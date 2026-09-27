@@ -587,13 +587,32 @@ function loadCap() {
     dx.fillText("wear the clouds", ccx, 790);
     const dtex = new THREE.CanvasTexture(dc);
     dtex.colorSpace = THREE.SRGBColorSpace; dtex.anisotropy = 8;
-    const dR = size.x * .48, dArc = 1.05;
-    const decal = new THREE.Mesh(
-      new THREE.CylinderGeometry(dR, dR, size.y * .36, 48, 1, true, -dArc / 2, dArc),
-      new THREE.MeshBasicMaterial({ map: dtex, transparent: true, side: THREE.FrontSide, depthWrite: false }));
-    decal.position.set(0, size.y * .16, size.z * .5 - dR);
-    decal.rotation.x = -0.1;
-    wrap.add(decal);
+    /* locate the front panel: the brim's low vertices point the way, then a
+       raycast pins the decal to the real surface */
+    cap.updateMatrixWorld(true);
+    const v = new THREE.Vector3(); let fx = 0, fz = 0, fn = 0;
+    cap.traverse(o => { if (!o.isMesh) return; const p = o.geometry.attributes.position;
+      for (let i = 0; i < p.count; i += 7) { v.fromBufferAttribute(p, i); o.localToWorld(v);
+        if (v.y < -size.y * .2) { fx += v.x; fz += v.z; fn++; } } });
+    const fa = Math.atan2(fx / (fn || 1), fz / (fn || 1));
+    const dir = new THREE.Vector3(Math.sin(fa), 0, Math.cos(fa));
+    const rc = new THREE.Raycaster(
+      dir.clone().multiplyScalar(size.length()).setY(size.y * .14), dir.clone().negate());
+    const hit = rc.intersectObject(cap, true)[0];
+    if (hit) {
+      const N = hit.face.normal.clone().transformDirection(hit.object.matrixWorld);
+      if (N.dot(dir) < 0) N.negate();
+      const nh = new THREE.Vector3(N.x, 0, N.z).normalize();
+      const dR = size.x * .5, dArc = .95;
+      const decal = new THREE.Mesh(
+        new THREE.CylinderGeometry(dR, dR, size.y * .3, 48, 1, true, -dArc / 2, dArc),
+        new THREE.MeshBasicMaterial({ map: dtex, transparent: true, side: THREE.FrontSide, depthWrite: false }));
+      decal.rotation.order = "YXZ";
+      decal.rotation.y = Math.atan2(nh.x, nh.z);
+      decal.rotation.x = -Math.asin(THREE.MathUtils.clamp(N.y, -.5, .5)) * .7;
+      decal.position.copy(hit.point).addScaledVector(nh, -dR + size.x * .012);
+      wrap.add(decal);
+    }
     capHolder.add(wrap);
     gsap.from(wrap.scale, { x: 0, y: 0, z: 0, duration: 1.4, ease: "expo.out" });
   }, undefined, e => console.warn("cap model unavailable", e));
