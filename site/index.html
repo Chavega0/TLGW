@@ -177,6 +177,7 @@ section{position:relative;padding-inline:var(--gutter)}
 /* ---------- act VI · 3D ---------- */
 .threed{height:250vh;padding:0}
 .threed__pin{position:sticky;top:0;height:100svh;overflow:hidden}
+.threed__mark{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none;font-weight:900;text-transform:uppercase;font-size:clamp(56px,11vw,190px);line-height:.92;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px rgba(247,244,238,.22);user-select:none}
 #stage{position:absolute;inset:0;width:100%;height:100%}
 .threed__txt{position:absolute;z-index:2;left:var(--gutter);right:var(--gutter);top:calc(96px + env(safe-area-inset-top,0px));display:grid;gap:16px;justify-items:center;text-align:center;pointer-events:none}
 .threed__txt h2{font-size:clamp(38px,6vw,100px)}
@@ -381,6 +382,7 @@ footer{padding-block:9vh calc(26px + env(safe-area-inset-bottom,0px));overflow:h
   <!-- ACT VI · the cap in 3D -->
   <section class="threed" id="threed" aria-label="The cap in 3D">
     <div class="threed__pin">
+      <div class="threed__mark" aria-hidden="true">Above<br>the clouds</div>
       <canvas id="stage" aria-hidden="true"></canvas>
       <div class="threed__txt">
         <div class="eyebrow" style="justify-content:center">above the clouds · white trucker cap</div>
@@ -543,7 +545,7 @@ function resizeSky() {
 }
 
 /* ============ three.js: the real cap, reconstructed in 3D ============ */
-const CAP_GLB = "https://d8j0ntlcm91z4.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/hf_20260927_030537_ccaa0567-e375-4070-96a7-4db002e7ec41.glb";
+const CAP_GLB = "https://d8j0ntlcm91z4.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/hf_20260927_044328_dea487f1-a67e-405b-bcde-af56d063ee75.glb";
 const stage = document.getElementById("stage");
 const renderer = new THREE.WebGLRenderer({ canvas: stage, alpha: true, antialias: true });
 renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
@@ -556,7 +558,7 @@ scene.add(new THREE.HemisphereLight(0xdfe9ff, 0x2a2438, 1.5));
 const key = new THREE.DirectionalLight(0xffffff, 2.4); key.position.set(4, 6, 8); scene.add(key);
 const rim = new THREE.DirectionalLight(0xffb503, 2.0); rim.position.set(-6, 1, -6); scene.add(rim);
 const capHolder = new THREE.Group(); scene.add(capHolder);
-let capLoaded = false, dragging = false, dragVel = 0, spinY = -1.7;
+let capLoaded = false, dragging = false, dragVel = 0, spinY = -0.55;
 function loadCap() {
   if (capLoaded) return; capLoaded = true;
   new GLTFLoader().load(CAP_GLB, g => {
