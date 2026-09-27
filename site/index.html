@@ -445,6 +445,7 @@ setTimeout(function () { var l = document.getElementById("loader"); if (l && l.s
 <script type="module">
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { DecalGeometry } from "three/addons/geometries/DecalGeometry.js";
 
 /* ============ real catalog: weartheclouds Drop 01 (live store data) ============ */
 const CDN = "https://www.weartheclouds.com/cdn/shop/files/";
@@ -586,12 +587,16 @@ function loadCap() {
       loader.setCrossOrigin("anonymous");
       loader.load("https://d2ol7oe51mr4n9.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/990433a0-ff0c-44e0-8887-a3344479b045.png", dtex => {
         dtex.colorSpace = THREE.SRGBColorSpace; dtex.anisotropy = 8;
-        const dw = size.x * .52, dh = dw * dtex.image.height / dtex.image.width;
+        const dw = size.x * .5, dh = dw * dtex.image.height / dtex.image.width;
+        /* project the mark onto the mesh itself so it follows the panel's
+           curvature instead of floating on a flat plane */
+        const aim = new THREE.Object3D();
+        aim.position.copy(hit.point);
+        aim.lookAt(hit.point.clone().add(N));
         const decal = new THREE.Mesh(
-          new THREE.PlaneGeometry(dw, dh),
-          new THREE.MeshBasicMaterial({ map: dtex, transparent: true, side: THREE.DoubleSide, depthWrite: false }));
-        decal.position.copy(hit.point).addScaledVector(N, size.x * .03);
-        decal.lookAt(decal.position.clone().add(N));
+          new DecalGeometry(hit.object, hit.point, aim.rotation, new THREE.Vector3(dw, dh, size.x * .6)),
+          new THREE.MeshBasicMaterial({ map: dtex, transparent: true, depthWrite: false,
+            polygonOffset: true, polygonOffsetFactor: -4 }));
         wrap.add(decal);
       });
     }
