@@ -16,7 +16,7 @@
   --paper:#f7f4ee;        /* warm off-white, from their product photography */
   --sand:#e9e4dc;
   --dim:rgba(247,244,238,.6);
-  --dim2:rgba(247,244,238,.38);
+  --dim2:rgba(247,244,238,.3);
   --line:rgba(247,244,238,.16);
   --sun:#ffb503;          /* brand yellow from weartheclouds.com */
   --alarm:#d12607;        /* brand red, noise act only */
@@ -58,14 +58,21 @@ main,footer,nav{position:relative;z-index:2}
 .loader__bar i{display:block;height:100%;width:100%;background:var(--sun);transform-origin:left;transform:scaleX(0)}
 
 /* ---------- nav ---------- */
-nav.top{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:calc(14px + env(safe-area-inset-top,0px)) var(--gutter) 14px;mix-blend-mode:difference}
+nav.top{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:calc(14px + env(safe-area-inset-top,0px)) var(--gutter) 14px;mix-blend-mode:difference;transition:background .3s}
+nav.top.solid{mix-blend-mode:normal;color:var(--ink);background:linear-gradient(180deg,rgba(247,244,238,.92),rgba(247,244,238,.75));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+nav.top.solid .brand img{filter:none}
+.menu-btn{display:none;font:inherit;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:inherit;background:none;border:0;cursor:pointer;padding:9px 0}
+.sheet{position:fixed;inset:0;z-index:70;background:var(--ink);display:grid;place-content:center;gap:10px;text-align:center}
+.sheet[hidden]{display:none}
+.sheet a{font-weight:800;font-size:34px;letter-spacing:-.03em;text-decoration:none;padding:8px}
+.sheet .close{position:absolute;top:20px;right:24px;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;background:none;border:0;color:var(--dim);cursor:pointer}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:14px;letter-spacing:.01em}
 .brand img{width:34px;height:34px;filter:invert(1)}
 .navlinks{display:flex;gap:26px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
 .navlinks a{text-decoration:none;opacity:.8}
 .navlinks a:hover{opacity:1}
 .bag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:1px solid currentColor;border-radius:999px;padding:9px 16px}
-@media (max-width:900px){.navlinks{display:none}}
+@media (max-width:900px){.navlinks{display:none}.menu-btn{display:block}}
 
 /* ---------- shared ---------- */
 section{position:relative;padding-inline:var(--gutter)}
@@ -86,7 +93,8 @@ section{position:relative;padding-inline:var(--gutter)}
 .nrow b{font-weight:800;color:transparent;-webkit-text-stroke:1px rgba(247,244,238,.3)}
 .nrow em{font-style:normal;color:var(--alarm)}
 .noise__center{position:relative;z-index:2;text-align:center;display:grid;gap:26px;justify-items:center;max-width:900px}
-.noise__center h1{font-size:clamp(38px,6.5vw,92px);letter-spacing:-.045em}
+.noise__center h1{font-size:clamp(38px,6.5vw,92px);letter-spacing:-.04em;word-spacing:.06em;text-shadow:0 0 60px rgba(10,10,16,.9)}
+.noise__center{background:radial-gradient(60% 60% at 50% 50%,rgba(10,10,16,.72),transparent 75%)}
 .noise__center h1 span{color:var(--dim)}
 .noise__hint{font-family:var(--mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:12px}
 .noise__hint i{width:1px;height:42px;background:var(--paper);transform-origin:top;animation:cue 2.2s cubic-bezier(.7,0,.3,1) infinite}
@@ -117,7 +125,7 @@ section{position:relative;padding-inline:var(--gutter)}
 .panel::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,7,12,.78) 0%,rgba(7,7,12,.3) 55%,rgba(7,7,12,.05) 100%)}
 .panel__body{position:absolute;z-index:2;inset:0;display:grid;align-content:end;gap:20px;padding:calc(100px + env(safe-area-inset-top,0px)) var(--gutter) 44px;max-width:1000px}
 .panel__num{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim)}
-.word{font-size:clamp(40px,7.2vw,128px);letter-spacing:-.05em;max-width:12ch}
+.word{font-size:clamp(40px,7.2vw,128px);letter-spacing:-.05em;max-width:12ch;text-shadow:0 3px 30px rgba(7,7,12,.55)}
 .panel__desc{max-width:44ch;font-size:clamp(16px,1.5vw,20px);margin:0;color:var(--paper);font-weight:500}
 .panel__caps{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .panel__caps a{display:inline-flex;gap:10px;align-items:baseline;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:10px 15px;border-radius:999px;background:rgba(247,244,238,.09);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);transition:background .3s,color .3s}
@@ -131,7 +139,8 @@ section{position:relative;padding-inline:var(--gutter)}
 .drop__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:28px;max-width:1500px;margin:0 auto 44px}
 .drop__head h2{font-size:clamp(42px,7vw,120px)}
 .drop__head .lede{color:var(--ink-dim)}
-.filters{display:flex;flex-wrap:wrap;gap:8px;max-width:1500px;margin:0 auto 30px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;max-width:1500px;margin:0 auto 30px;position:sticky;top:calc(60px + env(safe-area-inset-top,0px));z-index:5;background:var(--paper);padding-block:10px}
+@media (max-width:760px){.filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.filters button{white-space:nowrap}}
 .filters button{font:inherit;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:transparent;border:1px solid var(--ink-line);border-radius:999px;padding:10px 16px;cursor:pointer;transition:background .25s,color .25s}
 .filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:clamp(14px,2vw,26px);max-width:1500px;margin-inline:auto}
@@ -146,7 +155,7 @@ section{position:relative;padding-inline:var(--gutter)}
 .card__meta{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-inline:2px}
 .card__meta h3{margin:0;font-weight:700;font-size:14.5px;letter-spacing:-.01em}
 .card__meta small{display:block;color:var(--ink-dim);font-size:13.5px;margin-top:2px}
-.price{font-family:var(--mono);font-size:12.5px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.price{font-family:var(--mono);font-size:12.5px;white-space:nowrap;font-variant-numeric:tabular-nums;text-transform:uppercase}
 
 /* ---------- act V · silhouettes (light) ---------- */
 .shapes{background:var(--sand);color:var(--ink);padding-block:12vh}
@@ -177,13 +186,13 @@ section{position:relative;padding-inline:var(--gutter)}
 .threed__hint{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
 
 /* ---------- act VII · finale ---------- */
-.night{min-height:120vh;display:grid;align-content:center;padding-block:16vh 12vh;text-align:center}
+.night{display:grid;align-content:center;padding-block:14vh 8vh;text-align:center}
 .night__txt{display:grid;gap:28px;justify-items:center}
 .night h2{font-size:clamp(34px,6.4vw,110px);max-width:16ch}
 .night h2 em{font-style:normal;color:var(--sun)}
 .night .ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.words-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;margin:12vh auto 0;max-width:1100px;font-family:var(--mono);font-size:clamp(11px,1.2vw,14px);letter-spacing:.2em;text-transform:uppercase;color:var(--dim2)}
-.words-row span:nth-child(odd){color:var(--dim)}
+.words-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;margin:8vh auto 0;max-width:1100px;font-family:var(--mono);font-size:clamp(11px,1.2vw,14px);letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.words-row span:nth-child(odd){color:var(--paper)}
 
 footer{padding-block:9vh calc(26px + env(safe-area-inset-bottom,0px));overflow:hidden;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(10,10,16,0),rgba(10,10,16,.9))}
 .marquee{display:flex;width:max-content;animation:marq 32s linear infinite}
@@ -224,8 +233,18 @@ footer{padding-block:9vh calc(26px + env(safe-area-inset-bottom,0px));overflow:h
     <a href="#threed">the cap</a>
     <a href="https://www.weartheclouds.com/pages/about-us" target="_blank" rel="noopener">about</a>
   </div>
-  <a class="bag" href="https://www.weartheclouds.com/collections/caps" target="_blank" rel="noopener">shop caps ↗</a>
+  <div style="display:flex;align-items:center;gap:14px">
+    <button class="menu-btn" type="button" id="menuBtn" aria-label="Open menu">menu</button>
+    <a class="bag" href="https://www.weartheclouds.com/collections/caps" target="_blank" rel="noopener">shop caps ↗</a>
+  </div>
 </nav>
+<div class="sheet" id="sheet" hidden>
+  <button class="close" type="button" id="sheetClose">close</button>
+  <a href="#messages">Shop by message</a>
+  <a href="#drop">The drop</a>
+  <a href="#threed">The cap</a>
+  <a href="https://www.weartheclouds.com/pages/about-us" target="_blank" rel="noopener">About</a>
+</div>
 
 <main id="top">
 
@@ -409,6 +428,11 @@ footer{padding-block:9vh calc(26px + env(safe-area-inset-bottom,0px));overflow:h
   </div>
 </footer>
 
+<script>
+// failsafe: never strand visitors behind the loader if a CDN fails
+addEventListener("error", function () { var l = document.getElementById("loader"); if (l) l.style.display = "none"; }, true);
+setTimeout(function () { var l = document.getElementById("loader"); if (l && l.style.display !== "none") l.style.display = "none"; }, 7000);
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
@@ -436,11 +460,11 @@ const CAPS = [
   ["less-noise","less-noise-classic-cap","Black Classic Cap","classic",139,"LNBLK_FRONT_f56efd72-469a-42a2-b2a6-069e43a24aec.jpg","LNBLK_MODEL_FRONT.jpg"],
   ["less-noise","less-noise-grey-classic-cap","Grey Classic Cap","classic",139,"LNGW_FRONT.jpg","LNDW_MODEL_FRONT.jpg"],
   ["less-noise","less-noise-dad-cap","Dark Grey Classic Cap","classic",139,"LNDW_FRONT_ea8d09f2-9b1d-49dc-b2fe-215ed1ca8a40.jpg","ChatGPTImageSep1_2026_01_26_42PM_1.png"],
-  ["less-noise","less-noise-dark-grey-classic-cap","Dark Grey Dad Cap","dad",139,"LNDG_FRONT.jpg","LNGW_MODEL_FRONT.jpg"],
+  ["less-noise","less-noise-dark-grey-classic-cap","Dark Grey Dad Cap","dad",139,"LNDG_FRONT.jpg","LNDG_SIDE.jpg"],
   ["never-settle","never-settle-trucker-cap","Royal Blue Trucker Cap","trucker",159,"NSRYL_FRONT.jpg","NSRYL_MODEL_FRONT_78e8da28-e4b9-4c91-ae1e-cacafc68ceb9.jpg"],
   ["never-settle","never-settle-mustard-black-trucker-cap","Mustard-Black Trucker Cap","trucker",179,"NSMBK_FRONT.jpg","NSMBK_MODEL_SIDE.jpg"],
   ["never-settle","never-settle-vintage-dad-cap","Camouflage Vintage Dad Cap","vintage",159,"NSCAM_FRONT.jpg","NSCAM_MODEL_FRONT.jpg"],
-  ["never-settle","never-settle-dad-cap","Red Dad Cap","dad",139,"NSRED_SIDE.jpg","NSRED_MODEL_FRONT.jpg"],
+  ["never-settle","never-settle-dad-cap","Red Dad Cap","dad",139,"ChatGPTImageSep1_2026_03_39_59PM.png","NSRED_MODEL_FRONT.jpg"],
 ];
 const LINE = { "above-the-clouds": "Above The Clouds", "find-your-peace": "Find Your Peace", "less-noise": "Less Noise", "never-settle": "Never Settle" };
 
@@ -549,9 +573,9 @@ function loadCap() {
 stage.style.pointerEvents = "auto";
 stage.style.touchAction = "pan-y";
 let px = 0;
-stage.addEventListener("pointerdown", e => { dragging = true; px = e.clientX; document.getElementById("dragHint").textContent = "scroll to continue"; });
+stage.addEventListener("pointerdown", e => { dragging = true; px = e.clientX; try { stage.setPointerCapture(e.pointerId); } catch (err) {} document.getElementById("dragHint").textContent = "scroll to continue"; });
 addEventListener("pointermove", e => { if (dragging) { dragVel = (e.clientX - px) * .012; spinY += dragVel; px = e.clientX; } });
-addEventListener("pointerup", () => dragging = false);
+["pointerup", "pointercancel", "lostpointercapture"].forEach(ev => addEventListener(ev, () => dragging = false));
 function resizeStage() { renderer.setSize(innerWidth, innerHeight, false); camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); }
 
 /* ============ render loop ============ */
@@ -609,8 +633,8 @@ const flashEl = document.querySelector(".flash");
 function strike(power = 1) {
   if (reduce) return;
   const tl = gsap.timeline();
-  [0, .12, .45].forEach((d, i) => tl.add(() => { flash = (i === 2 ? .7 : 1) * power; }, d)
-    .fromTo(flashEl, { opacity: (i === 2 ? .28 : .5) * power }, { opacity: 0, duration: .35, ease: "power2.out" }, d));
+  [0, .55].forEach((d, i) => tl.add(() => { flash = (i === 1 ? .5 : .8) * power; }, d)
+    .fromTo(flashEl, { opacity: (i === 1 ? .18 : .3) * power }, { opacity: 0, duration: .45, ease: "power2.out" }, d));
 }
 
 /* ---- act I: noise rows ---- */
@@ -627,7 +651,8 @@ for (let r = 0; r < ROWN; r++) {
     const w = WORDS[(r * 7 + i * 3) % WORDS.length];
     words.push(i % 4 === 1 ? `<b>${w}</b>` : (r === 4 && i === 6 ? `<em>${w}</em>` : w));
   }
-  el.innerHTML = words.join(" · ") + " · ";
+  const half = words.join(" · ") + " · ";
+  el.innerHTML = half + half;
   nrows.appendChild(el);
   rows.push({ el, dir: r % 2 ? 1 : -1, speed: .35 + (r % 3) * .22 });
 }
@@ -656,12 +681,15 @@ const filmBar = document.getElementById("filmBar");
 const filmTime = document.getElementById("filmTime");
 let vidDur = 6, targetT = 0, currentT = 0, vidReady = false;
 vid.addEventListener("loadedmetadata", () => { vidDur = vid.duration || 6; });
-vid.addEventListener("canplaythrough", () => { vidReady = true; media.classList.add("ready"); vid.pause(); }, { once: true });
+function filmReady() { if (vidReady) return; vidReady = true; media.classList.add("ready"); vid.pause(); }
+vid.addEventListener("loadeddata", filmReady, { once: true });
+vid.addEventListener("canplaythrough", filmReady, { once: true });
+setTimeout(() => { if (vid.readyState >= 2) filmReady(); }, 4000);
 vid.load();
 gsap.ticker.add(() => {
   if (!vidReady) return;
   currentT = lerp(currentT, targetT, .18);
-  if (Math.abs(currentT - vid.currentTime) > .033) {
+  if (!vid.seeking && Math.abs(currentT - vid.currentTime) > .033) {
     try { vid.currentTime = currentT; } catch (e) {}
   }
 });
@@ -673,7 +701,7 @@ ScrollTrigger.create({
     targetT = p * (vidDur - .05);
     filmBar.style.transform = `scaleX(${p})`;
     const tt = p * vidDur;
-    filmTime.textContent = "00:0" + Math.floor(tt) + ":" + String(Math.floor(tt % 1 * 24)).padStart(2, "0");
+    filmTime.textContent = "00:0" + Math.floor(tt) + ":" + String(Math.min(23, Math.floor(tt % 1 * 24))).padStart(2, "0");
     for (const st of steps) {
       const a = +st.dataset.a, b = +st.dataset.b;
       const local = clamp01((p - a) / (b - a));
@@ -684,7 +712,7 @@ ScrollTrigger.create({
     }
   }
 });
-if (reduce) { media.classList.add("ready"); }
+if (reduce) { media.classList.add("ready"); const st = steps[2]; st.style.opacity = 1; st.firstElementChild.style.transform = "none"; }
 
 /* ---- act III: message chapters ---- */
 const panels = gsap.utils.toArray(".panel");
@@ -734,6 +762,28 @@ gsap.timeline()
   .set("#loader", { display: "none" })
   .from(".noise__center > *", { y: 34, opacity: 0, duration: 1, ease: "power3.out", stagger: .1 }, "-=.5")
   .add(() => { lenis && lenis.start(); });
+
+/* ---- nav state + mobile menu ---- */
+const navEl = document.querySelector("nav.top");
+const sheet = document.getElementById("sheet");
+document.getElementById("menuBtn").addEventListener("click", () => { sheet.hidden = false; lenis && lenis.stop(); });
+function closeSheet() { sheet.hidden = true; lenis && lenis.start(); }
+document.getElementById("sheetClose").addEventListener("click", closeSheet);
+sheet.querySelectorAll("a").forEach(a => a.addEventListener("click", e => {
+  closeSheet();
+  const el = a.getAttribute("href").startsWith("#") && document.querySelector(a.getAttribute("href"));
+  if (el) { e.preventDefault(); (lenis ? lenis.scrollTo(el, { duration: 1.6 }) : el.scrollIntoView()); }
+}));
+const lightZone = { top: 0, bottom: 0 };
+function measureLight() {
+  const d = document.querySelector(".drop"), sh = document.querySelector(".shapes");
+  lightZone.top = d.offsetTop; lightZone.bottom = sh.offsetTop + sh.offsetHeight;
+}
+addEventListener("load", measureLight); addEventListener("resize", measureLight); measureLight();
+gsap.ticker.add(() => {
+  const y = scrollY + 40;
+  navEl.classList.toggle("solid", y > lightZone.top && y < lightZone.bottom);
+});
 
 addEventListener("load", () => ScrollTrigger.refresh());
 </script>

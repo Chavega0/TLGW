@@ -5,7 +5,8 @@ import { mkdirSync, writeFileSync } from 'fs';
 import { spawn } from 'child_process';
 
 mkdirSync('out', { recursive: true });
-const server = spawn('python3', ['-m', 'http.server', '8123', '-d', 'site']);
+const BASE = process.env.BASE_URL || 'http://localhost:8123';
+const server = process.env.BASE_URL ? null : spawn('python3', ['-m', 'http.server', '8123', '-d', 'site']);
 await new Promise(r => setTimeout(r, 1500));
 
 const errs = [];
@@ -14,7 +15,7 @@ async function run(width, height, fracs, prefix) {
   const page = await browser.newPage({ viewport: { width, height } });
   page.on('pageerror', e => errs.push('JS ' + e.message.slice(0, 300)));
   page.on('response', r => { if (r.status() >= 400) errs.push('HTTP' + r.status() + ' ' + r.url().slice(0, 140)); });
-  await page.goto('http://localhost:8123/index.html', { waitUntil: 'load', timeout: 60000 });
+  await page.goto(BASE + '/index.html', { waitUntil: 'load', timeout: 60000 });
   await page.waitForTimeout(9000);
   const H = await page.evaluate(() => document.documentElement.scrollHeight);
   for (let i = 0; i < fracs.length; i++) {
@@ -30,4 +31,4 @@ const H = await run(1440, 900, dFracs, 'd');
 await run(390, 844, [0, .12, .25, .38, .5, .62, .75, .88, .97], 'm');
 writeFileSync('out/meta.txt', 'H=' + H + '\n' + [...new Set(errs)].join('\n'));
 await browser.close();
-server.kill();
+server && server.kill();

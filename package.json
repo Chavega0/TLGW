@@ -1,0 +1,8 @@
+{
+  "name": "weartheclouds-experience",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 8080 -d site",
+    "shots": "node .github/preview/shot.mjs"
+  }
+}
