@@ -1,5 +1,8 @@
 name: preview-shots
 on:
+  push:
+    branches: ['claude/**']
+    paths: ['site/**', '.github/**']
   workflow_dispatch:
 permissions:
   contents: write
