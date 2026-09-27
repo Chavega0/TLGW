@@ -1,0 +1,27 @@
+name: preview-shots
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  shots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Playwright Chromium
+        run: |
+          npm i playwright@1.49.1 --no-save
+          npx playwright install --with-deps chromium
+      - name: Capture
+        run: node .github/preview/shot.mjs
+      - name: Publish to shots branch
+        run: |
+          cd out
+          git init -b shots
+          git add -A
+          git -c user.email=preview@local -c user.name=preview commit -m "preview shots $GITHUB_SHA"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" shots
