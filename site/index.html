@@ -628,11 +628,11 @@ for (let r = 0; r < ROWN; r++) {
   nrows.appendChild(el);
   rows.push({ el, dir: r % 2 ? 1 : -1, speed: .35 + (r % 3) * .22 });
 }
+const noiseSect = document.querySelector(".noise");
 gsap.ticker.add(() => {
   if (reduce) return;
-  const y = scrollY, vh = innerHeight;
-  const sect = document.querySelector(".noise");
-  const r = sect.getBoundingClientRect();
+  const vh = innerHeight;
+  const r = noiseSect.getBoundingClientRect();
   if (r.bottom < 0 || r.top > vh) return;
   const prog = clamp01(-r.top / (r.height - vh));
   for (const row of rows) {
