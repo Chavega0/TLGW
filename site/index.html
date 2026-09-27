@@ -571,17 +571,10 @@ function loadCap() {
     wrap.scale.setScalar((isMobile ? 2.2 : 3.9) / Math.max(size.x, size.y, size.z));
     if (isMobile) wrap.position.y = 0.1;
     cap.traverse(o => { if (o.isMesh && o.material) o.material.side = THREE.DoubleSide; });
-    /* front-panel wordmark: photogrammetry can't rebuild stitching, so the
-       mark is crisp canvas type on a curved surface hugging the panel */
-    const dc = document.createElement("canvas"); dc.width = 2048; dc.height = 1024;
-    const dx = dc.getContext("2d"); dx.fillStyle = "#181c2a";
-    dx.textAlign = "center";
-    dx.font = "900 170px 'Inter Tight', 'Helvetica Neue', sans-serif";
-    dx.fillText("wear the clouds", 1024, 570);
-    const dtex = new THREE.CanvasTexture(dc);
-    dtex.colorSpace = THREE.SRGBColorSpace; dtex.anisotropy = 8;
-    /* the front panel faces +Z (measured offline: near-vertical, normal
-       (0,.27,.96), spanning the lower third) - seat the mark on it */
+    /* front-panel embroidery: photogrammetry smears stitching, so the real
+       mark - lifted from the store's ATCWH_FRONT product photo and cut to
+       transparency - is projected onto the panel. The panel faces +Z
+       (measured offline: near-vertical, normal (0,.27,.96)). */
     cap.updateMatrixWorld(true);
     const rc = new THREE.Raycaster(
       new THREE.Vector3(0, size.y * .16, size.length()), new THREE.Vector3(0, 0, -1));
@@ -589,13 +582,18 @@ function loadCap() {
     if (hit) {
       const N = hit.face.normal.clone().transformDirection(hit.object.matrixWorld).normalize();
       if (N.y < 0) N.negate();
-      const dw = size.x * .5;
-      const decal = new THREE.Mesh(
-        new THREE.PlaneGeometry(dw, dw / 2),
-        new THREE.MeshBasicMaterial({ map: dtex, transparent: true, side: THREE.DoubleSide, depthWrite: false }));
-      decal.position.copy(hit.point).addScaledVector(N, size.x * .03);
-      decal.lookAt(decal.position.clone().add(N));
-      wrap.add(decal);
+      const loader = new THREE.TextureLoader();
+      loader.setCrossOrigin("anonymous");
+      loader.load("https://d2ol7oe51mr4n9.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/990433a0-ff0c-44e0-8887-a3344479b045.png", dtex => {
+        dtex.colorSpace = THREE.SRGBColorSpace; dtex.anisotropy = 8;
+        const dw = size.x * .52, dh = dw * dtex.image.height / dtex.image.width;
+        const decal = new THREE.Mesh(
+          new THREE.PlaneGeometry(dw, dh),
+          new THREE.MeshBasicMaterial({ map: dtex, transparent: true, side: THREE.DoubleSide, depthWrite: false }));
+        decal.position.copy(hit.point).addScaledVector(N, size.x * .03);
+        decal.lookAt(decal.position.clone().add(N));
+        wrap.add(decal);
+      });
     }
     capHolder.add(wrap);
     gsap.from(wrap.scale, { x: 0, y: 0, z: 0, duration: 1.4, ease: "expo.out" });
