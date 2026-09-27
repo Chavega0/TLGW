@@ -178,8 +178,8 @@ section{position:relative;padding-inline:var(--gutter)}
 .threed{height:250vh;padding:0}
 .threed__pin{position:sticky;top:0;height:100svh;overflow:hidden}
 .threed__mark{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:27vh 0 9vh;text-align:center;pointer-events:none;font-weight:900;text-transform:uppercase;font-size:clamp(44px,8.5vw,140px);line-height:.92;letter-spacing:-.03em;color:rgba(247,244,238,.07);-webkit-text-stroke:2px rgba(247,244,238,.55);user-select:none}
-.threed__mark em{font-style:normal;color:var(--accent);-webkit-text-stroke:0}
-@media (max-width:760px){.threed__mark{padding:31vh 0 15vh}}
+.threed__mark em{font-style:normal;color:var(--sun);-webkit-text-stroke:0}
+@media (max-width:760px){.threed__mark{padding:30vh 0 0;justify-content:flex-start;font-size:11vw}}
 #stage{position:absolute;inset:0;width:100%;height:100%}
 .threed__txt{position:absolute;z-index:2;left:var(--gutter);right:var(--gutter);top:calc(96px + env(safe-area-inset-top,0px));display:grid;gap:16px;justify-items:center;text-align:center;pointer-events:none}
 .threed__txt h2{font-size:clamp(38px,6vw,100px)}
@@ -569,7 +569,7 @@ function loadCap() {
     cap.position.sub(c);
     const wrap = new THREE.Group(); wrap.add(cap);
     wrap.scale.setScalar((isMobile ? 2.2 : 3.9) / Math.max(size.x, size.y, size.z));
-    if (isMobile) wrap.position.y = 0.55;
+    if (isMobile) wrap.position.y = 0.1;
     cap.traverse(o => { if (o.isMesh && o.material) o.material.side = THREE.DoubleSide; });
     capHolder.add(wrap);
     gsap.from(wrap.scale, { x: 0, y: 0, z: 0, duration: 1.4, ease: "expo.out" });
