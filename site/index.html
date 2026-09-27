@@ -560,7 +560,7 @@ scene.add(new THREE.HemisphereLight(0xdfe9ff, 0x2a2438, 1.5));
 const key = new THREE.DirectionalLight(0xffffff, 2.4); key.position.set(4, 6, 8); scene.add(key);
 const rim = new THREE.DirectionalLight(0xffb503, 2.0); rim.position.set(-6, 1, -6); scene.add(rim);
 const capHolder = new THREE.Group(); scene.add(capHolder);
-let capLoaded = false, dragging = false, dragVel = 0, spinY = -0.55;
+let capLoaded = false, dragging = false, dragVel = 0, spinY = 2.9;
 function loadCap() {
   if (capLoaded) return; capLoaded = true;
   new GLTFLoader().load(CAP_GLB, g => {
@@ -587,30 +587,22 @@ function loadCap() {
     dx.fillText("wear the clouds", ccx, 790);
     const dtex = new THREE.CanvasTexture(dc);
     dtex.colorSpace = THREE.SRGBColorSpace; dtex.anisotropy = 8;
-    /* locate the front panel: the brim's low vertices point the way, then a
-       raycast pins the decal to the real surface */
+    /* this reconstruction has no vertical front panel - the front is a low
+       slope rising from the brim (brim points -Z, measured offline), so the
+       mark lies flat on that slope like dad-cap embroidery */
     cap.updateMatrixWorld(true);
-    const v = new THREE.Vector3(); let fx = 0, fz = 0, fn = 0;
-    cap.traverse(o => { if (!o.isMesh) return; const p = o.geometry.attributes.position;
-      for (let i = 0; i < p.count; i += 7) { v.fromBufferAttribute(p, i); o.localToWorld(v);
-        if (v.y < -size.y * .2) { fx += v.x; fz += v.z; fn++; } } });
-    const fa = Math.atan2(fx / (fn || 1), fz / (fn || 1));
-    const dir = new THREE.Vector3(Math.sin(fa), 0, Math.cos(fa));
     const rc = new THREE.Raycaster(
-      dir.clone().multiplyScalar(size.length()).setY(size.y * .14), dir.clone().negate());
+      new THREE.Vector3(0, size.y * .34, -size.length()), new THREE.Vector3(0, 0, 1));
     const hit = rc.intersectObject(cap, true)[0];
     if (hit) {
-      const N = hit.face.normal.clone().transformDirection(hit.object.matrixWorld);
-      if (N.dot(dir) < 0) N.negate();
-      const nh = new THREE.Vector3(N.x, 0, N.z).normalize();
-      const dR = size.x * .5, dArc = .95;
+      const N = hit.face.normal.clone().transformDirection(hit.object.matrixWorld).normalize();
+      if (N.y < 0) N.negate();
+      const dw = size.x * .5;
       const decal = new THREE.Mesh(
-        new THREE.CylinderGeometry(dR, dR, size.y * .3, 48, 1, true, -dArc / 2, dArc),
-        new THREE.MeshBasicMaterial({ map: dtex, transparent: true, side: THREE.FrontSide, depthWrite: false }));
-      decal.rotation.order = "YXZ";
-      decal.rotation.y = Math.atan2(nh.x, nh.z);
-      decal.rotation.x = -Math.asin(THREE.MathUtils.clamp(N.y, -.5, .5)) * .7;
-      decal.position.copy(hit.point).addScaledVector(nh, -dR + size.x * .012);
+        new THREE.PlaneGeometry(dw, dw / 2),
+        new THREE.MeshBasicMaterial({ map: dtex, transparent: true, side: THREE.DoubleSide, depthWrite: false }));
+      decal.position.copy(hit.point).addScaledVector(N, size.x * .03);
+      decal.lookAt(decal.position.clone().add(N));
       wrap.add(decal);
     }
     capHolder.add(wrap);
