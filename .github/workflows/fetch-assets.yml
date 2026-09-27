@@ -1,5 +1,9 @@
 name: Fetch generated site assets
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches: ["claude/peaceful-clarke-u33yni"]
+    paths: [".github/workflows/fetch-assets.yml"]
 
 permissions:
   contents: write
