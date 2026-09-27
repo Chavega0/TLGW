@@ -571,6 +571,29 @@ function loadCap() {
     wrap.scale.setScalar((isMobile ? 2.2 : 3.9) / Math.max(size.x, size.y, size.z));
     if (isMobile) wrap.position.y = 0.1;
     cap.traverse(o => { if (o.isMesh && o.material) o.material.side = THREE.DoubleSide; });
+    /* front-panel wordmark: photogrammetry can't rebuild stitching, so the
+       mark is crisp canvas type on a curved surface hugging the panel */
+    const dc = document.createElement("canvas"); dc.width = 2048; dc.height = 1024;
+    const dx = dc.getContext("2d"); dx.fillStyle = "#181c2a";
+    const ccx = 1024, ccy = 350, cr = 150;
+    dx.beginPath();
+    dx.arc(ccx - cr * 1.15, ccy, cr * .85, 0, 7);
+    dx.arc(ccx, ccy - cr * .55, cr * 1.05, 0, 7);
+    dx.arc(ccx + cr * 1.15, ccy, cr * .9, 0, 7);
+    dx.rect(ccx - cr * 1.15, ccy, cr * 2.3, cr * .82);
+    dx.fill();
+    dx.textAlign = "center";
+    dx.font = "900 148px 'Inter Tight', 'Helvetica Neue', sans-serif";
+    dx.fillText("wear the clouds", ccx, 790);
+    const dtex = new THREE.CanvasTexture(dc);
+    dtex.colorSpace = THREE.SRGBColorSpace; dtex.anisotropy = 8;
+    const dR = size.x * .48, dArc = 1.05;
+    const decal = new THREE.Mesh(
+      new THREE.CylinderGeometry(dR, dR, size.y * .36, 48, 1, true, -dArc / 2, dArc),
+      new THREE.MeshBasicMaterial({ map: dtex, transparent: true, side: THREE.FrontSide, depthWrite: false }));
+    decal.position.set(0, size.y * .16, size.z * .5 - dR);
+    decal.rotation.x = -0.1;
+    wrap.add(decal);
     capHolder.add(wrap);
     gsap.from(wrap.scale, { x: 0, y: 0, z: 0, duration: 1.4, ease: "expo.out" });
   }, undefined, e => console.warn("cap model unavailable", e));
