@@ -246,7 +246,10 @@ footer{padding-block:9vh calc(26px + env(safe-area-inset-bottom,0px));overflow:h
     <div class="film__pin">
       <div class="film__media" id="filmMedia">
         <img class="poster" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/eab04be3-dae9-48bc-9dd0-81968bcff64e.jpg" alt="The Above The Clouds white trucker cap">
-        <video id="filmVid" muted playsinline preload="auto" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/3161d2d0-2b24-4d75-842c-3d075124d436.mp4"></video>
+        <video id="filmVid" muted playsinline preload="auto">
+          <source src="https://d2ol7oe51mr4n9.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/6fc6dcec-58fb-471f-895c-af8cc0d72318.mp4" type='video/mp4; codecs="vp09.00.41.08"'>
+          <source src="https://d2ol7oe51mr4n9.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/3161d2d0-2b24-4d75-842c-3d075124d436.mp4" type='video/mp4; codecs="avc1.640028"'>
+        </video>
       </div>
       <div class="film__shade" aria-hidden="true"></div>
       <div class="fstep fstep--dark" data-a="0" data-b=".16"><div><h2 class="display">One cap.</h2><p>above the clouds · drop 01</p></div></div>
@@ -529,7 +532,7 @@ scene.add(new THREE.HemisphereLight(0xdfe9ff, 0x2a2438, 1.5));
 const key = new THREE.DirectionalLight(0xffffff, 2.4); key.position.set(4, 6, 8); scene.add(key);
 const rim = new THREE.DirectionalLight(0xffb503, 2.0); rim.position.set(-6, 1, -6); scene.add(rim);
 const capHolder = new THREE.Group(); scene.add(capHolder);
-let capLoaded = false, dragging = false, dragVel = 0, spinY = 0;
+let capLoaded = false, dragging = false, dragVel = 0, spinY = -0.9;
 function loadCap() {
   if (capLoaded) return; capLoaded = true;
   new GLTFLoader().load(CAP_GLB, g => {
