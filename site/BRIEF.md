@@ -47,7 +47,8 @@ Registry is empty (first build), gate clears trivially. Why the other seven lost
 
 ## Signature move: the ribbon
 A fixed SVG rhythmic-gymnastics ribbon, drawn by scroll (stroke-dashoffset from page progress),
-travelling down the right side of the page, changing hue with the acts, and at the close curling
+travelling down the right side of the page, held to the one page accent (taste.md accent lock),
+breathing out during the authored silence before the peak, and at the close curling
 into the "11" of the wordmark. It is the trace of where you have been and it double-serves as
 scroll progress. Coded in the page (site JS reading scroll), engine untouched.
 

@@ -12,6 +12,10 @@
   --s11-haze: rgba(232, 68, 46, 0.05);
 }
 
+/* athletic display voice: heavier than the engine's default 500 */
+.sc-display { font-weight: 800; }
+.argument .sc-display--lg { font-weight: 700; }
+
 /* ---------- chrome ---------- */
 
 .site-bar {
@@ -127,29 +131,37 @@
   max-width: none;
 }
 
-.hero-plane--bg { transform: translate3d(calc(var(--wx, 0) * -8px), calc(var(--wy, 0) * -5px), 0) scale(1.12); }
+.hero-plane--bg {
+  transform: translate3d(calc(var(--wx, 0) * -8px), calc(var(--wy, 0) * -5px + var(--sc-p, 0) * 3vh), 0) scale(1.12);
+}
 .hero-plane--bg img { filter: saturate(0.92); }
 
 .hero-plane--dust {
   mix-blend-mode: screen;
-  opacity: calc(0.5 - var(--sc-p, 0) * 0.25);
+  opacity: calc(0.26 - var(--sc-p, 0) * 0.14);
   transform: translate3d(calc(var(--wx, 0) * 14px), calc(var(--sc-p, 0) * -6vh), 0) scale(1.25);
+  -webkit-mask-image: radial-gradient(90% 70% at 50% 82%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(90% 70% at 50% 82%, #000 30%, transparent 75%);
 }
 
 .hero-plane--subject {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  padding-left: 22vw; /* keep the full headline clear of the subject at rest */
 }
 .hero-plane--subject img {
   position: static;
   width: auto;
   max-width: none;
-  height: min(86vh, 120vw);
+  height: min(82vh, 120vw);
   object-fit: contain;
   transform: translate3d(calc(var(--wx, 0) * 5px), calc(var(--sc-p, 0) * -9vh + 4vh), 0)
              scale(calc(1 + var(--sc-p, 0) * 0.05));
   filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.55));
+  /* soften the cutout's bounding box so the baked-in glow never shows an edge */
+  -webkit-mask-image: radial-gradient(75% 75% at 50% 50%, #000 62%, transparent 98%);
+  mask-image: radial-gradient(75% 75% at 50% 50%, #000 62%, transparent 98%);
 }
 
 .hero-copy { z-index: 1; } /* headline sits BETWEEN bg and subject */
@@ -157,8 +169,11 @@
 .hero-plane--dust { z-index: 3; }
 .hero-late { z-index: 4; }
 
-.hero-copy .sc-display--xl { max-width: 11ch; }
+.hero-copy .sc-display--xl { max-width: 13ch; }
 .hero-copy .sc-body { max-width: 34ch; }
+
+/* a flow act directly after a pinned act starts near the fold */
+.sc-section--tight { padding-block-start: calc(var(--sc-section) * 0.1); }
 
 .hero-late {
   position: absolute;
@@ -170,10 +185,11 @@
 .hero-late .sc-label { color: var(--sc-accent); }
 
 @media (max-width: 700px) {
-  /* mobile art direction: type above the subject, subject lower and smaller */
-  .hero-copy { z-index: 3; }
-  .hero-plane--subject img { height: 62vh; transform: translate3d(0, calc(var(--sc-p, 0) * -5vh + 10vh), 0); }
-  .hero-late { bottom: 6vh; }
+  /* mobile art direction: type anchored high, subject low and clear of it */
+  .hero-copy { z-index: 3; top: 13vh; bottom: auto; }
+  .hero-plane--subject { padding-left: 0; }
+  .hero-plane--subject img { height: 52vh; transform: translate3d(6vw, calc(var(--sc-p, 0) * -5vh + 20vh), 0); }
+  .hero-late { bottom: 5vh; right: var(--sc-gutter); left: var(--sc-gutter); }
 }
 
 /* ---------- argument (A2) ---------- */
@@ -183,6 +199,10 @@
   place-items: center;
   text-align: center;
   padding: 0 var(--sc-gutter);
+  /* a lit-room ground so the stage never reads as a void */
+  background:
+    radial-gradient(60% 45% at 50% 62%, rgba(242, 239, 233, 0.05), transparent 70%),
+    radial-gradient(30% 22% at 50% 30%, rgba(90, 140, 160, 0.08), transparent 75%);
 }
 .argument > p {
   grid-area: 1 / 1;
@@ -308,6 +328,16 @@
 /* ---------- peak (A6) ---------- */
 
 .peak-stage { overflow: hidden; background: #060607; }
+/* a ground, not a cue: arrives after the authored silence, then rides out
+   with the stage instead of fading to a void */
+.peak-frame {
+  position: absolute;
+  inset: 0;
+  opacity: clamp(0, (var(--sc-p, 0) - 0.14) * 4, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .peak-frame { opacity: 1; }
+}
 .peak-stage .peak-img {
   position: absolute;
   inset: 0;
