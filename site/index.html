@@ -566,7 +566,7 @@ function loadCap() {
     const box = new THREE.Box3().setFromObject(cap), size = box.getSize(new THREE.Vector3()), c = box.getCenter(new THREE.Vector3());
     cap.position.sub(c);
     const wrap = new THREE.Group(); wrap.add(cap);
-    wrap.scale.setScalar(4.6 / Math.max(size.x, size.y, size.z));
+    wrap.scale.setScalar((isMobile ? 3.1 : 4.6) / Math.max(size.x, size.y, size.z));
     cap.traverse(o => { if (o.isMesh && o.material) o.material.side = THREE.DoubleSide; });
     capHolder.add(wrap);
     gsap.from(wrap.scale, { x: 0, y: 0, z: 0, duration: 1.4, ease: "expo.out" });
