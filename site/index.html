@@ -560,7 +560,7 @@ scene.add(new THREE.HemisphereLight(0xdfe9ff, 0x2a2438, 1.5));
 const key = new THREE.DirectionalLight(0xffffff, 2.4); key.position.set(4, 6, 8); scene.add(key);
 const rim = new THREE.DirectionalLight(0xffb503, 2.0); rim.position.set(-6, 1, -6); scene.add(rim);
 const capHolder = new THREE.Group(); scene.add(capHolder);
-let capLoaded = false, dragging = false, dragVel = 0, spinY = 2.9;
+let capLoaded = false, dragging = false, dragVel = 0, spinY = -0.4;
 function loadCap() {
   if (capLoaded) return; capLoaded = true;
   new GLTFLoader().load(CAP_GLB, g => {
@@ -575,24 +575,16 @@ function loadCap() {
        mark is crisp canvas type on a curved surface hugging the panel */
     const dc = document.createElement("canvas"); dc.width = 2048; dc.height = 1024;
     const dx = dc.getContext("2d"); dx.fillStyle = "#181c2a";
-    const ccx = 1024, ccy = 350, cr = 150;
-    dx.beginPath();
-    dx.arc(ccx - cr * 1.15, ccy, cr * .85, 0, 7);
-    dx.arc(ccx, ccy - cr * .55, cr * 1.05, 0, 7);
-    dx.arc(ccx + cr * 1.15, ccy, cr * .9, 0, 7);
-    dx.rect(ccx - cr * 1.15, ccy, cr * 2.3, cr * .82);
-    dx.fill();
     dx.textAlign = "center";
-    dx.font = "900 148px 'Inter Tight', 'Helvetica Neue', sans-serif";
-    dx.fillText("wear the clouds", ccx, 790);
+    dx.font = "900 170px 'Inter Tight', 'Helvetica Neue', sans-serif";
+    dx.fillText("wear the clouds", 1024, 570);
     const dtex = new THREE.CanvasTexture(dc);
     dtex.colorSpace = THREE.SRGBColorSpace; dtex.anisotropy = 8;
-    /* this reconstruction has no vertical front panel - the front is a low
-       slope rising from the brim (brim points -Z, measured offline), so the
-       mark lies flat on that slope like dad-cap embroidery */
+    /* the front panel faces +Z (measured offline: near-vertical, normal
+       (0,.27,.96), spanning the lower third) - seat the mark on it */
     cap.updateMatrixWorld(true);
     const rc = new THREE.Raycaster(
-      new THREE.Vector3(0, size.y * .34, -size.length()), new THREE.Vector3(0, 0, 1));
+      new THREE.Vector3(0, size.y * .16, size.length()), new THREE.Vector3(0, 0, -1));
     const hit = rc.intersectObject(cap, true)[0];
     if (hit) {
       const N = hit.face.normal.clone().transformDirection(hit.object.matrixWorld).normalize();
