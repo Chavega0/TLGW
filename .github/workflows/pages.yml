@@ -17,6 +17,10 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Pages can only be enabled by the repo owner (Settings > Pages > Source:
+    # GitHub Actions). Until then this deploy cannot succeed, and the site is
+    # served from Vercel anyway - so don't fail the PR over it.
+    continue-on-error: true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
