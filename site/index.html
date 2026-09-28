@@ -268,7 +268,7 @@ footer{padding-block:9vh calc(26px + env(safe-area-inset-bottom,0px));overflow:h
     <div class="film__pin">
       <div class="film__media" id="filmMedia">
         <img class="poster" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/eab04be3-dae9-48bc-9dd0-81968bcff64e.jpg" alt="The Above The Clouds white trucker cap">
-        <video id="filmVid" muted playsinline preload="auto">
+        <video id="filmVid" muted playsinline autoplay preload="auto">
           <source src="https://d2ol7oe51mr4n9.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/6fc6dcec-58fb-471f-895c-af8cc0d72318.mp4" type='video/mp4; codecs="vp09.00.41.08"'>
           <source src="https://d2ol7oe51mr4n9.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/3161d2d0-2b24-4d75-842c-3d075124d436.mp4" type='video/mp4; codecs="avc1.640028"'>
         </video>
@@ -720,6 +720,16 @@ vid.addEventListener("loadeddata", filmReady, { once: true });
 vid.addEventListener("canplaythrough", filmReady, { once: true });
 setTimeout(() => { if (vid.readyState >= 2) filmReady(); }, 4000);
 vid.load();
+/* iOS: media won't buffer or seek until it has autoplayed (muted) or been
+   touched - so autoplay-then-pause, with a first-gesture fallback */
+vid.addEventListener("playing", () => { vid.pause(); filmReady(); }, { once: true });
+function unlockVid() {
+  if (vidReady) return;
+  const p = vid.play();
+  if (p && p.then) p.then(() => { vid.pause(); filmReady(); }).catch(() => {});
+}
+addEventListener("touchstart", unlockVid, { once: true, passive: true });
+addEventListener("pointerdown", unlockVid, { once: true });
 gsap.ticker.add(() => {
   if (!vidReady) return;
   currentT = lerp(currentT, targetT, .18);
