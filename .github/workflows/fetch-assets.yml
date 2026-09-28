@@ -1,0 +1,59 @@
+name: Fetch generated site assets
+on:
+  workflow_dispatch:
+  push:
+    branches: ["claude/peaceful-clarke-u33yni"]
+    paths: [".github/workflows/fetch-assets.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install webp tools
+        run: sudo apt-get update -q && sudo apt-get install -y -q webp
+      - name: Download and convert
+        run: |
+          set -e
+          B=https://d8j0ntlcm91z4.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR
+          mkdir -p /tmp/imgs site/assets
+          cd /tmp/imgs
+          curl -sf -o 01.png $B/hf_20260927_191204_716e9baa-2d80-4eea-8de6-9b4e67b4f790.png
+          curl -sf -o 02.png $B/hf_20260927_191203_5fb42da7-c0c4-429c-aee1-ed0fd531ab8b.png
+          curl -sf -o 03.png $B/hf_20260927_191204_077d1f29-4d9a-480c-a0db-6729432b1e6d.png
+          curl -sf -o 04.png $B/hf_20260927_191204_6b9a2501-569f-4537-87b4-61336bc511d8.png
+          curl -sf -o 05.png $B/hf_20260927_191204_202da119-b3a3-4000-908c-52c4d938b3f8.png
+          curl -sf -o 06.png $B/hf_20260927_191203_a8dc6965-34ea-4d82-b158-6e220d95d8e1.png
+          curl -sf -o 07.png $B/hf_20260927_191204_0567e467-cbb4-4683-8321-4e017aa0140a.png
+          curl -sf -o 08.png $B/hf_20260927_191204_052e7407-b06d-47d7-976d-819640132a8d.png
+          curl -sf -o 09.png $B/hf_20260927_191203_40f97d28-23d3-4db6-baee-b42e4822c04e.png
+          curl -sf -o 10.png $B/hf_20260927_191204_0e7d12c0-40b0-43c7-b215-7abedc0e14ed.png
+          curl -sf -o 11.png $B/hf_20260927_191203_5b59b756-bb34-411a-9591-cecda1effc25.png
+          curl -sf -o 12.png $B/hf_20260927_191204_afba6c0f-eb05-49a4-84bd-1cd70761c88a.png
+          curl -sf -o 13.png $B/hf_20260927_191548_ac62f502-d362-4cad-afc1-ba1caf427e0d.png
+          A=$GITHUB_WORKSPACE/site/assets
+          cwebp -quiet -q 70 -resize 1920 0 01.png -o $A/hero-bg.webp
+          cwebp -quiet -q 78 -resize 0 1500 02.png -o $A/hero-gymnast.webp
+          cwebp -quiet -q 52 -resize 1600 0 03.png -o $A/chalk-dust.webp
+          cwebp -quiet -q 70 -resize 2000 0 04.png -o $A/peak.webp
+          cwebp -quiet -q 66 -resize 800 0 05.png -o $A/p-artistic.webp
+          cwebp -quiet -q 66 -resize 800 0 06.png -o $A/p-rhythmic.webp
+          cwebp -quiet -q 66 -resize 800 0 07.png -o $A/p-toddler.webp
+          cwebp -quiet -q 66 -resize 800 0 08.png -o $A/p-trampoline.webp
+          cwebp -quiet -q 66 -resize 800 0 09.png -o $A/p-swim.webp
+          cwebp -quiet -q 66 -resize 800 0 10.png -o $A/p-pilates.webp
+          cwebp -quiet -q 66 -resize 800 0 11.png -o $A/p-kickbox.webp
+          cwebp -quiet -q 66 -resize 800 0 12.png -o $A/p-jiujitsu.webp
+          cwebp -quiet -q 70 -resize 1600 0 13.png -o $A/hall.webp
+          ls -la $A
+      - name: Commit assets
+        run: |
+          cd $GITHUB_WORKSPACE
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/assets
+          git commit -m "Add optimized site assets (webp)"
+          git push
