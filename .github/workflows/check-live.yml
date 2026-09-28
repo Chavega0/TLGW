@@ -1,0 +1,21 @@
+name: Check live site
+on:
+  workflow_dispatch:
+  push:
+    branches: ["claude/peaceful-clarke-u33yni"]
+    paths: [".github/workflows/check-live.yml"]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe deployed site
+        run: |
+          set -e
+          for p in "" programs about admissions contact assets/hero-bg.webp assets/peak.webp fonts.css site.js; do
+            code=$(curl -s -o /tmp/body -w "%{http_code}" "https://stamina11.vercel.app/$p")
+            size=$(wc -c < /tmp/body)
+            echo "GET /$p -> $code ($size bytes)"
+          done
+          curl -s https://stamina11.vercel.app/ | grep -o "<title>[^<]*</title>" || true
+          curl -s https://stamina11.vercel.app/ | grep -c "hero-gymnast" || true
