@@ -1,7 +1,31 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const HEADLINE = ["Your", "software,", "working", "as", "one."];
+
+// Local copy first (vendor with scripts/fetch-hero.mjs); falls back to the
+// generated video on Higgsfield's CDN when the local file isn't present.
+const LOCAL_SRC = "/media/hero.mp4";
+const REMOTE_SRC =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/hf_20260930_195348_ab23c3e8-aa68-4ec6-8f1e-41c1b6e1e271.mp4";
+
+function HeroVideo() {
+  const [src, setSrc] = useState(LOCAL_SRC);
+  return (
+    <video
+      key={src}
+      className="h-full w-full object-cover"
+      src={src}
+      autoPlay
+      muted
+      loop
+      playsInline
+      onError={() => {
+        if (src !== REMOTE_SRC) setSrc(REMOTE_SRC);
+      }}
+    />
+  );
+}
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -13,15 +37,7 @@ export function Hero() {
   return (
     <section ref={ref} id="top" className="relative h-[100svh] overflow-hidden bg-ink">
       <motion.div style={{ y: videoY, scale: videoScale }} className="absolute inset-0">
-        <video
-          className="h-full w-full object-cover"
-          src="/media/hero.mp4"
-          poster="/media/hero-poster.jpg"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
+        <HeroVideo />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/25 to-ink/30" />
       </motion.div>
 
