@@ -158,8 +158,11 @@ export function Hero() {
     [0.28, 0.8],
     ["0 0 70px 26px rgba(249,244,232,0.95)", "0 0 0px 0px rgba(249,244,232,0)"]
   );
-  // The caption belongs to the page, not the laptop: it arrives last.
-  const captionOpacity = useTransform(p, [0.86, 0.95], [0, 1]);
+  // Value first: as the screen becomes the page, the CLAIM leads in
+  // display type and the dashboard reads as its evidence.
+  const claimOpacity = useTransform(p, [0.84, 0.93], [0, 1]);
+  const claimY = useTransform(p, [0.84, 0.93], [26, 0]);
+  const captionOpacity = useTransform(p, [0.88, 0.96], [0, 1]);
 
   return (
     <section id="top" ref={stageRef} data-theme-section="light" className="relative h-[280vh] bg-cream md:h-[420vh]">
@@ -233,15 +236,20 @@ export function Hero() {
           }}
           className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-6 px-4 will-change-transform md:gap-8 md:px-8"
         >
-          <motion.div style={{ boxShadow: screenGlow }} className="w-full max-w-[880px] rounded-xl">
+          <motion.h2
+            style={{ opacity: claimOpacity, y: claimY }}
+            className="font-display t-text text-center text-[clamp(1.9rem,4.2vw,3.2rem)] leading-[1.05]"
+          >
+            Nothing falls <span className="text-terracotta">through.</span>
+          </motion.h2>
+          <motion.div style={{ boxShadow: screenGlow }} className="w-full max-w-[820px] rounded-xl">
             <SystemMock step={4} />
           </motion.div>
           <motion.p
             style={{ opacity: captionOpacity }}
             className="t-muted max-w-md text-center text-[0.88rem] leading-relaxed md:text-[0.98rem]"
           >
-            Leads answered, calls in context, nothing falling through — one system your team
-            actually uses.
+            Leads answered, calls in context — one system your team actually uses.
           </motion.p>
         </motion.div>
 
