@@ -136,8 +136,8 @@ export function Hero() {
   const uiRadius = useTransform(p, [0.73, 0.92], [14, 0]);
 
   return (
-    <section id="top" ref={stageRef} data-theme-section="light" className="relative h-[420vh] bg-cream">
-      <div className="sticky top-0 h-screen overflow-hidden">
+    <section id="top" ref={stageRef} data-theme-section="light" className="relative h-[280vh] bg-cream md:h-[420vh]">
+      <div className="sticky top-0 h-svh overflow-hidden">
         {/* The scene — full-bleed, no frame: the page IS the footage. */}
         <motion.div
           style={{ scale: zoom, opacity: filmOpacity, transformOrigin: SCREEN_ORIGIN }}
@@ -197,12 +197,12 @@ export function Hero() {
             borderRadius: uiRadius,
             transformOrigin: SCREEN_ORIGIN,
           }}
-          className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-8 bg-cream px-4 will-change-transform md:px-8"
+          className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-6 bg-cream px-4 will-change-transform md:gap-8 md:px-8"
         >
           <div className="w-full max-w-[880px]">
             <SystemMock step={4} />
           </div>
-          <p className="t-muted max-w-md text-center text-[0.98rem] leading-relaxed">
+          <p className="t-muted max-w-md text-center text-[0.88rem] leading-relaxed md:text-[0.98rem]">
             One connected system — leads, calls, tasks, and pipeline, in the place your team
             already works.
           </p>
