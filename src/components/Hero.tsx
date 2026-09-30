@@ -189,8 +189,8 @@ export function Hero() {
             transition={{ delay: 0.55, duration: 0.85, ease: EASE }}
             className="text-ink-soft mx-auto mt-6 max-w-xl text-[1.05rem] leading-relaxed [text-shadow:0_1px_18px_rgba(243,236,220,0.6)]"
           >
-            Stacktik helps growing businesses choose, implement, and connect the software they
-            need to run better — as one system.
+            We build and connect the CRM, calling, outreach, and automation behind sales and
+            support teams — chosen for your budget, implemented for the way you work.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 22 }}
@@ -226,8 +226,8 @@ export function Hero() {
             style={{ opacity: captionOpacity }}
             className="t-muted max-w-md text-center text-[0.88rem] leading-relaxed md:text-[0.98rem]"
           >
-            One connected system — leads, calls, tasks, and pipeline, in the place your team
-            already works.
+            Leads answered, calls in context, nothing falling through — one system your team
+            actually uses.
           </motion.p>
         </motion.div>
 

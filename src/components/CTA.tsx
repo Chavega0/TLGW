@@ -18,12 +18,13 @@ export function CTA() {
         </div>
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-display text-cream text-[clamp(2.1rem,4.6vw,3.6rem)] leading-[1.05]">
-            Start with a free personalized systems blueprint.
+            Free at minimum: your blueprint and partner discounts.
           </h2>
           <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-cream/85">
-            Tell us what you want to achieve and show us how you work today. We'll map the main
-            gaps, recommend a suitable setup, and outline the steps to get there — a clear
-            starting point for a business that runs more smoothly.
+            Show us how you work today and you walk away with a personalized systems blueprint —
+            where leads leak, the tools we'd pick for your budget, and the order to set them up —
+            plus partner discounts on the platforms when you implement through us. Yours to keep
+            either way.
           </p>
           <div className="mt-10 flex justify-center">
             <ArrowPill href="mailto:hello@stacktik.com" tone="cream">

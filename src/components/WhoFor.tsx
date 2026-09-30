@@ -6,7 +6,7 @@ export function WhoFor() {
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="t-hairline border-t pt-10">
           <Rise>
-            <Eyebrow>05 — Who it's for</Eyebrow>
+            <Eyebrow>06 — Who it's for</Eyebrow>
           </Rise>
           <div className="mt-10 grid gap-12 md:grid-cols-2 md:gap-8">
             <Rise>
@@ -15,10 +15,9 @@ export function WhoFor() {
                   Technical expertise, without building a full internal systems team.
                 </h2>
                 <p className="t-muted mt-6 max-w-lg text-[1.02rem] leading-relaxed">
-                  Our services are designed for growing businesses, sales teams, and
-                  customer-facing operations. We work with owners and managers who want clearer
-                  processes, more reliable information, and technology their people can use
-                  confidently.
+                  Our services are built for sales and support teams. We work with owners and
+                  managers who want clearer processes, more reliable information, and technology
+                  their people can use confidently.
                 </p>
               </div>
             </Rise>
