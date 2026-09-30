@@ -1,47 +1,41 @@
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { Logo } from "./Logo";
+import { Mark } from "./Logo";
 
 export function Nav() {
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
-  useMotionValueEvent(scrollY, "change", (y) => {
-    setScrolled(y > window.innerHeight * 0.7);
-  });
+  useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 24));
 
   return (
     <motion.header
-      className="fixed top-0 inset-x-0 z-50 backdrop-blur-md transition-[background-color,box-shadow] duration-500"
+      className="fixed top-0 inset-x-0 z-50"
       style={{
-        backgroundColor: scrolled ? "rgba(243,236,220,0.88)" : "rgba(43,39,35,0.0)",
-        boxShadow: scrolled ? "0 8px 32px rgba(43,39,35,0.08)" : "none",
+        backdropFilter: scrolled ? "blur(14px) saturate(1.4)" : "none",
+        WebkitBackdropFilter: scrolled ? "blur(14px) saturate(1.4)" : "none",
+        backgroundColor: scrolled ? "color-mix(in srgb, var(--page-bg) 72%, transparent)" : "transparent",
+        borderBottom: scrolled ? "1px solid var(--hairline)" : "1px solid transparent",
+        transition: "background-color .5s ease, border-color .5s ease",
       }}
     >
-      <nav className="mx-auto max-w-6xl px-5 md:px-6 h-16 flex items-center justify-between gap-3">
-        <a href="#top" aria-label="Stacktik home" className="flex items-center shrink-0">
-          <Logo dark={!scrolled} />
+      <nav className="mx-auto flex h-12 max-w-[1200px] items-center justify-between gap-3 px-6">
+        <a href="#top" aria-label="Stacktik home" className="flex items-center gap-2 select-none">
+          <Mark color="#C4552B" size={20} />
+          <span className="t-text text-[1.05rem] font-semibold tracking-tight leading-none">
+            stack<span className="text-terracotta">tik</span>
+          </span>
         </a>
-        <div
-          className={`hidden md:flex items-center gap-8 text-sm font-medium transition-colors duration-500 ${
-            scrolled ? "text-ink-soft" : "text-cream/80"
-          }`}
-        >
-          <a href="#services" className="hover:text-terracotta transition-colors">
-            Services
-          </a>
-          <a href="#how" className="hover:text-terracotta transition-colors">
-            How we work
-          </a>
-          <a href="#who" className="hover:text-terracotta transition-colors">
-            Who it's for
-          </a>
+        <div className="t-muted hidden items-center gap-7 text-[0.82rem] font-medium md:flex">
+          <a href="#services" className="hover:text-terracotta transition-colors">Services</a>
+          <a href="#how" className="hover:text-terracotta transition-colors">How we work</a>
+          <a href="#system" className="hover:text-terracotta transition-colors">The system</a>
+          <a href="#who" className="hover:text-terracotta transition-colors">Who it's for</a>
         </div>
         <a
           href="#blueprint"
-          className="rounded-full bg-terracotta text-cream px-4 py-2 text-xs md:px-5 md:py-2.5 md:text-sm font-semibold whitespace-nowrap hover:bg-terracotta-deep transition-colors"
+          className="rounded-full bg-terracotta px-4 py-1.5 text-[0.78rem] font-semibold text-cream whitespace-nowrap hover:bg-terracotta-deep transition-colors"
         >
-          <span className="md:hidden">Free blueprint</span>
-          <span className="hidden md:inline">Get your free blueprint</span>
+          Free blueprint
         </a>
       </nav>
     </motion.header>
