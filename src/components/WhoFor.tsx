@@ -6,7 +6,7 @@ export function WhoFor() {
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="t-hairline border-t pt-10">
           <Rise>
-            <Eyebrow>06 — Who it's for</Eyebrow>
+            <Eyebrow>05 — Who it's for</Eyebrow>
           </Rise>
           <div className="mt-10 grid gap-12 md:grid-cols-2 md:gap-8">
             <Rise>

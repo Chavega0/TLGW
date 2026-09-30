@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Rise, Eyebrow, EASE } from "./motion";
+import { Rise, EASE } from "./motion";
 
 /* Text wordmarks, each styled loosely after the brand's own type. */
 const PARTNERS: { name: string; style: React.CSSProperties }[] = [
@@ -12,33 +12,37 @@ const PARTNERS: { name: string; style: React.CSSProperties }[] = [
   { name: "Close", style: { fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const } },
 ];
 
+/* The platforms are a headline element: they carry the credibility,
+   so they sit high on the page at display size. */
 export function Partners() {
   return (
-    <section id="partners" data-theme-section="light" className="py-28 md:py-36">
-      <div className="mx-auto max-w-[1200px] px-6">
-        <div className="t-hairline border-t pt-10 text-center">
-          <Rise>
-            <Eyebrow>05 — Our partners</Eyebrow>
-            <p className="t-muted mx-auto mt-6 max-w-xl text-lg leading-relaxed">
-              Implement through us and you get partner discounts on the platforms you choose.
-            </p>
-          </Rise>
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-12 gap-y-7">
-            {PARTNERS.map((partner, i) => (
-              <motion.span
-                key={partner.name}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ delay: i * 0.05, duration: 0.7, ease: EASE }}
-                className="t-text text-[1.35rem] opacity-55 transition-opacity hover:opacity-90 md:text-[1.6rem]"
-                style={partner.style}
-              >
-                {partner.name}
-              </motion.span>
-            ))}
-          </div>
+    <section id="partners" data-theme-section="light" className="py-16 md:py-24">
+      <div className="mx-auto max-w-[1200px] px-6 text-center">
+        <Rise>
+          <span className="t-muted text-[0.68rem] font-semibold uppercase tracking-[0.28em]">
+            We implement &amp; partner with
+          </span>
+        </Rise>
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-x-14 gap-y-7">
+          {PARTNERS.map((partner, i) => (
+            <motion.span
+              key={partner.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ delay: i * 0.05, duration: 0.7, ease: EASE }}
+              className="t-text text-[1.7rem] opacity-70 transition-opacity hover:opacity-100 md:text-[2.1rem]"
+              style={partner.style}
+            >
+              {partner.name}
+            </motion.span>
+          ))}
         </div>
+        <Rise delay={0.15}>
+          <p className="t-muted mx-auto mt-9 max-w-xl text-[1.02rem] leading-relaxed">
+            Implement through us and you get partner discounts on the platforms you choose.
+          </p>
+        </Rise>
       </div>
     </section>
   );

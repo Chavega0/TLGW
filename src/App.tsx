@@ -56,12 +56,12 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
+        <Partners />
         <Clients />
         <Manifesto />
         <Discovery />
         <Services />
         <Workflow />
-        <Partners />
         <WhoFor />
         <CTA />
       </main>
