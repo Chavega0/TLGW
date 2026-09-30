@@ -32,8 +32,9 @@ const STEPS = [
 ];
 
 /* A faithful mock of the connected system inside a browser frame —
-   each scroll chapter lights up the element the step describes. */
-function SystemMock({ step }: { step: number }) {
+   each scroll chapter lights up the element the step describes.
+   Also used by the hero takeover, fully lit (step 4). */
+export function SystemMock({ step }: { step: number }) {
   return (
     <div className="overflow-hidden rounded-xl border border-cream/15 bg-[#2b2620] shadow-[0_30px_70px_rgba(0,0,0,0.4)]">
       <div className="flex items-center gap-2 border-b border-cream/10 bg-[#332d26] px-4 py-2.5">
