@@ -12,7 +12,7 @@ import { WordsPullUp, EASE } from "./motion";
 // generated film on Higgsfield's CDN when the local file isn't present.
 const LOCAL_SRC = "/media/hero.mp4";
 const REMOTE_SRC =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/hf_20260930_203620_b407f171-b8f9-493e-9ad0-e98e870c3c04.mp4";
+  "https://d8j0ntlcm91z4.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/hf_20260930_205801_55a5418e-fdab-4810-bb76-ad4c2ae5f747.mp4";
 
 export function ArrowPill({
   href,
@@ -46,9 +46,8 @@ export function ArrowPill({
   );
 }
 
-/* Scroll-scrubbed film: the scrollbar is the timeline. The footage is
-   shot on the page's own cream background, so it reads as the page
-   itself in motion — not a video in a box. */
+/* Scroll-scrubbed film: scroll position drives video.currentTime, so
+   the footage advances exactly in step with the user's scrolling. */
 function ScrubVideo({ progress }: { progress: MotionValue<number> }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [src, setSrc] = useState(LOCAL_SRC);
@@ -59,18 +58,11 @@ function ScrubVideo({ progress }: { progress: MotionValue<number> }) {
     const video = ref.current;
     if (!video) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const seek = () => {
-      if (video.duration) {
-        video.currentTime = target.current * Math.max(0, video.duration - 0.08);
-      }
-      raf.current = 0;
-    };
     const onLoaded = () => {
-      if (reduced) {
-        // Reduced motion: hold the resolved final frame.
-        video.currentTime = Math.max(0, video.duration - 0.08);
-      } else {
-        seek();
+      if (video.duration) {
+        video.currentTime = reduced
+          ? Math.max(0, video.duration - 0.08)
+          : target.current * Math.max(0, video.duration - 0.08);
       }
     };
     video.addEventListener("loadedmetadata", onLoaded);
@@ -111,108 +103,78 @@ function ScrubVideo({ progress }: { progress: MotionValue<number> }) {
   );
 }
 
-/* One narrative beat, bound continuously (and reversibly) to a
-   sub-range of the scene's scroll progress. */
-function Beat({
-  progress,
-  range,
-  hold = false,
-  children,
-  className = "",
-}: {
-  progress: MotionValue<number>;
-  range: [number, number];
-  hold?: boolean;
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const [a, b] = range;
-  const fadeIn = 0.07;
-  const opacity = useTransform(
-    progress,
-    hold ? [a, a + fadeIn] : [a, a + fadeIn, b - fadeIn, b],
-    hold ? [0, 1] : [0, 1, 1, 0]
-  );
-  const y = useTransform(
-    progress,
-    hold ? [a, a + fadeIn] : [a, a + fadeIn, b - fadeIn, b],
-    hold ? [28, 0] : [28, 0, 0, -22]
-  );
-  return (
-    <div className={`absolute inset-x-0 top-1/2 -translate-y-1/2 ${className}`}>
-      <motion.div style={{ opacity, y }}>{children}</motion.div>
-    </div>
-  );
-}
-
 export function Hero() {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
+  const stageRef = useRef<HTMLDivElement>(null);
+  // Tilt: resolves as the panel travels up into place.
+  const { scrollYProgress: approach } = useScroll({
+    target: stageRef,
+    offset: ["start 0.92", "start 0.08"],
+  });
+  // Scrub: the film plays across the stage's full scroll budget.
+  const { scrollYProgress: scrub } = useScroll({
+    target: stageRef,
+    offset: ["start 0.92", "end end"],
+  });
+
+  const rotateX = useTransform(approach, [0, 1], [18, 0]);
+  const scale = useTransform(approach, [0, 1], [0.9, 1]);
+  const shadow = useTransform(
+    approach,
+    [0, 1],
+    ["0 60px 120px rgba(33,29,25,0.18)", "0 32px 90px rgba(33,29,25,0.3)"]
+  );
 
   return (
-    <section id="top" ref={ref} data-theme-section="light" className="relative h-[340vh]">
-      <div className="sticky top-0 h-screen overflow-hidden">
-        <div className="absolute inset-0" aria-hidden="true">
-          <ScrubVideo progress={scrollYProgress} />
-        </div>
-
-        <div className="relative mx-auto flex h-full max-w-[1200px] flex-col justify-center px-6">
-          {/* The opening headline: present immediately, released mid-scene. */}
-          <motion.div
-            style={{
-              opacity: useTransform(scrollYProgress, [0.3, 0.42], [1, 0]),
-              y: useTransform(scrollYProgress, [0.3, 0.42], [0, -30]),
-            }}
-          >
-            <h1 className="font-display t-text text-[clamp(3rem,7.6vw,6.6rem)] leading-[0.98]">
-              <WordsPullUp text="Your software" />
-            </h1>
-            <motion.p
-              initial={{ opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.85, ease: EASE }}
-              className="t-muted mt-7 max-w-md text-[1.05rem] leading-relaxed"
+    <section id="top" data-theme-section="light">
+      {/* Mercury-style centered intro. */}
+      <div className="mx-auto max-w-[1200px] px-6 pt-36 pb-14 text-center md:pt-44">
+        <h1 className="font-display t-text text-[clamp(2.9rem,7vw,6.2rem)] leading-[1.0]">
+          <WordsPullUp text="Your software," className="justify-center" />
+          <br />
+          <span className="inline-flex flex-wrap justify-center">
+            <WordsPullUp text="working as" className="justify-center" />
+            <span className="inline-block" style={{ width: "0.24em" }} />
+            <motion.span
+              className="inline-block text-terracotta"
+              initial={{ y: 24, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.32, duration: 0.85, ease: EASE }}
             >
-              CRM. Business phone. Outreach. Automation. Each useful — each pulling in its own
-              direction.
-            </motion.p>
-          </motion.div>
+              one.
+            </motion.span>
+          </span>
+        </h1>
+        <motion.p
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.55, duration: 0.85, ease: EASE }}
+          className="t-muted mx-auto mt-8 max-w-xl text-[1.08rem] leading-relaxed"
+        >
+          Stacktik helps growing businesses choose, implement, and connect the software they need
+          to run better — CRM, business phone, sales tools, and automation, as one system.
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.72, duration: 0.85, ease: EASE }}
+          className="mt-10 flex justify-center"
+        >
+          <ArrowPill href="#blueprint">Get your free systems blueprint</ArrowPill>
+        </motion.div>
+      </div>
 
-          {/* Beat two: the turn. */}
-          <Beat progress={scrollYProgress} range={[0.42, 0.66]}>
-            <h2 className="font-display t-text max-w-2xl text-[clamp(2.2rem,5vw,4.2rem)] leading-[1.04]">
-              We connect them around the way you work.
-            </h2>
-          </Beat>
-
-          {/* Beat three: resolution — holds while the stack completes. */}
-          <Beat progress={scrollYProgress} range={[0.7, 1]} hold>
-            <h2 className="font-display t-text text-[clamp(2.6rem,6.6vw,5.8rem)] leading-[0.98]">
-              working as <span className="text-terracotta">one.</span>
-            </h2>
-            <p className="t-muted mt-6 max-w-md text-[1.05rem] leading-relaxed">
-              Stacktik helps growing businesses choose, implement, and connect the software they
-              need to run better — as one system.
-            </p>
-            <div className="mt-9">
-              <ArrowPill href="#blueprint">Get your free systems blueprint</ArrowPill>
-            </div>
-          </Beat>
-
-          {/* Scroll cue, only at the very start. */}
-          <motion.div
-            style={{ opacity: useTransform(scrollYProgress, [0, 0.08], [1, 0]) }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2"
-            aria-hidden="true"
-          >
+      {/* The demo panel: tilted in perspective, it straightens as you
+          scroll into it, then pins while the film scrubs with scroll. */}
+      <div ref={stageRef} className="relative h-[300vh]">
+        <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
+          <div style={{ perspective: "1300px" }} className="w-full px-4 md:px-8">
             <motion.div
-              animate={{ y: [0, 7, 0] }}
-              transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
-              className="t-muted text-[0.68rem] uppercase tracking-[0.3em]"
+              style={{ rotateX, scale, boxShadow: shadow, transformOrigin: "center 20%" }}
+              className="mx-auto aspect-[16/9] w-full max-w-[1160px] overflow-hidden rounded-[1.2rem] bg-[#2c3a2e] will-change-transform"
             >
-              Scroll
+              <ScrubVideo progress={scrub} />
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

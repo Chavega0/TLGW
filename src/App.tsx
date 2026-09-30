@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { MotionConfig } from "framer-motion";
 import Lenis from "lenis";
+import { Cursor } from "./components/Cursor";
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
 import { Manifesto } from "./components/Manifesto";
@@ -49,6 +50,7 @@ export default function App() {
 
   return (
     <MotionConfig reducedMotion="user">
+      <Cursor />
       <Nav />
       <main>
         <Hero />
