@@ -47,45 +47,54 @@ export function ArrowPill({
   );
 }
 
-/* Scroll-scrubbed film: scroll position drives video.currentTime, so
-   the footage advances exactly in step with the user's scrolling. */
+/* Scroll-scrubbed film: scroll position drives video.currentTime.
+   Seeks are chased via the 'seeked' event — a new seek is issued only
+   when the previous one lands, always toward the LATEST target — so
+   the film converges in both directions and scrolling back up cleanly
+   rewinds to the intro instead of sticking on a late frame. */
 function ScrubVideo({ progress }: { progress: MotionValue<number> }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [src, setSrc] = useState(LOCAL_SRC);
-  const raf = useRef(0);
   const target = useRef(0);
+  const pending = useRef(false);
 
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const onLoaded = () => {
-      if (video.duration) {
-        video.currentTime = reduced
-          ? Math.max(0, video.duration - 0.08)
-          : target.current * Math.max(0, video.duration - 0.08);
+    const seekToTarget = () => {
+      if (!video.duration) return;
+      const t = reduced
+        ? Math.max(0, video.duration - 0.08)
+        : target.current * Math.max(0, video.duration - 0.08);
+      if (Math.abs(video.currentTime - t) < 0.034) {
+        pending.current = false;
+        return;
       }
+      pending.current = true;
+      video.currentTime = t;
     };
+    const onSeeked = () => seekToTarget();
+    const onLoaded = () => seekToTarget();
     video.addEventListener("loadedmetadata", onLoaded);
+    video.addEventListener("loadeddata", onLoaded);
+    video.addEventListener("seeked", onSeeked);
+    (video as unknown as { __seek?: () => void }).__seek = seekToTarget;
     return () => {
       video.removeEventListener("loadedmetadata", onLoaded);
-      if (raf.current) cancelAnimationFrame(raf.current);
+      video.removeEventListener("loadeddata", onLoaded);
+      video.removeEventListener("seeked", onSeeked);
     };
   }, [src]);
 
   useMotionValueEvent(progress, "change", (p) => {
     target.current = Math.min(1, Math.max(0, p));
-    const video = ref.current;
-    if (!video || !video.duration) return;
+    const video = ref.current as
+      | (HTMLVideoElement & { __seek?: () => void })
+      | null;
+    if (!video || !video.duration || !video.__seek) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    if (!raf.current) {
-      raf.current = requestAnimationFrame(() => {
-        if (video.duration) {
-          video.currentTime = target.current * Math.max(0, video.duration - 0.08);
-        }
-        raf.current = 0;
-      });
-    }
+    if (!pending.current) video.__seek();
   });
 
   return (
@@ -117,7 +126,7 @@ export function Hero() {
 
   // The film ends with the laptop screen centered, nearly filling the
   // frame — the REAL camera does the dive. CSS only finishes the move.
-  const SCREEN_ORIGIN = "50% 54%";
+  const SCREEN_ORIGIN = "50% 50%";
 
   // Film: the dolly-in scrubs across most of the stage.
   const filmProgress = useTransform(p, [0, 0.78], [0, 1]);
@@ -134,8 +143,12 @@ export function Hero() {
   // it appears tiny at the screen's position as the headline releases
   // and grows with the camera (accelerating, like the dolly), so the
   // takeover is continuous — never a visible cut.
-  const uiScale = useTransform(p, [0.22, 0.55, 0.88], [0.13, 0.32, 1]);
-  const uiOpacity = useTransform(p, [0.18, 0.28], [0, 1]);
+  const uiScale = useTransform(p, [0.24, 0.55, 0.88], [0.1, 0.3, 1]);
+  const uiOpacity = useTransform(p, [0.24, 0.34], [0, 1]);
+  // Track the screen: in the wide shot the laptop sits below center and
+  // drifts up as the camera pushes in — the overlay rides that drift so
+  // it stays ON the screen, never floating beside it.
+  const uiY = useTransform(p, [0.24, 0.85], ["20%", "0%"]);
   // The page's cream arrives as a full-viewport layer BEHIND the
   // dashboard (never inside the scaled layer), so no edge is visible.
   const pageBgOpacity = useTransform(p, [0.82, 0.93], [0, 1]);
@@ -214,6 +227,7 @@ export function Hero() {
         <motion.div
           style={{
             scale: uiScale,
+            y: uiY,
             opacity: uiOpacity,
             transformOrigin: SCREEN_ORIGIN,
           }}
