@@ -3,7 +3,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 
 const URL =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/hf_20260930_195348_ab23c3e8-aa68-4ec6-8f1e-41c1b6e1e271.mp4";
+  "https://d8j0ntlcm91z4.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/hf_20260930_203620_b407f171-b8f9-493e-9ad0-e98e870c3c04.mp4";
 
 const res = await fetch(URL);
 if (!res.ok) throw new Error(`fetch failed: ${res.status}`);
