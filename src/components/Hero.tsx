@@ -136,7 +136,9 @@ export function Hero() {
   // takeover is continuous — never a visible cut.
   const uiScale = useTransform(p, [0.22, 0.55, 0.88], [0.13, 0.32, 1]);
   const uiOpacity = useTransform(p, [0.18, 0.28], [0, 1]);
-  const uiRadius = useTransform(p, [0.7, 0.92], [10, 0]);
+  // The page's cream arrives as a full-viewport layer BEHIND the
+  // dashboard (never inside the scaled layer), so no edge is visible.
+  const pageBgOpacity = useTransform(p, [0.82, 0.93], [0, 1]);
   // Lit-screen bloom while the UI is small; gone once it owns the page.
   const screenGlow = useTransform(
     p,
@@ -200,24 +202,23 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
+        {/* Full-viewport page background: fades in beneath the dashboard
+            as the takeover completes — its edges can never show. */}
+        <motion.div
+          style={{ opacity: pageBgOpacity }}
+          className="absolute inset-0 z-[15] bg-cream"
+          aria-hidden="true"
+        />
+
         {/* The laptop screen's content, growing until it owns the page. */}
         <motion.div
           style={{
             scale: uiScale,
             opacity: uiOpacity,
-            borderRadius: uiRadius,
             transformOrigin: SCREEN_ORIGIN,
           }}
           className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-6 px-4 will-change-transform md:gap-8 md:px-8"
         >
-          <motion.div
-            style={{
-              opacity: useTransform(p, [0.8, 0.9], [0, 1]),
-              background: "var(--color-cream)",
-            }}
-            className="absolute inset-0 -z-10"
-            aria-hidden="true"
-          />
           <motion.div style={{ boxShadow: screenGlow }} className="w-full max-w-[880px] rounded-xl">
             <SystemMock step={4} />
           </motion.div>
