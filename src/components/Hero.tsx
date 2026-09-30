@@ -13,7 +13,7 @@ import { SystemMock } from "./Workflow";
 // generated film on Higgsfield's CDN when the local file isn't present.
 const LOCAL_SRC = "/media/hero.mp4";
 const REMOTE_SRC =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/hf_20260930_205801_55a5418e-fdab-4810-bb76-ad4c2ae5f747.mp4";
+  "https://d8j0ntlcm91z4.cloudfront.net/user_3JCTza2MGAYDg9eWeuWorQ0PdNR/hf_20260930_212446_8525749e-2a12-406e-ad39-a40186c09ca7.mp4";
 
 export function ArrowPill({
   href,
@@ -115,23 +115,25 @@ export function Hero() {
     offset: ["start start", "end end"],
   });
 
-  // The film's laptop sits centered, lower third of frame.
-  const SCREEN_ORIGIN = "50% 62%";
+  // The film ends with the laptop screen centered, nearly filling the
+  // frame — the REAL camera does the dive. CSS only finishes the move.
+  const SCREEN_ORIGIN = "50% 50%";
 
-  // Film: scrubs through the first 80% of the stage, then the zoom
-  // carries the rest.
-  const filmProgress = useTransform(p, [0, 0.8], [0, 1]);
-  const zoom = useTransform(p, [0.34, 0.8], [1, 4.2]);
-  const filmOpacity = useTransform(p, [0.74, 0.9], [1, 0]);
+  // Film: the dolly-in scrubs across most of the stage.
+  const filmProgress = useTransform(p, [0, 0.78], [0, 1]);
+  // Final push: carry the screen's edges past the viewport…
+  const zoom = useTransform(p, [0.66, 0.9], [1, 1.9]);
+  // …while the glowing cream screen crossfades into the cream page.
+  const filmOpacity = useTransform(p, [0.78, 0.9], [1, 0]);
 
   // Headline: lives on the scene, releases as the dolly begins.
   const introOpacity = useTransform(p, [0.14, 0.3], [1, 0]);
   const introY = useTransform(p, [0.14, 0.3], [0, -48]);
 
-  // The screen's content takes over the page.
-  const uiScale = useTransform(p, [0.34, 0.8], [0.2, 1]);
-  const uiOpacity = useTransform(p, [0.56, 0.75], [0, 1]);
-  const uiRadius = useTransform(p, [0.56, 0.88], [12, 0]);
+  // The screen's content resolves in place as the screen becomes the page.
+  const uiScale = useTransform(p, [0.66, 0.9], [0.62, 1]);
+  const uiOpacity = useTransform(p, [0.73, 0.85], [0, 1]);
+  const uiRadius = useTransform(p, [0.73, 0.92], [14, 0]);
 
   return (
     <section id="top" ref={stageRef} data-theme-section="light" className="relative h-[420vh] bg-cream">
