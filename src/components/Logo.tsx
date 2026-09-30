@@ -24,7 +24,7 @@ export function Logo({ dark = false }: { dark?: boolean }) {
         className="text-[1.35rem] font-semibold tracking-tight leading-none"
         style={{ color: ink }}
       >
-        stackt<span className="text-terracotta">ik</span>
+        stack<span className="text-terracotta">tik</span>
       </span>
     </span>
   );
