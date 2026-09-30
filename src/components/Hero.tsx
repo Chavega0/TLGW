@@ -117,23 +117,34 @@ export function Hero() {
 
   // The film ends with the laptop screen centered, nearly filling the
   // frame — the REAL camera does the dive. CSS only finishes the move.
-  const SCREEN_ORIGIN = "50% 50%";
+  const SCREEN_ORIGIN = "50% 54%";
 
   // Film: the dolly-in scrubs across most of the stage.
   const filmProgress = useTransform(p, [0, 0.78], [0, 1]);
   // Final push: carry the screen's edges past the viewport…
   const zoom = useTransform(p, [0.66, 0.9], [1, 1.9]);
-  // …while the glowing cream screen crossfades into the cream page.
-  const filmOpacity = useTransform(p, [0.78, 0.9], [1, 0]);
+  // …and the footage dissolves only once the UI already covers it.
+  const filmOpacity = useTransform(p, [0.84, 0.94], [1, 0]);
 
   // Headline: lives on the scene, releases as the dolly begins.
-  const introOpacity = useTransform(p, [0.14, 0.3], [1, 0]);
-  const introY = useTransform(p, [0.14, 0.3], [0, -48]);
+  const introOpacity = useTransform(p, [0.14, 0.26], [1, 0]);
+  const introY = useTransform(p, [0.14, 0.26], [0, -48]);
 
-  // The screen's content resolves in place as the screen becomes the page.
-  const uiScale = useTransform(p, [0.66, 0.9], [0.62, 1]);
-  const uiOpacity = useTransform(p, [0.73, 0.85], [0, 1]);
-  const uiRadius = useTransform(p, [0.73, 0.92], [14, 0]);
+  // The dashboard is ON the laptop screen for the whole approach:
+  // it appears tiny at the screen's position as the headline releases
+  // and grows with the camera (accelerating, like the dolly), so the
+  // takeover is continuous — never a visible cut.
+  const uiScale = useTransform(p, [0.22, 0.55, 0.88], [0.13, 0.32, 1]);
+  const uiOpacity = useTransform(p, [0.18, 0.28], [0, 1]);
+  const uiRadius = useTransform(p, [0.7, 0.92], [10, 0]);
+  // Lit-screen bloom while the UI is small; gone once it owns the page.
+  const screenGlow = useTransform(
+    p,
+    [0.28, 0.8],
+    ["0 0 70px 26px rgba(249,244,232,0.95)", "0 0 0px 0px rgba(249,244,232,0)"]
+  );
+  // The caption belongs to the page, not the laptop: it arrives last.
+  const captionOpacity = useTransform(p, [0.86, 0.95], [0, 1]);
 
   return (
     <section id="top" ref={stageRef} data-theme-section="light" className="relative h-[280vh] bg-cream md:h-[420vh]">
@@ -197,15 +208,26 @@ export function Hero() {
             borderRadius: uiRadius,
             transformOrigin: SCREEN_ORIGIN,
           }}
-          className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-6 bg-cream px-4 will-change-transform md:gap-8 md:px-8"
+          className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-6 px-4 will-change-transform md:gap-8 md:px-8"
         >
-          <div className="w-full max-w-[880px]">
+          <motion.div
+            style={{
+              opacity: useTransform(p, [0.8, 0.9], [0, 1]),
+              background: "var(--color-cream)",
+            }}
+            className="absolute inset-0 -z-10"
+            aria-hidden="true"
+          />
+          <motion.div style={{ boxShadow: screenGlow }} className="w-full max-w-[880px] rounded-xl">
             <SystemMock step={4} />
-          </div>
-          <p className="t-muted max-w-md text-center text-[0.88rem] leading-relaxed md:text-[0.98rem]">
+          </motion.div>
+          <motion.p
+            style={{ opacity: captionOpacity }}
+            className="t-muted max-w-md text-center text-[0.88rem] leading-relaxed md:text-[0.98rem]"
+          >
             One connected system — leads, calls, tasks, and pipeline, in the place your team
             already works.
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Scroll cue, first moments only. */}
