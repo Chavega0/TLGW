@@ -14,6 +14,7 @@ type Partner = {
   blurb: string;
   pricing: string;
   pricingNote: string;
+  deal: string;
 };
 
 const PARTNERS: Partner[] = [
@@ -24,6 +25,7 @@ const PARTNERS: Partner[] = [
     blurb: "Cloud phone system for sales and support teams — smart routing, call recording, dialers, and deep CRM integrations.",
     pricing: "From $25/user/mo",
     pricingNote: "Starter · Essential $29 · Expert $49 (annual billing)",
+    deal: "Up to 30% off",
   },
   {
     name: "Apollo",
@@ -32,6 +34,7 @@ const PARTNERS: Partner[] = [
     blurb: "B2B contact database and sales engagement — find the right buyers, then sequence emails and calls from one place.",
     pricing: "Free plan · paid from $49/user/mo",
     pricingNote: "Basic $49 · Professional $79 (annual billing)",
+    deal: "Up to 20% off annual",
   },
   {
     name: "Instantly",
@@ -40,6 +43,7 @@ const PARTNERS: Partner[] = [
     blurb: "Outbound email infrastructure — unlimited sending accounts, warm-up, and deliverability tooling for serious volume.",
     pricing: "From $37/mo",
     pricingNote: "Growth · Hypergrowth $78/mo (annual billing, per workspace)",
+    deal: "Up to 20% off",
   },
   {
     name: "JustCall",
@@ -48,6 +52,7 @@ const PARTNERS: Partner[] = [
     blurb: "Phone, SMS, and AI call intelligence for customer-facing teams, wired into your CRM and helpdesk.",
     pricing: "From $29/user/mo",
     pricingNote: "Team · Pro $49 · Pro Plus $89 (annual billing)",
+    deal: "Up to $100 credit",
   },
   {
     name: "Pipedrive",
@@ -56,6 +61,7 @@ const PARTNERS: Partner[] = [
     blurb: "Pipeline-first CRM that salespeople actually keep updated — visual deals, automations, and clean reporting.",
     pricing: "From $14/seat/mo",
     pricingNote: "Lite · Growth $39 · Premium $59 (annual billing)",
+    deal: "Extended 30-day trial",
   },
   {
     name: "Zoho",
@@ -64,6 +70,7 @@ const PARTNERS: Partner[] = [
     blurb: "CRM plus a full suite — desk, campaigns, books — when you want one vendor behind the whole operation.",
     pricing: "From $14/user/mo",
     pricingNote: "Standard · Professional $23 · Enterprise $40 (annual billing)",
+    deal: "$100 wallet credit",
   },
   {
     name: "Close",
@@ -72,6 +79,7 @@ const PARTNERS: Partner[] = [
     blurb: "CRM made for inside sales — calling, SMS, and email live inside the pipeline, built for high-outreach teams.",
     pricing: "From $9/user/mo",
     pricingNote: "Solo · Essentials $35 · Growth $99 (annual billing)",
+    deal: "Up to 35% off year one",
   },
 ];
 
@@ -200,7 +208,7 @@ export function PartnersPage() {
                     <div className="t-muted mt-1 text-[0.78rem]">{p.pricingNote}</div>
                   </div>
                   <span className="rounded-full bg-terracotta/10 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-terracotta">
-                    Discount via Stacktik
+                    {p.deal} · via Stacktik
                   </span>
                 </div>
               </article>

@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import { Rise, Eyebrow, EASE } from "./motion";
 
 /* Text wordmarks, each styled loosely after the brand's own type. */
-const PARTNERS: { name: string; style: React.CSSProperties }[] = [
-  { name: "CloudTalk", style: { fontWeight: 700, letterSpacing: "-0.02em" } },
-  { name: "Apollo", style: { fontWeight: 600, letterSpacing: "0.01em" } },
-  { name: "Instantly", style: { fontWeight: 700, fontStyle: "italic" } },
-  { name: "JustCall", style: { fontWeight: 700, letterSpacing: "-0.01em" } },
-  { name: "Pipedrive", style: { fontWeight: 600 } },
-  { name: "Zoho", style: { fontWeight: 800, letterSpacing: "0.02em" } },
-  { name: "Close", style: { fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const } },
+const PARTNERS: { name: string; style: React.CSSProperties; deal: string }[] = [
+  { name: "CloudTalk", style: { fontWeight: 700, letterSpacing: "-0.02em" } , deal: "Up to 30% off" },
+  { name: "Apollo", style: { fontWeight: 600, letterSpacing: "0.01em" } , deal: "Up to 20% off" },
+  { name: "Instantly", style: { fontWeight: 700, fontStyle: "italic" } , deal: "Up to 20% off" },
+  { name: "JustCall", style: { fontWeight: 700, letterSpacing: "-0.01em" } , deal: "Up to $100 credit" },
+  { name: "Pipedrive", style: { fontWeight: 600 } , deal: "Extended 30-day trial" },
+  { name: "Zoho", style: { fontWeight: 800, letterSpacing: "0.02em" } , deal: "$100 wallet credit" },
+  { name: "Close", style: { fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const } , deal: "Up to 35% off year one" },
 ];
 
 /* The platforms are a headline moment: the discounts are a core part
@@ -50,7 +50,7 @@ export function Partners() {
                 {partner.name}
               </span>
               <span className="text-terracotta text-[0.66rem] font-semibold uppercase tracking-[0.18em]">
-                Discount available
+                {partner.deal}
               </span>
             </motion.div>
           ))}
