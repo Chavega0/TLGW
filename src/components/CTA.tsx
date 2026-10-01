@@ -21,11 +21,25 @@ export function CTA() {
             Free at minimum: your blueprint and partner discounts.
           </h2>
           <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-cream/85">
-            Show us how you work today and you walk away with a personalized systems blueprint —
-            where leads leak, the tools we'd pick for your budget, and the order to set them up —
-            plus partner discounts on the platforms when you implement through us. Yours to keep
-            either way.
+            A personalized systems blueprint — where leads leak, the tools we'd pick for your
+            budget, and the order to set them up — plus partner discounts on the platforms when
+            you implement through us.
           </p>
+          {/* The plan, numbered: people buy paths they can see. */}
+          <ol className="mx-auto mt-10 grid max-w-2xl gap-3 text-left sm:grid-cols-3">
+            {[
+              "Show us how you work — one call.",
+              "Get your blueprint. Free either way.",
+              "We implement, connect, and train.",
+            ].map((step, i) => (
+              <li key={i} className="rounded-xl bg-cream/10 px-5 py-4">
+                <span className="font-display text-lg italic leading-none text-cream/70">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="mt-2 text-[0.94rem] leading-snug text-cream">{step}</p>
+              </li>
+            ))}
+          </ol>
           <div className="mt-10 flex justify-center">
             <ArrowPill href="mailto:hello@stacktik.com" tone="cream">
               Request your blueprint

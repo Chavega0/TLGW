@@ -167,8 +167,18 @@ export function Hero() {
         {/* The headline, typeset on the scene itself. */}
         <motion.div
           style={{ opacity: introOpacity, y: introY }}
-          className="relative z-10 mx-auto max-w-[1200px] px-6 pt-28 text-center md:pt-32"
+          className="relative z-10 mx-auto max-w-[1200px] px-6 pt-24 text-center md:pt-28"
         >
+          {/* The category, named plainly before the poetry — a visitor
+              knows WHAT this is within the first five seconds. */}
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.08, duration: 0.8, ease: EASE }}
+            className="text-ink-soft mb-6 text-[0.7rem] font-semibold uppercase tracking-[0.32em] [text-shadow:0_1px_18px_rgba(243,236,220,0.6)]"
+          >
+            Software implementation for sales &amp; support teams
+          </motion.p>
           <h1 className="font-display text-ink text-[clamp(2.7rem,6.4vw,5.6rem)] leading-[1.0] [text-shadow:0_1px_24px_rgba(243,236,220,0.55)]">
             <WordsPullUp text="Your software," className="justify-center" />
             <br />

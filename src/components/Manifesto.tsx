@@ -12,7 +12,7 @@ export function Manifesto() {
           <div className="mt-8 md:col-span-9 md:mt-0">
             <ScrollProse
               className="font-display t-text text-[clamp(1.8rem,3.8vw,3.1rem)] leading-[1.28]"
-              text="Every business has a different way of working. Your technology should reflect your goals, your team, your budget, and the way your customers buy. Stacktik turns those requirements into a practical system — with guidance on what to choose and the technical support to put it into use."
+              text="Stacktik chooses, sets up, and connects the software your sales and support teams run on — CRM, calling, outreach, automation. Built around your goals, your budget, and the way your customers buy, with the technical support to put it into use."
             />
             <ScrollProse
               className="t-muted mt-10 max-w-2xl text-lg leading-relaxed"
