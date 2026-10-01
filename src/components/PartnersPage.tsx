@@ -34,7 +34,7 @@ const PARTNERS: Partner[] = [
     blurb: "B2B contact database and sales engagement — find the right buyers, then sequence emails and calls from one place.",
     pricing: "Free plan · paid from $49/user/mo",
     pricingNote: "Basic $49 · Professional $79 (annual billing)",
-    deal: "Preferred partner pricing",
+    deal: "Preferred partner affiliate pricing",
   },
   {
     name: "Instantly",
@@ -43,7 +43,7 @@ const PARTNERS: Partner[] = [
     blurb: "Outbound email infrastructure — unlimited sending accounts, warm-up, and deliverability tooling for serious volume.",
     pricing: "From $37/mo",
     pricingNote: "Growth · Hypergrowth $78/mo (annual billing, per workspace)",
-    deal: "Preferred partner pricing",
+    deal: "Preferred partner affiliate pricing",
   },
   {
     name: "JustCall",
@@ -52,7 +52,7 @@ const PARTNERS: Partner[] = [
     blurb: "Phone, SMS, and AI call intelligence for customer-facing teams, wired into your CRM and helpdesk.",
     pricing: "From $29/user/mo",
     pricingNote: "Team · Pro $49 · Pro Plus $89 (annual billing)",
-    deal: "Preferred partner pricing",
+    deal: "Preferred partner affiliate pricing",
   },
   {
     name: "Pipedrive",
@@ -61,7 +61,7 @@ const PARTNERS: Partner[] = [
     blurb: "Pipeline-first CRM that salespeople actually keep updated — visual deals, automations, and clean reporting.",
     pricing: "From $14/seat/mo",
     pricingNote: "Lite · Growth $39 · Premium $59 (annual billing)",
-    deal: "Preferred partner pricing",
+    deal: "Preferred partner affiliate pricing",
   },
   {
     name: "Zoho",
@@ -70,7 +70,7 @@ const PARTNERS: Partner[] = [
     blurb: "CRM plus a full suite — desk, campaigns, books — when you want one vendor behind the whole operation.",
     pricing: "From $14/user/mo",
     pricingNote: "Standard · Professional $23 · Enterprise $40 (annual billing)",
-    deal: "Preferred partner pricing",
+    deal: "Preferred partner affiliate pricing",
   },
   {
     name: "Close",
@@ -79,7 +79,7 @@ const PARTNERS: Partner[] = [
     blurb: "CRM made for inside sales — calling, SMS, and email live inside the pipeline, built for high-outreach teams.",
     pricing: "From $9/user/mo",
     pricingNote: "Solo · Essentials $35 · Growth $99 (annual billing)",
-    deal: "Preferred partner pricing",
+    deal: "Preferred partner affiliate pricing",
   },
 ];
 

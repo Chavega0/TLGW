@@ -4,12 +4,12 @@ import { Rise, Eyebrow, EASE } from "./motion";
 /* Text wordmarks, each styled loosely after the brand's own type. */
 const PARTNERS: { name: string; style: React.CSSProperties; deal: string }[] = [
   { name: "CloudTalk", style: { fontWeight: 700, letterSpacing: "-0.02em" } , deal: "Up to 30% off" },
-  { name: "Apollo", style: { fontWeight: 600, letterSpacing: "0.01em" } , deal: "Preferred partner pricing" },
-  { name: "Instantly", style: { fontWeight: 700, fontStyle: "italic" } , deal: "Preferred partner pricing" },
-  { name: "JustCall", style: { fontWeight: 700, letterSpacing: "-0.01em" } , deal: "Preferred partner pricing" },
-  { name: "Pipedrive", style: { fontWeight: 600 } , deal: "Preferred partner pricing" },
-  { name: "Zoho", style: { fontWeight: 800, letterSpacing: "0.02em" } , deal: "Preferred partner pricing" },
-  { name: "Close", style: { fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const } , deal: "Preferred partner pricing" },
+  { name: "Apollo", style: { fontWeight: 600, letterSpacing: "0.01em" } , deal: "Preferred partner affiliate pricing" },
+  { name: "Instantly", style: { fontWeight: 700, fontStyle: "italic" } , deal: "Preferred partner affiliate pricing" },
+  { name: "JustCall", style: { fontWeight: 700, letterSpacing: "-0.01em" } , deal: "Preferred partner affiliate pricing" },
+  { name: "Pipedrive", style: { fontWeight: 600 } , deal: "Preferred partner affiliate pricing" },
+  { name: "Zoho", style: { fontWeight: 800, letterSpacing: "0.02em" } , deal: "Preferred partner affiliate pricing" },
+  { name: "Close", style: { fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const } , deal: "Preferred partner affiliate pricing" },
 ];
 
 /* The platforms are a headline moment: the discounts are a core part
