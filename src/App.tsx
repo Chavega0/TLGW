@@ -4,7 +4,6 @@ import Lenis from "lenis";
 import { Cursor } from "./components/Cursor";
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
-import { Clients } from "./components/Clients";
 import { Manifesto } from "./components/Manifesto";
 import { Partners } from "./components/Partners";
 import { Discovery } from "./components/Discovery";
@@ -57,7 +56,6 @@ export default function App() {
       <main>
         <Hero />
         <Partners />
-        <Clients />
         <Manifesto />
         <Discovery />
         <Services />
