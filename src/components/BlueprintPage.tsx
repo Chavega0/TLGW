@@ -149,6 +149,16 @@ export function BlueprintPage() {
               </Rise>
             ))}
           </div>
+          <Rise>
+            <p className="mt-6">
+              <a
+                href="/partners/"
+                className="t-muted text-[0.88rem] font-medium underline-offset-4 transition-colors hover:text-terracotta hover:underline"
+              >
+                See every platform's benefits &amp; pricing →
+              </a>
+            </p>
+          </Rise>
         </section>
 
         {/* The ask. */}

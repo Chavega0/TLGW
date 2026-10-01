@@ -71,6 +71,16 @@ export function Partners() {
             </span>
           </motion.a>
         </div>
+        <Rise>
+          <p className="mt-9 text-center">
+            <a
+              href="/partners/"
+              className="t-muted text-[0.92rem] font-medium underline-offset-4 transition-colors hover:text-terracotta hover:underline"
+            >
+              See every platform's benefits &amp; pricing →
+            </a>
+          </p>
+        </Rise>
       </div>
     </section>
   );
