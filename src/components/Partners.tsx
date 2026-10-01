@@ -4,12 +4,12 @@ import { Rise, Eyebrow, EASE } from "./motion";
 /* Text wordmarks, each styled loosely after the brand's own type. */
 const PARTNERS: { name: string; style: React.CSSProperties; deal: string }[] = [
   { name: "CloudTalk", style: { fontWeight: 700, letterSpacing: "-0.02em" } , deal: "Up to 30% off" },
-  { name: "Apollo", style: { fontWeight: 600, letterSpacing: "0.01em" } , deal: "Up to 20% off" },
-  { name: "Instantly", style: { fontWeight: 700, fontStyle: "italic" } , deal: "Up to 20% off" },
-  { name: "JustCall", style: { fontWeight: 700, letterSpacing: "-0.01em" } , deal: "Up to $100 credit" },
-  { name: "Pipedrive", style: { fontWeight: 600 } , deal: "Extended 30-day trial" },
-  { name: "Zoho", style: { fontWeight: 800, letterSpacing: "0.02em" } , deal: "$100 wallet credit" },
-  { name: "Close", style: { fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const } , deal: "Up to 35% off year one" },
+  { name: "Apollo", style: { fontWeight: 600, letterSpacing: "0.01em" } , deal: "Preferred partner pricing" },
+  { name: "Instantly", style: { fontWeight: 700, fontStyle: "italic" } , deal: "Preferred partner pricing" },
+  { name: "JustCall", style: { fontWeight: 700, letterSpacing: "-0.01em" } , deal: "Preferred partner pricing" },
+  { name: "Pipedrive", style: { fontWeight: 600 } , deal: "Preferred partner pricing" },
+  { name: "Zoho", style: { fontWeight: 800, letterSpacing: "0.02em" } , deal: "Preferred partner pricing" },
+  { name: "Close", style: { fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const } , deal: "Preferred partner pricing" },
 ];
 
 /* The platforms are a headline moment: the discounts are a core part
@@ -30,9 +30,9 @@ export function Partners() {
           </Rise>
           <Rise delay={0.1}>
             <p className="t-muted mx-auto mt-6 max-w-2xl text-lg leading-relaxed">
-              We hold partner and referral relationships with every platform below. Sign up
-              through our links and codes and the discounts and partner benefits are yours —
-              no implementation required, no strings attached.
+              We hold partner and referral relationships with every platform below — savings
+              of up to 30% depending on the platform and plan. Sign up through our links and
+              codes and the preferred pricing is yours — no implementation required.
             </p>
           </Rise>
         </div>
