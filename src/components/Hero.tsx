@@ -48,54 +48,40 @@ export function ArrowPill({
 }
 
 /* Scroll-scrubbed film: scroll position drives video.currentTime.
-   Seeks are chased via the 'seeked' event — a new seek is issued only
-   when the previous one lands, always toward the LATEST target — so
-   the film converges in both directions and scrolling back up cleanly
-   rewinds to the intro instead of sticking on a late frame. */
+   A per-frame loop steers the playhead toward the LATEST scroll target.
+   While the browser reports a seek in flight we normally wait for it,
+   but a watchdog re-issues any seek older than ~400ms — so a seek that
+   silently dies (network hiccup, element swap on the CDN fallback) can
+   never freeze the film: the loop always recovers, in both directions. */
 function ScrubVideo({ progress }: { progress: MotionValue<number> }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [src, setSrc] = useState(LOCAL_SRC);
   const target = useRef(0);
-  const pending = useRef(false);
+
+  useMotionValueEvent(progress, "change", (p) => {
+    target.current = Math.min(1, Math.max(0, p));
+  });
 
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const seekToTarget = () => {
-      if (!video.duration) return;
+    let rafId = 0;
+    let issuedAt = 0;
+    const tick = (now: number) => {
+      rafId = requestAnimationFrame(tick);
+      if (!video.duration || video.error) return;
       const t = reduced
         ? Math.max(0, video.duration - 0.08)
         : target.current * Math.max(0, video.duration - 0.08);
-      if (Math.abs(video.currentTime - t) < 0.034) {
-        pending.current = false;
-        return;
-      }
-      pending.current = true;
+      if (Math.abs(video.currentTime - t) < 0.034) return;
+      if (video.seeking && now - issuedAt < 400) return;
+      issuedAt = now;
       video.currentTime = t;
     };
-    const onSeeked = () => seekToTarget();
-    const onLoaded = () => seekToTarget();
-    video.addEventListener("loadedmetadata", onLoaded);
-    video.addEventListener("loadeddata", onLoaded);
-    video.addEventListener("seeked", onSeeked);
-    (video as unknown as { __seek?: () => void }).__seek = seekToTarget;
-    return () => {
-      video.removeEventListener("loadedmetadata", onLoaded);
-      video.removeEventListener("loadeddata", onLoaded);
-      video.removeEventListener("seeked", onSeeked);
-    };
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
   }, [src]);
-
-  useMotionValueEvent(progress, "change", (p) => {
-    target.current = Math.min(1, Math.max(0, p));
-    const video = ref.current as
-      | (HTMLVideoElement & { __seek?: () => void })
-      | null;
-    if (!video || !video.duration || !video.__seek) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    if (!pending.current) video.__seek();
-  });
 
   return (
     <video
