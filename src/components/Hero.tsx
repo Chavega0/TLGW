@@ -179,11 +179,11 @@ export function Hero() {
           >
             Software implementation for sales &amp; support teams
           </motion.p>
-          <h1 className="font-display text-ink text-[clamp(2.7rem,6.4vw,5.6rem)] leading-[1.0] [text-shadow:0_1px_24px_rgba(243,236,220,0.55)]">
-            <WordsPullUp text="Your software," className="justify-center" />
+          <h1 className="font-display text-ink text-[clamp(2.5rem,6vw,5.2rem)] leading-[1.02] [text-shadow:0_1px_24px_rgba(243,236,220,0.55)]">
+            <WordsPullUp text="Free software consulting." className="justify-center" />
             <br />
             <span className="inline-flex flex-wrap justify-center">
-              <WordsPullUp text="working as" className="justify-center" />
+              <WordsPullUp text="Partner discounts" className="justify-center" />
               <span className="inline-block" style={{ width: "0.24em" }} />
               <motion.span
                 className="inline-block text-terracotta"
@@ -191,7 +191,7 @@ export function Hero() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.32, duration: 0.85, ease: EASE }}
               >
-                one.
+                included.
               </motion.span>
             </span>
           </h1>
@@ -199,10 +199,12 @@ export function Hero() {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.55, duration: 0.85, ease: EASE }}
-            className="text-ink-soft mx-auto mt-6 max-w-xl text-[1.05rem] leading-relaxed [text-shadow:0_1px_18px_rgba(243,236,220,0.6)]"
+            className="text-ink-soft mx-auto mt-6 max-w-2xl text-[1.05rem] leading-relaxed [text-shadow:0_1px_18px_rgba(243,236,220,0.6)]"
           >
-            We build and connect the CRM, calling, outreach, and automation behind sales and
-            support teams — chosen for your budget, implemented for the way you work.
+            Tell us how your sales and support teams work, and we recommend the exact CRM,
+            calling, and outreach platforms for your business — free. Our referral links unlock
+            partner discounts on them, yours either way. Implementation? Optional, and the only
+            thing we ever charge for.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 22 }}
@@ -210,7 +212,7 @@ export function Hero() {
             transition={{ delay: 0.72, duration: 0.85, ease: EASE }}
             className="mt-9 flex justify-center"
           >
-            <ArrowPill href="#blueprint">Get your free systems blueprint</ArrowPill>
+            <ArrowPill href="/blueprint/">Get your free recommendation</ArrowPill>
           </motion.div>
         </motion.div>
 
@@ -260,7 +262,7 @@ export function Hero() {
             transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
             className="text-ink-soft text-[0.68rem] uppercase tracking-[0.3em]"
           >
-            Scroll
+            Scroll — see the system we'd build you
           </motion.div>
         </motion.div>
       </div>

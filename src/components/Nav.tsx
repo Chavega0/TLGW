@@ -33,10 +33,10 @@ export function Nav() {
           <a href="#who" className="hover:text-terracotta transition-colors">Who it's for</a>
         </div>
         <a
-          href="#blueprint"
+          href="/blueprint/"
           className="rounded-full bg-terracotta px-4 py-1.5 text-[0.78rem] font-semibold text-cream whitespace-nowrap hover:bg-terracotta-deep transition-colors"
         >
-          Free blueprint
+          Free recommendation
         </a>
       </nav>
     </motion.header>
