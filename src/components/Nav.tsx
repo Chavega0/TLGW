@@ -29,7 +29,7 @@ export function Nav() {
           <a href="#services" className="hover:text-terracotta transition-colors">Services</a>
           <a href="#how" className="hover:text-terracotta transition-colors">How we work</a>
           <a href="#system" className="hover:text-terracotta transition-colors">The system</a>
-          <a href="/partners/" className="hover:text-terracotta transition-colors">Partners</a>
+          <a href="#partners" className="hover:text-terracotta transition-colors">Partners</a>
           <a href="#who" className="hover:text-terracotta transition-colors">Who it's for</a>
         </div>
         <a

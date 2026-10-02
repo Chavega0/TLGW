@@ -24,7 +24,6 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
     title: "Get started",
     links: [
       ["Free recommendation", "/blueprint/"],
-      ["Partner benefits & pricing", "/partners/"],
       ["hello@stacktik.com", "mailto:hello@stacktik.com"],
     ],
   },

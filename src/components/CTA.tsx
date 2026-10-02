@@ -18,20 +18,19 @@ export function CTA() {
         </div>
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-display text-cream text-[clamp(2.1rem,4.6vw,3.6rem)] leading-[1.05]">
-            Free consulting. Real discounts. No catch.
+            Your systems blueprint. Free.
           </h2>
           <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-cream/85">
-            A personalized recommendation of the exact software for your business — free. Referral
-            links and codes that unlock partner discounts and benefits on the platforms — also
-            free. The only thing we ever charge for is implementation, and only if you decide you
-            want us to build it.
+            Show us how you work today and you walk away with a personalized systems blueprint —
+            where leads leak, the tools we'd pick for your budget, and the order to set them up.
+            Yours to keep either way.
           </p>
           {/* The plan, numbered: people buy paths they can see. */}
           <ol className="mx-auto mt-10 grid max-w-2xl gap-3 text-left sm:grid-cols-3">
             {[
               "One free call about how your business works.",
-              "Your recommendation + referral links for the discounts. Free either way.",
-              "Want it built? We implement, connect, and train — the only paid part, entirely optional.",
+              "Get your blueprint. Free either way.",
+              "Want it built? We implement, connect, and train — entirely optional.",
             ].map((step, i) => (
               <li key={i} className="rounded-xl bg-cream/10 px-5 py-4">
                 <span className="font-display text-lg italic leading-none text-cream/70">
@@ -43,7 +42,7 @@ export function CTA() {
           </ol>
           <div className="mt-10 flex justify-center">
             <ArrowPill href="/blueprint/" tone="cream">
-              Get your free recommendation
+              Get your free blueprint
             </ArrowPill>
           </div>
         </div>

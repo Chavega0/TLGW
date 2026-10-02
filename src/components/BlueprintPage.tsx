@@ -18,10 +18,6 @@ const GETS = [
     body: "The exact platforms we'd pick for your business and budget, how they connect, and the order to set them up. Written down, yours to keep.",
   },
   {
-    title: "Partner discounts & benefits",
-    body: "We hold partner and referral relationships with the platforms we recommend. Sign up through our links and codes and the discounts are yours — whether or not we build anything.",
-  },
-  {
     title: "Optional implementation",
     body: "If you want the system built, connected, and your team trained, we do that too. It's the only part you ever pay for — and it's entirely your call.",
   },
@@ -95,7 +91,7 @@ export function BlueprintPage() {
             transition={{ duration: 0.8, ease: EASE }}
             className="t-muted text-[0.7rem] font-semibold uppercase tracking-[0.32em]"
           >
-            Free consulting · Partner discounts · Optional build
+            Free consulting · Personalized blueprint · Optional build
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
@@ -104,8 +100,6 @@ export function BlueprintPage() {
             className="font-display t-text mx-auto mt-6 max-w-3xl text-[clamp(2.3rem,5.4vw,4.2rem)] leading-[1.04]"
           >
             Your software recommendation is <span className="text-terracotta">free.</span>
-            <br />
-            So are the discounts.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 22 }}
@@ -114,9 +108,8 @@ export function BlueprintPage() {
             className="t-muted mx-auto mt-7 max-w-2xl text-[1.08rem] leading-relaxed"
           >
             Tell us how your sales and support teams work. We recommend the exact platforms for
-            your business, free — and our referral links and codes unlock partner discounts and
-            benefits on them. You only ever pay if you separately decide you want us to build the
-            system for you.
+            your business and how they connect — free. You only ever pay if you separately
+            decide you want us to build the system for you.
           </motion.p>
         </section>
 
@@ -135,11 +128,11 @@ export function BlueprintPage() {
           ))}
         </section>
 
-        {/* The platforms the discounts apply to. */}
+        {/* The platforms we implement. */}
         <section className="mt-16 text-center md:mt-24">
           <Rise>
             <p className="t-muted text-[0.68rem] font-semibold uppercase tracking-[0.28em]">
-              Discounts &amp; partner benefits on
+              We implement &amp; partner with
             </p>
           </Rise>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
@@ -149,16 +142,6 @@ export function BlueprintPage() {
               </Rise>
             ))}
           </div>
-          <Rise>
-            <p className="mt-6">
-              <a
-                href="/partners/"
-                className="t-muted text-[0.88rem] font-medium underline-offset-4 transition-colors hover:text-terracotta hover:underline"
-              >
-                See every platform's benefits &amp; pricing →
-              </a>
-            </p>
-          </Rise>
         </section>
 
         {/* The ask. */}
@@ -168,8 +151,8 @@ export function BlueprintPage() {
               Request your free recommendation
             </h2>
             <p className="t-muted mt-4 text-center text-[0.95rem] leading-relaxed">
-              A few details, one call, and you'll have the recommendation and your referral links
-              within days. Free either way.
+              A few details, one call, and you'll have your recommendation within days. Free
+              either way.
             </p>
           </Rise>
           <Rise delay={0.08}>
