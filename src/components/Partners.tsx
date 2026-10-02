@@ -1,19 +1,6 @@
-import { motion } from "framer-motion";
-import { Rise, EASE } from "./motion";
+import { Rise } from "./motion";
 
-/* Text wordmarks, each styled loosely after the brand's own type. */
-const PARTNERS: { name: string; style: React.CSSProperties }[] = [
-  { name: "CloudTalk", style: { fontWeight: 700, letterSpacing: "-0.02em" } },
-  { name: "Apollo", style: { fontWeight: 600, letterSpacing: "0.01em" } },
-  { name: "Instantly", style: { fontWeight: 700, fontStyle: "italic" } },
-  { name: "JustCall", style: { fontWeight: 700, letterSpacing: "-0.01em" } },
-  { name: "Pipedrive", style: { fontWeight: 600 } },
-  { name: "Zoho", style: { fontWeight: 800, letterSpacing: "0.02em" } },
-  { name: "Close", style: { fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const } },
-];
-
-/* The platforms carry the credibility, so they sit high on the page
-   at display size — a quiet strip, no program attached. */
+/* No names for now: the partnerships stay general. */
 export function Partners() {
   return (
     <section id="partners" data-theme-section="light" className="py-16 md:py-24">
@@ -23,25 +10,15 @@ export function Partners() {
             Our partners
           </span>
         </Rise>
-        <div className="mt-9 flex flex-wrap items-center justify-center gap-x-14 gap-y-7">
-          {PARTNERS.map((partner, i) => (
-            <motion.span
-              key={partner.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ delay: i * 0.05, duration: 0.7, ease: EASE }}
-              className="t-text text-[1.7rem] opacity-70 transition-opacity hover:opacity-100 md:text-[2.1rem]"
-              style={partner.style}
-            >
-              {partner.name}
-            </motion.span>
-          ))}
-        </div>
+        <Rise delay={0.08}>
+          <h2 className="font-display t-text mx-auto mt-6 max-w-3xl text-[clamp(1.7rem,3.4vw,2.6rem)] leading-[1.12]">
+            We partner with the leading CRM, calling, outreach, and automation platforms —
+            and implement them every day.
+          </h2>
+        </Rise>
         <Rise delay={0.15}>
-          <p className="t-muted mx-auto mt-9 max-w-xl text-[1.02rem] leading-relaxed">
-            The platforms we partner up with and implement every day — so your system is
-            built on tools we know inside out.
+          <p className="t-muted mx-auto mt-6 max-w-xl text-[1.02rem] leading-relaxed">
+            So your system is built on tools we know inside out.
           </p>
         </Rise>
       </div>

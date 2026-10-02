@@ -6,8 +6,6 @@ import { Rise, EASE } from "./motion";
 /* Dedicated landing page: one job — request the free recommendation.
    No film, no scenes: the offer, the proof of no-catch, the form. */
 
-const PARTNER_NAMES = ["CloudTalk", "Apollo", "Instantly", "JustCall", "Pipedrive", "Zoho", "Close"];
-
 const GETS = [
   {
     title: "Free software consulting",
@@ -128,20 +126,14 @@ export function BlueprintPage() {
           ))}
         </section>
 
-        {/* The platforms we implement. */}
+        {/* The partnerships, kept general. */}
         <section className="mt-16 text-center md:mt-24">
           <Rise>
-            <p className="t-muted text-[0.68rem] font-semibold uppercase tracking-[0.28em]">
-              We implement &amp; partner with
+            <p className="t-muted mx-auto max-w-xl text-[0.98rem] leading-relaxed">
+              We partner with the leading CRM, calling, outreach, and automation platforms —
+              and implement them every day.
             </p>
           </Rise>
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-            {PARTNER_NAMES.map((name, i) => (
-              <Rise key={name} delay={i * 0.04}>
-                <span className="t-text text-[1.25rem] font-semibold opacity-70">{name}</span>
-              </Rise>
-            ))}
-          </div>
         </section>
 
         {/* The ask. */}
