@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f3ecdc;
+  --color-cream-soft: #f9f4e8;
+  --color-terracotta: #c4552b;
+  --color-terracotta-deep: #a8441f;
+  --color-clay: #d97747;
+  --color-olive: #33493a;
+  --color-olive-deep: #28392e;
+  --color-ink: #211d19;
+  --color-ink-soft: #55493d;
+  --font-sans: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Newsreader", ui-serif, Georgia, serif;
+}
+
+/* Chapter themes — the page background morphs as chapters cross the
+   viewport center (cross-section theme morph). */
+:root,
+:root[data-theme="light"] {
+  --page-bg: #f3ecdc;
+  --page-text: #211d19;
+  --page-muted: #5f5347;
+  --hairline: rgba(33, 29, 25, 0.16);
+  --surface: rgba(255, 253, 247, 0.55);
+}
+:root[data-theme="olive"] {
+  --page-bg: #33493a;
+  --page-text: #f3ecdc;
+  --page-muted: rgba(243, 236, 220, 0.64);
+  --hairline: rgba(243, 236, 220, 0.22);
+  --surface: rgba(243, 236, 220, 0.06);
+}
+:root[data-theme="dark"] {
+  --page-bg: #211d19;
+  --page-text: #f3ecdc;
+  --page-muted: rgba(243, 236, 220, 0.6);
+  --hairline: rgba(243, 236, 220, 0.18);
+  --surface: rgba(243, 236, 220, 0.05);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--page-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.65s ease, color 0.65s ease;
+}
+
+.t-text { color: var(--page-text); }
+.t-muted { color: var(--page-muted); }
+.t-hairline { border-color: var(--hairline); }
+.t-surface { background: var(--surface); }
+
+.font-display {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Film grain (SVG turbulence) — used on the hero video panel only. */
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+/* Ambient float — the page breathes when scrolling stops. */
+@keyframes ambient-float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
+.ambient-float {
+  animation: ambient-float 6.5s ease-in-out infinite alternate;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambient-float { animation: none; }
+}
+
+::selection {
+  background: var(--color-terracotta);
+  color: var(--color-cream);
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
