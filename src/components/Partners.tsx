@@ -20,7 +20,7 @@ export function Partners() {
       <div className="mx-auto max-w-[1200px] px-6 text-center">
         <Rise>
           <span className="t-muted text-[0.68rem] font-semibold uppercase tracking-[0.28em]">
-            We implement &amp; partner with
+            Our partners
           </span>
         </Rise>
         <div className="mt-9 flex flex-wrap items-center justify-center gap-x-14 gap-y-7">
@@ -38,6 +38,12 @@ export function Partners() {
             </motion.span>
           ))}
         </div>
+        <Rise delay={0.15}>
+          <p className="t-muted mx-auto mt-9 max-w-xl text-[1.02rem] leading-relaxed">
+            The platforms we partner up with and implement every day — so your system is
+            built on tools we know inside out.
+          </p>
+        </Rise>
       </div>
     </section>
   );
