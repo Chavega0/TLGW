@@ -4,12 +4,12 @@ Paste everything below into a local session to redo the TLGW client research fro
 
 ---
 
-# MASTER PROMPT — The Last Goal Wins: client research for Jaime "Magnet" Bruno
+# MASTER PROMPT — The Last Goal Wins: client research for the client
 
 CONTEXT
 I run The Last Goal Wins (TLGW), a football/soccer influencer-marketing agency in Toronto.
-Our offer: Instagram creator collaborations. First client: Jaime "Magnet" Bruno
-(@magnetfreestyle) — Toronto-based pro soccer freestyler, 6x Canadian champion, former
+Our offer: Instagram creator collaborations. First client: the client
+([client Instagram]) — Toronto-based pro soccer freestyler, 6x Canadian champion, former
 Red Bull Street Style Canada winner, ~21K IG followers, performs at corporate/brand events.
 Goal: find his first brand clients in Canada and the US (keep the two markets separate).
 
@@ -26,7 +26,7 @@ through OpenCLI, which reuses my logged-in Chrome session. Verify, in order:
 4. I'll log into instagram.com in Chrome. NOTE: the Agent Reach repo recommends a
    secondary account (automated reading can trigger restrictions) — advise me, my call.
 5. Verify: `agent-reach doctor` shows Instagram usable, then test:
-   `opencli instagram profile magnetfreestyle -f yaml`
+   `opencli instagram profile [client Instagram] -f yaml`
 If any step fails, STOP and explain exactly what's needed. NEVER quietly substitute
 web-search snippets for actual Instagram inspection; if I explicitly approve a partial
 fallback, label every non-inspected claim clearly.
@@ -36,8 +36,8 @@ Read-only: never like, follow, comment, message, or buy anything. Low request ra
 back off immediately on 429/login errors. Research only — no outreach of any kind,
 no Instantly campaigns.
 
-STEP 1 — MAGNET BASELINE
-Inspect @magnetfreestyle: current followers, bio (confirm or refute the "Puma ambassador"
+STEP 1 — THE CLIENT BASELINE
+Inspect [client Instagram]: current followers, bio (confirm or refute the "Puma ambassador"
 line — this gates whether we can pitch Adidas/Nike), last ~20 posts (dates, brand tags,
 paid-partnership labels, content formats, engagement pattern).
 
@@ -59,9 +59,9 @@ sponsorship alone is a weaker signal. Older evidence allowed only if clearly dat
 STEP 4 — RANKED BRAND LIST (up to 30, quality over quantity)
 Qualified brands with campaigns relevant to Canada or the US, ranked within each market.
 Per brand: target market, evidence creator(s), exact post link(s) + dates, sponsorship
-evidence + strength label (strong/medium/weak), what the content shows, why Magnet fits,
+evidence + strength label (strong/medium/weak), what the content shows, why the client fits,
 the agency behind the campaign if identifiable (only if a source names it), and one
-specific campaign idea for Magnet. Prefer fewer verified prospects over weak filler.
+specific campaign idea for the client. Prefer fewer verified prospects over weak filler.
 
 STEP 5 — BUYER CONTACTS
 For each ranked brand, use LinkedIn and official company sites to find the relevant

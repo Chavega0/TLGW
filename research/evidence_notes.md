@@ -1,8 +1,8 @@
 # Evidence notes — TLGW prospect research (compiled 2026-10-08)
 Method label for all rows: Instagram network-blocked in session; no post media inspected. Sources = press/agency/brand pages/indexed snippets.
 
-## Magnet baseline
-Toronto; CAN/PER; 6x CAN champ; ~21K IG (indexed snapshot); RBSS Canada winner (newswire.ca/news-releases/jaime-magnet-bruno-crowned-canadas-freestyle-soccer-champion-at-red-bullstreet-style-538979931.html); corporate shows Samsung/Sony/Adidas/Red Bull (magnetfreestyle.com, indexed); bio says "@puma ambassador" — UNCORROBORATED elsewhere; Magnet FC events page claims WC26 activations Toronto/Vancouver + Air Canada session + "upcoming Sport Chek campaigns" (magnetfreestyle.com/events/, /the-team/ — self-reported).
+## the client baseline
+Toronto; CAN/PER; 6x CAN champ; ~21K IG (indexed snapshot); RBSS Canada winner (newswire.ca/news-releases/[removed]-crowned-canadas-freestyle-soccer-champion-at-red-bullstreet-style-538979931.html); corporate shows Samsung/Sony/Adidas/Red Bull ([client agency site], indexed); bio says "@puma ambassador" — UNCORROBORATED elsewhere; the client's agency events page claims WC26 activations Toronto/Vancouver + Air Canada session + "upcoming Sport Chek campaigns" ([client agency site], /the-team/ — self-reported).
 
 ## US creators (agent report highlights)
 - Caitlyn Schrepfer @caitfreestyle, LA, ~266K (socialveins.com/influencer/instagram/caitfreestyle). WeHo Fan Zone perf 2026-06-26 (weho.org/Home/Components/News/News/12188/23). Adidas WC commercial 2017-18 (taegukwarriors.com/tavern-interview-caitlyn-schrepfer/; vimeo.com/223610414). Red Bull SS finalist (redbull.com/int-en/red-bull-street-style-world-finalist-caitlyn-schrepfer). Self-reported: Nike, Slim Jim, VW, Coca-Cola, FIFA (opensponsorship.com/profiles/caitlyn-schrepfer-2).
@@ -21,7 +21,7 @@ Toronto; CAN/PER; 6x CAN champ; ~21K IG (indexed snapshot); RBSS Canada winner (
 - Not confirmed: Indi Cowie (inactive?); @brandon.elsd (country unconfirmed; Motion: Walmart, LEGO, Jockey, New Era).
 
 ## Canada creators (agent report highlights)
-- Ollie Clark @ollieclarkfreestyle, Toronto, ~5.4K. Magnet FC roster; "upcoming Sport Chek campaigns" claim (magnetfreestyle.com/the-team/).
+- Ollie Clark @ollieclarkfreestyle, Toronto, ~5.4K. The client's agency roster; "upcoming Sport Chek campaigns" claim ([client agency site]).
 - José Avalos @avalosfreestyle, Toronto, ~11K. Bio self-claims Sony/Hyundai/McDonald's/MLS/FIFA; "FIFA WC26 performer" self-reported. RBSS 2008 champ.
 - Steve Elias @elifreeze, Toronto/Mississauga, ~31K. WFFA CEO; SWRL founder. WFFA Showdown Calgary Feb 2026 w/ Calgary Tourism + The Good Games + SWRL (thewffa.org/en/events). Red Bull CA editorial (redbull.com/ca-en/street-style-soccer-tricks).
 - Mo Ali @moalifc, Toronto (+Boston), ~1M (agency 1.2M: doubletapcontent.com/creators/mo-ali). SKLZ "joins the team" (sklz.com/blogs/sklz-blog/mo-ali-joins-the-team). Senda Athletics roster (sendaathletics.com/blogs/news/mo-ali-in-argentina-with-senda). TST team. Agency: Double Tap.
@@ -34,7 +34,7 @@ Toronto; CAN/PER; 6x CAN champ; ~21K IG (indexed snapshot); RBSS Canada winner (
 - Excluded: Soccer Samurai (base unclear), El Tigre (San Diego), 7MLC (Rochester NY), Laura Biondo (Miami), Jon Paul Piques (out of band).
 
 ## Agencies named
-OpenSponsorship (Walmart Soccer Saturday, USA Today; CEO Ishveen Jolly, NYC). Double Tap Content (Mo Ali; FIFA/UEFA/LaLiga/adidas campaigns). Global Freestyle (books US freestylers). Scarlett Entertainment (freestyle bookings US/CA, WC26 page). FSMTL + North Stage Management (Montreal). Footballco (The Late Run / DraftKings). Magnet FC + Freestyle Soccer Inc (Toronto, own ecosystem).
+OpenSponsorship (Walmart Soccer Saturday, USA Today; CEO Ishveen Jolly, NYC). Double Tap Content (Mo Ali; FIFA/UEFA/LaLiga/adidas campaigns). Global Freestyle (books US freestylers). Scarlett Entertainment (freestyle bookings US/CA, WC26 page). FSMTL + North Stage Management (Montreal). Footballco (The Late Run / DraftKings). The client's agency + Freestyle Soccer Inc (Toronto, own ecosystem).
 
 ## No exact IG post URLs were retrievable via indexed search for any collab (both agents). Label in deliverable.
 

@@ -13,7 +13,7 @@ SETUP (ask me before system changes):
 2. Run: `agent-reach install --env=auto --system --channels=opencli,instagram`
    and walk me through adding the OpenCLI Chrome extension.
 3. I'll log into instagram.com in Chrome (possibly a secondary account — advise me on risk).
-   Confirm readiness: `agent-reach doctor`, then: `opencli instagram profile magnetfreestyle -f yaml`
+   Confirm readiness: `agent-reach doctor`, then: `opencli instagram profile [client Instagram] -f yaml`
    Keep request rates low; back off immediately on 429/login errors.
 
 THEN pull the research: clone github.com/chavega0/tlgw, check out branch
@@ -21,7 +21,7 @@ THEN pull the research: clone github.com/chavega0/tlgw, check out branch
 `research/evidence_notes.md` and `research/summary.md`.
 
 VERIFY (read-only on Instagram — do NOT like, follow, comment or message):
-1. @magnetfreestyle — current follower count, full bio (does it actually say Puma
+1. [client Instagram] — current follower count, full bio (does it actually say Puma
    ambassador?), last 10 posts: dates, brand tags, any "Paid partnership" labels.
 2. Every creator handle in the CSV — handle exists, current followers, base city per bio.
 3. For every row whose instagram_post_link says "Not found": scan that creator's last
