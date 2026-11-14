@@ -126,12 +126,11 @@ export function BlueprintPage() {
           ))}
         </section>
 
-        {/* The partnerships, kept general. */}
         <section className="mt-16 text-center md:mt-24">
           <Rise>
             <p className="t-muted mx-auto max-w-xl text-[0.98rem] leading-relaxed">
-              We partner with the leading CRM, calling, outreach, and automation platforms —
-              and implement them every day.
+              Your recommendation draws on 400+ technology suppliers through our partnership
+              with Telarus — so it's never limited to one vendor.
             </p>
           </Rise>
         </section>
