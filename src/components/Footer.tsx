@@ -17,6 +17,7 @@ const COLUMNS: { title: string; links: [string, string][] }[] = [
       ["How we work", "#how"],
       ["The system", "#system"],
       ["Partners", "#partners"],
+      ["Partner network", "/partners/"],
       ["Who it's for", "#who"],
     ],
   },

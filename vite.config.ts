@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         main: fileURLToPath(new URL("./index.html", import.meta.url)),
         blueprint: fileURLToPath(new URL("./blueprint/index.html", import.meta.url)),
+        partners: fileURLToPath(new URL("./partners/index.html", import.meta.url)),
       },
     },
   },
