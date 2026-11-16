@@ -16,11 +16,11 @@
     },
     {
       "label": "What you get",
-      "text": "A shortlist with monthly costs, a written proposal, the purchase in your name, setup, the CRM connection and training."
+      "text": "A shortlist with monthly costs, a written proposal, the purchase in your name, setup, the CRM connection and training. Use only the part you need."
     },
     {
       "label": "How it is priced",
-      "text": "The phone system is per user per month on the vendor's own plan."
+      "text": "The phone system is per user per month on the vendor's own plan. Our implementation is a separate fixed fee, quoted in writing before work starts."
     }
   ],
   "blocks": [
@@ -33,7 +33,7 @@
       "items": [
         {
           "title": "On-premises, hosted PBX and cloud PBX",
-          "body": "An on-premises PBX is hardware in your office, wired to desk phones and phone lines."
+          "body": "An on-premises PBX is hardware in your office. A hosted PBX or cloud PBX runs on the provider's servers and reaches your team over the internet."
         },
         {
           "title": "What you maintain, and how you grow",
@@ -41,7 +41,7 @@
         },
         {
           "title": "Working away from the office",
-          "body": "A cloud system is used through an app on a computer or mobile phone, or through a desk phone that connects over the internet."
+          "body": "A cloud system works through a computer or mobile app, or an internet desk phone, so the business number follows each person home or on the road."
         },
         {
           "title": "The internet connection",
@@ -110,14 +110,6 @@
           "body": "Extra phone numbers, calls to other countries and add-on features can be billed on top of the seat price."
         },
         {
-          "title": "Monthly or annual billing",
-          "body": "A subscription can be billed month to month or on an annual term."
-        },
-        {
-          "title": "Partner programs",
-          "body": "Stacktik is enrolled in vendor partner programs with most of the platforms it sets up."
-        },
-        {
           "title": "Our fee, kept separate",
           "body": "Implementation is a fixed fee, quoted in writing before work starts, with what is in scope and what is not."
         }
@@ -159,7 +151,7 @@
   ],
   "platforms": {
     "h2": "The business phone platforms we work with.",
-    "intro": "CloudTalk, Dialpad and Kixie are the calling platforms we set up directly.",
+    "intro": "CloudTalk, Dialpad and Kixie are the calling platforms we set up directly. The others come through our supplier network, on the same written proposal.",
     "names": [
       "CloudTalk",
       "Dialpad",

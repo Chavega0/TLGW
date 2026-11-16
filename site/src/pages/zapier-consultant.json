@@ -78,7 +78,7 @@
         },
         {
           "title": "An AI agent, where judgement is needed",
-          "body": "A rule cannot read a message. For steps that need reading or writing, we build an AI agent on Claude or OpenAI, with a person approving."
+          "body": "A rule cannot decide what a message means. We build an AI agent on Claude or OpenAI, with a person approving anything that reaches a customer."
         },
         {
           "title": "Fewer automations, well documented",

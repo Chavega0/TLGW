@@ -29,7 +29,7 @@
       "id": "what-it-does",
       "eyebrow": "What it does",
       "h2": "What the RingCentral HubSpot integration is for.",
-      "intro": "The purpose is simple: the call and the customer record stay together.",
+      "intro": "The call and the customer record stay together. The integration's details depend on your plans, so we confirm them on the proposal.",
       "items": [
         {
           "title": "Calls placed from HubSpot",
@@ -46,10 +46,6 @@
         {
           "title": "The caller's record in view",
           "body": "When a known contact calls, the rep sees who it is and can open the record with its history."
-        },
-        {
-          "title": "Other RingCentral integrations",
-          "body": "If your team needs a RingCentral CRM integration for another system we set up, the proposal says what is possible."
         }
       ]
     },

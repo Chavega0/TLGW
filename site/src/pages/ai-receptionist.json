@@ -45,7 +45,7 @@
         },
         {
           "title": "AI answering service and AI voice agent",
-          "body": "More names for the same category. The first usually means message taking and after-hours cover."
+          "body": "More names for the same category. The first usually means message taking and after-hours cover. The second, also called AI phone agent, covers outbound calls too."
         },
         {
           "title": "A blend of AI and people",
@@ -53,7 +53,7 @@
         },
         {
           "title": "How to tell which you need",
-          "body": "If callers only need the right department, a phone menu is enough. If most calls need judgement, use people."
+          "body": "A phone menu fits callers who only need a department, people fit calls that need judgement, and an AI receptionist fits the same few requests."
         }
       ]
     },
@@ -82,7 +82,7 @@
         },
         {
           "title": "What it cannot do",
-          "body": "It does not exercise judgement. Complaints, exceptions, pricing commitments, upset callers and unusual requests belong with a person."
+          "body": "It does not exercise judgement. Complaints, exceptions, pricing commitments, upset callers and unusual requests belong with a person. It can also mishear names and numbers."
         },
         {
           "title": "Hand over to a person",
@@ -115,7 +115,7 @@
         },
         {
           "title": "Pricing structure",
-          "body": "Plans are commonly built from a monthly subscription, a usage charge by the minute or by the call, phone numbers and sometimes a setup fee."
+          "body": "Ask what the subscription, the usage charge by the minute or call, phone numbers and any setup fee add up to in a busy month."
         },
         {
           "title": "Control after launch",
@@ -152,14 +152,14 @@
         },
         {
           "title": "Tested, trained, handed over",
-          "body": "We place test calls for the common requests and the awkward ones before the agent takes real calls."
+          "body": "We test the common and awkward requests before the agent takes real calls, then train your team and hand over notes on how each piece runs."
         }
       ]
     }
   ],
   "platforms": {
     "h2": "The platforms an AI receptionist sits between.",
-    "intro": "An AI receptionist works between a phone system and a CRM.",
+    "intro": "An AI receptionist works between a phone system and a CRM. These are the platforms we set up or can source.",
     "names": [
       "HubSpot",
       "monday.com CRM",

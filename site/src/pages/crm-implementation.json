@@ -29,7 +29,7 @@
       "id": "what-it-covers",
       "eyebrow": "What CRM implementation is",
       "h2": "What CRM implementation covers, from setup to CRM integration.",
-      "intro": "A sales CRM is the system where every customer, opportunity and conversation lives, and the one your other tools connect to.",
+      "intro": "A sales CRM is the system where every customer, opportunity and conversation lives. This list is what we draw from, not a fixed package.",
       "items": [
         {
           "title": "CRM setup",
@@ -74,7 +74,7 @@
         },
         {
           "title": "CRM setup in your account",
-          "body": "The subscription is in your name, bought through our partner programs or direct from the vendor."
+          "body": "The subscription is in your name, bought through our partner programs or direct. We build the pipeline stages and lead routing through an admin seat you create."
         },
         {
           "title": "Your data moved over",
@@ -82,11 +82,11 @@
         },
         {
           "title": "Calling, outreach and reporting connected",
-          "body": "The phone system is connected so calls log to the record with the recording. Email sequences stop when a reply comes in."
+          "body": "The phone system and outreach tool are connected to the CRM, and reports pull from all three, so the numbers update without anyone typing."
         },
         {
           "title": "Training and handover",
-          "body": "Your team is trained on the setup, on their own data, and the sessions are recorded."
+          "body": "Your team is trained on the setup and given written handover notes. Then you revoke our admin seat."
         }
       ]
     },
@@ -115,7 +115,7 @@
         },
         {
           "title": "Additions and ongoing support",
-          "body": "The proposal says what is in scope, what is not, and what an addition would cost."
+          "body": "The proposal says what is in scope, what is not, and what an addition would cost. Support after handover is optional and monthly, with its own fee."
         }
       ]
     },
@@ -176,7 +176,7 @@
     },
     {
       "q": "How do I choose a CRM implementation consultant?",
-      "a": "Choose a consultant who puts the scope, the fee and what counts as done in writing before work starts. Then check who does the build, whether a vendor pays them, whether they connect the tools around the CRM, and whether you can buy the software and the setup separately."
+      "a": "Choose a CRM consultant who puts the scope, the fee and what counts as done in writing before work starts. Then check who does the build, whether a vendor pays them, whether they connect the tools around the CRM, and whether you can buy the software and the setup separately."
     },
     {
       "q": "What is the best CRM for a small business in Canada?",

@@ -45,7 +45,7 @@
         },
         {
           "title": "AI workflow automation",
-          "body": "Rules and agents on the same path. Rules carry the steps that never need to guess."
+          "body": "Rules and agents on the same path. Rules carry the steps that never need to guess. Agents take the ones that need reading or writing."
         },
         {
           "title": "The approval point",
@@ -136,7 +136,7 @@
         },
         {
           "title": "What a person approves",
-          "body": "Ask which outputs can reach a customer without a person seeing them."
+          "body": "Ask which outputs can reach a customer without a person seeing them. In what we build, a rep approves drafted replies and follow-ups."
         },
         {
           "title": "What stays a rule",
@@ -180,7 +180,7 @@
     },
     {
       "q": "How much do AI agents and AI automation services cost?",
-      "a": "The build is a fixed fee quoted in writing, and model usage is billed separately by the provider. Stacktik quotes the build before work starts, with what is in scope and what is not. Usage of Claude or OpenAI is billed by the provider on its own pricing."
+      "a": "The build is a fixed fee, quoted in writing before work starts, with what is in scope and what is not. Usage of Claude or OpenAI is billed by the provider on its own pricing."
     },
     {
       "q": "How do I choose an AI agency or AI consultant?",

@@ -20,7 +20,7 @@
     },
     {
       "label": "How it is priced",
-      "text": "A fixed fee for the build, quoted in writing before work starts."
+      "text": "A fixed fee for the build, quoted in writing before work starts. HubSpot and the AI provider each stay on their own plan and pricing."
     }
   ],
   "blocks": [
@@ -28,7 +28,7 @@
       "type": "rows",
       "id": "ways-to-connect",
       "eyebrow": "How to connect",
-      "h2": "Four ways to connect HubSpot to Claude or ChatGPT.",
+      "h2": "Ways to connect HubSpot to Claude or ChatGPT.",
       "intro": "There is no single HubSpot AI integration. There are several routes, and the proposal says which one fits and why.",
       "items": [
         {
@@ -37,7 +37,7 @@
         },
         {
           "title": "HubSpot MCP",
-          "body": "MCP, the Model Context Protocol, is an open standard AI assistants use to reach other tools."
+          "body": "HubSpot offers an MCP server. MCP, the Model Context Protocol, is an open standard AI assistants use to reach other tools."
         },
         {
           "title": "An automation tool in between",
@@ -95,7 +95,7 @@
         },
         {
           "title": "A written proposal",
-          "body": "What to keep, connect or replace, the monthly cost of each tool, and our fee for the work, fixed before it starts."
+          "body": "What to keep, connect or replace, the monthly cost of each tool, and our fixed fee. Our relationship with each vendor is stated next to its price."
         },
         {
           "title": "Map the step",

@@ -37,11 +37,11 @@
         },
         {
           "title": "HubSpot migration: your data moved over",
-          "body": "Data migration from your current system or spreadsheets, with duplicates merged. The old system stays read-only during the switch, then it is yours to close."
+          "body": "Data migration from your current system or spreadsheets, with duplicates merged. Salesforce and ERP migrations are not usually in scope, so ask on the call."
         },
         {
           "title": "HubSpot integrations: calling and outreach",
-          "body": "The phone system connected to HubSpot, so calls are logged on the record with the recording attached."
+          "body": "The phone system connected to HubSpot, so calls are logged on the record with the recording attached. Email sequences that stop when a reply comes in."
         },
         {
           "title": "Reporting and the revenue scoreboard",
@@ -49,7 +49,7 @@
         },
         {
           "title": "AI agents and custom tools",
-          "body": "AI agents on Claude or OpenAI write call notes, qualify inbound leads and draft follow-ups. Where no platform covers a step, we build the tool."
+          "body": "Agents on Claude or OpenAI write call notes, qualify inbound leads and draft follow-ups for a rep to approve. Where no platform fits, we build the tool."
         },
         {
           "title": "Training and handover",
@@ -79,10 +79,6 @@
         {
           "title": "Works across every tool, not one vendor's",
           "body": "Setup, data, connections and training cover the whole stack: the CRM, the phone system, the outreach tool and the reporting."
-        },
-        {
-          "title": "Says so when you need less",
-          "body": "If HubSpot's own onboarding is enough for your case, we say so."
         }
       ]
     },
@@ -107,7 +103,7 @@
         },
         {
           "title": "Buying HubSpot: through us or direct",
-          "body": "We are enrolled in vendor programs with most of the platforms we set up, and the proposal states our relationship with HubSpot next to its price."
+          "body": "We handle the purchase through a vendor program where it helps, or tell you to buy direct. The proposal states our relationship with HubSpot."
         },
         {
           "title": "When to keep the CRM you have",
@@ -185,7 +181,7 @@
     },
     {
       "q": "Do I need a HubSpot expert, or is HubSpot's own onboarding enough?",
-      "a": "Not always. A vendor's own onboarding covers that vendor's tool, so if HubSpot is the only tool involved and nothing else has to connect to it, HubSpot's own onboarding may be enough. Stacktik says so when that is the better path."
+      "a": "Not always. HubSpot's own onboarding covers HubSpot, so it may be enough when nothing else has to connect to it, and we say so. Outside help fits better when the work crosses tools: data from another system, calling, outreach and reports."
     },
     {
       "q": "Do we have to buy HubSpot through Stacktik to get it set up?",

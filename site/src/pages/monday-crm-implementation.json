@@ -37,15 +37,15 @@
         },
         {
           "title": "Forms routed to reps",
-          "body": "A web form becomes a CRM record with its source attached and duplicates merged."
+          "body": "A web form becomes a CRM record with its source attached. A routing rule assigns an owner in turn, by territory, or to whoever is on duty."
         },
         {
           "title": "Automations and AI agents",
-          "body": "Routine steps run as documented rules: a missed call becomes a callback task, a booked call lands on the record."
+          "body": "Documented rules turn a missed call into a callback task. Agents on Claude or OpenAI qualify inbound leads and draft follow-ups for a rep to approve."
         },
         {
           "title": "Calling and email connected",
-          "body": "A business calling platform is connected to the CRM so each call is logged on the record with its recording."
+          "body": "Calls are logged on the CRM record with the recording. Email sequences go out from your reps' own inboxes and stop when a reply comes in."
         },
         {
           "title": "Dashboards and a revenue scoreboard",
@@ -82,11 +82,7 @@
         },
         {
           "title": "HubSpot vs monday CRM",
-          "body": "HubSpot and monday CRM are both on the list of CRMs we set up, alongside Close, Nutshell, Capsule and HighLevel."
-        },
-        {
-          "title": "When the vendor's onboarding is enough",
-          "body": "Some teams need no consultant. If the vendor's own onboarding is enough for your case, we say so."
+          "body": "We set up both, and Close, Nutshell, Capsule and HighLevel too. We shortlist from how your team works, not from a feature list."
         }
       ]
     },
@@ -107,7 +103,7 @@
         },
         {
           "title": "The purchase, through us or direct",
-          "body": "Where it helps, we set the plan and seats up through the vendor's program, in your name, and apply any customer offer it provides."
+          "body": "Where it helps, we set the plan and seats up through the vendor's program, in your name. Where it does not, we tell you to buy direct."
         },
         {
           "title": "The build",
@@ -119,7 +115,7 @@
         },
         {
           "title": "Training and handover",
-          "body": "Your team is trained on the setup, on your own data, and the sessions are recorded."
+          "body": "Your team is trained on the setup, then gets handover notes on how each piece runs and who to call."
         }
       ]
     },
@@ -189,11 +185,11 @@
     },
     {
       "q": "Do we need a monday.com partner or consultant to set up monday CRM?",
-      "a": "No. Some teams set it up themselves, and if the vendor's own onboarding is enough for your case, we say so. A consultant helps when the CRM has to work with calling, outreach and reporting tools as one system."
+      "a": "No. Some teams set it up themselves, and if the vendor's own onboarding is enough for your case, we say so. A consultant helps when the CRM has to work with calling, outreach and reporting tools as one system. The proposal states our relationship with each vendor next to its price."
     },
     {
       "q": "Can you move our data into monday CRM from spreadsheets or another CRM?",
-      "a": "Yes. Data migration from your current system or spreadsheets is part of what an implementation can include, with duplicates merged on the way in. The old system stays read-only during the switch, then it is yours to close."
+      "a": "Yes. Data migration from your current system or spreadsheets is part of what an implementation can include, with duplicates merged on the way in. The old system stays read-only during the switch. Salesforce and ERP migrations are not usually in scope."
     }
   ],
   "closeH2": "Start with a call about your monday CRM setup.",

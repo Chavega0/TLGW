@@ -45,7 +45,7 @@
         },
         {
           "title": "Email sequences and their rules",
-          "body": "Sequences your reps send from their own inboxes, with the rules that stop them when a reply comes in. We build the sequence."
+          "body": "Sequences sent from your reps' own inboxes, stopped when a reply comes in. We build the sequence. Your team writes and sends the copy."
         },
         {
           "title": "Lead routing",
@@ -79,10 +79,6 @@
         {
           "title": "Close CRM pricing, in structure",
           "body": "Close is priced per user on its own plans and billed by Close, with separate charges for phone numbers, calls and texts."
-        },
-        {
-          "title": "Close CRM integrations",
-          "body": "Close connects to other tools through its own integrations, through a connector such as Zapier, or through a custom connector we build."
         }
       ]
     },
@@ -156,7 +152,7 @@
     },
     {
       "q": "How do you move our data into Close?",
-      "a": "We map your fields to Close, clean the data, merge duplicates, run a test import and check it against the source before the final move. The old system stays read-only during the switch."
+      "a": "We map your fields to Close, clean the data, merge duplicates, run a test import and check it against the source before the final move. The old system stays read-only during the switch. Salesforce and ERP migrations are not usually in scope, so ask on the call."
     }
   ],
   "closeH2": "Start with how your team sells today.",

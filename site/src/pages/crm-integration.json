@@ -61,7 +61,7 @@
       "type": "rows",
       "id": "three-ways",
       "eyebrow": "How to integrate",
-      "h2": "Three ways to integrate a tool with your CRM.",
+      "h2": "Ways to integrate a tool with your CRM.",
       "intro": "Most connections can be made in more than one way.",
       "items": [
         {
@@ -118,7 +118,7 @@
   ],
   "platforms": {
     "h2": "The platforms we connect.",
-    "intro": "These are the CRM, calling, outreach, AI and reporting platforms Stacktik sets up and connects.",
+    "intro": "Stacktik sets up and connects these CRM, calling, outreach, AI and reporting platforms. The proposal states our relationship with each.",
     "names": [
       "HubSpot",
       "monday.com CRM",
