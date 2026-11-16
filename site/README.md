@@ -6,6 +6,7 @@ static HTML with no dependencies.
 ```
 node site/build.mjs     # writes site/dist
 node site/check.mjs     # SEO checks on the build; fails on any broken rule
+node site/lint-pages.mjs # copy rules and word limits for src/pages/*.json
 node site/serve.mjs     # preview at http://localhost:4321 with production-style URLs
 node site/og.mjs        # re-render share images and icons (needs Playwright; run when a headline changes)
 ```
@@ -17,6 +18,13 @@ node site/og.mjs        # re-render share images and icons (needs Playwright; ru
   them with the shared template in `build.mjs`.
 - `src/search-map.json`: which page targets which search terms, with measured volume. Readable version in
   `docs/search-map.md`.
+- `visuals.mjs`: the visual layer of the landing pages. An animated product scene in each hero (pipeline, call,
+  AI receptionist, AI agent, connections, migration or audit, chosen per page in `SCENES`), the moving band of
+  vendor tiles under the hero (`TILES`, picked by topic in `TOPICS`), the logo tiles in the platforms section, and
+  an illustration on each step and service card. All HTML, CSS and inline SVG: no image files, and reduced motion
+  shows each scene finished. Vendor marks come from the homepage source; a vendor without a mark there is shown
+  as its name.
+- `src/illos.json`: the small looping illustrations, taken from the homepage and details page.
 - `public/`: the film, share images (`og/`), icons. Copied to the build as is.
 - `../vercel.json`: hosting rules (clean URLs, HTTPS header, caching, redirects, no indexing on the vercel.app
   address so only stacktik.com is indexed).
@@ -29,7 +37,8 @@ BreadcrumbList, Service, FAQPage, VideoObject), footer links to every service pa
 
 ## Rules for copy
 
-RevOps is the specialty. No invented numbers, results, prices or timelines. No discount language. The technology
+Keep it short: `lint-pages.mjs` holds each field to a word limit. RevOps is the specialty, and Stacktik serves
+Canada and the United States. No invented numbers, results, prices or timelines. No discount language. The technology
 distributor is never named. No claims of certified or official partner status. `check.mjs` enforces the mechanical
 ones (one H1 per page, unique titles and descriptions, working links, valid structured data).
 

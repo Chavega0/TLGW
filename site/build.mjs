@@ -5,12 +5,14 @@
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, readdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { initVisuals, heroScene, tileBand, logoWall, stepIllo, cardIllo, VISUAL_CSS } from "./visuals.mjs";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const SRC = join(ROOT, "src");
 const OUT = join(ROOT, "dist");
 const ORIGIN = "https://stacktik.com";
 const TODAY = process.env.BUILD_DATE || new Date().toISOString().slice(0, 10);
+initVisuals(readFileSync(join(SRC, "home.html"), "utf8"), join(SRC, "illos.json"));
 const ORG = {
   name: "Stacktik",
   legalName: "Stacktik Solutions Inc.",
@@ -100,7 +102,7 @@ const footerHtml = () => `<footer>${footLinks("Services", inGroup("service"))}${
   </div>
 </footer>`;
 
-const EXTRA_CSS = `
+const EXTRA_CSS = VISUAL_CSS + `
 /* Site-wide additions for the multi-page site: service links, breadcrumbs, key facts, platform chips, the booking form. */
 .foot-svc { display: grid !important; gap: 12px; justify-content: start; padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--ln); }
 .foot-svc nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
@@ -351,8 +353,8 @@ function buildLanding(p) {
   const name = metaOf(p).name;
   const steps = p.blocks.find((b) => b.type === "steps");
   const blockHtml = (b) => {
-    const rows = b.items.map((it, i) => `      <${b.type === "steps" ? "li" : "div"} class="ledger-row">
-        <div class="who">${b.type === "steps" ? `<span class="n">${String(i + 1).padStart(2, "0")}</span>` : ""}${esc(it.title)}</div>
+    const rows = b.items.map((it, i) => `      <${b.type === "steps" ? "li" : "div"} class="ledger-row${b.type === "steps" ? " has-illo" : ""}">
+        ${b.type === "steps" ? stepIllo(it.title) : ""}<div class="who">${b.type === "steps" ? `<span class="n">${String(i + 1).padStart(2, "0")}</span><span class="t">${esc(it.title)}</span>` : esc(it.title)}</div>
         <p>${esc(it.body)}</p>
       </${b.type === "steps" ? "li" : "div"}>`).join("\n");
     return `<section id="${attr(b.id)}" class="rule" data-tone="dark">
@@ -370,7 +372,7 @@ ${rows}
   };
   const related = metaOf(p).related.map((s) => services.find((x) => x.slug === s)).filter(Boolean);
   const main = `
-<section class="hero hero-short" data-tone="dark">
+<section class="hero hero-short hero-lp" data-tone="dark">
   <div class="wrap">
     <div class="hero-copy" style="max-width:46rem">
       <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">${esc(name)}</span></nav>
@@ -382,8 +384,11 @@ ${rows}
         ${steps ? `<a class="btn-text" href="#${attr(steps.id)}">How it works <svg aria-hidden="true"><use href="#chev"/></svg></a>` : ""}
       </div>
     </div>
+    ${heroScene(p.slug, metaOf(p).group)}
   </div>
 </section>
+
+${tileBand(p.slug, p.platforms.names)}
 
 <section id="in-short" class="rule" data-tone="dark">
   <div class="wrap">
@@ -406,9 +411,7 @@ ${p.blocks.map(blockHtml).join("\n\n")}
       <h2>${esc(p.platforms.h2)}</h2>
       <p class="lede">${esc(p.platforms.intro)}</p>
     </div>
-    <ul class="chips" data-reveal-group>
-${p.platforms.names.map((n) => `      <li>${esc(n)}</li>`).join("\n")}
-    </ul>
+    ${logoWall(p.platforms.names)}
     <p class="chips-note">Our relationship with each platform is stated on the proposal, next to its price. <a href="/details/#platforms">All the platforms we work with, by the job they do.</a></p>
   </div>
 </section>
@@ -432,7 +435,7 @@ ${related.length ? `<section id="related" class="rule" data-tone="dark">
       <h2>Often part of the same project.</h2>
     </div>
     <div class="rel" data-reveal-group>
-${related.map((r) => `      <a href="${r.path}"><strong>${esc(r.name)}</strong></a>`).join("\n")}
+${related.map((r) => `      <a href="${r.path}">${cardIllo(r.slug)}<strong>${esc(r.name)}</strong></a>`).join("\n")}
     </div>
     <p class="chips-note"><a href="/services/">All services and integrations</a></p>
   </div>
@@ -456,7 +459,7 @@ const SITE_NAV = [{ href: "/", text: "Home" }, { href: "/#help", text: "What we 
 
 function buildServices() {
   const cards = (items) => `<div class="rel" data-reveal-group>
-${items.map((r) => `      <a href="${r.path}"><strong>${esc(r.name)}</strong><span>${esc(r.blurb)}</span></a>`).join("\n")}
+${items.map((r) => `      <a href="${r.path}">${cardIllo(r.slug)}<strong>${esc(r.name)}</strong><span>${esc(r.blurb)}</span></a>`).join("\n")}
     </div>`;
   const group = (id, eyebrow, h2, lede, items) => (items.length ? `
 <section id="${id}" class="rule" data-tone="dark">
