@@ -1,0 +1,158 @@
+{
+ "slug": "crm-migration",
+ "title": "CRM migration and data migration services | Stacktik",
+ "metaDescription": "CRM migration by Stacktik: your records mapped, cleaned, de-duplicated and moved to the new CRM, with the old system read-only during the switch.",
+ "eyebrow": "CRM migration",
+ "h1": "CRM migration, with your data checked before the switch.",
+ "lede": "CRM migration is the work of moving your customer records from one CRM, or from spreadsheets, into another without losing history or creating duplicates. Stacktik, a RevOps (revenue operations) consultancy in Woodbridge, Ontario, maps, cleans and moves the data, rebuilds what the old system did, and keeps that system read-only until your team is working in the new one.",
+ "summary": [
+  {
+   "label": "What it is",
+   "text": "Moving contacts, companies, deals and their history into a new CRM, with fields mapped, duplicates merged and the result checked against the source."
+  },
+  {
+   "label": "Who it is for",
+   "text": "Teams changing CRM, leaving spreadsheets, or bringing several lists into one system, including moves into HubSpot, monday.com CRM or Close."
+  },
+  {
+   "label": "What you get",
+   "text": "Your data in the new CRM, a written field map, automations and connections rebuilt, the old system read-only during the switch, and recorded training."
+  },
+  {
+   "label": "How it is priced",
+   "text": "A fixed fee quoted in writing before work starts, set by how much data moves and from how many sources. The first call is free."
+  }
+ ],
+ "blocks": [
+  {
+   "type": "rows",
+   "id": "what-moves",
+   "eyebrow": "What moves",
+   "h2": "What a CRM data migration carries over.",
+   "intro": "Not everything in the old system deserves to move. The proposal lists what moves, what is archived and what is left behind, so nobody is surprised after the switch.",
+   "items": [
+    {
+     "title": "Contacts and companies",
+     "body": "People and the organizations they belong to, with the fields your team actually uses. Duplicates are merged before the move, not after."
+    },
+    {
+     "title": "Deals and pipeline history",
+     "body": "Open deals with their stage, value and owner, and closed deals where the history matters for reporting."
+    },
+    {
+     "title": "Activity and notes",
+     "body": "Calls, emails, notes and tasks attached to the right record, so the next conversation starts from what was already said."
+    },
+    {
+     "title": "Files and attachments",
+     "body": "Documents tied to a record, where the new CRM can hold them. Where it cannot, the proposal says where they will live."
+    },
+    {
+     "title": "Owners and permissions",
+     "body": "Each record assigned to a current user. Records owned by people who have left are reassigned by a rule you approve."
+    }
+   ]
+  },
+  {
+   "type": "rows",
+   "id": "what-breaks",
+   "eyebrow": "What to check first",
+   "h2": "What usually breaks in a CRM migration.",
+   "intro": "The data is half the job. The other half is everything the old system did quietly. These are the points that separate a clean switch from a messy one.",
+   "items": [
+    {
+     "title": "Automations do not move",
+     "body": "Workflows, reminders and assignment rules have to be rebuilt in the new CRM. We list them first, then decide which ones are still worth having."
+    },
+    {
+     "title": "Integrations have to be reconnected",
+     "body": "The phone system, email sequences, forms and reports all point at the old CRM. Each connection is rebuilt and tested against the new one."
+    },
+    {
+     "title": "Fields rarely match one to one",
+     "body": "Two systems seldom describe a customer the same way. A written field map decides where every value goes before anything is imported."
+    },
+    {
+     "title": "Dirty data moves with you",
+     "body": "A migration is the best moment to clean. Duplicates, dead records and fields nobody fills in are dealt with before the import."
+    },
+    {
+     "title": "Salesforce and ERP migrations",
+     "body": "Stacktik does not usually take on migrations out of Salesforce or an ERP. If that is where your data lives, ask on the call and you will get a straight answer."
+    }
+   ]
+  },
+  {
+   "type": "steps",
+   "id": "process",
+   "eyebrow": "How it works",
+   "h2": "How Stacktik runs a CRM migration.",
+   "intro": "One technical RevOps consultant is assigned to your project and stays with it. The steps and their order are written on the proposal. This is the usual outline.",
+   "items": [
+    {
+     "title": "A free call",
+     "body": "We go through how leads, calls and follow-ups move through your team today, what you use, and what isn't working. You get a straight answer on the right next step. No obligation."
+    },
+    {
+     "title": "A written proposal and field map",
+     "body": "What moves, what is archived, where every field goes, what has to be rebuilt, and our fee for the work, fixed before it starts."
+    },
+    {
+     "title": "Clean and test import",
+     "body": "Duplicates are merged and a test import is run into the new CRM. Your team checks a sample of records against the old system before the real move."
+    },
+    {
+     "title": "The switch",
+     "body": "The old system goes read-only and the full import runs. Automations and connections are switched to the new CRM and tested with real examples."
+    },
+    {
+     "title": "Training and handover",
+     "body": "Training sessions on your own data, recorded for the team. Handover notes say how each piece runs and who to call. Ongoing support is optional and monthly."
+    }
+   ]
+  }
+ ],
+ "platforms": {
+  "h2": "The CRMs we migrate into.",
+  "intro": "These are the CRMs Stacktik sets up and moves data into. Moves into HubSpot are the most common request. The proposal names the system that fits you.",
+  "names": [
+   "HubSpot",
+   "monday.com CRM",
+   "Close",
+   "Nutshell",
+   "Capsule",
+   "HighLevel"
+  ]
+ },
+ "faq": [
+  {
+   "q": "What is CRM migration?",
+   "a": "CRM migration is moving your customer records, deals and history from one CRM or from spreadsheets into another. A proper migration also rebuilds the automations and reconnects the tools that depended on the old system. Stacktik does both and keeps the old system read-only during the switch."
+  },
+  {
+   "q": "How much does a CRM data migration cost?",
+   "a": "It is a fixed fee quoted in writing before work starts. The fee depends on how many records move, how many sources they come from, how clean they are, and how much has to be rebuilt in the new CRM. Nothing is charged for the first call."
+  },
+  {
+   "q": "How does a HubSpot CRM migration work?",
+   "a": "A HubSpot migration follows the same order as any other: a field map, cleaning, a test import, the switch and the rebuild of automations and connections. Stacktik does the work inside your own HubSpot account through an admin seat you create and revoke at handover."
+  },
+  {
+   "q": "Do you migrate from Salesforce to HubSpot?",
+   "a": "Not usually. The details page on this site lists Salesforce and ERP migrations as not usually in scope. If you are leaving Salesforce, ask on the first call. We will tell you plainly whether we are the right firm for it."
+  },
+  {
+   "q": "Can you move us from Pipedrive or spreadsheets to HubSpot?",
+   "a": "Yes, that is the kind of move we do: from a lighter CRM or from spreadsheets into the system your team will run on. Fields are mapped in writing, duplicates are merged, and a test import is checked before the switch."
+  },
+  {
+   "q": "Will we lose data or history in the migration?",
+   "a": "Not if the field map is agreed first. Everything that moves is listed on the proposal, the test import is checked against the source, and the old system stays read-only during the switch so nothing is lost while your team changes over."
+  }
+ ],
+ "closeH2": "Start with where your data lives today.",
+ "closeLede": "A free call about the system you are leaving and the one you are moving to. You get a written proposal with the field map and a fixed fee.",
+ "keywordsUsed": [],
+ "keywordsSkipped": [],
+ "sources": []
+}
