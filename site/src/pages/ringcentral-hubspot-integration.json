@@ -41,15 +41,15 @@
     },
     {
      "title": "Recordings and notes attached",
-     "body": "The recording and the notes sit with the call on the record, where a manager or a colleague can find them."
+     "body": "Where call recording is turned on in RingCentral, a playback link sits with the call and its notes on the record. The recording itself stays in RingCentral."
     },
     {
      "title": "The caller's record in view",
-     "body": "When a known contact calls, the rep sees who it is and what was said last time."
+     "body": "When a known contact calls, the rep sees who it is and can open the record with its history."
     },
     {
      "title": "Other RingCentral integrations",
-     "body": "RingCentral connects to other business tools as well. If your team also needs a RingCentral CRM integration beyond HubSpot, the proposal covers it."
+     "body": "RingCentral connects to other business tools as well. If your team also needs a RingCentral CRM integration for another system we set up, the proposal says what is possible."
     }
    ]
   },
@@ -161,7 +161,7 @@
   },
   {
    "q": "How much does the RingCentral HubSpot integration cost to set up?",
-   "a": "Stacktik quotes the setup as a fixed fee in writing before work starts. RingCentral and HubSpot are each billed by the vendor on their own plans. Nothing is charged for the first call."
+   "a": "Stacktik quotes the setup as a fixed fee in writing before work starts. RingCentral and HubSpot each stay on the vendor's own plan and pricing. Nothing is charged for the first call."
   },
   {
    "q": "Can we buy RingCentral through Stacktik?",
@@ -173,7 +173,7 @@
   },
   {
    "q": "What if calls are not logging correctly today?",
-   "a": "That is usually a rules problem, not a broken integration: the wrong users connected, unknown callers with no owner, or duplicates. We review the setup, fix the rules and test again with real calls."
+   "a": "The cause is often in the setup: the wrong users connected, unknown callers with no owner, or duplicates. We review the setup, fix the rules and test again with real calls."
   }
  ],
  "closeH2": "Start with how your team calls today.",

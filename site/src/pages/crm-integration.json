@@ -3,7 +3,7 @@
  "title": "CRM integration services for sales teams | Stacktik",
  "metaDescription": "CRM integration services from Stacktik: your phone system, outreach, forms, reporting and AI agents connected to the CRM, tested and documented.",
  "eyebrow": "CRM integration services",
- "h1": "CRM integration services that leave nothing to retype.",
+ "h1": "CRM integration services, tested and documented.",
  "lede": "CRM integration is connecting the tools your team uses to the CRM, so a call, an email, a form or a signed deal lands on the customer record without anyone retyping it. Stacktik, a RevOps (revenue operations) consultancy in Woodbridge, Ontario, provides CRM integration services for sales and customer-facing teams: each connection is built, tested with real examples and documented, for a fixed fee quoted in writing.",
  "summary": [
   {
@@ -29,7 +29,7 @@
    "id": "common-integrations",
    "eyebrow": "What we connect",
    "h2": "The CRM integrations a sales team needs most.",
-   "intro": "The CRM is the system the others connect to. These are the connections Stacktik builds most often, drawn from the scope list on every proposal.",
+   "intro": "The CRM is the system the others connect to. These are the connections Stacktik builds most often, drawn from the list each proposal is scoped from.",
    "items": [
     {
      "title": "Phone system to CRM",
@@ -37,7 +37,7 @@
     },
     {
      "title": "Email and outreach to CRM",
-     "body": "Sequences your reps send from their own inboxes, with replies landing on the record and stopping the sequence. Tools such as lemlist and Instantly connect to HubSpot this way."
+     "body": "Sequences your reps send from their own inboxes, with replies landing on the record and stopping the sequence. lemlist, for example, logs sent emails and replies to the HubSpot contact."
     },
     {
      "title": "Forms and lead routing",
@@ -78,7 +78,7 @@
     },
     {
      "title": "An AI agent on top",
-     "body": "Where a step needs reading or writing, such as qualifying a lead or drafting a follow-up, an agent built on Claude or OpenAI does it, with a person approving."
+     "body": "Where a step needs reading or writing, such as qualifying a lead or drafting a follow-up, an agent built on Claude or OpenAI does it, with a person approving anything that reaches a customer."
     },
     {
      "title": "Fewer connections, documented",
@@ -147,7 +147,7 @@
   },
   {
    "q": "Can you connect our phone system to the CRM?",
-   "a": "Yes. A phone system connected to the CRM, with calls logged and recordings attached, is on the scope list of every Stacktik implementation. If you do not have a phone system that integrates well, we can shortlist one on the same proposal."
+   "a": "Yes. A phone system connected to the CRM, with calls logged and recordings attached, is on the list of work a Stacktik implementation can include. If you do not have a phone system that integrates well, we can shortlist one on the same proposal."
   },
   {
    "q": "Do you set up HubSpot integrations?",

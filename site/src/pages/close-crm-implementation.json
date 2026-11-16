@@ -78,7 +78,7 @@
     },
     {
      "title": "Close CRM pricing, in structure",
-     "body": "Close is priced per user on its own plans and billed by Close. The proposal shows the monthly cost for your seat count. No figures are published here because plans change."
+     "body": "Close is priced per user on its own plans and billed by Close, with separate charges for phone numbers, calls and texts. The proposal shows the monthly plan cost for your seat count. No figures are published here because plans change."
     },
     {
      "title": "Close CRM integrations",
@@ -152,7 +152,7 @@
   },
   {
    "q": "Which tools integrate with Close CRM?",
-   "a": "Close has its own integrations, and most other tools can be connected through Zapier or a custom connector. Stacktik connects calling, email outreach, conversation notes, reporting and AI agents to the CRM, and documents each connection so your team knows how it runs."
+   "a": "Close has its own integrations, and many other tools can be connected through Zapier or a custom connector. Stacktik connects calling, email outreach, conversation notes, reporting and AI agents to the CRM, and documents each connection so your team knows how it runs."
   },
   {
    "q": "How do you move our data into Close?",

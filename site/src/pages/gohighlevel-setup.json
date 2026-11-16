@@ -82,7 +82,7 @@
     },
     {
      "title": "GoHighLevel pricing, in structure",
-     "body": "HighLevel is billed by the vendor on its own plans, with usage charges for some messaging and calling. The proposal shows the monthly cost that applies to you."
+     "body": "Bought direct, HighLevel is billed by the vendor on its own plans, with usage charges for some messaging and calling. An account bought through an agency is billed by that agency. The proposal shows the monthly cost that applies to you."
     }
    ]
   },
@@ -118,7 +118,7 @@
  ],
  "platforms": {
   "h2": "HighLevel and the tools we connect to it.",
-  "intro": "HighLevel is one of the CRMs Stacktik sets up. These are the tools we most often connect around a CRM. The proposal names the ones that fit you.",
+  "intro": "HighLevel is one of the CRMs Stacktik sets up. These are the tools we connect around a CRM, through the tool's own integration, Zapier or a custom connector. The proposal names the ones that fit you.",
   "names": [
    "HighLevel",
    "CloudTalk",
@@ -146,7 +146,7 @@
   },
   {
    "q": "How much does a GoHighLevel setup cost?",
-   "a": "The setup is a fixed fee, quoted in writing before work starts, and it depends on scope. HighLevel itself is billed by the vendor on its own plans. The proposal shows both numbers separately. Nothing is charged for the first call."
+   "a": "The setup is a fixed fee, quoted in writing before work starts, and it depends on scope. HighLevel itself is billed on its own plans, by the vendor or by the agency you bought it from. The proposal shows both numbers separately. Nothing is charged for the first call."
   },
   {
    "q": "Are you a GoHighLevel agency?",

@@ -20,7 +20,7 @@
   },
   {
    "label": "How it is priced",
-   "text": "A fixed fee for the build, quoted in writing before work starts. Zapier is billed by Zapier on its own plans. The first call is free."
+   "text": "A fixed fee for the build, quoted in writing before work starts. Zapier stays on Zapier's own plan and pricing. The first call is free."
   }
  ],
  "blocks": [
@@ -62,7 +62,7 @@
    "id": "which-tool",
    "eyebrow": "Choosing the tool",
    "h2": "When Zapier is the right tool, and when it is not.",
-   "intro": "Zapier is one of three ways to connect two tools. A careful Zapier expert tells you when one of the other two is better, even though it means less Zapier.",
+   "intro": "Zapier is one of three ways to connect two tools. A careful consultant tells you when one of the other two is better, even though it means less Zapier.",
    "items": [
     {
      "title": "The vendor's own integration",
@@ -78,7 +78,7 @@
     },
     {
      "title": "An AI agent, where judgement is needed",
-     "body": "A rule cannot read a message and decide what it means. For steps that need reading or writing, we build an AI agent on Claude or OpenAI, with a person approving."
+     "body": "A rule cannot read a message and decide what it means. For steps that need reading or writing, we build an AI agent on Claude or OpenAI, with a person approving anything that reaches a customer."
     },
     {
      "title": "Fewer automations, well documented",
@@ -145,8 +145,8 @@
    "a": "CRM automation is having the CRM and the tools around it carry out routine steps by rule: creating a record from a form, assigning an owner, logging a call, stopping a sequence on a reply, updating a deal stage. It removes the retyping, not the judgement."
   },
   {
-   "q": "How much does a Zapier expert cost?",
-   "a": "Stacktik quotes the build as a fixed fee in writing before work starts, based on how many steps are automated and how many tools they touch. Zapier itself is billed by Zapier on its own plans. Nothing is charged for the first call."
+   "q": "How much does a Zapier consultant cost?",
+   "a": "Stacktik quotes the build as a fixed fee in writing before work starts, based on how many steps are automated and how many tools they touch. Zapier itself stays on Zapier's own plan and pricing. Nothing is charged for the first call."
   },
   {
    "q": "Are you a Zapier agency?",

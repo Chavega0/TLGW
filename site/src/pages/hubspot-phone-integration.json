@@ -3,7 +3,7 @@
  "title": "HubSpot phone integration and calling setup | Stacktik",
  "metaDescription": "HubSpot phone integration by Stacktik: your phone system connected to HubSpot so calls are placed from the CRM and logged with the recording.",
  "eyebrow": "HubSpot phone integration",
- "h1": "HubSpot phone integration, with every call on the record.",
+ "h1": "HubSpot phone integration, with your calls on the record.",
  "lede": "A HubSpot phone integration connects your business phone system to HubSpot, so calls are placed from the CRM, logged to the contact record and stored with the recording attached. Stacktik, a RevOps (revenue operations) consultancy in Woodbridge, Ontario, helps you choose the phone system, connects it to HubSpot and tests it with your team, for a fixed fee quoted in writing.",
  "summary": [
   {
@@ -33,7 +33,7 @@
    "items": [
     {
      "title": "HubSpot's own calling",
-     "body": "HubSpot includes calling from the record. It suits a small team with simple needs. A team with shared lines, queues or heavy call volume usually outgrows it."
+     "body": "HubSpot includes calling from the record, with calling minutes set by your HubSpot plan. Whether that is enough depends on how your team shares lines and how much it calls, so we check it first."
     },
     {
      "title": "Dialpad with HubSpot",
@@ -49,7 +49,7 @@
     },
     {
      "title": "RingCentral, Aircall and Zoom",
-     "body": "These come through our supplier network on the same proposal. Zoom's HubSpot integration is best known for meetings, so if you use Zoom for calls we check what it logs first."
+     "body": "These come through our supplier network on the same proposal. HubSpot's Zoom integration covers meetings and webinars. Zoom Phone has a separate HubSpot app, so if you use Zoom for calls we check what that app logs first."
     }
    ]
   },
@@ -95,7 +95,7 @@
     },
     {
      "title": "A written proposal",
-     "body": "Two or three phone options that fit how you call, each with its monthly cost, and our fixed fee for the setup. Keeping the phone system you have is always one of the options."
+     "body": "Two or three phone options that fit how you call, each with its monthly cost, and our fixed fee for the setup. Keeping the phone system you have is one of the options where it connects to HubSpot."
     },
     {
      "title": "The purchase, if you want it",
@@ -131,11 +131,11 @@
  "faq": [
   {
    "q": "What is a HubSpot phone integration?",
-   "a": "A HubSpot phone integration connects a business phone system to HubSpot. Reps place calls from the contact record, and each call is logged there with its recording and outcome. It is also called a HubSpot VoIP integration or a VoIP CRM integration."
+   "a": "A HubSpot phone integration connects a business phone system to HubSpot. Reps place calls from the contact record, and calls are logged there with the recording and outcome. It is also called a HubSpot VoIP integration or a VoIP CRM integration."
   },
   {
    "q": "Which phone system works best with HubSpot?",
-   "a": "It depends on how your team calls. HubSpot's own calling suits a small team. Dialpad, CloudTalk and Kixie suit teams that need shared lines, call queues or volume dialling. Stacktik shortlists two or three on a written proposal with the monthly cost of each."
+   "a": "It depends on how your team calls. HubSpot's own calling can be enough where your plan's calling limits fit. Dialpad, CloudTalk and Kixie suit teams that need shared lines, call queues or volume dialling. Stacktik shortlists two or three on a written proposal with the monthly cost of each."
   },
   {
    "q": "Is there a Dialpad HubSpot integration?",
@@ -143,11 +143,11 @@
   },
   {
    "q": "Does Zoom integrate with HubSpot?",
-   "a": "Yes, most visibly for meetings. If you want Zoom to carry your phone calls as well, Stacktik checks what the current integration writes to the HubSpot record before recommending it, and says so on the proposal."
+   "a": "Yes. HubSpot's Zoom integration covers meetings and webinars, and Zoom Phone has a separate HubSpot app for calls. If you want Zoom to carry your phone calls, Stacktik checks what that app writes to the HubSpot record before recommending it, and says so on the proposal."
   },
   {
    "q": "How much does a HubSpot phone integration cost?",
-   "a": "Stacktik quotes the setup as a fixed fee in writing before work starts. The phone system is billed by its vendor per user on its own plans, and the proposal shows that monthly cost beside each option. Nothing is charged for the first call."
+   "a": "Stacktik quotes the setup as a fixed fee in writing before work starts. The phone system stays on its vendor's own plan and pricing, and the proposal shows that monthly cost beside each option. Nothing is charged for the first call."
   },
   {
    "q": "Do we have to change our phone system?",

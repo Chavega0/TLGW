@@ -41,14 +41,14 @@
     },
     {
      "title": "Activity and notes",
-     "body": "Calls, emails, notes and tasks attached to the right record, so the next conversation starts from what was already said."
+     "body": "Calls, emails, notes and tasks attached to the right record, where the new CRM can import them, so the next conversation starts from what was already said."
     },
     {
      "title": "Files and attachments",
      "body": "Documents tied to a record, where the new CRM can hold them. Where it cannot, the proposal says where they will live."
     },
     {
-     "title": "Owners and permissions",
+     "title": "Record owners",
      "body": "Each record assigned to a current user. Records owned by people who have left are reassigned by a rule you approve."
     }
    ]
@@ -114,7 +114,7 @@
  ],
  "platforms": {
   "h2": "The CRMs we migrate into.",
-  "intro": "These are the CRMs Stacktik sets up and moves data into. Moves into HubSpot are the most common request. The proposal names the system that fits you.",
+  "intro": "These are the CRMs Stacktik sets up and moves data into. The proposal names the system that fits you.",
   "names": [
    "HubSpot",
    "monday.com CRM",
@@ -143,11 +143,11 @@
   },
   {
    "q": "Can you move us from Pipedrive or spreadsheets to HubSpot?",
-   "a": "Yes, that is the kind of move we do: from a lighter CRM or from spreadsheets into the system your team will run on. Fields are mapped in writing, duplicates are merged, and a test import is checked before the switch."
+   "a": "Yes, that is the kind of move we do: from another CRM or from spreadsheets into the system your team will run on. Fields are mapped in writing, duplicates are merged, and a test import is checked before the switch."
   },
   {
    "q": "Will we lose data or history in the migration?",
-   "a": "Not if the field map is agreed first. Everything that moves is listed on the proposal, the test import is checked against the source, and the old system stays read-only during the switch so nothing is lost while your team changes over."
+   "a": "What moves, what is archived and what is left behind is listed on the proposal before anything is imported. The test import is checked against the source, and the old system stays read-only during the switch, so the original records are still there while your team changes over."
   }
  ],
  "closeH2": "Start with where your data lives today.",

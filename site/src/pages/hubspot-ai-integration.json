@@ -20,7 +20,7 @@
   },
   {
    "label": "How it is priced",
-   "text": "A fixed fee for the build, quoted in writing before work starts. HubSpot and the AI provider each bill on their own pricing."
+   "text": "A fixed fee for the build, quoted in writing before work starts. HubSpot and the AI provider each stay on their own plan and pricing."
   }
  ],
  "blocks": [
@@ -49,7 +49,7 @@
     },
     {
      "title": "HubSpot's built-in AI",
-     "body": "HubSpot also has AI features of its own inside the product. Where they already do the job, we say so and you need nothing extra."
+     "body": "HubSpot also has AI features of its own inside the product. Where they already do the job on your plan, we say so."
     }
    ]
   },
@@ -66,7 +66,7 @@
     },
     {
      "title": "What the AI may change",
-     "body": "Reading is low risk. Writing is not. We decide whether the AI drafts for a person, updates a record, or does neither."
+     "body": "Reading carries less risk than writing. We decide whether the AI drafts for a person, updates a record, or does neither."
     },
     {
      "title": "Where a person approves",
@@ -74,7 +74,7 @@
     },
     {
      "title": "Who can use it",
-     "body": "The AI should see what the user is allowed to see, and no more. Access follows the permissions already set in HubSpot."
+     "body": "The AI should see what the user is allowed to see, and no more. HubSpot's own connectors and MCP server follow the permissions already set in HubSpot. A custom agent's access is set when it is built."
     },
     {
      "title": "Where the data goes",
@@ -107,7 +107,7 @@
     },
     {
      "title": "Test on your own data, then train",
-     "body": "The agent runs on examples from your own records until the drafts are ones a rep would send. Your team is trained, and handover notes say how it runs."
+     "body": "The agent is tested on examples from your own records before it goes live. Your team is trained, and handover notes say how it runs."
     }
    ]
   }
@@ -144,11 +144,11 @@
   },
   {
    "q": "How much does a HubSpot AI integration cost?",
-   "a": "The build is a fixed fee, quoted in writing before work starts. HubSpot is billed by HubSpot, and model usage is billed by the AI provider on its own pricing. Nothing is charged for the first call."
+   "a": "The build is a fixed fee, quoted in writing before work starts. HubSpot stays on HubSpot's own plan and pricing, and model usage is charged at the AI provider's own pricing. Nothing is charged for the first call."
   },
   {
    "q": "Is it safe to connect ChatGPT or Claude to our CRM?",
-   "a": "It can be, if the limits are set first: what the AI may read, what it may change, who can use it and where a person approves. Stacktik writes those rules on the proposal and tests them on your own data before the agent goes live."
+   "a": "It can be, if the limits are set first: what the AI may read, what it may change, who can use it and where a person approves. Stacktik writes those rules down before anything is connected and tests them on your own data before the agent goes live."
   }
  ],
  "closeH2": "Start with one routine step in HubSpot.",
