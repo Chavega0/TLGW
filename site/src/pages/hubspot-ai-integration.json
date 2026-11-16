@@ -114,7 +114,7 @@
   ],
   "platforms": {
     "h2": "HubSpot and the AI models we build on.",
-    "intro": "Stacktik builds AI agents on Claude and OpenAI and connects them to the CRM. These are the platforms most often involved.",
+    "intro": "Stacktik builds AI agents on Claude and OpenAI and connects them to the CRM. These are the platforms involved.",
     "names": [
       "HubSpot",
       "Claude",

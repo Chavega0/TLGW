@@ -337,6 +337,9 @@ export const VISUAL_CSS = `
 .hero-lp h1 { font-size: clamp(2.3rem, 4vw, 3.4rem); }
 @media (max-width: 1000px) { .hero-lp .wrap { grid-template-columns: 1fr; } .hero-scene { max-width: 560px; } }
 .hero-scene { min-width: 0; }
+.trust { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: .84rem; color: var(--fg-muted); }
+.trust li { display: inline-flex; align-items: center; gap: 8px; }
+.trust li::before { content: ""; width: 12px; height: 7px; margin-top: -4px; border-left: 2px solid var(--green-light); border-bottom: 2px solid var(--green-light); transform: rotate(-45deg); flex: none; }
 .scene { position: relative; display: grid; gap: 0; font-family: var(--ui); font-size: .8rem; color: var(--fg); min-width: 0; }
 .scene .sk { display: block; height: 6px; border-radius: 3px; background: rgba(243, 236, 220, .13); }
 .sc-card { position: relative; background: linear-gradient(180deg, #26211C, #1B1815); border: 1px solid var(--ln); border-radius: 14px; padding: 16px; display: grid; gap: 12px; align-content: start; min-width: 0; box-shadow: inset 0 1px 0 rgba(243, 236, 220, .06), 0 30px 70px -36px rgba(0, 0, 0, .95); --knock: #211C18; }

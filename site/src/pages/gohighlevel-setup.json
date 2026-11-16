@@ -154,7 +154,7 @@
     },
     {
       "q": "Can you fix a HighLevel account that is already set up?",
-      "a": "Yes. The proposal says what to keep, what to connect and what to rebuild. Common fixes are stages nobody agrees on, leads with no owner, automations nobody documented and reports nobody reads. Each is quoted as a fixed fee in writing."
+      "a": "Yes. The proposal says what to keep, what to connect and what to rebuild. Fixes can cover stages nobody agrees on, leads with no owner, automations nobody documented and reports nobody reads. Each is quoted as a fixed fee in writing."
     }
   ],
   "closeH2": "Start with what your account does today.",

@@ -383,6 +383,7 @@ ${rows}
         <a class="btn" href="/blueprint/">Book a call ${chev}</a>
         ${steps ? `<a class="btn-text" href="#${attr(steps.id)}">How it works <svg aria-hidden="true"><use href="#chev"/></svg></a>` : ""}
       </div>
+      <ul class="trust"><li>Free first call</li><li>Fixed fee, quoted in writing</li><li>Accounts stay in your name</li></ul>
     </div>
     ${heroScene(p.slug, metaOf(p).group)}
   </div>
@@ -420,7 +421,7 @@ ${p.blocks.map(blockHtml).join("\n\n")}
   <div class="wrap">
     <div class="sec-head" data-reveal-group>
       <span class="eyebrow">Questions</span>
-      <h2>${esc(name)}: questions we get.</h2>
+      <h2>${esc(name)}: common questions.</h2>
     </div>
     <div class="faq" data-reveal-group>
 ${p.faq.map((f) => `      <div class="q"><h3>${esc(f.q)}</h3><p>${esc(f.a)}</p></div>`).join("\n")}
@@ -432,7 +433,7 @@ ${related.length ? `<section id="related" class="rule" data-tone="dark">
   <div class="wrap">
     <div class="sec-head" data-reveal-group>
       <span class="eyebrow">Related</span>
-      <h2>Often part of the same project.</h2>
+      <h2>Services that pair with this one.</h2>
     </div>
     <div class="rel" data-reveal-group>
 ${related.map((r) => `      <a href="${r.path}">${cardIllo(r.slug)}<strong>${esc(r.name)}</strong></a>`).join("\n")}
