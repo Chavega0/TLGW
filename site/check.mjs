@@ -28,7 +28,7 @@ for (const p of pages) {
   const ld = [...p.html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => { try { return JSON.parse(m[1]); } catch (e) { F("JSON-LD does not parse"); return null; } }).filter(Boolean);
   const types = ld.flatMap((d) => (d["@graph"] || [d]).flatMap((n) => [].concat(n["@type"])));
   for (const t of ["Organization", "WebSite", "WebPage"]) if (!types.includes(t)) F("structured data has no " + t);
-  const faqCount = (p.html.match(/<div class="q">/g) || []).length;
+  const faqCount = (p.html.match(/<details class="q">/g) || []).length;
   const faqLd = ld.flatMap((d) => d["@graph"] || [d]).find((n) => n["@type"] === "FAQPage");
   if (faqCount && (!faqLd || faqLd.mainEntity.length !== faqCount)) F(`FAQ schema has ${faqLd ? faqLd.mainEntity.length : 0} questions, page shows ${faqCount}`);
   if (p.path !== "/" && !types.includes("BreadcrumbList")) F("no breadcrumb schema");

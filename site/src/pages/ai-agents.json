@@ -1,230 +1,230 @@
 {
- "slug": "ai-agents",
- "title": "AI agents for business: sales and service teams | Stacktik",
- "metaDescription": "What AI agents for business are, where they help a sales or service team, and how Stacktik builds them on Claude and OpenAI, with a person approving.",
- "eyebrow": "AI agents for sales and service",
- "h1": "AI agents for business, built into the tools your team already uses.",
- "lede": "An AI agent is software that reads a message or a record, works out the next step within rules you set, and does it inside your tools. Stacktik builds AI agents for business on Claude and OpenAI for sales and service teams: follow-ups drafted, call notes written to the record, inbound leads qualified, handover notes prepared. A person on your team approves anything that reaches a customer.",
- "summary": [
-  {
-   "label": "What it is",
-   "text": "AI agents for business are software that reads a message or record, decides within your rules and acts in your tools. Stacktik builds them on Claude and OpenAI."
-  },
-  {
-   "label": "Who it is for",
-   "text": "Sales and customer-facing teams with routine steps that depend on someone remembering: follow-ups, call notes, lead qualifying and handovers."
-  },
-  {
-   "label": "What you get",
-   "text": "An agent mapped to one step, connected to your tools, tested on your own data, with a set approval point, a trained team and handover notes."
-  },
-  {
-   "label": "How it is priced",
-   "text": "The build is a fixed fee, quoted in writing before work starts. Model usage is billed by the provider. Nothing is charged for the first call."
-  }
- ],
- "blocks": [
-  {
-   "type": "rows",
-   "id": "agent-chatbot-automation",
-   "eyebrow": "Agent, chatbot or automation",
-   "h2": "What AI agents for business are, and what they are not.",
-   "intro": "Agent, chatbot and automation get used as if they meant the same thing. They do different jobs, and a working system usually needs more than one. This is how Stacktik uses each term on a proposal.",
-   "items": [
+  "slug": "ai-agents",
+  "title": "AI agents for business: sales and service teams | Stacktik",
+  "metaDescription": "What AI agents for business are, where they help a sales or service team, and how Stacktik builds them on Claude and OpenAI, with a person approving.",
+  "eyebrow": "AI agents for sales and service",
+  "h1": "AI agents for business, built into the tools your team already uses.",
+  "lede": "An AI agent is software that reads a message or a record, works out the next step within rules you set, and does it inside your tools.",
+  "summary": [
     {
-     "title": "AI agent",
-     "body": "Software built on an AI model, in our case Claude or OpenAI. It reads a message, a call or a record, makes a judgement within rules you set, and acts in your tools, usually the CRM (the system where every customer and conversation lives)."
+      "label": "What it is",
+      "text": "AI agents for business are software that reads a message or record, decides within your rules and acts in your tools."
     },
     {
-     "title": "Chatbot",
-     "body": "A chat window that answers questions in conversation. On your site it can answer the first question, capture who the visitor is and what they need, and hand the rest to a person. A chatbot talks. An agent also does the work on the record."
+      "label": "Who it is for",
+      "text": "Sales and customer-facing teams with routine steps that depend on someone remembering: follow-ups, call notes, lead qualifying and handovers."
     },
     {
-     "title": "Plain automation",
-     "body": "A rule the tools follow the same way every time, with no judgement involved. A web form becomes a CRM record. A lead is routed to a rep in turn or by territory. A reply stops a sequence. None of this needs AI."
+      "label": "What you get",
+      "text": "One agent mapped to one step, connected to your tools, tested on your own data, with a set approval point and handover notes."
     },
     {
-     "title": "AI workflow automation",
-     "body": "Rules and agents on the same path. Rules carry the steps that never need to guess. An agent takes the steps that need reading or writing: qualifying a lead, writing call notes, drafting a follow-up. The AI automation Stacktik sets up is this mix."
-    },
-    {
-     "title": "The approval point",
-     "body": "The step where a person checks an agent's work before it goes further. A rep reads the drafted reply, edits it if needed and sends it. In what Stacktik builds, a person approves anything that reaches a customer."
+      "label": "How it is priced",
+      "text": "The build is a fixed fee, quoted in writing before work starts. Model usage is billed by the provider."
     }
-   ]
-  },
-  {
-   "type": "rows",
-   "id": "where-agents-help",
-   "eyebrow": "Where agents help",
-   "h2": "Where AI agents for sales and service teams do the work.",
-   "intro": "An agent fits a step that is routine, needs some reading or writing, and depends today on someone remembering it. These are the steps Stacktik builds agents for, each one inside the CRM and tools you already run.",
-   "items": [
+  ],
+  "blocks": [
     {
-     "title": "Inbound leads qualified",
-     "body": "An agent reads the message against your fit rules: size, location, what they are asking for, and whether they are already a customer. A fit gets a CRM record, a booked call and a first reply drafted for a rep. When it is not a fit, the agent logs why."
+      "type": "rows",
+      "id": "agent-chatbot-automation",
+      "eyebrow": "Agent, chatbot or automation",
+      "h2": "What AI agents for business are, and what they are not.",
+      "intro": "Agent, chatbot and automation get used as if they meant the same thing.",
+      "items": [
+        {
+          "title": "AI agent",
+          "body": "Software built on an AI model, in our case Claude or OpenAI."
+        },
+        {
+          "title": "Chatbot",
+          "body": "A chat window that answers questions in conversation. A chatbot talks. An agent also does the work on the record."
+        },
+        {
+          "title": "Plain automation",
+          "body": "A rule the tools follow the same way every time, with no judgement involved. A web form becomes a CRM record."
+        },
+        {
+          "title": "AI workflow automation",
+          "body": "Rules and agents on the same path. Rules carry the steps that never need to guess."
+        },
+        {
+          "title": "The approval point",
+          "body": "The step where a person checks an agent's work before it goes further. A rep reads the drafted reply, edits it if needed and sends it."
+        }
+      ]
     },
     {
-     "title": "The AI sales agent: replies and follow-ups",
-     "body": "The first reply is drafted in your tone with the details already in. Follow-ups are drafted and timed from the conversation so far. The rep approves and sends, and a reply from the customer stops the sequence."
+      "type": "rows",
+      "id": "where-agents-help",
+      "eyebrow": "Where agents help",
+      "h2": "Where AI agents for sales and service teams do the work.",
+      "intro": "An agent fits a step that is routine, needs some reading or writing, and depends today on someone remembering it.",
+      "items": [
+        {
+          "title": "Inbound leads qualified",
+          "body": "An agent reads the message against your fit rules: size, location, what they are asking for, and whether they are already a customer."
+        },
+        {
+          "title": "The AI sales agent: replies and follow-ups",
+          "body": "The first reply is drafted in your tone with the details already in. Follow-ups are drafted and timed from the conversation so far."
+        },
+        {
+          "title": "Call notes on the record",
+          "body": "After a call, the notes and the next step are written to the CRM record without anyone typing them."
+        },
+        {
+          "title": "Handover notes between people",
+          "body": "When a conversation passes from site chat to a rep, or between reps, an agent drafts the handover note from the record."
+        },
+        {
+          "title": "First questions answered on your site",
+          "body": "Chat on your site answers the first question, captures who the visitor is and what they need, and hands the rest to a person."
+        },
+        {
+          "title": "A pipeline kept current",
+          "body": "An agent flags deals that have gone quiet and suggests the next action, so the pipeline your team reads is current."
+        }
+      ]
     },
     {
-     "title": "Call notes on the record",
-     "body": "After a call, the notes and the next step are written to the CRM record without anyone typing them. The follow-up no longer depends on what the rep remembers, and the next person to open the record can see what was said."
+      "type": "steps",
+      "id": "how-stacktik-builds",
+      "eyebrow": "AI agent implementation",
+      "h2": "How Stacktik builds an agent, step by step.",
+      "intro": "Each build follows the same order, and one technical RevOps (revenue operations) consultant stays with it from the first call to the handover.",
+      "items": [
+        {
+          "title": "Map the step",
+          "body": "We start from how leads, calls and follow-ups move through your team today and choose the step an agent should take."
+        },
+        {
+          "title": "Connect the tools",
+          "body": "The agent is built on Claude or OpenAI and connected to the CRM, phone system and outreach tool you run."
+        },
+        {
+          "title": "Set the approval point",
+          "body": "We set where a person checks the work. Replies and follow-ups are drafted for a rep to approve and send."
+        },
+        {
+          "title": "Test on your own data",
+          "body": "Before it goes live, the agent runs on examples from your own data."
+        },
+        {
+          "title": "Train the team",
+          "body": "Your team is trained on the setup, on your own data, and the sessions are recorded."
+        },
+        {
+          "title": "Hand over, with notes",
+          "body": "Our handover notes say how each piece runs and who to call about it."
+        }
+      ]
     },
     {
-     "title": "Handover notes between people",
-     "body": "When a conversation passes from site chat to a rep, or from one rep to another, an agent drafts the handover note from the record: who the customer is, what they asked and what happens next. The next person starts from the record, not from memory."
-    },
-    {
-     "title": "First questions answered on your site",
-     "body": "Chat on your site answers the first question, captures who the visitor is and what they need, and hands the rest to a person. For a service team, the conversation arrives with its context attached to the record."
-    },
-    {
-     "title": "A pipeline kept current",
-     "body": "An agent flags deals that have gone quiet and suggests the next action, so the pipeline your team reads is current. Every agent runs inside your tools, and every answer stays in your CRM with its source attached."
+      "type": "rows",
+      "id": "how-to-choose",
+      "eyebrow": "How to choose",
+      "h2": "What to ask an AI automation agency or AI consultant.",
+      "intro": "The same questions apply whether you are comparing agencies, an AI consulting firm or one independent consultant.",
+      "items": [
+        {
+          "title": "Who builds it",
+          "body": "Ask whether the AI implementation consultant you meet on the first call is the person who builds the agent."
+        },
+        {
+          "title": "Where the agent runs",
+          "body": "Ask whether the agent works inside your own CRM and accounts or in a separate system."
+        },
+        {
+          "title": "What a person approves",
+          "body": "Ask which outputs can reach a customer without a person seeing them."
+        },
+        {
+          "title": "What stays a rule",
+          "body": "A careful workflow automation consultant tells you which steps need no AI at all."
+        },
+        {
+          "title": "How the fee is set",
+          "body": "Ask for the scope and the fee in writing before work starts, including what is not in scope."
+        },
+        {
+          "title": "Who pays the firm",
+          "body": "Ask what the firm is paid by the tools it recommends. Our proposal states our relationship with each vendor next to its price."
+        }
+      ]
     }
-   ]
+  ],
+  "platforms": {
+    "h2": "Claude AI for business teams, OpenAI and the tools agents run in.",
+    "intro": "Stacktik builds agents on Claude and OpenAI and connects them to the CRM, calling, site chat and support tools your team works in.",
+    "names": [
+      "Claude",
+      "OpenAI",
+      "Zapier",
+      "Relevance AI",
+      "Chatbase",
+      "Tidio",
+      "Fireflies.ai",
+      "HubSpot",
+      "monday.com CRM",
+      "Close",
+      "Nutshell",
+      "Capsule",
+      "HighLevel",
+      "Freshdesk"
+    ]
   },
-  {
-   "type": "steps",
-   "id": "how-stacktik-builds",
-   "eyebrow": "AI agent implementation",
-   "h2": "How Stacktik builds an agent, step by step.",
-   "intro": "Each build follows the same order, and one technical RevOps (revenue operations) consultant stays with it from the first call to the handover. The steps, their order and what we need from your team are written on the proposal.",
-   "items": [
+  "faq": [
     {
-     "title": "Map the step",
-     "body": "We start from how leads, calls and follow-ups move through your team today and choose the step an agent should take. We write down what it reads, the rules it follows and what a correct result looks like. Steps that need no judgement stay as rules."
+      "q": "What do AI agents for business actually do?",
+      "a": "They take routine steps that need reading or writing. An AI agent reads a message, a call or a record, makes a judgement within rules you set, and acts in your tools."
     },
     {
-     "title": "Connect the tools",
-     "body": "The agent is built on Claude or OpenAI and connected to the CRM, phone system and outreach tool you run. We work through an admin seat you create for us and can revoke at handover. Your data stays in your accounts."
+      "q": "How much do AI agents and AI automation services cost?",
+      "a": "The build is a fixed fee quoted in writing, and model usage is billed separately by the provider. Stacktik quotes the build before work starts, with what is in scope and what is not. Usage of Claude or OpenAI is billed by the provider on its own pricing."
     },
     {
-     "title": "Set the approval point",
-     "body": "We set where a person checks the work. Replies and follow-ups are drafted for a rep to approve and send. A person approves anything that reaches a customer, and every agent output keeps its source attached."
+      "q": "How do I choose an AI agency or AI consultant?",
+      "a": "Choose on who builds it, where it runs and what is in writing. Ask whether the person on the first call does the build, whether the agent works inside your own accounts, which outputs a person approves, and whether the fee is fixed before work starts."
     },
     {
-     "title": "Test on your own data",
-     "body": "Before it goes live, the agent runs on examples from your own data. Your team reads the output, and we adjust the rules and the wording until the drafts are ones a rep would send."
+      "q": "How do AI integration services work with the CRM we already have?",
+      "a": "The agent is connected to the tools you already own, and nothing is replaced unless it has to go. Stacktik maps the step, connects the CRM, phone system and outreach tool, sets where a person approves, tests on your own data and trains the team."
     },
     {
-     "title": "Train the team",
-     "body": "Your team is trained on the setup, on your own data, and the sessions are recorded. The people who approve the agent's work learn what it reads, what it writes and when to correct it."
+      "q": "Is an AI sales agent the same as an AI SDR?",
+      "a": "No, not as Stacktik builds it. An AI SDR (sales development representative) usually means software that prospects and sends outbound messages on its own. The agents we build qualify inbound leads, draft replies and follow-ups, and keep the CRM record current, and a rep approves what is sent."
     },
     {
-     "title": "Hand over, with notes",
-     "body": "Our handover notes say how each piece runs and who to call about it. Ongoing support is optional and monthly, for teams that want the people who built the system to keep it current."
+      "q": "Does AI for small business need a developer on staff?",
+      "a": "No. Stacktik builds the agent, connects it to your tools and trains your team on your own data, with the sessions recorded. Handover notes say how each piece runs and who to call. Ongoing support is optional and monthly."
     }
-   ]
-  },
-  {
-   "type": "rows",
-   "id": "how-to-choose",
-   "eyebrow": "How to choose",
-   "h2": "What to ask an AI automation agency or AI consultant.",
-   "intro": "The same questions apply whether you are comparing agencies, an AI consulting firm or one independent consultant. Stacktik's own answer follows each question, so you can hold us to it.",
-   "items": [
+  ],
+  "closeH2": "Start with one routine step.",
+  "closeLede": "The first call is free. We tell you if a rule would do the job without an agent.",
+  "keywordsUsed": [
+    "ai agents for business",
+    "ai agents",
+    "ai automation agency",
+    "ai agency",
+    "ai automation",
+    "ai automation services",
+    "ai consulting",
+    "ai consultant",
+    "ai integration services",
+    "ai implementation consultant",
+    "ai agent implementation",
+    "claude ai for business",
+    "ai sales agent",
+    "ai agents for sales",
+    "ai sdr",
+    "ai workflow automation",
+    "ai for small business",
+    "workflow automation consultant"
+  ],
+  "keywordsSkipped": [
     {
-     "title": "Who builds it",
-     "body": "Ask whether the AI implementation consultant you meet on the first call is the person who builds the agent. At Stacktik, one technical RevOps consultant is assigned to your project and stays with it from the first idea to fully deployed."
-    },
-    {
-     "title": "Where the agent runs",
-     "body": "Ask whether the agent works inside your own CRM and accounts or in a separate system. Stacktik builds every agent inside your tools, through a seat you control, and your data stays in your accounts."
-    },
-    {
-     "title": "What a person approves",
-     "body": "Ask which outputs can reach a customer without a person seeing them. In what Stacktik builds, a person approves anything that reaches a customer, and the approval point is set before the agent goes live."
-    },
-    {
-     "title": "What stays a rule",
-     "body": "A careful workflow automation consultant tells you which steps need no AI at all. Routing a lead, creating a record and stopping a sequence on a reply are rules. We use an agent only where the step needs reading or writing."
-    },
-    {
-     "title": "How the fee is set",
-     "body": "Ask for the scope and the fee in writing before work starts, including what is not in scope. Stacktik quotes implementation as a fixed fee on a written proposal. Model usage is billed by the provider."
-    },
-    {
-     "title": "Who pays the firm",
-     "body": "Ask what the firm is paid by the tools it recommends. Stacktik is enrolled in vendor partner programs with most of the platforms it sets up, and the proposal states its relationship with each one next to its price."
+      "keyword": "ai lead generation",
+      "reason": "The site says running your outbound is not usually in scope and describes agents that qualify and capture inbound leads, not generate them. Using the term would imply a lead generation service Stacktik does not state it offers."
     }
-   ]
-  }
- ],
- "platforms": {
-  "h2": "Claude AI for business teams, OpenAI and the tools agents run in.",
-  "intro": "Stacktik builds agents on Claude and OpenAI and connects them to the CRM, calling, site chat and support tools your team works in. The proposal states our relationship with each platform next to its price.",
-  "names": [
-   "Claude",
-   "OpenAI",
-   "Zapier",
-   "Relevance AI",
-   "Chatbase",
-   "Tidio",
-   "Fireflies.ai",
-   "HubSpot",
-   "monday.com CRM",
-   "Close",
-   "Nutshell",
-   "Capsule",
-   "HighLevel",
-   "Freshdesk"
   ]
- },
- "faq": [
-  {
-   "q": "What do AI agents for business actually do?",
-   "a": "They take routine steps that need reading or writing. An AI agent reads a message, a call or a record, makes a judgement within rules you set, and acts in your tools. The agents Stacktik builds qualify inbound leads, draft replies and follow-ups for a rep to approve, write call notes to the CRM record and flag opportunities that have gone quiet."
-  },
-  {
-   "q": "How much do AI agents and AI automation services cost?",
-   "a": "The build is a fixed fee quoted in writing, and model usage is billed separately by the provider. Stacktik quotes the build before work starts, with what is in scope and what is not. Usage of Claude or OpenAI is billed by the provider on its own pricing. Ongoing support is optional and monthly. No figures are published because every project is scoped. Nothing is charged for the first call."
-  },
-  {
-   "q": "How do I choose an AI agency or AI consultant?",
-   "a": "Choose on who builds it, where it runs and what is in writing. Ask whether the person on the first call does the build, whether the agent works inside your own accounts, which outputs a person approves, and whether the fee is fixed before work starts. Stacktik is a RevOps (revenue operations) consultancy in Woodbridge, Ontario, not a general AI agency. We build agents for sales and customer-facing teams."
-  },
-  {
-   "q": "How do AI integration services work with the CRM we already have?",
-   "a": "The agent is connected to the tools you already own, and nothing is replaced unless it has to go. Stacktik maps the step, connects the CRM, phone system and outreach tool, sets where a person approves, tests on your own data and trains the team. The work runs through an admin seat you create and can revoke. You can buy software direct and hire us only for the build, or buy through us and run the setup yourself."
-  },
-  {
-   "q": "Is an AI sales agent the same as an AI SDR?",
-   "a": "No, not as Stacktik builds it. An AI SDR (sales development representative) usually means software that prospects and sends outbound messages on its own. The agents we build qualify inbound leads, draft replies and follow-ups, and keep the CRM record current, and a rep approves what is sent. We set up outreach sequences as well, but your team sends them. Running your outbound for you is not usually in scope."
-  },
-  {
-   "q": "Does AI for small business need a developer on staff?",
-   "a": "No. Stacktik builds the agent, connects it to your tools and trains your team on your own data, with the sessions recorded. Handover notes say how each piece runs and who to call. Ongoing support is optional and monthly. If a plain rule would do the job without AI, or the answer is nothing yet, we say so on the first call."
-  }
- ],
- "closeH2": "Start with one routine step.",
- "closeLede": "The first call is free. We go through what you use today and which step an agent should take, and we tell you if a rule would do the job without one.",
- "keywordsUsed": [
-  "ai agents for business",
-  "ai agents",
-  "ai automation agency",
-  "ai agency",
-  "ai automation",
-  "ai automation services",
-  "ai consulting",
-  "ai consultant",
-  "ai integration services",
-  "ai implementation consultant",
-  "ai agent implementation",
-  "claude ai for business",
-  "ai sales agent",
-  "ai agents for sales",
-  "ai sdr",
-  "ai workflow automation",
-  "ai for small business",
-  "workflow automation consultant"
- ],
- "keywordsSkipped": [
-  {
-   "keyword": "ai lead generation",
-   "reason": "The site says running your outbound is not usually in scope and describes agents that qualify and capture inbound leads, not generate them. Using the term would imply a lead generation service Stacktik does not state it offers."
-  }
- ]
 }

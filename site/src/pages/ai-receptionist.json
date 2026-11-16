@@ -1,230 +1,230 @@
 {
- "slug": "ai-receptionist",
- "title": "AI receptionist: what it is and how to choose | Stacktik",
- "metaDescription": "An AI receptionist answers calls, takes messages and books appointments. Stacktik helps you choose one and connects it to your phone system and CRM.",
- "eyebrow": "AI receptionist and call answering",
- "h1": "We help you choose an AI receptionist and connect it to your CRM.",
- "lede": "An AI receptionist is software that answers your business phone with a voice agent. It greets the caller, answers common questions, takes a message, books an appointment, routes the call and hands over to a person. Stacktik helps you choose one, connects it to your phone system and CRM so every call lands on the record, sets its rules and tests it before it takes real calls.",
- "summary": [
-  {
-   "label": "What it is",
-   "text": "An AI receptionist is a voice agent that answers business calls, takes messages, books appointments, routes callers and hands over to a person under rules you set."
-  },
-  {
-   "label": "Who it is for",
-   "text": "Sales and customer-facing teams whose calls arrive faster than people can answer them, or after hours, and who want each call on the CRM record."
-  },
-  {
-   "label": "What you get",
-   "text": "A shortlist with the monthly cost of each option, the purchase handled if you want it, the agent connected to your phones and CRM, written rules and test calls."
-  },
-  {
-   "label": "How it is priced",
-   "text": "Software is on the vendor's own plan and pricing. Our implementation is a fixed fee, quoted in writing before work starts. The first call is free."
-  }
- ],
- "blocks": [
-  {
-   "type": "rows",
-   "id": "compare",
-   "eyebrow": "Three names, three different things",
-   "h2": "AI receptionist vs virtual receptionist vs auto attendant.",
-   "intro": "The three terms get used as if they meant the same thing. They do not. One is a menu, one is a team of people and one is software that holds a conversation. Knowing which is which matters, because they are priced and run differently.",
-   "items": [
+  "slug": "ai-receptionist",
+  "title": "AI receptionist: what it is and how to choose | Stacktik",
+  "metaDescription": "An AI receptionist answers calls, takes messages and books appointments. Stacktik helps you choose one and connects it to your phone system and CRM.",
+  "eyebrow": "AI receptionist and call answering",
+  "h1": "We help you choose an AI receptionist and connect it to your CRM.",
+  "lede": "An AI receptionist is software that answers your business phone with a voice agent. It greets the caller, answers common questions, takes a message, books an appointment, routes the call and hands over to a person.",
+  "summary": [
     {
-     "title": "Auto attendant: a phone menu",
-     "body": "The caller presses a key or says a department name and the call is routed. It follows fixed rules. It does not understand an open question, and it does not take down what the caller needs."
+      "label": "What it is",
+      "text": "A voice agent that answers business calls, takes messages, books appointments, routes callers and hands over to a person under rules you set."
     },
     {
-     "title": "Virtual receptionist: a human service",
-     "body": "People at an outside company answer in your business name, take messages, book appointments and transfer calls. It is typically billed by the minute or by the call, within the hours and scripts you agree on."
+      "label": "Who it is for",
+      "text": "Sales and customer-facing teams whose calls arrive faster than people can answer them, or after hours, and who want each call on the CRM record."
     },
     {
-     "title": "AI receptionist: a voice agent",
-     "body": "Software that holds a spoken conversation. It answers common questions from the information you give it, takes messages, books into a calendar you connect, routes calls and passes the caller to a person under rules you set."
+      "label": "What you get",
+      "text": "A shortlist with monthly costs, the purchase handled if you want it, the agent connected to your phones and CRM, written rules and test calls."
     },
     {
-     "title": "AI answering service and AI voice agent",
-     "body": "More names for the same category. The first usually means message taking and after-hours cover. The second is the broader term, also written as AI phone agent, and covers agents that place outbound calls as well."
-    },
-    {
-     "title": "A blend of AI and people",
-     "body": "Some services put an AI agent on the first answer and human receptionists behind it for the calls it hands over. Ask which parts of a quote are software and which are people, because they are priced differently."
-    },
-    {
-     "title": "How to tell which you need",
-     "body": "If callers only need the right department, a phone menu is enough. If most calls need judgement, use people. If most calls are the same few requests, an AI receptionist with a clear handover to a person fits."
+      "label": "How it is priced",
+      "text": "Software is on the vendor's own plan and pricing. Our implementation is a fixed fee, quoted in writing before work starts."
     }
-   ]
-  },
-  {
-   "type": "rows",
-   "id": "can-and-cannot",
-   "eyebrow": "What it can and cannot do",
-   "h2": "What an AI phone receptionist can and cannot do.",
-   "intro": "An AI receptionist is good at the routine parts of a call and poor at the parts that need judgement. What matters is where one ends and the other begins for your callers.",
-   "items": [
+  ],
+  "blocks": [
     {
-     "title": "Answer and route calls",
-     "body": "It picks up on the lines and during the hours you choose, asks what the caller needs and sends the call to the right person or queue. Routing follows rules you set once."
+      "type": "rows",
+      "id": "compare",
+      "eyebrow": "Three names, three different things",
+      "h2": "AI receptionist vs virtual receptionist vs auto attendant.",
+      "intro": "The three terms get used as if they meant the same thing. They do not.",
+      "items": [
+        {
+          "title": "Auto attendant: a phone menu",
+          "body": "The caller presses a key or says a department name and the call is routed. It follows fixed rules."
+        },
+        {
+          "title": "Virtual receptionist: a human service",
+          "body": "People at an outside company answer in your business name, take messages, book appointments and transfer calls."
+        },
+        {
+          "title": "AI receptionist: a voice agent",
+          "body": "Software that holds a spoken conversation: it answers common questions, takes messages, books into your calendar, routes calls and hands over to a person."
+        },
+        {
+          "title": "AI answering service and AI voice agent",
+          "body": "More names for the same category. The first usually means message taking and after-hours cover."
+        },
+        {
+          "title": "A blend of AI and people",
+          "body": "Some services put an AI agent on the first answer and human receptionists behind it for the calls it hands over."
+        },
+        {
+          "title": "How to tell which you need",
+          "body": "If callers only need the right department, a phone menu is enough. If most calls need judgement, use people."
+        }
+      ]
     },
     {
-     "title": "Take messages",
-     "body": "It records who called, their number and what they asked for. Connected to the CRM, the message lands on the caller's record with a callback task for the owner, not in a voicemail box."
+      "type": "rows",
+      "id": "can-and-cannot",
+      "eyebrow": "What it can and cannot do",
+      "h2": "What an AI phone receptionist can and cannot do.",
+      "intro": "An AI receptionist is good at the routine parts of a call and poor at the parts that need judgement.",
+      "items": [
+        {
+          "title": "Answer and route calls",
+          "body": "It picks up on the lines and during the hours you choose, asks what the caller needs and sends the call to the right person or queue."
+        },
+        {
+          "title": "Take messages",
+          "body": "It records who called, their number and what they asked. Connected to the CRM, the message lands on the caller's record with a callback task."
+        },
+        {
+          "title": "Book appointments",
+          "body": "Working as an AI appointment setter, it offers open times from a calendar you connect and books the slot."
+        },
+        {
+          "title": "Answer common questions",
+          "body": "Hours, location, services, what to bring. It answers from the information you provide."
+        },
+        {
+          "title": "What it cannot do",
+          "body": "It does not exercise judgement. Complaints, exceptions, pricing commitments, upset callers and unusual requests belong with a person."
+        },
+        {
+          "title": "Hand over to a person",
+          "body": "The handover is the part to design first: the caller asks for a person, the topic is on your list, or the agent is unsure."
+        }
+      ]
     },
     {
-     "title": "Book appointments",
-     "body": "Working as an AI appointment setter, it offers open times from a calendar you connect and books the slot. It knows only the availability and the booking rules you give it."
+      "type": "rows",
+      "id": "what-to-check",
+      "eyebrow": "Before you buy",
+      "h2": "Choosing an AI receptionist for small business teams.",
+      "intro": "A demo shows the easy call. These points separate one option from another once real callers are on the line.",
+      "items": [
+        {
+          "title": "Your phone system",
+          "body": "Check how it takes calls from the system you already use: forwarded from your main number, on its own number, or inside your existing call flow."
+        },
+        {
+          "title": "Your CRM and calendar",
+          "body": "Ask what it writes to the CRM after each call, and whether it does so directly or through a connector."
+        },
+        {
+          "title": "The handover",
+          "body": "Ask how a transfer to a person works, what happens when nobody picks up and what happens outside business hours."
+        },
+        {
+          "title": "Languages and recordings",
+          "body": "Check the languages it handles, where recordings and transcripts are stored, and what callers are told about recording and about speaking with an AI."
+        },
+        {
+          "title": "Pricing structure",
+          "body": "Plans are commonly built from a monthly subscription, a usage charge by the minute or by the call, phone numbers and sometimes a setup fee."
+        },
+        {
+          "title": "Control after launch",
+          "body": "Check who can change the greeting, the answers and the rules without going back to the vendor, and whether you can read transcripts."
+        }
+      ]
     },
     {
-     "title": "Answer common questions",
-     "body": "Hours, location, services, what to bring. It answers from the information you provide. A sound setup has it say when it does not know, then offer a person or a callback."
-    },
-    {
-     "title": "What it cannot do",
-     "body": "It does not exercise judgement. Complaints, exceptions, pricing commitments, upset callers and unusual requests belong with a person. It can also mishear names and numbers, so it needs a step that confirms the details back to the caller."
-    },
-    {
-     "title": "Hand over to a person",
-     "body": "The handover is the part to design first: the caller asks for a person, the topic is on your list, or the agent is unsure. The call transfers with a summary of what was said so far."
+      "type": "steps",
+      "id": "how-we-work",
+      "eyebrow": "How Stacktik does the work",
+      "h2": "How Stacktik sets up an AI phone answering service.",
+      "intro": "One technical RevOps consultant is assigned to your project and stays with it. The steps below are the usual order.",
+      "items": [
+        {
+          "title": "A free call",
+          "body": "We go through how calls reach you today, what callers ask for, and what you use for phones and CRM."
+        },
+        {
+          "title": "A written proposal",
+          "body": "Two or three options that fit your calls, each with its monthly cost and our relationship with the vendor stated next to its price."
+        },
+        {
+          "title": "The purchase, if you want it",
+          "body": "Where it helps, we set the plan and phone numbers up through the vendor's partner program, in your name. You can also buy direct."
+        },
+        {
+          "title": "Connected to your phones and CRM",
+          "body": "We connect the agent to your phone system and CRM. Each call creates or updates a record, with an owner and the next step set."
+        },
+        {
+          "title": "Rules and handover, in writing",
+          "body": "We set what the agent answers, what it never answers, when it transfers and to whom, and what happens when nobody picks up."
+        },
+        {
+          "title": "Tested, trained, handed over",
+          "body": "We place test calls for the common requests and the awkward ones before the agent takes real calls."
+        }
+      ]
     }
-   ]
+  ],
+  "platforms": {
+    "h2": "The platforms an AI receptionist sits between.",
+    "intro": "An AI receptionist works between a phone system and a CRM.",
+    "names": [
+      "HubSpot",
+      "monday.com CRM",
+      "Close",
+      "Nutshell",
+      "Capsule",
+      "HighLevel",
+      "CloudTalk",
+      "Dialpad",
+      "Kixie",
+      "RingCentral",
+      "8x8",
+      "Aircall",
+      "Nextiva",
+      "Five9",
+      "Genesys",
+      "Talkdesk",
+      "PolyAI",
+      "boost.ai",
+      "Claude",
+      "OpenAI",
+      "Zapier"
+    ]
   },
-  {
-   "type": "rows",
-   "id": "what-to-check",
-   "eyebrow": "Before you buy",
-   "h2": "Choosing an AI receptionist for small business teams.",
-   "intro": "A demo shows the easy call. These are the points that separate one option from another once real callers are on the line. The list works with any vendor, whether or not you buy through Stacktik.",
-   "items": [
+  "faq": [
     {
-     "title": "Your phone system",
-     "body": "Check how it takes calls from the system you already use: forwarded from your main number, on its own number, or as a step in your existing call flow. Replacing the phone system is a separate decision."
+      "q": "What is an AI receptionist?",
+      "a": "An AI receptionist is software that answers business phone calls with a voice agent, in place of a keypad menu or a person. It greets the caller, answers common questions from information you provide, takes messages, books appointments, routes calls and hands over to a person under rules you set."
     },
     {
-     "title": "Your CRM and calendar",
-     "body": "Ask what it writes to the CRM after each call, and whether it does so directly or through a connector. A call that leaves no record means someone on your team types it in later."
+      "q": "How much does an AI receptionist cost?",
+      "a": "It depends on the vendor's plan and on how many calls you take, so there are no figures on this page. Plans are commonly built from a monthly subscription plus usage by the minute or by the call, with phone numbers and sometimes a setup fee."
     },
     {
-     "title": "The handover",
-     "body": "Ask how a transfer to a person works, what happens when nobody picks up and what happens outside business hours. Hear it on a test call with your own scenarios, not on a slide."
+      "q": "Is an AI virtual receptionist a person or software?",
+      "a": "Software, in most cases. The term is used two ways: as another name for an AI receptionist, and for a blended service where an AI agent answers first and people at an answering service take the calls it hands over."
     },
     {
-     "title": "Languages and recordings",
-     "body": "Check the languages it handles, including English and French if your callers need both, where recordings and transcripts are stored, and what callers are told about recording and about speaking with an AI."
+      "q": "How do I choose an AI answering service?",
+      "a": "Start from your calls, not from a demo. List what callers ask for, which requests need a person and what has to be written to the CRM. Stacktik puts two or three options on a written proposal with the monthly cost of each."
     },
     {
-     "title": "Pricing structure",
-     "body": "Plans are commonly built from a monthly subscription, a usage charge by the minute or by the call, phone numbers and sometimes a setup fee. Ask how the bill changes in a busy month."
+      "q": "How do you set up an AI receptionist?",
+      "a": "In this order: a free call, a written proposal with a shortlist and costs, the purchase if you want us to handle it, the connection to your phone system and CRM, written rules for answers and handover, then test calls and team training before it takes real calls."
     },
     {
-     "title": "Control after launch",
-     "body": "Check who can change the greeting, the answers and the rules without going back to the vendor, and whether you can read transcripts and listen to calls to hear what the agent said."
+      "q": "What should I check when buying an AI receptionist in Canada?",
+      "a": "Check whether it answers in English and French, where call recordings and transcripts are stored, and what callers are told about recording and about speaking with an AI. Stacktik is based in Ontario and works with teams across Canada and the United States."
     }
-   ]
-  },
-  {
-   "type": "steps",
-   "id": "how-we-work",
-   "eyebrow": "How Stacktik does the work",
-   "h2": "How Stacktik sets up an AI phone answering service.",
-   "intro": "One technical RevOps consultant is assigned to your project and stays with it. The steps below are the usual order. Use the part you need: choosing and buying, the setup, or both.",
-   "items": [
-    {
-     "title": "A free call",
-     "body": "We go through how calls reach you today, what callers ask for, and what you use for phones and CRM. You get a straight answer on whether an AI receptionist is the right next step. No obligation."
-    },
-    {
-     "title": "A written proposal",
-     "body": "Two or three options that fit your calls, each with its monthly cost and our relationship with the vendor stated next to its price. The scope and fixed fee of any implementation are on the same proposal."
-    },
-    {
-     "title": "The purchase, if you want it",
-     "body": "Where it helps, we set the plan and phone numbers up through the vendor's partner program, in your name. You can also buy direct. Buying through us never requires hiring us for the setup, and the reverse."
-    },
-    {
-     "title": "Connected to your phones and CRM",
-     "body": "We connect the agent to your phone system and CRM. Each call creates or updates a record, with the message or summary attached, an owner assigned and the next step set as a task."
-    },
-    {
-     "title": "Rules and handover, in writing",
-     "body": "We set what the agent answers, what it never answers, when it transfers and to whom, and what happens when nobody picks up. A person on your team approves what matters, such as quotes and exceptions."
-    },
-    {
-     "title": "Tested, trained, handed over",
-     "body": "We place test calls for the common requests and the awkward ones before the agent takes real calls. Your team is trained on the setup, and the handover notes say how each piece runs and who to call."
-    }
-   ]
-  }
- ],
- "platforms": {
-  "h2": "The platforms an AI receptionist sits between.",
-  "intro": "An AI receptionist works between a phone system and a CRM. These are the phone, contact-centre, CRM and AI platforms we set up or can source. The proposal names which fit you, and our relationship with each.",
-  "names": [
-   "HubSpot",
-   "monday.com CRM",
-   "Close",
-   "Nutshell",
-   "Capsule",
-   "HighLevel",
-   "CloudTalk",
-   "Dialpad",
-   "Kixie",
-   "RingCentral",
-   "8x8",
-   "Aircall",
-   "Nextiva",
-   "Five9",
-   "Genesys",
-   "Talkdesk",
-   "PolyAI",
-   "boost.ai",
-   "Claude",
-   "OpenAI",
-   "Zapier"
-  ]
- },
- "faq": [
-  {
-   "q": "What is an AI receptionist?",
-   "a": "An AI receptionist is software that answers business phone calls with a voice agent, in place of a keypad menu or a person. It greets the caller, answers common questions from information you provide, takes messages, books appointments, routes calls and hands over to a person under rules you set. Vendors sell the same thing under several names, including AI voice agent."
-  },
-  {
-   "q": "How much does an AI receptionist cost?",
-   "a": "It depends on the vendor's plan and on how many calls you take, so there are no figures on this page. Plans are commonly built from a monthly subscription plus usage by the minute or by the call, with phone numbers and sometimes a setup fee. Stacktik's proposal shows the monthly software cost of each option, and our implementation as a fixed fee quoted in writing before work starts."
-  },
-  {
-   "q": "Is an AI virtual receptionist a person or software?",
-   "a": "Software, in most cases. The term is used two ways: as another name for an AI receptionist, and for a blended service where an AI agent answers first and people at an answering service take the calls it hands over. Ask which one you are being quoted, because the pricing and the handover differ. A human-only service is a different purchase, and sometimes the better one."
-  },
-  {
-   "q": "How do I choose an AI answering service?",
-   "a": "Start from your calls, not from a demo. List what callers ask for, which requests need a person and what has to be written to the CRM. Then check each option against your phone system, your CRM and calendar, its handover to people, the languages you need and how the bill changes with call volume. Stacktik puts two or three options on a written proposal with the monthly cost of each."
-  },
-  {
-   "q": "How do you set up an AI receptionist?",
-   "a": "In this order: a free call about your calls and tools, a written proposal with a shortlist and costs, the purchase if you want us to handle it, the connection to your phone system and CRM, written rules for answers and handover, then test calls and team training before it takes real calls. You keep the tools you own unless the proposal justifies a change in writing."
-  },
-  {
-   "q": "What should I check when buying an AI receptionist in Canada?",
-   "a": "Check whether it answers in English and French, where call recordings and transcripts are stored, and what callers are told about recording and about speaking with an AI. Stacktik is a RevOps consultancy in Woodbridge, Ontario. If the right answer is a new phone system, a contact centre or a human answering service, we can source those on the same written proposal. We help you choose and buy an answering service. We do not operate it."
-  }
- ],
- "closeH2": "Start with how your calls are answered today.",
- "closeLede": "A free call about your phone system, your CRM and what callers ask for. You get a straight answer on whether an AI receptionist fits, and a written proposal if it does.",
- "keywordsUsed": [
-  "ai receptionist",
-  "virtual receptionist",
-  "ai receptionist for small business",
-  "ai answering service",
-  "ai phone answering service",
-  "ai voice agent",
-  "ai phone agent",
-  "ai receptionist canada",
-  "ai phone receptionist",
-  "ai appointment setter",
-  "auto attendant",
-  "ai virtual receptionist"
- ],
- "keywordsSkipped": []
+  ],
+  "closeH2": "Start with how your calls are answered today.",
+  "closeLede": "A free call about your phone system, your CRM and what callers ask for.",
+  "keywordsUsed": [
+    "ai receptionist",
+    "virtual receptionist",
+    "ai receptionist for small business",
+    "ai answering service",
+    "ai phone answering service",
+    "ai voice agent",
+    "ai phone agent",
+    "ai receptionist canada",
+    "ai phone receptionist",
+    "ai appointment setter",
+    "auto attendant",
+    "ai virtual receptionist"
+  ],
+  "keywordsSkipped": []
 }

@@ -1,248 +1,248 @@
 {
- "slug": "business-phone-systems",
- "title": "Business phone system in Canada: cloud VoIP setup | Stacktik",
- "metaDescription": "A cloud business phone system for teams in Canada: what to compare and how it is priced. Stacktik buys it, sets it up and connects it to your CRM.",
- "eyebrow": "Phone systems and VoIP in Canada",
- "h1": "We choose, buy and set up your business phone system in Canada.",
- "lede": "A business phone system is the set of numbers, extensions, call routing and voicemail a company uses to make and take calls. A cloud phone system runs all of it over the internet, using VoIP (voice over internet protocol), instead of on hardware in your office. Stacktik helps teams in Canada choose one, buys it in your name, sets it up, connects it to your CRM and trains your team.",
- "summary": [
-  {
-   "label": "What it is",
-   "text": "A cloud business phone system: numbers, extensions, call routing and recordings delivered over the internet (VoIP), with no phone switch to maintain in your office."
-  },
-  {
-   "label": "Who it is for",
-   "text": "Sales and customer-facing teams in Canada replacing an office phone system, or adding calling that logs itself on the CRM record."
-  },
-  {
-   "label": "What you get",
-   "text": "A shortlist with monthly costs, a written proposal, the purchase in your name, setup, the CRM connection and training. Use only the part you need."
-  },
-  {
-   "label": "How it is priced",
-   "text": "The phone system is per user per month on the vendor's own plan. Our implementation is a separate fixed fee, quoted in writing before work starts."
-  }
- ],
- "blocks": [
-  {
-   "type": "rows",
-   "id": "cloud-vs-on-premises",
-   "eyebrow": "Cloud or on-premises",
-   "h2": "Cloud phone system or on-premises PBX.",
-   "intro": "A PBX (private branch exchange) is the switch that connects a company's extensions to each other and to the outside phone network. The difference between the two kinds of system is where that switch lives.",
-   "items": [
+  "slug": "business-phone-systems",
+  "title": "Business phone systems: cloud VoIP setup and CRM | Stacktik",
+  "metaDescription": "A cloud business phone system for teams in Canada and the US: what to compare and how it is priced. Stacktik buys it, sets it up and connects it to your CRM.",
+  "eyebrow": "Business phone systems and VoIP",
+  "h1": "We choose, buy and set up your business phone system.",
+  "lede": "A business phone system is the set of numbers, extensions, call routing and voicemail a company uses to make and take calls.",
+  "summary": [
     {
-     "title": "On-premises, hosted PBX and cloud PBX",
-     "body": "An on-premises PBX is hardware in your office, wired to desk phones and phone lines. A cloud system runs on the provider's servers and reaches your team over the internet. Hosted PBX and cloud PBX are two names for that same arrangement."
+      "label": "What it is",
+      "text": "A cloud business phone system: numbers, extensions, call routing and recordings delivered over the internet (VoIP), with no phone switch to maintain in your office."
     },
     {
-     "title": "What you maintain, and how you grow",
-     "body": "With an on-premises PBX, your team or a contractor looks after the hardware, the lines and the updates, and growth can mean more equipment. With a cloud system, the provider runs the platform. A new person is a new seat on the plan."
+      "label": "Who it is for",
+      "text": "Sales and customer-facing teams in Canada and the United States replacing an office phone system, or adding calling that logs itself on the CRM record."
     },
     {
-     "title": "Working away from the office",
-     "body": "A cloud system is used through an app on a computer or mobile phone, or through a desk phone that connects over the internet. The same business number follows the person, whether they are at a desk, at home or on the road."
+      "label": "What you get",
+      "text": "A shortlist with monthly costs, a written proposal, the purchase in your name, setup, the CRM connection and training."
     },
     {
-     "title": "The internet connection",
-     "body": "Calls on a cloud system travel over your internet connection, so its quality sets your call quality. Stacktik can source business internet from its supplier network on the same proposal. For internet, we help you choose and buy. We do not install or operate it."
-    },
-    {
-     "title": "Connecting to the CRM",
-     "body": "Your CRM is the system where every customer and conversation lives. Business VoIP platforms can connect to it, which is what lets a call be placed from the CRM and logged on the record, with the recording attached, without anyone typing it in."
-    },
-    {
-     "title": "When to keep what you have",
-     "body": "If your current office phone system does the job, replacing it may not be the right step. The proposal says what to keep, what to connect and what, if anything, to replace. We will not recommend a switch we cannot justify in writing."
+      "label": "How it is priced",
+      "text": "The phone system is per user per month on the vendor's own plan."
     }
-   ]
-  },
-  {
-   "type": "rows",
-   "id": "what-to-compare",
-   "eyebrow": "How to choose",
-   "h2": "What to compare in a small business phone system.",
-   "intro": "Vendor feature lists look alike. These are the points that decide whether a business phone service fits how your team in Canada actually works. Put the same questions to every vendor on your list.",
-   "items": [
+  ],
+  "blocks": [
     {
-     "title": "Seats and user types",
-     "body": "Count who needs a full calling seat, who only needs to receive calls, and which shared lines, such as a main number or a support line, need no named user. Pricing is per user, so the monthly cost follows the seat count."
+      "type": "rows",
+      "id": "cloud-vs-on-premises",
+      "eyebrow": "Cloud or on-premises",
+      "h2": "Cloud phone system or on-premises PBX.",
+      "intro": "A PBX (private branch exchange) is the switch that connects a company's extensions to each other and to the outside phone network.",
+      "items": [
+        {
+          "title": "On-premises, hosted PBX and cloud PBX",
+          "body": "An on-premises PBX is hardware in your office, wired to desk phones and phone lines."
+        },
+        {
+          "title": "What you maintain, and how you grow",
+          "body": "With an on-premises PBX, your team or a contractor looks after the hardware, the lines and the updates, and growth can mean more equipment."
+        },
+        {
+          "title": "Working away from the office",
+          "body": "A cloud system is used through an app on a computer or mobile phone, or through a desk phone that connects over the internet."
+        },
+        {
+          "title": "The internet connection",
+          "body": "Calls on a cloud system travel over your internet connection, so its quality sets your call quality."
+        },
+        {
+          "title": "Connecting to the CRM",
+          "body": "Business VoIP platforms can connect to your CRM, so a call is placed from the CRM and logged on the record with the recording attached."
+        },
+        {
+          "title": "When to keep what you have",
+          "body": "If your current office phone system does the job, replacing it may not be the right step."
+        }
+      ]
     },
     {
-     "title": "Canadian phone numbers",
-     "body": "Check that the provider offers local numbers in the Canadian area codes you need, and that your existing numbers can be moved over to the new system. Ask how emergency calls are handled and which address is registered for each user."
+      "type": "rows",
+      "id": "what-to-compare",
+      "eyebrow": "How to choose",
+      "h2": "What to compare in a small business phone system.",
+      "intro": "Vendor feature lists look alike. These are the points that decide whether a business phone service fits how your team actually works.",
+      "items": [
+        {
+          "title": "Seats and user types",
+          "body": "Count who needs a full calling seat, who only receives calls, and which shared lines need no named user. Pricing is per user."
+        },
+        {
+          "title": "Local phone numbers",
+          "body": "Check that the provider offers local numbers in the area codes you need, in Canada or the US, and that your existing numbers can be moved over."
+        },
+        {
+          "title": "Call recording and call notes",
+          "body": "Decide which calls must be recorded, who can listen to them and how long recordings are kept."
+        },
+        {
+          "title": "The CRM connection",
+          "body": "A logo on an integrations page is not enough. Ask to see calls placed from your CRM and logged on the right record with the recording."
+        },
+        {
+          "title": "Where your data is kept",
+          "body": "Recordings, voicemail and call logs are customer data. Ask each provider where they are stored, whether storage in your country is available and who can access them."
+        },
+        {
+          "title": "Outbound calling tools",
+          "body": "If your reps call lists of prospects, ask about outbound tools such as a power dialer. If they mostly answer calls, look at routing and queues first."
+        }
+      ]
     },
     {
-     "title": "Call recording and call notes",
-     "body": "Decide which calls must be recorded, who can listen to them and how long recordings are kept. Ask how callers are told a call is recorded, and whether the recording and the call notes can be attached to the CRM record."
+      "type": "rows",
+      "id": "pricing",
+      "eyebrow": "What it costs",
+      "h2": "How a business phone system is priced.",
+      "intro": "There are no prices on this page, because the figure depends on the vendor, the plan and your seat count.",
+      "items": [
+        {
+          "title": "Per user, per month",
+          "body": "A cloud system is sold as a subscription: a price per user per month, on the vendor's own plan."
+        },
+        {
+          "title": "The plan tier",
+          "body": "Call recording, CRM connections, reporting and outbound tools can sit on different tiers. We match the plan to the workflow, not the workflow to the plan."
+        },
+        {
+          "title": "Numbers, usage and add-ons",
+          "body": "Extra phone numbers, calls to other countries and add-on features can be billed on top of the seat price."
+        },
+        {
+          "title": "Monthly or annual billing",
+          "body": "A subscription can be billed month to month or on an annual term."
+        },
+        {
+          "title": "Partner programs",
+          "body": "Stacktik is enrolled in vendor partner programs with most of the platforms it sets up."
+        },
+        {
+          "title": "Our fee, kept separate",
+          "body": "Implementation is a fixed fee, quoted in writing before work starts, with what is in scope and what is not."
+        }
+      ]
     },
     {
-     "title": "The CRM connection",
-     "body": "A logo on an integrations page is not enough. Ask to see what the connection does with your CRM: calls placed from the CRM, logged on the right record with the recording, and a missed call turned into a callback task."
-    },
-    {
-     "title": "Where your data is kept",
-     "body": "Recordings, voicemail and call logs are customer data. Ask each provider where they are stored, whether storage in Canada is available and who can access them. If your data has to stay in Canada, say so before anyone builds a shortlist."
-    },
-    {
-     "title": "Outbound calling tools",
-     "body": "If your reps call lists of prospects, ask about outbound tools such as a power dialer, which dials the next number on a list when a call ends. If your team mostly answers calls, look at call routing and queues first."
+      "type": "steps",
+      "id": "how-stacktik-works",
+      "eyebrow": "How Stacktik does the work",
+      "h2": "How Stacktik handles a VoIP implementation.",
+      "intro": "One technical RevOps (revenue operations) consultant is assigned to your project, from the first idea to a trained team.",
+      "items": [
+        {
+          "title": "A free first call",
+          "body": "We go through the phone system you use today, what is not working and what you are trying to get to."
+        },
+        {
+          "title": "A shortlist with costs",
+          "body": "Two or three options that fit how your team works, each with its monthly cost for your seat count."
+        },
+        {
+          "title": "A written proposal",
+          "body": "The systems and why, the monthly software cost, the scope and fixed fee of any implementation, and our relationship with each vendor stated next to its price."
+        },
+        {
+          "title": "Purchase in your name",
+          "body": "Where it helps, we set the plan, seats and phone numbers up through the vendor's program, in your name. The agreement and the account are yours."
+        },
+        {
+          "title": "Set up and connect to the CRM",
+          "body": "We set the system up and connect it to your CRM, so calls are placed from the CRM and logged on the record with the recording attached."
+        },
+        {
+          "title": "Train and hand over",
+          "body": "Training sessions run on your own data and are recorded for the team. Handover notes say how each piece runs and who to call."
+        }
+      ]
     }
-   ]
+  ],
+  "platforms": {
+    "h2": "The business phone platforms we work with.",
+    "intro": "CloudTalk, Dialpad and Kixie are the calling platforms we set up directly.",
+    "names": [
+      "CloudTalk",
+      "Dialpad",
+      "Kixie",
+      "Zoom",
+      "RingCentral",
+      "8x8",
+      "Nextiva",
+      "Vonage",
+      "GoTo",
+      "Cisco",
+      "Aircall"
+    ]
   },
-  {
-   "type": "rows",
-   "id": "pricing",
-   "eyebrow": "What it costs",
-   "h2": "How a business phone system is priced.",
-   "intro": "There are no prices on this page, because the figure depends on the vendor, the plan and your seat count. The structure is similar from vendor to vendor, and the proposal puts your own numbers in writing.",
-   "items": [
+  "faq": [
     {
-     "title": "Per user, per month",
-     "body": "A cloud system is sold as a subscription: a price per user per month, on the vendor's own plan. Your monthly cost is that price multiplied by your seats, plus anything the plan bills separately."
+      "q": "What is a business phone system?",
+      "a": "A business phone system is the set of phone numbers, extensions, call routing, voicemail and call recording a company uses to handle its calls. A cloud system runs on the provider's servers and reaches your team over the internet using VoIP, with no switch to maintain on site."
     },
     {
-     "title": "The plan tier",
-     "body": "Vendors sell several plans. Call recording, CRM connections, reporting and outbound tools can sit on different tiers, so the plan you need depends on which of those your team will use. We match the plan to the workflow, not the workflow to the plan."
+      "q": "How much does a phone system for a small business cost in Canada?",
+      "a": "The cost depends on the vendor, the plan and your seat count, so Stacktik does not publish a figure. Cloud business phone plans in Canada are priced per user per month on the vendor's own plan, and some items can be billed separately."
     },
     {
-     "title": "Numbers, usage and add-ons",
-     "body": "Extra phone numbers, calls to other countries and add-on features can be billed on top of the seat price. Ask each vendor what the plan includes and what is charged separately, then compare the totals, not the headline price."
+      "q": "How do I choose a VoIP phone system for a small business?",
+      "a": "Start from how calls move through your team, not from a vendor's feature list. Count the seats, list the numbers you need to keep, decide what must be recorded and check what the CRM connection does. Then compare two or three systems on those points and on monthly cost."
     },
     {
-     "title": "Monthly or annual billing",
-     "body": "A subscription can be billed month to month or on an annual term. The proposal states how each subscription is billed, so you know the commitment before you sign anything."
+      "q": "How do I compare VoIP providers in Canada?",
+      "a": "Compare VoIP providers in Canada on the same points: seats, Canadian numbers, call recording, the CRM connection, where data is stored and outbound tools. Not every supplier serves every location, so confirm coverage for your sites first."
     },
     {
-     "title": "Partner programs",
-     "body": "Stacktik is enrolled in vendor partner programs with most of the platforms it sets up. Where a program provides a customer offer, it is applied and shown on the proposal. Where none exists, you pay the vendor's own price. The proposal states our relationship with each vendor next to its price."
+      "q": "How does RingCentral pricing or Dialpad pricing work if we buy through Stacktik?",
+      "a": "RingCentral pricing and Dialpad pricing stay on the vendor's own plan when you buy through Stacktik, with the subscription in your name. Stacktik does not publish vendor prices. The proposal shows the monthly figure for your seat count, how it is billed and our relationship with the vendor."
     },
     {
-     "title": "Our fee, kept separate",
-     "body": "Implementation is a fixed fee, quoted in writing before work starts, with what is in scope and what is not. If you only want help choosing and buying, the proposal says whether that carries a fee at all. Nothing is charged for the first call."
+      "q": "What does a VoIP implementation include?",
+      "a": "Implementation is the work of getting the phone system running. With Stacktik it can include the setup, the CRM connection so calls log themselves, a callback task for a missed call, and training on your own data."
     }
-   ]
-  },
-  {
-   "type": "steps",
-   "id": "how-stacktik-works",
-   "eyebrow": "How Stacktik does the work",
-   "h2": "How Stacktik handles a VoIP implementation.",
-   "intro": "One technical RevOps (revenue operations) consultant is assigned to your project, from the first idea to a trained team. Use every step below or only the part you need. Buying through Stacktik never requires hiring us for setup, and the reverse.",
-   "items": [
+  ],
+  "closeH2": "Start with the phone system you use today.",
+  "closeLede": "A free first call about your calls, your CRM and what is not working.",
+  "keywordsUsed": [
+    "business phone system",
+    "small business phone system",
+    "business phone service",
+    "cloud phone system",
+    "voip phone system for small business",
+    "business phone system canada",
+    "phone system for small business canada",
+    "business phone plans canada",
+    "voip canada",
+    "voip providers canada",
+    "office phone system",
+    "business voip",
+    "hosted pbx",
+    "cloud pbx",
+    "business phone",
+    "ringcentral pricing",
+    "dialpad pricing",
+    "voip implementation",
+    "power dialer"
+  ],
+  "keywordsSkipped": [
     {
-     "title": "A free first call",
-     "body": "We go through the phone system you use today, what is not working and what you are trying to get to. You get a straight answer on whether the next step is software, implementation, both, or nothing yet. No obligation."
+      "keyword": "voip toronto",
+      "reason": "The site gives Stacktik's location only as Woodbridge, Ontario and states no Toronto office or Toronto service area. Using the term would need a location or coverage claim the sources do not make. Worth adding (or giving its own local page) if the owner confirms the service area."
     },
     {
-     "title": "A shortlist with costs",
-     "body": "Two or three options that fit how your team works, each with its monthly cost for your seat count. They come from the calling platforms we set up directly and, where one fits better, from our supplier network."
+      "keyword": "zoom phone pricing",
+      "reason": "The site and brief name Zoom as a supplier but never the Zoom Phone product, and the page carries no price figures. Naming the product and discussing its pricing would go beyond the source text."
     },
     {
-     "title": "A written proposal",
-     "body": "The systems and why, the monthly software cost, the scope and fixed fee of any implementation, and our relationship with each vendor stated next to its price. All of it in writing before you commit to anything."
+      "keyword": "zoom phone canada",
+      "reason": "Would need a statement that a specific Zoom product is available in Canada. The site says not every supplier serves every location and confirms availability only on the proposal."
     },
     {
-     "title": "Purchase in your name",
-     "body": "Where it helps, we set the plan, seats and phone numbers up through the vendor's program, in your name. The agreement and the account are yours. Where buying direct is the better path, we tell you to buy direct."
+      "keyword": "ringcentral canada",
+      "reason": "Would need a claim about RingCentral's Canadian availability, numbers or data handling, which the site does not state. RingCentral is named as a platform and in the pricing FAQ instead."
     },
     {
-     "title": "Set up and connect to the CRM",
-     "body": "We set the system up and connect it to your CRM, so calls are placed from the CRM and logged on the record with the recording attached. We work inside your account through an admin seat you create for us and can revoke at handover."
-    },
-    {
-     "title": "Train and hand over",
-     "body": "Training sessions run on your own data and are recorded for the team. Handover notes say how each piece runs and who to call. Monthly support is optional, for teams that want the people who built the system to keep it current."
+      "keyword": "dialpad canada",
+      "reason": "Would need a claim about Dialpad's Canadian availability or features, which the site does not state. Dialpad is named as a directly supported platform and in the pricing FAQ instead."
     }
-   ]
-  }
- ],
- "platforms": {
-  "h2": "The business phone platforms we work with.",
-  "intro": "CloudTalk, Dialpad and Kixie are the calling platforms we set up directly. The others come through our supplier network, on the same written proposal. For VoIP in Canada, the proposal names which suppliers currently serve your location.",
-  "names": [
-   "CloudTalk",
-   "Dialpad",
-   "Kixie",
-   "Zoom",
-   "RingCentral",
-   "8x8",
-   "Nextiva",
-   "Vonage",
-   "GoTo",
-   "Cisco",
-   "Aircall"
   ]
- },
- "faq": [
-  {
-   "q": "What is a business phone system?",
-   "a": "A business phone system is the set of phone numbers, extensions, call routing, voicemail and call recording a company uses to handle its calls. An on-premises system runs on a PBX, a phone switch kept in the office. A cloud system runs on the provider's servers and reaches your team over the internet using VoIP, with no switch to maintain on site."
-  },
-  {
-   "q": "How much does a phone system for a small business cost in Canada?",
-   "a": "The cost depends on the vendor, the plan and your seat count, so Stacktik does not publish a figure. Cloud business phone plans in Canada are priced per user per month on the vendor's own plan, and some items can be billed separately. The proposal shows the monthly cost of each shortlisted system for your seat count. Implementation, if you want it, is a separate fixed fee quoted in writing."
-  },
-  {
-   "q": "How do I choose a VoIP phone system for a small business?",
-   "a": "Start from how calls move through your team, not from a vendor's feature list. Count the seats, list the numbers you need to keep, decide what must be recorded and check what the CRM connection does. Then compare two or three systems on those points and on monthly cost. Stacktik builds that shortlist after a free first call and puts it on a written proposal."
-  },
-  {
-   "q": "How do I compare VoIP providers in Canada?",
-   "a": "Compare VoIP providers in Canada on the same points: seats, Canadian numbers, call recording, the CRM connection, where data is stored and outbound tools. Not every supplier serves every location, so confirm coverage for your sites first. Stacktik can put the platforms it sets up directly and providers from its supplier network on one written proposal, with the monthly cost of each and its relationship with each vendor stated next to the price."
-  },
-  {
-   "q": "How does RingCentral pricing or Dialpad pricing work if we buy through Stacktik?",
-   "a": "RingCentral pricing and Dialpad pricing stay on the vendor's own plan when you buy through Stacktik, with the subscription in your name. Stacktik does not publish vendor prices. The proposal shows the monthly figure for your seat count, how it is billed and our relationship with the vendor. Where a partner program provides a customer offer, it is applied and shown. Where none exists, you pay the vendor's own price. Hiring us for setup is optional."
-  },
-  {
-   "q": "What does a VoIP implementation include?",
-   "a": "Implementation is the work of getting the phone system running. With Stacktik it can include the setup, the CRM connection so calls log themselves, a callback task for a missed call, and training on your own data. Each project is scoped on the proposal and quoted as a fixed fee in writing before work starts. The software stays on the vendor's own plan, and you can buy it direct and hire us only for the implementation."
-  }
- ],
- "closeH2": "Start with the phone system you use today.",
- "closeLede": "A free first call about your calls, your CRM and what is not working. If there is a fit, a written proposal follows. Software, implementation, or both.",
- "keywordsUsed": [
-  "business phone system",
-  "small business phone system",
-  "business phone service",
-  "cloud phone system",
-  "voip phone system for small business",
-  "business phone system canada",
-  "phone system for small business canada",
-  "business phone plans canada",
-  "voip canada",
-  "voip providers canada",
-  "office phone system",
-  "business voip",
-  "hosted pbx",
-  "cloud pbx",
-  "business phone",
-  "ringcentral pricing",
-  "dialpad pricing",
-  "voip implementation",
-  "power dialer"
- ],
- "keywordsSkipped": [
-  {
-   "keyword": "voip toronto",
-   "reason": "The site gives Stacktik's location only as Woodbridge, Ontario and states no Toronto office or Toronto service area. Using the term would need a location or coverage claim the sources do not make. Worth adding (or giving its own local page) if the owner confirms the service area."
-  },
-  {
-   "keyword": "zoom phone pricing",
-   "reason": "The site and brief name Zoom as a supplier but never the Zoom Phone product, and the page carries no price figures. Naming the product and discussing its pricing would go beyond the source text."
-  },
-  {
-   "keyword": "zoom phone canada",
-   "reason": "Would need a statement that a specific Zoom product is available in Canada. The site says not every supplier serves every location and confirms availability only on the proposal."
-  },
-  {
-   "keyword": "ringcentral canada",
-   "reason": "Would need a claim about RingCentral's Canadian availability, numbers or data handling, which the site does not state. RingCentral is named as a platform and in the pricing FAQ instead."
-  },
-  {
-   "keyword": "dialpad canada",
-   "reason": "Would need a claim about Dialpad's Canadian availability or features, which the site does not state. Dialpad is named as a directly supported platform and in the pricing FAQ instead."
-  }
- ]
 }

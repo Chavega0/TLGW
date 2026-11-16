@@ -1,165 +1,165 @@
 {
- "slug": "gohighlevel-setup",
- "title": "GoHighLevel setup for your own business | Stacktik",
- "metaDescription": "GoHighLevel setup by Stacktik: pipelines, lead capture, follow-up automations, calendars and reporting in HighLevel, with your team trained on it.",
- "eyebrow": "GoHighLevel setup",
- "h1": "GoHighLevel setup, done properly for your own sales team.",
- "lede": "GoHighLevel setup is the work of turning HighLevel, a sales and marketing platform with CRM, pipelines, forms, calendars and messaging in one product, into a system your team uses every day. Stacktik, a RevOps (revenue operations) consultancy in Woodbridge, Ontario, sets HighLevel up for businesses running it for their own sales, for a fixed fee quoted in writing.",
- "summary": [
-  {
-   "label": "What it is",
-   "text": "Setting up HighLevel for a business: pipelines, lead capture routed to a rep, follow-up automations, calendars, messaging, reporting, and the team trained."
-  },
-  {
-   "label": "Who it is for",
-   "text": "Businesses that bought HighLevel, or are about to, for their own sales and follow-up, and want it set up once and written down."
-  },
-  {
-   "label": "What you get",
-   "text": "HighLevel configured in your own account, data moved in, automations documented, your other tools connected, recorded training and handover notes."
-  },
-  {
-   "label": "How it is priced",
-   "text": "A fixed fee for the setup, quoted in writing before work starts. HighLevel stays on its own plan and pricing. The first call is free."
-  }
- ],
- "blocks": [
-  {
-   "type": "rows",
-   "id": "included",
-   "eyebrow": "What is included",
-   "h2": "What a GoHighLevel setup covers.",
-   "intro": "Every project is scoped on the proposal, so this is the list we draw from, not a fixed package. Fixes to a HighLevel account you already run draw from the same list.",
-   "items": [
+  "slug": "gohighlevel-setup",
+  "title": "GoHighLevel setup for your own business | Stacktik",
+  "metaDescription": "GoHighLevel setup by Stacktik: pipelines, lead capture, follow-up automations, calendars and reporting in HighLevel, with your team trained on it.",
+  "eyebrow": "GoHighLevel setup",
+  "h1": "GoHighLevel setup, done properly for your own sales team.",
+  "lede": "GoHighLevel setup is the work of turning HighLevel, a sales and marketing platform with CRM, pipelines, forms, calendars and messaging in one product, into a system your team uses every day.",
+  "summary": [
     {
-     "title": "Pipelines and stage rules",
-     "body": "Pipelines that match how a deal moves in your business, with written rules for when it moves forward, so the board means the same thing to everyone."
+      "label": "What it is",
+      "text": "Setting up HighLevel for a business: pipelines, lead capture routed to a rep, follow-up automations, calendars, messaging, reporting, and the team trained."
     },
     {
-     "title": "Lead capture routed to a rep",
-     "body": "Forms and other lead sources feeding the CRM, with each new lead assigned in turn, by territory, or to whoever is on duty."
+      "label": "Who it is for",
+      "text": "Businesses that bought HighLevel, or are about to, for their own sales and follow-up, and want it set up once and written down."
     },
     {
-     "title": "Follow-up automations",
-     "body": "The routine follow-ups set up as rules: a new lead is acknowledged, a missed call becomes a callback task, a reply stops the sequence. Every automation is documented."
+      "label": "What you get",
+      "text": "HighLevel configured in your own account, data moved in, automations documented, your other tools connected, recorded training and handover notes."
     },
     {
-     "title": "Calendars and messaging",
-     "body": "Booking calendars and the messaging channels you use, arranged so a booked call or a message lands on the right record with an owner."
-    },
-    {
-     "title": "Data moved in",
-     "body": "Contacts and open deals moved from your current system or spreadsheets, with duplicates merged, and the old system kept read-only during the switch."
-    },
-    {
-     "title": "Reporting and the scoreboard",
-     "body": "The reports the owner actually reads, and a revenue scoreboard with targets and a leaderboard in front of the team."
+      "label": "How it is priced",
+      "text": "A fixed fee for the setup, quoted in writing before work starts. HighLevel stays on its own plan and pricing."
     }
-   ]
-  },
-  {
-   "type": "rows",
-   "id": "before",
-   "eyebrow": "Before you start",
-   "h2": "What to prepare before a GoHighLevel setup.",
-   "intro": "A setup goes well when a few decisions are made first. These are the questions a careful GoHighLevel consultant asks before touching the account, whoever you hire.",
-   "items": [
+  ],
+  "blocks": [
     {
-     "title": "What a lead and a deal mean",
-     "body": "Agree on when a contact counts as a lead and what each pipeline stage means. Without that, the automations built on top will disagree with your team."
+      "type": "rows",
+      "id": "included",
+      "eyebrow": "What is included",
+      "h2": "What a GoHighLevel setup covers.",
+      "intro": "Every project is scoped on the proposal, so this is the list we draw from, not a fixed package.",
+      "items": [
+        {
+          "title": "Pipelines and stage rules",
+          "body": "Pipelines that match how a deal moves in your business, with written rules for when it moves forward, so the board means the same thing to everyone."
+        },
+        {
+          "title": "Lead capture routed to a rep",
+          "body": "Forms and other lead sources feeding the CRM, with each new lead assigned in turn, by territory, or to whoever is on duty."
+        },
+        {
+          "title": "Follow-up automations",
+          "body": "The routine follow-ups set up as rules: a new lead is acknowledged, a missed call becomes a callback task, a reply stops the sequence."
+        },
+        {
+          "title": "Calendars and messaging",
+          "body": "Booking calendars and the messaging channels you use, arranged so a booked call or a message lands on the right record with an owner."
+        },
+        {
+          "title": "Data moved in",
+          "body": "Contacts and open deals moved from your current system or spreadsheets, with duplicates merged, and the old system kept read-only during the switch."
+        },
+        {
+          "title": "Reporting and the scoreboard",
+          "body": "The reports the owner actually reads, and a revenue scoreboard with targets and a leaderboard in front of the team."
+        }
+      ]
     },
     {
-     "title": "Where your data lives today",
-     "body": "List the systems and spreadsheets that hold customers and deals, and who trusts which one. That decides what moves in and what stays behind."
+      "type": "rows",
+      "id": "before",
+      "eyebrow": "Before you start",
+      "h2": "What to prepare before a GoHighLevel setup.",
+      "intro": "A setup goes well when a few decisions are made first.",
+      "items": [
+        {
+          "title": "What a lead and a deal mean",
+          "body": "Agree on when a contact counts as a lead and what each pipeline stage means."
+        },
+        {
+          "title": "Where your data lives today",
+          "body": "List the systems and spreadsheets that hold customers and deals, and who trusts which one. That decides what moves in and what stays behind."
+        },
+        {
+          "title": "Which channels you really use",
+          "body": "HighLevel can cover many channels. Pick the ones your team will answer, and leave the rest off until someone owns them."
+        },
+        {
+          "title": "Who owns the system",
+          "body": "Name the person who will keep it current after handover. If nobody will, a simpler CRM may be the safer choice, and we say so."
+        },
+        {
+          "title": "GoHighLevel pricing, in structure",
+          "body": "Bought direct, HighLevel is billed by the vendor on its own plans, with usage charges for some messaging and calling."
+        }
+      ]
     },
     {
-     "title": "Which channels you really use",
-     "body": "HighLevel can cover many channels. Pick the ones your team will answer, and leave the rest off until someone owns them."
-    },
-    {
-     "title": "Who owns the system",
-     "body": "Name the person who will keep it current after handover. If nobody will, a simpler CRM may be the safer choice, and we say so."
-    },
-    {
-     "title": "GoHighLevel pricing, in structure",
-     "body": "Bought direct, HighLevel is billed by the vendor on its own plans, with usage charges for some messaging and calling. An account bought through an agency is billed by that agency. The proposal shows the monthly cost that applies to you."
+      "type": "steps",
+      "id": "process",
+      "eyebrow": "How it works",
+      "h2": "How Stacktik runs a GoHighLevel setup.",
+      "intro": "One technical RevOps consultant is assigned to your project and stays with it.",
+      "items": [
+        {
+          "title": "A free call",
+          "body": "We go through how leads, calls and follow-ups move through your team today, what you use, and what isn't working."
+        },
+        {
+          "title": "A written proposal",
+          "body": "What to keep, connect or replace, the monthly cost of each tool, and our fee for the work, fixed before it starts."
+        },
+        {
+          "title": "Setup in your account",
+          "body": "We work inside your own HighLevel account through an admin seat you create for us and revoke at handover. Pipelines, lead capture and routing come first."
+        },
+        {
+          "title": "Automations built and documented",
+          "body": "Follow-ups, reminders and handoffs are built as rules, tested with real examples, and written down so your team can change them later."
+        },
+        {
+          "title": "Training and handover",
+          "body": "Training sessions on your own data, recorded for the team. Handover notes say how each piece runs and who to call."
+        }
+      ]
     }
-   ]
+  ],
+  "platforms": {
+    "h2": "HighLevel and the tools we connect to it.",
+    "intro": "HighLevel is one of the CRMs Stacktik sets up.",
+    "names": [
+      "HighLevel",
+      "CloudTalk",
+      "Dialpad",
+      "Kixie",
+      "Zapier",
+      "Claude",
+      "OpenAI",
+      "Fireflies.ai",
+      "Databox"
+    ]
   },
-  {
-   "type": "steps",
-   "id": "process",
-   "eyebrow": "How it works",
-   "h2": "How Stacktik runs a GoHighLevel setup.",
-   "intro": "One technical RevOps consultant is assigned to your project and stays with it. The steps and their order are written on the proposal. This is the usual outline.",
-   "items": [
+  "faq": [
     {
-     "title": "A free call",
-     "body": "We go through how leads, calls and follow-ups move through your team today, what you use, and what isn't working. You get a straight answer on the right next step. No obligation."
+      "q": "What does a GoHighLevel setup include?",
+      "a": "A GoHighLevel setup includes pipelines with written stage rules, lead capture routed to a rep, follow-up automations, calendars and messaging, your data moved in and reporting. Stacktik scopes each project on a written proposal, trains your team on your own data and leaves handover notes."
     },
     {
-     "title": "A written proposal",
-     "body": "What to keep, connect or replace, the monthly cost of each tool, and our fee for the work, fixed before it starts. Our relationship with each vendor is stated next to its price."
+      "q": "Is GoHighLevel the same as HighLevel?",
+      "a": "Yes. HighLevel is the product name, and GoHighLevel comes from its web address, so people use both for the same platform. Stacktik lists HighLevel among the CRMs it sets up, alongside HubSpot, monday.com CRM, Close, Nutshell and Capsule."
     },
     {
-     "title": "Setup in your account",
-     "body": "We work inside your own HighLevel account through an admin seat you create for us and revoke at handover. Pipelines, lead capture and routing come first."
+      "q": "What does a GoHighLevel consultant do?",
+      "a": "A GoHighLevel consultant, sometimes called a GoHighLevel expert, turns the account into a working system: the pipeline, the routing, the automations and the reports, set up around how your team sells. Stacktik assigns one technical RevOps consultant who does the work and stays with the project."
     },
     {
-     "title": "Automations built and documented",
-     "body": "Follow-ups, reminders and handoffs are built as rules, tested with real examples, and written down so your team can change them later."
+      "q": "How much does a GoHighLevel setup cost?",
+      "a": "The setup is a fixed fee, quoted in writing before work starts, and it depends on scope. HighLevel itself is billed on its own plans, by the vendor or by the agency you bought it from. The proposal shows both numbers separately. Nothing is charged for the first call."
     },
     {
-     "title": "Training and handover",
-     "body": "Training sessions on your own data, recorded for the team. Handover notes say how each piece runs and who to call. Ongoing support is optional and monthly."
+      "q": "Are you a GoHighLevel agency?",
+      "a": "Stacktik is a RevOps consultancy, not an agency that resells HighLevel under its own name. We set HighLevel up for businesses that run it for their own sales and follow-up. We do not write your marketing copy or run campaigns for you."
+    },
+    {
+      "q": "Can you fix a HighLevel account that is already set up?",
+      "a": "Yes. The proposal says what to keep, what to connect and what to rebuild. Common fixes are stages nobody agrees on, leads with no owner, automations nobody documented and reports nobody reads. Each is quoted as a fixed fee in writing."
     }
-   ]
-  }
- ],
- "platforms": {
-  "h2": "HighLevel and the tools we connect to it.",
-  "intro": "HighLevel is one of the CRMs Stacktik sets up. These are the tools we connect around a CRM, through the tool's own integration, Zapier or a custom connector. The proposal names the ones that fit you.",
-  "names": [
-   "HighLevel",
-   "CloudTalk",
-   "Dialpad",
-   "Kixie",
-   "Zapier",
-   "Claude",
-   "OpenAI",
-   "Fireflies.ai",
-   "Databox"
-  ]
- },
- "faq": [
-  {
-   "q": "What does a GoHighLevel setup include?",
-   "a": "A GoHighLevel setup includes pipelines with written stage rules, lead capture routed to a rep, follow-up automations, calendars and messaging, your data moved in and reporting. Stacktik scopes each project on a written proposal, trains your team on your own data and leaves handover notes."
-  },
-  {
-   "q": "Is GoHighLevel the same as HighLevel?",
-   "a": "Yes. HighLevel is the product name, and GoHighLevel comes from its web address, so people use both for the same platform. Stacktik lists HighLevel among the CRMs it sets up, alongside HubSpot, monday.com CRM, Close, Nutshell and Capsule."
-  },
-  {
-   "q": "What does a GoHighLevel consultant do?",
-   "a": "A GoHighLevel consultant, sometimes called a GoHighLevel expert, turns the account into a working system: the pipeline, the routing, the automations and the reports, set up around how your team sells. Stacktik assigns one technical RevOps consultant who does the work and stays with the project."
-  },
-  {
-   "q": "How much does a GoHighLevel setup cost?",
-   "a": "The setup is a fixed fee, quoted in writing before work starts, and it depends on scope. HighLevel itself is billed on its own plans, by the vendor or by the agency you bought it from. The proposal shows both numbers separately. Nothing is charged for the first call."
-  },
-  {
-   "q": "Are you a GoHighLevel agency?",
-   "a": "Stacktik is a RevOps consultancy, not an agency that resells HighLevel under its own name. We set HighLevel up for businesses that run it for their own sales and follow-up. We do not write your marketing copy or run campaigns for you."
-  },
-  {
-   "q": "Can you fix a HighLevel account that is already set up?",
-   "a": "Yes. The proposal says what to keep, what to connect and what to rebuild. Common fixes are stages nobody agrees on, leads with no owner, automations nobody documented and reports nobody reads. Each is quoted as a fixed fee in writing."
-  }
- ],
- "closeH2": "Start with what your account does today.",
- "closeLede": "A free call about how leads reach you and what isn't working. You get a straight answer on the right next step, and a written proposal.",
- "keywordsUsed": [],
- "keywordsSkipped": [],
- "sources": []
+  ],
+  "closeH2": "Start with what your account does today.",
+  "closeLede": "A free call about how leads reach you and what isn't working.",
+  "keywordsUsed": [],
+  "keywordsSkipped": [],
+  "sources": []
 }

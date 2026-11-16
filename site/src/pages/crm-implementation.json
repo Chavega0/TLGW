@@ -1,223 +1,223 @@
 {
- "slug": "crm-implementation",
- "title": "CRM Implementation Services, Process and Cost | Stacktik",
- "metaDescription": "CRM implementation by Stacktik: the CRM chosen, set up and connected to calling and outreach, your data migrated, your team trained. Fixed fee in writing.",
- "eyebrow": "CRM implementation services",
- "h1": "CRM implementation for sales teams, from first call to handover.",
- "lede": "CRM implementation is the work of putting a customer relationship management (CRM) system into daily use: choosing the system, setting it up around how your team sells, moving your data in, connecting calling, outreach and reporting to it, and training the people who use it. Stacktik, a RevOps (revenue operations) consultancy in Woodbridge, Ontario, runs CRM implementation as a scoped project for a fixed fee, quoted in writing before work starts.",
- "summary": [
-  {
-   "label": "What it is",
-   "text": "CRM implementation is choosing a CRM, setting it up, migrating your data, connecting calling, outreach and reporting to it, and training your team to use it."
-  },
-  {
-   "label": "Who it is for",
-   "text": "Sales and customer-facing teams choosing a first sales CRM, replacing one, or fixing a CRM that was bought but never set up properly."
-  },
-  {
-   "label": "What you get",
-   "text": "A CRM configured in your own account, your data moved in, your other tools connected, recorded training sessions and written handover notes."
-  },
-  {
-   "label": "How it is priced",
-   "text": "A fixed fee for the implementation, quoted in writing before work starts. Software stays on the vendor's own plan and pricing. The first call is free."
-  }
- ],
- "blocks": [
-  {
-   "type": "rows",
-   "id": "what-it-covers",
-   "eyebrow": "What CRM implementation is",
-   "h2": "What CRM implementation covers, from setup to CRM integration.",
-   "intro": "A sales CRM is the system where every customer, opportunity and conversation lives, and the one your other tools connect to. Every Stacktik project is scoped on a written proposal, so the list below is what we draw from, not a fixed package.",
-   "items": [
+  "slug": "crm-implementation",
+  "title": "CRM Implementation Services, Process and Cost | Stacktik",
+  "metaDescription": "CRM implementation by Stacktik: the CRM chosen, set up and connected to calling and outreach, your data migrated, your team trained. Fixed fee in writing.",
+  "eyebrow": "CRM implementation services",
+  "h1": "CRM implementation for sales teams, from first call to handover.",
+  "lede": "CRM implementation is the work of putting a CRM into daily use: choosing the system, setting it up around how your team sells, moving your data in, connecting calling, outreach and reporting, and training the people who use it.",
+  "summary": [
     {
-     "title": "CRM setup",
-     "body": "Pipeline stages, with written rules for when an opportunity moves forward. Lead routing in turn, by territory, or to whoever is on duty. We start from how leads, calls and follow-ups move through your team."
+      "label": "What it is",
+      "text": "Choosing a CRM, setting it up, migrating your data, connecting calling, outreach and reporting to it, and training your team to use it."
     },
     {
-     "title": "CRM data migration",
-     "body": "Your records are moved from your current system or from spreadsheets, and duplicates are merged. The old system stays read-only during the switch. After that it is yours to close."
+      "label": "Who it is for",
+      "text": "Sales and customer-facing teams choosing a first sales CRM, replacing one, or fixing a CRM that was bought but never set up properly."
     },
     {
-     "title": "CRM integration",
-     "body": "The phone system is connected to the CRM, so calls are logged on the record with the recording. Email sequences run with rules that stop them. Reports pull from the CRM, the phone system and the outreach tool."
+      "label": "What you get",
+      "text": "A CRM configured in your own account, your data moved in, your other tools connected, recorded training sessions and written handover notes."
     },
     {
-     "title": "Automation and AI agents",
-     "body": "Automations between tools, documented. AI agents built on Claude or OpenAI take routine steps: call notes written to the record, inbound leads qualified, follow-ups drafted for a rep to approve."
-    },
-    {
-     "title": "Training on your own data",
-     "body": "Training sessions use your own data and are recorded for the team. Handover notes say how each piece runs and who to call about it."
-    },
-    {
-     "title": "A revenue scoreboard",
-     "body": "Targets per rep and per team, a live leaderboard, and the reports the owner reads, pulled from the CRM and the phone system and updating without anyone typing."
+      "label": "How it is priced",
+      "text": "A fixed fee for the implementation, quoted in writing before work starts. Software stays on the vendor's own plan and pricing."
     }
-   ]
-  },
-  {
-   "type": "steps",
-   "id": "process",
-   "eyebrow": "CRM implementation steps",
-   "h2": "The CRM implementation process, step by step.",
-   "intro": "At Stacktik, the written proposal is your CRM implementation plan. It lists the steps for your project, their order and what we need from your team. One technical RevOps consultant is assigned to your project and stays with it from the first idea to fully deployed.",
-   "items": [
+  ],
+  "blocks": [
     {
-     "title": "A free first call",
-     "body": "We go through what you use today, what isn't working, and whether the next step is software, implementation, both, or nothing yet. There is no obligation."
+      "type": "rows",
+      "id": "what-it-covers",
+      "eyebrow": "What CRM implementation is",
+      "h2": "What CRM implementation covers, from setup to CRM integration.",
+      "intro": "A sales CRM is the system where every customer, opportunity and conversation lives, and the one your other tools connect to.",
+      "items": [
+        {
+          "title": "CRM setup",
+          "body": "Pipeline stages, with written rules for when an opportunity moves forward. Lead routing in turn, by territory, or to whoever is on duty."
+        },
+        {
+          "title": "CRM data migration",
+          "body": "Your records are moved from your current system or from spreadsheets, and duplicates are merged. The old system stays read-only during the switch."
+        },
+        {
+          "title": "CRM integration",
+          "body": "The phone system is connected to the CRM, so calls are logged on the record with the recording. Email sequences run with rules that stop them."
+        },
+        {
+          "title": "Automation and AI agents",
+          "body": "Documented automations between tools, and AI agents on Claude or OpenAI that write call notes, qualify inbound leads and draft follow-ups for a rep to approve."
+        },
+        {
+          "title": "Training on your own data",
+          "body": "Training sessions use your own data and are recorded for the team. Handover notes say how each piece runs and who to call about it."
+        },
+        {
+          "title": "A revenue scoreboard",
+          "body": "Targets per rep and per team, a live leaderboard, and the reports the owner reads, pulled from the CRM and the phone system."
+        }
+      ]
     },
     {
-     "title": "A shortlist and a written proposal",
-     "body": "We map how leads, calls and follow-ups move through your team, then shortlist two or three CRMs with the monthly cost of each. The proposal sets out the scope, the fixed fee and what counts as done."
+      "type": "steps",
+      "id": "process",
+      "eyebrow": "CRM implementation steps",
+      "h2": "The CRM implementation process, step by step.",
+      "intro": "At Stacktik, the written proposal is your CRM implementation plan.",
+      "items": [
+        {
+          "title": "A free first call",
+          "body": "We go through what you use today, what isn't working, and whether the next step is software, implementation, both, or nothing yet. There is no obligation."
+        },
+        {
+          "title": "A shortlist and a written proposal",
+          "body": "We map how leads, calls and follow-ups move through your team, then shortlist two or three CRMs with the monthly cost of each."
+        },
+        {
+          "title": "CRM setup in your account",
+          "body": "The subscription is in your name, bought through our partner programs or direct from the vendor."
+        },
+        {
+          "title": "Your data moved over",
+          "body": "Records come across from your current system or spreadsheets, and duplicates are merged. The old system is read-only during the switch, then yours to close."
+        },
+        {
+          "title": "Calling, outreach and reporting connected",
+          "body": "The phone system is connected so calls log to the record with the recording. Email sequences stop when a reply comes in."
+        },
+        {
+          "title": "Training and handover",
+          "body": "Your team is trained on the setup, on their own data, and the sessions are recorded."
+        }
+      ]
     },
     {
-     "title": "CRM setup in your account",
-     "body": "The subscription is in your name, bought through our partner programs or direct from the vendor. You create a named admin seat for us, and we build the pipeline stages and lead routing inside your account."
+      "type": "rows",
+      "id": "cost",
+      "eyebrow": "What it costs",
+      "h2": "What drives CRM implementation cost.",
+      "intro": "There are two separate numbers, both on the Stacktik proposal: what the software costs you each month, and what our work costs.",
+      "items": [
+        {
+          "title": "Plan and seat count",
+          "body": "The software is on the vendor's own plan and pricing. The monthly figure depends on the plan and the number of seats."
+        },
+        {
+          "title": "How much data moves",
+          "body": "Moving records out of one current system is a different job from pulling them out of several spreadsheets."
+        },
+        {
+          "title": "How many tools connect",
+          "body": "A CRM on its own is a smaller project than a CRM with a phone system, an outreach tool and a reporting dashboard connected to it."
+        },
+        {
+          "title": "Automation, AI agents and custom tools",
+          "body": "Automations between tools, AI agents for routine steps, and any internal tool or connector we build are scoped and quoted on the same proposal."
+        },
+        {
+          "title": "Additions and ongoing support",
+          "body": "The proposal says what is in scope, what is not, and what an addition would cost."
+        }
+      ]
     },
     {
-     "title": "Your data moved over",
-     "body": "Records come across from your current system or spreadsheets, and duplicates are merged. The old system is read-only during the switch, then yours to close."
-    },
-    {
-     "title": "Calling, outreach and reporting connected",
-     "body": "The phone system is connected so calls log to the record with the recording. Email sequences stop when a reply comes in. Automations between tools are documented, and reports pull from every system."
-    },
-    {
-     "title": "Training and handover",
-     "body": "Your team is trained on the setup, on their own data, and the sessions are recorded. Handover notes say how each piece runs and who to call. You revoke our admin seat. Monthly support afterwards is optional."
+      "type": "rows",
+      "id": "choosing",
+      "eyebrow": "Choosing CRM consulting services",
+      "h2": "How to choose a CRM implementation consultant or partner.",
+      "intro": "CRM consulting ranges from one vendor's own onboarding to a full build across several tools.",
+      "items": [
+        {
+          "title": "Scope and fee in writing",
+          "body": "Ask for the scope, what is out of scope, the fee and what counts as done before work starts."
+        },
+        {
+          "title": "One named person on the work",
+          "body": "Ask who builds it. At Stacktik one technical RevOps consultant is the same person on the call, the proposal and the build."
+        },
+        {
+          "title": "Vendor relationships disclosed",
+          "body": "Ask whether the vendor pays the consultant. Our proposal states our relationship with each vendor next to its price."
+        },
+        {
+          "title": "Software and setup kept separate",
+          "body": "A consultant should not tie the two together. Buy direct and hire us only for the implementation, or buy through us and set up yourself."
+        },
+        {
+          "title": "Work across every tool",
+          "body": "The CRM is the system your other tools connect to. Check that the consultant sets up calling, outreach and reporting across every tool, not one vendor's."
+        },
+        {
+          "title": "Limits stated up front",
+          "body": "Ask what the consultant does not do. We do not usually take on Salesforce or ERP migrations, write your email copy, or run your outbound."
+        }
+      ]
     }
-   ]
+  ],
+  "platforms": {
+    "h2": "CRM software: the platforms we set up.",
+    "intro": "For teams choosing a CRM in Canada or the United States, these are the ones Stacktik works with.",
+    "names": [
+      "HubSpot",
+      "monday.com CRM",
+      "Close",
+      "Nutshell",
+      "Capsule",
+      "HighLevel"
+    ]
   },
-  {
-   "type": "rows",
-   "id": "cost",
-   "eyebrow": "What it costs",
-   "h2": "What drives CRM implementation cost.",
-   "intro": "There are two separate numbers, both on the Stacktik proposal: what the software costs you each month, and what our work costs. There are no prices on this page because every job is scoped. These are the things that move each number.",
-   "items": [
+  "faq": [
     {
-     "title": "Plan and seat count",
-     "body": "The software is on the vendor's own plan and pricing. The monthly figure depends on the plan and the number of seats. Where a vendor program provides a customer offer, it is applied and shown on the proposal, whether or not we do your setup."
+      "q": "What does CRM implementation cost?",
+      "a": "The cost of a CRM implementation has two parts: the software, on the vendor's own plan and pricing, and the implementation work. Stacktik quotes the work as a fixed fee, in writing, before it starts, with what is in scope, what is not and what an addition would cost."
     },
     {
-     "title": "How much data moves",
-     "body": "Moving records out of one current system is a different job from pulling them out of several spreadsheets. What is moved, and from where, is part of the scope on the proposal."
+      "q": "What are the steps in a CRM implementation plan?",
+      "a": "At Stacktik, the steps in implementing a CRM are a first call, a shortlist and written proposal, then the work the proposal scopes: setup in your account, data migration, connecting calling, outreach and reporting, training and handover."
     },
     {
-     "title": "How many tools connect",
-     "body": "A CRM on its own is a smaller project than a CRM with a phone system, an outreach tool and a reporting dashboard connected to it. The tools to connect are part of the scope on the proposal."
+      "q": "How do I choose a CRM implementation consultant?",
+      "a": "Choose a consultant who puts the scope, the fee and what counts as done in writing before work starts. Then check who does the build, whether a vendor pays them, whether they connect the tools around the CRM, and whether you can buy the software and the setup separately."
     },
     {
-     "title": "Automation, AI agents and custom tools",
-     "body": "Automations between tools, AI agents for routine steps, and any internal tool or connector we build where no platform covers a step are scoped and quoted on the same proposal."
+      "q": "What is the best CRM for a small business in Canada?",
+      "a": "There is no single best CRM for every small business in Canada. The right one fits how your team sells, at a monthly cost you see before you commit."
     },
     {
-     "title": "Additions and ongoing support",
-     "body": "The proposal says what is in scope, what is not, and what an addition would cost. Support after handover is optional and monthly, with its own scope and fee."
+      "q": "How does CRM data migration work when we switch CRMs?",
+      "a": "In a CRM migration, your records are moved from the current system or from spreadsheets into the new CRM, and duplicates are merged. With Stacktik, the old system stays read-only during the switch and is then yours to close. Salesforce and ERP migrations are not usually in scope."
+    },
+    {
+      "q": "Can Stacktik be our CRM implementation partner if we already bought the CRM?",
+      "a": "Yes. Stacktik works as your CRM implementation partner whether you bought the CRM direct, bought it through Stacktik, or have not chosen one yet. You can buy direct and hire us only for the implementation, or buy through us and run the setup yourself."
     }
-   ]
-  },
-  {
-   "type": "rows",
-   "id": "choosing",
-   "eyebrow": "Choosing CRM consulting services",
-   "h2": "How to choose a CRM implementation consultant or partner.",
-   "intro": "CRM consulting ranges from one vendor's own onboarding to a full build across several tools. These are the points worth checking with any CRM consultant before you sign, and how Stacktik answers each one.",
-   "items": [
+  ],
+  "closeH2": "Start with a call about your CRM.",
+  "closeLede": "The first call is free. We tell you whether the next step is software, implementation, both, or nothing yet.",
+  "keywordsUsed": [
+    "crm implementation",
+    "crm implementation services",
+    "crm consultant",
+    "crm consulting",
+    "crm consulting services",
+    "crm implementation consultant",
+    "crm implementation partner",
+    "crm implementation plan",
+    "crm implementation process",
+    "crm implementation steps",
+    "crm implementation cost",
+    "crm data migration",
+    "crm migration",
+    "crm integration",
+    "crm setup",
+    "crm canada",
+    "crm software canada",
+    "best crm for small business canada",
+    "sales crm"
+  ],
+  "keywordsSkipped": [
     {
-     "title": "Scope and fee in writing",
-     "body": "Ask for the scope, what is out of scope, the fee and what counts as done before work starts. Stacktik quotes implementation as a fixed fee in writing, with what an addition would cost."
-    },
-    {
-     "title": "One named person on the work",
-     "body": "Ask who builds it. At Stacktik a technical RevOps consultant is assigned to your project: the same person on the call, the proposal and the build, from the first idea to fully deployed."
-    },
-    {
-     "title": "Vendor relationships disclosed",
-     "body": "Ask whether the vendor pays the consultant. Stacktik is enrolled in vendor partner programs with most of the platforms it sets up, and the proposal states its relationship with each one next to its price."
-    },
-    {
-     "title": "Software and setup kept separate",
-     "body": "A consultant should not tie the two together. With Stacktik you can buy direct and hire us only for the implementation, or buy through us and run the setup yourself."
-    },
-    {
-     "title": "Work across every tool",
-     "body": "The CRM is the system your other tools connect to. Check that the consultant sets up calling, outreach and reporting across every tool, not one vendor's. If the vendor's own onboarding is enough for your case, we say so."
-    },
-    {
-     "title": "Limits stated up front",
-     "body": "Ask what the consultant does not do. Stacktik does not usually take on Salesforce or ERP migrations, write your email copy, or run your outbound for you. We build it; your team sends it."
+      "keyword": "crm consultant toronto",
+      "reason": "The site text places Stacktik in Woodbridge, Ontario and never mentions Toronto or a service area. Presenting Stacktik as a Toronto consultant would be a location claim the sources do not support."
     }
-   ]
-  }
- ],
- "platforms": {
-  "h2": "CRM software in Canada: the platforms we set up.",
-  "intro": "For teams choosing a CRM in Canada, these are the ones Stacktik works with. We are enrolled in vendor partner programs with most platforms we set up, and the proposal states our relationship with each next to its price.",
-  "names": [
-   "HubSpot",
-   "monday.com CRM",
-   "Close",
-   "Nutshell",
-   "Capsule",
-   "HighLevel"
   ]
- },
- "faq": [
-  {
-   "q": "What does CRM implementation cost?",
-   "a": "The cost of a CRM implementation has two parts: the software, on the vendor's own plan and pricing, and the implementation work. Stacktik quotes the work as a fixed fee, in writing, before it starts, with what is in scope, what is not and what an addition would cost. Every job is scoped, so there are no prices on this page. Nothing is charged for the first call."
-  },
-  {
-   "q": "What are the steps in a CRM implementation plan?",
-   "a": "At Stacktik, the steps in implementing a CRM are a first call, a shortlist and written proposal, then the work the proposal scopes: setup in your account, data migration, connecting calling, outreach and reporting, training and handover. The proposal lists the steps for your project, their order and what we need from your team, so you see the whole plan before you commit to anything."
-  },
-  {
-   "q": "How do I choose a CRM implementation consultant?",
-   "a": "Choose a consultant who puts the scope, the fee and what counts as done in writing before work starts. Then check who does the build, whether a vendor pays them, whether they connect the tools around the CRM, and whether you can buy the software and the setup separately. Stacktik quotes a fixed fee in writing, assigns one technical RevOps consultant to your project, and states its relationship with each tool next to its price."
-  },
-  {
-   "q": "What is the best CRM for a small business in Canada?",
-   "a": "There is no single best CRM for every small business in Canada. The right one fits how your team sells, at a monthly cost you see before you commit. Stacktik maps how leads, calls and follow-ups move through your team, then shortlists two or three CRMs with the monthly cost of each for your seat count, so you decide on fit and cost, not on demos."
-  },
-  {
-   "q": "How does CRM data migration work when we switch CRMs?",
-   "a": "In a CRM migration, your records are moved from the current system or from spreadsheets into the new CRM, and duplicates are merged. With Stacktik, the old system stays read-only during the switch and is then yours to close. Salesforce and ERP migrations are not usually in scope. If the system you run on is not one we list, ask on the call."
-  },
-  {
-   "q": "Can Stacktik be our CRM implementation partner if we already bought the CRM?",
-   "a": "Yes. Stacktik works as your CRM implementation partner whether you bought the CRM direct, bought it through Stacktik, or have not chosen one yet. You can buy direct and hire us only for the implementation, or buy through us and run the setup yourself. If the vendor's own onboarding is enough for your case, we say so."
-  }
- ],
- "closeH2": "Start with a call about your CRM.",
- "closeLede": "The first call is free, with no obligation. We go through what you use today and what isn't working, and tell you whether the next step is software, implementation, both, or nothing yet.",
- "keywordsUsed": [
-  "crm implementation",
-  "crm implementation services",
-  "crm consultant",
-  "crm consulting",
-  "crm consulting services",
-  "crm implementation consultant",
-  "crm implementation partner",
-  "crm implementation plan",
-  "crm implementation process",
-  "crm implementation steps",
-  "crm implementation cost",
-  "crm data migration",
-  "crm migration",
-  "crm integration",
-  "crm setup",
-  "crm canada",
-  "crm software canada",
-  "best crm for small business canada",
-  "sales crm"
- ],
- "keywordsSkipped": [
-  {
-   "keyword": "crm consultant toronto",
-   "reason": "The site text places Stacktik in Woodbridge, Ontario and never mentions Toronto or a service area. Presenting Stacktik as a Toronto consultant would be a location claim the sources do not support."
-  }
- ]
 }

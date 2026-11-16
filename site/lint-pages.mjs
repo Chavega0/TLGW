@@ -25,7 +25,15 @@ for (const f of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
   if (!p.metaDescription || p.metaDescription.length < 110 || p.metaDescription.length > 160) H.push(`metaDescription ${p.metaDescription?.length} chars`);
   if (!p.eyebrow || p.eyebrow.length > 40) H.push("eyebrow too long");
   if (!p.h1 || p.h1.length > 75) H.push(`h1 ${p.h1?.length} chars`);
-  if (words(p.lede || "") < 35 || words(p.lede || "") > 85) H.push(`lede ${words(p.lede || "")} words`);
+  // Word budgets. The pages were cut by about half after the owner found them too wordy; these keep them that way.
+  const budget = (where, t, max) => { if (words(t || "") > max) H.push(`${where}: ${words(t || "")} words, limit ${max}`); };
+  if (words(p.lede || "") < 15) H.push(`lede ${words(p.lede || "")} words`);
+  budget("lede", p.lede, 40);
+  (p.summary || []).forEach((s, i) => budget(`summary ${i + 1}`, s.text, 27));
+  (p.blocks || []).forEach((b) => { budget(`${b.id} intro`, b.intro, 24); b.items.forEach((it, i) => budget(`${b.id} item ${i + 1}`, it.body, 27)); });
+  budget("platforms intro", p.platforms?.intro, 24);
+  (p.faq || []).forEach((q, i) => budget(`faq ${i + 1}`, q.a, 55));
+  budget("closeLede", p.closeLede, 24);
   const labels = (p.summary || []).map((s) => s.label).join("|");
   if (labels !== "What it is|Who it is for|What you get|How it is priced") H.push("summary labels: " + labels);
   if ((p.blocks || []).length < 3 || (p.blocks || []).length > 4) H.push(`${(p.blocks || []).length} blocks`);

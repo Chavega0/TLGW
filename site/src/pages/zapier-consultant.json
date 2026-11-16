@@ -1,169 +1,169 @@
 {
- "slug": "zapier-consultant",
- "title": "Zapier consultant for CRM automation | Stacktik",
- "metaDescription": "A Zapier consultant from Stacktik builds and documents the automations between your CRM, phone, outreach and reporting tools, for a fixed fee.",
- "eyebrow": "Zapier and CRM automation",
- "h1": "A Zapier consultant who documents every automation.",
- "lede": "A Zapier consultant designs and builds the automations that pass information between your tools, so a form becomes a CRM record, a call logs itself and a follow-up goes out without anyone retyping. Stacktik, a RevOps (revenue operations) consultancy in Woodbridge, Ontario, builds CRM automation with Zapier, native integrations and custom connectors, and writes down how each one runs.",
- "summary": [
-  {
-   "label": "What it is",
-   "text": "Automations between your CRM, phone, outreach and reporting tools, built with Zapier, native integrations or custom connectors, tested and documented."
-  },
-  {
-   "label": "Who it is for",
-   "text": "Sales and customer-facing teams whose tools do not talk to each other, or whose automations were built by someone who has since left."
-  },
-  {
-   "label": "What you get",
-   "text": "Each routine step mapped, built and tested with real examples, a written record of how it runs, a trained team and handover notes."
-  },
-  {
-   "label": "How it is priced",
-   "text": "A fixed fee for the build, quoted in writing before work starts. Zapier stays on Zapier's own plan and pricing. The first call is free."
-  }
- ],
- "blocks": [
-  {
-   "type": "rows",
-   "id": "what-we-automate",
-   "eyebrow": "What we automate",
-   "h2": "CRM automation, in the steps a sales team repeats.",
-   "intro": "CRM automation means the routine steps happen by rule. These are the ones Stacktik builds most often, each inside the tools you already run.",
-   "items": [
+  "slug": "zapier-consultant",
+  "title": "Zapier consultant for CRM automation | Stacktik",
+  "metaDescription": "A Zapier consultant from Stacktik builds and documents the automations between your CRM, phone, outreach and reporting tools, for a fixed fee.",
+  "eyebrow": "Zapier and CRM automation",
+  "h1": "A Zapier consultant who documents every automation.",
+  "lede": "A Zapier consultant designs and builds the automations that pass information between your tools, so a form becomes a CRM record, a call logs itself and a follow-up goes out without anyone retyping.",
+  "summary": [
     {
-     "title": "A form becomes a record",
-     "body": "A web form or an inbound message creates a CRM record with the details already in, so nobody copies it across by hand."
+      "label": "What it is",
+      "text": "Automations between your CRM, phone, outreach and reporting tools, built with Zapier, native integrations or custom connectors, tested and documented."
     },
     {
-     "title": "A lead gets an owner",
-     "body": "The new record is routed in turn, by territory, or to whoever is on duty. This is sales workflow automation at its simplest."
+      "label": "Who it is for",
+      "text": "Sales and customer-facing teams whose tools do not talk to each other, or whose automations were built by someone who has since left."
     },
     {
-     "title": "A call logs itself",
-     "body": "The phone system writes the call, the recording and the notes to the right record, and a missed call becomes a callback task."
+      "label": "What you get",
+      "text": "Each routine step mapped, built and tested with real examples, a written record of how it runs, a trained team and handover notes."
     },
     {
-     "title": "A reply stops the sequence",
-     "body": "When a prospect answers, the outreach sequence stops and the conversation moves to a person."
-    },
-    {
-     "title": "A signed deal moves the stage",
-     "body": "A signature or a payment updates the deal and starts the handover to the next team."
-    },
-    {
-     "title": "The numbers update themselves",
-     "body": "The dashboard and the revenue scoreboard pull from the CRM, the phone system and the outreach tool without anyone typing."
+      "label": "How it is priced",
+      "text": "A fixed fee for the build, quoted in writing before work starts. Zapier stays on Zapier's own plan and pricing."
     }
-   ]
-  },
-  {
-   "type": "rows",
-   "id": "which-tool",
-   "eyebrow": "Choosing the tool",
-   "h2": "When Zapier is the right tool, and when it is not.",
-   "intro": "Zapier is one of three ways to connect two tools. A careful consultant tells you when one of the other two is better, even though it means less Zapier.",
-   "items": [
+  ],
+  "blocks": [
     {
-     "title": "The vendor's own integration",
-     "body": "When two tools already integrate, use that first. It is maintained by the vendor and usually carries more detail than a general connector can."
+      "type": "rows",
+      "id": "what-we-automate",
+      "eyebrow": "What we automate",
+      "h2": "CRM automation, in the steps a sales team repeats.",
+      "intro": "CRM automation means the routine steps happen by rule. These are the ones Stacktik builds most often.",
+      "items": [
+        {
+          "title": "A form becomes a record",
+          "body": "A web form or an inbound message creates a CRM record with the details already in, so nobody copies it across by hand."
+        },
+        {
+          "title": "A lead gets an owner",
+          "body": "The new record is routed in turn, by territory, or to whoever is on duty. This is sales workflow automation at its simplest."
+        },
+        {
+          "title": "A call logs itself",
+          "body": "The phone system writes the call, the recording and the notes to the right record, and a missed call becomes a callback task."
+        },
+        {
+          "title": "A reply stops the sequence",
+          "body": "When a prospect answers, the outreach sequence stops and the conversation moves to a person."
+        },
+        {
+          "title": "A signed deal moves the stage",
+          "body": "A signature or a payment updates the deal and starts the handover to the next team."
+        },
+        {
+          "title": "The numbers update themselves",
+          "body": "The dashboard and the revenue scoreboard pull from the CRM, the phone system and the outreach tool without anyone typing."
+        }
+      ]
     },
     {
-     "title": "Zapier, for the gaps",
-     "body": "Zapier fits a simple step between two tools that have no integration of their own. It is quick to build and easy for your team to read."
+      "type": "rows",
+      "id": "which-tool",
+      "eyebrow": "Choosing the tool",
+      "h2": "When Zapier is the right tool, and when it is not.",
+      "intro": "Zapier is one of three ways to connect two tools.",
+      "items": [
+        {
+          "title": "The vendor's own integration",
+          "body": "When two tools already integrate, use that first. It is maintained by the vendor and usually carries more detail than a general connector can."
+        },
+        {
+          "title": "Zapier, for the gaps",
+          "body": "Zapier fits a simple step between two tools that have no integration of their own."
+        },
+        {
+          "title": "A custom connector",
+          "body": "When a step needs logic a connector cannot express, or the tool has no integration at all, Stacktik builds the connector itself."
+        },
+        {
+          "title": "An AI agent, where judgement is needed",
+          "body": "A rule cannot read a message. For steps that need reading or writing, we build an AI agent on Claude or OpenAI, with a person approving."
+        },
+        {
+          "title": "Fewer automations, well documented",
+          "body": "Every automation is something to maintain. We build the ones that earn their place and write each one down."
+        }
+      ]
     },
     {
-     "title": "A custom connector",
-     "body": "When a step needs logic a connector cannot express, or the tool has no integration at all, Stacktik builds the connector itself."
-    },
-    {
-     "title": "An AI agent, where judgement is needed",
-     "body": "A rule cannot read a message and decide what it means. For steps that need reading or writing, we build an AI agent on Claude or OpenAI, with a person approving anything that reaches a customer."
-    },
-    {
-     "title": "Fewer automations, well documented",
-     "body": "Every automation is something to maintain. We build the ones that earn their place and write each one down."
+      "type": "steps",
+      "id": "process",
+      "eyebrow": "How it works",
+      "h2": "How Stacktik builds CRM workflow automation.",
+      "intro": "One technical RevOps consultant is assigned to your project and stays with it.",
+      "items": [
+        {
+          "title": "A free call",
+          "body": "We go through how leads, calls and follow-ups move through your team today, what you use, and what isn't working."
+        },
+        {
+          "title": "A written proposal",
+          "body": "What to keep, connect or replace, the monthly cost of each tool, and our fee for the work, fixed before it starts."
+        },
+        {
+          "title": "Map each step",
+          "body": "For each automation we write down what starts it, what it reads, what it changes and what a correct result looks like."
+        },
+        {
+          "title": "Build and test",
+          "body": "The automation is built in your own accounts through a seat you control, and tested with real examples before it runs on live records."
+        },
+        {
+          "title": "Document, train and hand over",
+          "body": "Each automation is written up: what it does, where it lives and how to change it. Your team is trained, and the notes are yours."
+        }
+      ]
     }
-   ]
+  ],
+  "platforms": {
+    "h2": "The tools we connect.",
+    "intro": "Zapier sits between other tools. These are the CRM, calling, outreach, AI and reporting platforms Stacktik sets up and connects.",
+    "names": [
+      "Zapier",
+      "HubSpot",
+      "monday.com CRM",
+      "Close",
+      "HighLevel",
+      "CloudTalk",
+      "Dialpad",
+      "lemlist",
+      "Instantly",
+      "Fireflies.ai",
+      "Claude",
+      "OpenAI",
+      "Databox"
+    ]
   },
-  {
-   "type": "steps",
-   "id": "process",
-   "eyebrow": "How it works",
-   "h2": "How Stacktik builds CRM workflow automation.",
-   "intro": "One technical RevOps consultant is assigned to your project and stays with it. The steps and their order are written on the proposal. This is the usual outline.",
-   "items": [
+  "faq": [
     {
-     "title": "A free call",
-     "body": "We go through how leads, calls and follow-ups move through your team today, what you use, and what isn't working. You get a straight answer on the right next step. No obligation."
+      "q": "What does a Zapier consultant do?",
+      "a": "A Zapier consultant maps the routine steps between your tools, builds the automations that carry them out, tests them and documents how they run. Stacktik's consultant also tells you when a native integration, a custom connector or an AI agent is the better route."
     },
     {
-     "title": "A written proposal",
-     "body": "What to keep, connect or replace, the monthly cost of each tool, and our fee for the work, fixed before it starts. Our relationship with each vendor is stated next to its price."
+      "q": "What is CRM automation?",
+      "a": "CRM automation is having the CRM and the tools around it carry out routine steps by rule: creating a record from a form, assigning an owner, logging a call, stopping a sequence on a reply, updating a deal stage. It removes the retyping, not the judgement."
     },
     {
-     "title": "Map each step",
-     "body": "For each automation we write down what starts it, what it reads, what it changes and what a correct result looks like."
+      "q": "How much does a Zapier consultant cost?",
+      "a": "Stacktik quotes the build as a fixed fee in writing before work starts, based on how many steps are automated and how many tools they touch. Zapier itself stays on Zapier's own plan and pricing. Nothing is charged for the first call."
     },
     {
-     "title": "Build and test",
-     "body": "The automation is built in your own accounts through a seat you control, and tested with real examples before it runs on live records."
+      "q": "Are you a Zapier agency?",
+      "a": "Stacktik is a RevOps consultancy that uses Zapier as one of several tools. We are not tied to it. If the vendor's own integration or a custom connector does the job better, that is what goes on the proposal."
     },
     {
-     "title": "Document, train and hand over",
-     "body": "Each automation is written up: what it does, where it lives and how to change it. Your team is trained, and the notes are yours."
+      "q": "Can you fix automations someone else built?",
+      "a": "Yes. We list what each automation does, test it against real records, remove the ones that conflict or no longer matter, and document the rest so your team can maintain them."
+    },
+    {
+      "q": "Which Zapier integrations do you set up most?",
+      "a": "The ones around the CRM: forms and lead sources into the CRM, the phone system, email and LinkedIn outreach tools, conversation notes, and reporting. Each connection is tested with real examples and written down."
     }
-   ]
-  }
- ],
- "platforms": {
-  "h2": "The tools we connect.",
-  "intro": "Zapier sits between other tools. These are the CRM, calling, outreach, AI and reporting platforms Stacktik sets up and connects.",
-  "names": [
-   "Zapier",
-   "HubSpot",
-   "monday.com CRM",
-   "Close",
-   "HighLevel",
-   "CloudTalk",
-   "Dialpad",
-   "lemlist",
-   "Instantly",
-   "Fireflies.ai",
-   "Claude",
-   "OpenAI",
-   "Databox"
-  ]
- },
- "faq": [
-  {
-   "q": "What does a Zapier consultant do?",
-   "a": "A Zapier consultant maps the routine steps between your tools, builds the automations that carry them out, tests them and documents how they run. Stacktik's consultant also tells you when a native integration, a custom connector or an AI agent is the better route."
-  },
-  {
-   "q": "What is CRM automation?",
-   "a": "CRM automation is having the CRM and the tools around it carry out routine steps by rule: creating a record from a form, assigning an owner, logging a call, stopping a sequence on a reply, updating a deal stage. It removes the retyping, not the judgement."
-  },
-  {
-   "q": "How much does a Zapier consultant cost?",
-   "a": "Stacktik quotes the build as a fixed fee in writing before work starts, based on how many steps are automated and how many tools they touch. Zapier itself stays on Zapier's own plan and pricing. Nothing is charged for the first call."
-  },
-  {
-   "q": "Are you a Zapier agency?",
-   "a": "Stacktik is a RevOps consultancy that uses Zapier as one of several tools. We are not tied to it. If the vendor's own integration or a custom connector does the job better, that is what goes on the proposal."
-  },
-  {
-   "q": "Can you fix automations someone else built?",
-   "a": "Yes. We list what each automation does, test it against real records, remove the ones that conflict or no longer matter, and document the rest so your team can maintain them."
-  },
-  {
-   "q": "Which Zapier integrations do you set up most?",
-   "a": "The ones around the CRM: forms and lead sources into the CRM, the phone system, email and LinkedIn outreach tools, conversation notes, and reporting. Each connection is tested with real examples and written down."
-  }
- ],
- "closeH2": "Start with one step someone retypes.",
- "closeLede": "A free call about the tools you use and what still gets done by hand. You get a written proposal with a fixed fee.",
- "keywordsUsed": [],
- "keywordsSkipped": [],
- "sources": []
+  ],
+  "closeH2": "Start with one step someone retypes.",
+  "closeLede": "A free call about the tools you use and what still gets done by hand.",
+  "keywordsUsed": [],
+  "keywordsSkipped": [],
+  "sources": []
 }

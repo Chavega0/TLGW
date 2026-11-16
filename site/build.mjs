@@ -18,7 +18,8 @@ const ORG = {
   locality: "Woodbridge",
   region: "ON",
   country: "CA",
-  description: "Stacktik is a RevOps consultancy in Woodbridge, Ontario. It chooses, buys, sets up and connects CRM, calling, outreach and reporting tools for sales and customer-facing teams, builds AI agents on Claude and OpenAI, and can source the rest of a company's technology on the same written proposal.",
+  areas: ["Canada", "United States"],
+  description: "Stacktik is a RevOps consultancy in Woodbridge, Ontario, working with teams across Canada and the United States. It chooses, buys, sets up and connects CRM, calling, outreach and reporting tools for sales and customer-facing teams, builds AI agents on Claude and OpenAI, and can source the rest of a company's technology on the same written proposal.",
 };
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -63,7 +64,7 @@ const inGroup = (g) => services.filter((s) => s.group === g);
 const HOME = {
   path: "/",
   title: "RevOps agency and consulting for sales teams | Stacktik",
-  description: "Stacktik is a RevOps consultancy in Ontario. We choose, buy, set up and connect your CRM, calling, outreach and reporting tools, with AI agents built in.",
+  description: "RevOps consultancy for sales teams in Canada and the US. We choose, buy, set up and connect your CRM, calling, outreach and reporting tools.",
   og: "home",
 };
 const DETAILS = {
@@ -94,7 +95,7 @@ const footLinks = (label, items) => (items.length ? `
   </div>` : "");
 const footerHtml = () => `<footer>${footLinks("Services", inGroup("service"))}${footLinks("Integrations", inGroup("integration"))}
   <div class="wrap">
-    <span>© ${TODAY.slice(0, 4)} ${ORG.legalName} · ${ORG.locality}, Ontario</span>
+    <span>© ${TODAY.slice(0, 4)} ${ORG.legalName} · ${ORG.locality}, Ontario · Serving Canada and the United States</span>
     <span><a href="/">Home</a> · ${services.length ? '<a href="/services/">All services</a> · ' : ""}<a href="/details/">Platforms, implementation scope and buying details</a> · <a href="/blueprint/">Book a call</a> · <span class="email">${ORG.email}</span></span>
   </div>
 </footer>`;
@@ -122,6 +123,18 @@ const EXTRA_CSS = `
 .chips li { padding: 9px 16px; border: 1px solid var(--ln-strong); border-radius: 999px; font-weight: 600; font-size: .9rem; }
 .chips-note { margin-top: 22px; font-size: .88rem; color: var(--fg-muted); }
 .chips-note a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--ln-strong); }
+.faq { display: block; max-width: 54rem; }
+details.q { display: block; border-top: 1px solid var(--ln); }
+details.q:last-child { border-bottom: 1px solid var(--ln); }
+details.q summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 0; }
+details.q summary::-webkit-details-marker { display: none; }
+details.q summary h3 { font-size: 1.2rem; margin: 0; }
+details.q summary::after { content: ""; flex: none; width: 9px; height: 9px; margin: 0 6px 4px 0; border-right: 1.5px solid var(--fg-muted); border-bottom: 1.5px solid var(--fg-muted); transform: rotate(45deg); transition: transform .2s ease; }
+details.q[open] summary::after { transform: rotate(-135deg); margin-bottom: -4px; }
+details.q summary:hover h3 { color: var(--acc); }
+details.q summary:focus-visible { outline: 2px solid var(--acc); outline-offset: 4px; border-radius: 4px; }
+details.q > p { padding: 0 40px 22px 0; max-width: 46rem; }
+@media (prefers-reduced-motion: reduce) { details.q summary::after { transition: none; } }
 .rel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .rel a { display: grid; gap: 10px; padding: 22px; border: 1px solid var(--ln); border-radius: 14px; background: var(--surface); text-decoration: none; color: var(--fg); align-content: start; transition: border-color .25s ease; }
 .rel a:hover { border-color: var(--terracotta-light); }
@@ -178,7 +191,7 @@ const orgNode = () => ({
   description: ORG.description,
   email: ORG.email,
   address: { "@type": "PostalAddress", addressLocality: ORG.locality, addressRegion: ORG.region, addressCountry: ORG.country },
-  areaServed: { "@type": "Country", name: "Canada" },
+  areaServed: ORG.areas.map((name) => ({ "@type": "Country", name })),
   knowsAbout: ["Revenue operations", "CRM implementation", "HubSpot", "monday CRM", "Business phone systems", "Contact centre software", "AI agents", "AI receptionist", "Sales automation", "Sales reporting"],
   hasOfferCatalog: { "@type": "OfferCatalog", name: "Services", itemListElement: services.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", "@id": url(s.path + "#service"), name: s.name, url: url(s.path) } })) },
 });
@@ -216,12 +229,12 @@ function buildHome() {
   // For AI assistants and anyone skimming: who Stacktik is, in sentences that stand on their own, and the questions
   // people ask an assistant about a firm like this, answered directly. The FAQ structured data picks these up.
   const facts = [
-    ["What Stacktik is", `${ORG.name} is a RevOps (revenue operations) consultancy in ${ORG.locality}, Ontario. It chooses, buys, sets up and connects the CRM, calling, outreach and reporting tools that sales and customer-facing teams run on.`],
-    ["Who it is for", "Sales and customer-facing teams that are choosing software, replacing it, or running tools that were bought but never connected."],
-    ["What you get", "A written proposal, software bought on the vendor's own plan, the system set up and connected, your data moved over, your team trained, AI agents on the routine steps and a live revenue scoreboard."],
-    ["How it is priced", "The first call is free. Implementation is a fixed fee, quoted in writing before work starts. Software stays on the vendor's own plan and pricing. Ongoing support is optional and monthly."],
-    ["Beyond the sales tools", "Stacktik can also source phone systems, contact centre, internet, security, cloud and mobility from more than 400 suppliers, on the same written proposal."],
-    ["How to start", `Book a call, or write to ${ORG.email}. One technical RevOps consultant is assigned to each project.`],
+    ["What Stacktik is", `${ORG.name} is a RevOps (revenue operations) consultancy in ${ORG.locality}, Ontario. It sets up and connects the CRM, calling, outreach and reporting tools sales teams run on.`],
+    ["Who it is for", "Sales and customer-facing teams across Canada and the United States that are choosing software, replacing it, or running tools that were never connected."],
+    ["What you get", "Software bought on the vendor's own plan, set up and connected, your data moved over, your team trained, AI agents on routine steps and a revenue scoreboard."],
+    ["How it is priced", "The first call is free. Implementation is a fixed fee, quoted in writing. Software stays on the vendor's own plan and pricing."],
+    ["Beyond the sales tools", "Phone systems, contact centre, internet, security, cloud and mobility from more than 400 suppliers, on the same written proposal."],
+    ["How to start", `Book a call, or write to ${ORG.email}.`],
   ];
   const inShort = `<section id="in-short" class="rule" data-tone="dark">
   <div class="wrap">
@@ -241,7 +254,7 @@ ${facts.map(([k, v]) => `      <div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
     ["What is RevOps?", "RevOps, short for revenue operations, is the work of making sales, marketing and customer service run on one connected system: one set of customer records, shared definitions of a lead and a deal, and reporting everyone trusts. In practice it is the CRM, the calling and outreach tools connected to it, the automation between them and the scoreboard on top. That system is what Stacktik sets up."],
     ["What does Stacktik do?", "Stacktik chooses, buys, sets up and connects the software a sales or customer-facing team runs on: CRM, calling, outreach and reporting. We move your data over, automate the routine steps, build AI agents on Claude and OpenAI for them, train your team and put a revenue scoreboard in front of them. Use one part or all of it."],
     ["Do you only work on sales tools?", "No. Revenue operations is our specialty and the work we do ourselves. For the technology around it, we can source phone systems, contact centre, internet, security, cloud and mobility from more than 400 suppliers on the same written proposal, whether or not we do your RevOps work."],
-    ["Where is Stacktik based?", `${ORG.legalName} is based in ${ORG.locality}, Ontario, Canada. We work inside your own accounts, through a seat you create for us and can revoke at handover. Write to ${ORG.email} or book a call.`],
+    ["Where is Stacktik based?", `${ORG.legalName} is based in ${ORG.locality}, Ontario, and works with teams across Canada and the United States. We work inside your own accounts, through a seat you create for us and can revoke at handover. Write to ${ORG.email} or book a call.`],
   ];
   const faqEnd = '</p></div>\n    </div>\n  </div>\n</section>\n\n<section class="close rule"';
   body = swap(body, faqEnd, '</p></div>\n' + extraFaq.map(([q, a]) => `      <div class="q"><h3>${esc(q)}</h3><p>${esc(a)}</p></div>`).join("\n") + '\n    </div>\n  </div>\n</section>\n\n<section class="close rule"');
@@ -419,7 +432,7 @@ ${related.length ? `<section id="related" class="rule" data-tone="dark">
       <h2>Often part of the same project.</h2>
     </div>
     <div class="rel" data-reveal-group>
-${related.map((r) => `      <a href="${r.path}"><strong>${esc(r.name)}</strong><span>${esc(r.blurb)}</span></a>`).join("\n")}
+${related.map((r) => `      <a href="${r.path}"><strong>${esc(r.name)}</strong></a>`).join("\n")}
     </div>
     <p class="chips-note"><a href="/services/">All services and integrations</a></p>
   </div>
@@ -433,7 +446,7 @@ ${related.map((r) => `      <a href="${r.path}"><strong>${esc(r.name)}</strong><
     <div><a class="btn" href="/blueprint/">Book a call ${chev}</a></div>
   </div>
 </section>`;
-  const service = { "@type": "Service", "@id": url(page.path + "#service"), name, serviceType: name, description: p.metaDescription, url: url(page.path), provider: { "@id": url("/#organization") }, areaServed: { "@type": "Country", name: "Canada" } };
+  const service = { "@type": "Service", "@id": url(page.path + "#service"), name, serviceType: name, description: p.metaDescription, url: url(page.path), provider: { "@id": url("/#organization") }, areaServed: ORG.areas.map((name) => ({ "@type": "Country", name })) };
   const schema = [orgNode(), siteNode(), pageNode(page, { breadcrumb: { "@id": url(page.path + "#breadcrumb") }, mainEntity: { "@id": url(page.path + "#service") } }), crumbNode(page, [{ name: "Home", path: "/" }, { name, path: page.path }]), service, faqNode(page, p.faq)];
   const navLinks = [{ href: "/", text: "Home" }, ...p.blocks.slice(0, 3).map((b) => ({ href: `#${b.id}`, text: b.eyebrow })), { href: "#faq", text: "Questions" }, { href: "/services/", text: "Services" }];
   return { page, html: shell(page, { schema, navLinks, main }) };
@@ -543,7 +556,9 @@ function buildBook() {
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 cpSync(join(ROOT, "public"), OUT, { recursive: true });
-const put = (rel, text) => { const p = join(OUT, rel); mkdirSync(dirname(p), { recursive: true }); writeFileSync(p, text); };
+// Every question folds shut until it is clicked. The answer stays in the HTML, so search engines and AI crawlers read it in full.
+const foldFaq = (html) => html.replace(/<div class="q"><h3>([\s\S]*?)<\/h3><p>([\s\S]*?)<\/p><\/div>/g, '<details class="q"><summary><h3>$1</h3></summary><p>$2</p></details>');
+const put = (rel, text) => { const p = join(OUT, rel); mkdirSync(dirname(p), { recursive: true }); writeFileSync(p, rel.endsWith(".html") ? foldFaq(text) : text); };
 
 const t = partsOfDetails();
 put("assets/site.css", t.css + "\n" + EXTRA_CSS);
@@ -575,7 +590,7 @@ put("llms.txt", `# Stacktik
 
 > ${ORG.description}
 
-Stacktik (${ORG.legalName}) is based in ${ORG.locality}, Ontario, Canada. Revenue operations (RevOps) is its specialty: the CRM, calling, outreach and reporting tools a sales or customer-facing team runs on, chosen, bought, set up, connected and taught to the team.
+Stacktik (${ORG.legalName}) is based in ${ORG.locality}, Ontario, Canada, and works with teams across Canada and the United States. Revenue operations (RevOps) is its specialty: the CRM, calling, outreach and reporting tools a sales or customer-facing team runs on, chosen, bought, set up, connected and taught to the team.
 
 ## How Stacktik works
 

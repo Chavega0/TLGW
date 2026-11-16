@@ -1,162 +1,162 @@
 {
- "slug": "hubspot-phone-integration",
- "title": "HubSpot phone integration and calling setup | Stacktik",
- "metaDescription": "HubSpot phone integration by Stacktik: your phone system connected to HubSpot so calls are placed from the CRM and logged with the recording.",
- "eyebrow": "HubSpot phone integration",
- "h1": "HubSpot phone integration, with your calls on the record.",
- "lede": "A HubSpot phone integration connects your business phone system to HubSpot, so calls are placed from the CRM, logged to the contact record and stored with the recording attached. Stacktik, a RevOps (revenue operations) consultancy in Woodbridge, Ontario, helps you choose the phone system, connects it to HubSpot and tests it with your team, for a fixed fee quoted in writing.",
- "summary": [
-  {
-   "label": "What it is",
-   "text": "Connecting a business phone system to HubSpot so calls are placed from the CRM and logged to the record with the recording."
-  },
-  {
-   "label": "Who it is for",
-   "text": "Sales and customer-facing teams on HubSpot whose calls live in a separate phone app, with activity typed in afterwards or not at all."
-  },
-  {
-   "label": "What you get",
-   "text": "A phone system chosen or kept, connected to HubSpot, logging rules agreed in writing, test calls placed, and your team trained."
-  },
-  {
-   "label": "How it is priced",
-   "text": "A fixed fee for the setup, quoted in writing before work starts. The phone system stays on the vendor's own plan and pricing."
-  }
- ],
- "blocks": [
-  {
-   "type": "rows",
-   "id": "options",
-   "eyebrow": "Your options",
-   "h2": "HubSpot calling and the phone systems that connect to it.",
-   "intro": "There is more than one way to get calls into HubSpot. The right one depends on how many people call, how calls are shared and what you already own. The proposal shortlists two or three with the monthly cost of each.",
-   "items": [
+  "slug": "hubspot-phone-integration",
+  "title": "HubSpot phone integration and calling setup | Stacktik",
+  "metaDescription": "HubSpot phone integration by Stacktik: your phone system connected to HubSpot so calls are placed from the CRM and logged with the recording.",
+  "eyebrow": "HubSpot phone integration",
+  "h1": "HubSpot phone integration, with your calls on the record.",
+  "lede": "A HubSpot phone integration connects your business phone system to HubSpot, so calls are placed from the CRM, logged to the contact record and stored with the recording attached.",
+  "summary": [
     {
-     "title": "HubSpot's own calling",
-     "body": "HubSpot includes calling from the record, with calling minutes set by your HubSpot plan. Whether that is enough depends on how your team shares lines and how much it calls, so we check it first."
+      "label": "What it is",
+      "text": "Connecting a business phone system to HubSpot so calls are placed from the CRM and logged to the record with the recording."
     },
     {
-     "title": "Dialpad with HubSpot",
-     "body": "Dialpad is one of the calling platforms in Stacktik's direct vendor programs. A Dialpad HubSpot integration puts calls and their recordings on the contact record."
+      "label": "Who it is for",
+      "text": "Sales and customer-facing teams on HubSpot whose calls live in a separate phone app, with activity typed in afterwards or not at all."
     },
     {
-     "title": "CloudTalk with HubSpot",
-     "body": "CloudTalk is another of our direct platforms. A CloudTalk HubSpot integration suits teams that call across countries and want each call logged in the CRM."
+      "label": "What you get",
+      "text": "A phone system chosen or kept, connected to HubSpot, logging rules agreed in writing, test calls placed, and your team trained."
     },
     {
-     "title": "Kixie with HubSpot",
-     "body": "Kixie is built for sales teams that dial in volume. Connected to HubSpot, each call and its outcome land on the record."
-    },
-    {
-     "title": "RingCentral, Aircall and Zoom",
-     "body": "These come through our supplier network on the same proposal. HubSpot's Zoom integration covers meetings and webinars. Zoom Phone has a separate HubSpot app, so if you use Zoom for calls we check what that app logs first."
+      "label": "How it is priced",
+      "text": "A fixed fee for the setup, quoted in writing before work starts. The phone system stays on the vendor's own plan and pricing."
     }
-   ]
-  },
-  {
-   "type": "rows",
-   "id": "before-connecting",
-   "eyebrow": "Before connecting",
-   "h2": "What to decide before a HubSpot VoIP integration.",
-   "intro": "An integration is only as good as the decisions made before it is switched on. These are the ones we settle in writing first, whoever you hire to connect the two.",
-   "items": [
+  ],
+  "blocks": [
     {
-     "title": "Which users and numbers",
-     "body": "Decide who is connected and which numbers are included. Shared lines and personal lines usually need different rules."
+      "type": "rows",
+      "id": "options",
+      "eyebrow": "Your options",
+      "h2": "HubSpot calling and the phone systems that connect to it.",
+      "intro": "There is more than one way to get calls into HubSpot.",
+      "items": [
+        {
+          "title": "HubSpot's own calling",
+          "body": "HubSpot includes calling from the record, with calling minutes set by your HubSpot plan."
+        },
+        {
+          "title": "Dialpad with HubSpot",
+          "body": "Dialpad is one of the calling platforms in Stacktik's direct vendor programs. A Dialpad HubSpot integration puts calls and their recordings on the contact record."
+        },
+        {
+          "title": "CloudTalk with HubSpot",
+          "body": "CloudTalk is another of our direct platforms. A CloudTalk HubSpot integration suits teams that call across countries and want each call logged in the CRM."
+        },
+        {
+          "title": "Kixie with HubSpot",
+          "body": "Kixie is built for sales teams that dial in volume. Connected to HubSpot, each call and its outcome land on the record."
+        },
+        {
+          "title": "RingCentral, Aircall and Zoom",
+          "body": "These come through our supplier network on the same proposal. HubSpot's Zoom integration covers meetings and webinars."
+        }
+      ]
     },
     {
-     "title": "What gets logged",
-     "body": "Every call, or only calls with a known contact. Logging everything is complete but noisy. Logging selectively is cleaner but can hide activity."
+      "type": "rows",
+      "id": "before-connecting",
+      "eyebrow": "Before connecting",
+      "h2": "What to decide before a HubSpot VoIP integration.",
+      "intro": "An integration is only as good as the decisions made before it is switched on.",
+      "items": [
+        {
+          "title": "Which users and numbers",
+          "body": "Decide who is connected and which numbers are included. Shared lines and personal lines usually need different rules."
+        },
+        {
+          "title": "What gets logged",
+          "body": "Every call, or only calls with a known contact. Logging everything is complete but noisy. Logging selectively is cleaner but can hide activity."
+        },
+        {
+          "title": "Who owns an unknown caller",
+          "body": "When a number matches no record, decide whether a new contact is created, who owns it, and how a duplicate is avoided."
+        },
+        {
+          "title": "Where recordings and notes go",
+          "body": "Whether the recording, the notes and the outcome are written to the contact, the deal or both, and who is allowed to listen."
+        },
+        {
+          "title": "What else depends on the call",
+          "body": "Lead routing, follow-up tasks and the revenue scoreboard often read from call activity. We check each one still works after the phone system is connected."
+        }
+      ]
     },
     {
-     "title": "Who owns an unknown caller",
-     "body": "When a number matches no record, decide whether a new contact is created, who owns it, and how a duplicate is avoided."
-    },
-    {
-     "title": "Where recordings and notes go",
-     "body": "Whether the recording, the notes and the outcome are written to the contact, the deal or both, and who is allowed to listen."
-    },
-    {
-     "title": "What else depends on the call",
-     "body": "Lead routing, follow-up tasks and the revenue scoreboard often read from call activity. We check each one still works after the phone system is connected."
+      "type": "steps",
+      "id": "process",
+      "eyebrow": "How it works",
+      "h2": "How Stacktik sets up a HubSpot phone integration.",
+      "intro": "One technical RevOps consultant is assigned to your project and stays with it.",
+      "items": [
+        {
+          "title": "A free call",
+          "body": "We go through how leads, calls and follow-ups move through your team today, what you use, and what isn't working."
+        },
+        {
+          "title": "A written proposal",
+          "body": "Two or three phone options that fit how you call, each with its monthly cost, and our fixed fee for the setup."
+        },
+        {
+          "title": "The purchase, if you want it",
+          "body": "Where it helps, we set the plan, seats and numbers up through the vendor's program, in your name. You can also buy direct."
+        },
+        {
+          "title": "Connect and test",
+          "body": "The phone system is connected to HubSpot in your own accounts. We place test calls and check what lands on the record."
+        },
+        {
+          "title": "Training and handover",
+          "body": "Training sessions on your own data, recorded for the team. Handover notes say how each piece runs and who to call."
+        }
+      ]
     }
-   ]
+  ],
+  "platforms": {
+    "h2": "Phone systems we connect to HubSpot.",
+    "intro": "CloudTalk, Dialpad and Kixie are in Stacktik's direct vendor programs.",
+    "names": [
+      "HubSpot",
+      "CloudTalk",
+      "Dialpad",
+      "Kixie",
+      "RingCentral",
+      "Aircall",
+      "Zoom",
+      "8x8",
+      "Nextiva",
+      "Vonage"
+    ]
   },
-  {
-   "type": "steps",
-   "id": "process",
-   "eyebrow": "How it works",
-   "h2": "How Stacktik sets up a HubSpot phone integration.",
-   "intro": "One technical RevOps consultant is assigned to your project and stays with it. The steps and their order are written on the proposal. This is the usual outline.",
-   "items": [
+  "faq": [
     {
-     "title": "A free call",
-     "body": "We go through how leads, calls and follow-ups move through your team today, what you use, and what isn't working. You get a straight answer on the right next step. No obligation."
+      "q": "What is a HubSpot phone integration?",
+      "a": "A HubSpot phone integration connects a business phone system to HubSpot. Reps place calls from the contact record, and calls are logged there with the recording and outcome. It is also called a HubSpot VoIP integration or a VoIP CRM integration."
     },
     {
-     "title": "A written proposal",
-     "body": "Two or three phone options that fit how you call, each with its monthly cost, and our fixed fee for the setup. Keeping the phone system you have is one of the options where it connects to HubSpot."
+      "q": "Which phone system works best with HubSpot?",
+      "a": "It depends on how your team calls. HubSpot's own calling can be enough where your plan's calling limits fit. Dialpad, CloudTalk and Kixie suit teams that need shared lines, call queues or volume dialling. Stacktik shortlists two or three on a written proposal with the monthly cost of each."
     },
     {
-     "title": "The purchase, if you want it",
-     "body": "Where it helps, we set the plan, seats and numbers up through the vendor's program, in your name. You can also buy direct."
+      "q": "Is there a Dialpad HubSpot integration?",
+      "a": "Yes. Dialpad connects to HubSpot so calls are logged on the contact record. Dialpad is one of the calling platforms in Stacktik's direct vendor programs, and we set up the connection, the logging rules and the training."
     },
     {
-     "title": "Connect and test",
-     "body": "The phone system is connected to HubSpot in your own accounts. We place test calls for each case you care about and check what lands on the record."
+      "q": "Does Zoom integrate with HubSpot?",
+      "a": "Yes. HubSpot's Zoom integration covers meetings and webinars, and Zoom Phone has a separate HubSpot app for calls. If you want Zoom to carry your phone calls, Stacktik checks what that app writes to the HubSpot record before recommending it, and says so on the proposal."
     },
     {
-     "title": "Training and handover",
-     "body": "Training sessions on your own data, recorded for the team. Handover notes say how each piece runs and who to call. Ongoing support is optional and monthly."
+      "q": "How much does a HubSpot phone integration cost?",
+      "a": "Stacktik quotes the setup as a fixed fee in writing before work starts. The phone system stays on its vendor's own plan and pricing, and the proposal shows that monthly cost beside each option. Nothing is charged for the first call."
+    },
+    {
+      "q": "Do we have to change our phone system?",
+      "a": "No. If your current phone system connects well to HubSpot, we keep it and set up the integration. The proposal only recommends a change when it can be justified in writing."
     }
-   ]
-  }
- ],
- "platforms": {
-  "h2": "Phone systems we connect to HubSpot.",
-  "intro": "CloudTalk, Dialpad and Kixie are in Stacktik's direct vendor programs. RingCentral, Aircall, Zoom and others come through our supplier network on the same proposal.",
-  "names": [
-   "HubSpot",
-   "CloudTalk",
-   "Dialpad",
-   "Kixie",
-   "RingCentral",
-   "Aircall",
-   "Zoom",
-   "8x8",
-   "Nextiva",
-   "Vonage"
-  ]
- },
- "faq": [
-  {
-   "q": "What is a HubSpot phone integration?",
-   "a": "A HubSpot phone integration connects a business phone system to HubSpot. Reps place calls from the contact record, and calls are logged there with the recording and outcome. It is also called a HubSpot VoIP integration or a VoIP CRM integration."
-  },
-  {
-   "q": "Which phone system works best with HubSpot?",
-   "a": "It depends on how your team calls. HubSpot's own calling can be enough where your plan's calling limits fit. Dialpad, CloudTalk and Kixie suit teams that need shared lines, call queues or volume dialling. Stacktik shortlists two or three on a written proposal with the monthly cost of each."
-  },
-  {
-   "q": "Is there a Dialpad HubSpot integration?",
-   "a": "Yes. Dialpad connects to HubSpot so calls are logged on the contact record. Dialpad is one of the calling platforms in Stacktik's direct vendor programs, and we set up the connection, the logging rules and the training."
-  },
-  {
-   "q": "Does Zoom integrate with HubSpot?",
-   "a": "Yes. HubSpot's Zoom integration covers meetings and webinars, and Zoom Phone has a separate HubSpot app for calls. If you want Zoom to carry your phone calls, Stacktik checks what that app writes to the HubSpot record before recommending it, and says so on the proposal."
-  },
-  {
-   "q": "How much does a HubSpot phone integration cost?",
-   "a": "Stacktik quotes the setup as a fixed fee in writing before work starts. The phone system stays on its vendor's own plan and pricing, and the proposal shows that monthly cost beside each option. Nothing is charged for the first call."
-  },
-  {
-   "q": "Do we have to change our phone system?",
-   "a": "No. If your current phone system connects well to HubSpot, we keep it and set up the integration. The proposal only recommends a change when it can be justified in writing."
-  }
- ],
- "closeH2": "Start with how your team calls today.",
- "closeLede": "A free call about your phone system and your HubSpot account. You get a written proposal with the options, their monthly cost and a fixed fee.",
- "keywordsUsed": [],
- "keywordsSkipped": [],
- "sources": []
+  ],
+  "closeH2": "Start with how your team calls today.",
+  "closeLede": "A free call about your phone system and your HubSpot account.",
+  "keywordsUsed": [],
+  "keywordsSkipped": [],
+  "sources": []
 }
