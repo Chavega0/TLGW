@@ -1,0 +1,1352 @@
+<title>Stacktik Homepage Redesign</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<style>
+/* Stacktik, dark-first. The brand's own cream/ink/terracotta, Newsreader display + Sora UI (measured on stacktik.com),
+   set on a warm near-black so the product panels (the part of v9 the founder liked) are the whole page's surface.
+   One cream band, the offer, so the deal reads like paper. Motion from solink.com, kept quiet: tile rows, progress tabs,
+   count-up numbers, group reveals. Every component reads its colours from --fg / --fg-muted / --ln / --acc, which the
+   cream band and the paper card redefine, so there is one set of rules, not two themes. */
+:root {
+  --cream: #F3ECDC;
+  --cream-deep: #EBE2CE;
+  --ink: #211D19;
+  --black: #131110;
+  --black-2: #191613;
+  --surface: #1F1B17;
+  --surface-2: #2A2521;
+  --terracotta: #C4552B;
+  --terracotta-deep: #A8441F;
+  --terracotta-light: #D97747;
+  --green: #33493A;
+  --green-light: #7FA98B;
+  --fg: var(--cream);
+  --fg-muted: rgba(243, 236, 220, .66);
+  --fg-soft: rgba(243, 236, 220, .5);
+  --ln: rgba(243, 236, 220, .12);
+  --ln-strong: rgba(243, 236, 220, .3);
+  --acc: var(--terracotta-light);
+  --knock: var(--black);
+  --display: "Newsreader", ui-serif, Georgia, "Times New Roman", serif;
+  --ui: "Sora", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --wrap: 1200px;
+  color-scheme: dark;
+}
+.band-light { background: var(--cream); color: var(--ink); --fg: var(--ink); --fg-muted: #5F5347; --fg-soft: #857666; --ln: rgba(33, 29, 25, .14); --ln-strong: rgba(33, 29, 25, .32); --acc: var(--terracotta); --knock: var(--cream); }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--fg); font-family: var(--ui); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--black); }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.08; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+h1, h2 { font-variation-settings: "opsz" 72; }
+h3 { font-variation-settings: "opsz" 24; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.5rem, 4.6vw, 4rem); }
+h2 { font-size: clamp(2rem, 4.2vw, 3.3rem); }
+h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); }
+p { margin: 0; }
+a { color: inherit; }
+em.acc { font-style: normal; color: var(--acc); }
+.eyebrow { font-family: var(--ui); font-size: .68rem; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--fg-muted); }
+.label { font-size: .62rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--fg-muted); }
+.lede { font-size: 1.1rem; line-height: 1.65; color: var(--fg-muted); max-width: 36em; }
+.muted { color: var(--fg-muted); }
+:focus-visible { outline: 3px solid var(--acc); outline-offset: 3px; border-radius: 4px; }
+
+/* Buttons, as on the live site: one pill (terracotta, cream text, arrow in a cream disc) and one text link with the same chevron */
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 12px 14px 12px 24px; border-radius: 999px; background: var(--terracotta); color: var(--cream); font-weight: 600; font-size: .95rem; text-decoration: none; transition: background-color .25s ease; white-space: nowrap; }
+.btn .disc { width: 26px; height: 26px; border-radius: 50%; background: var(--cream); color: var(--terracotta); display: grid; place-items: center; flex: none; transition: transform .25s ease; }
+.btn .disc svg { width: 12px; height: 12px; display: block; }
+.btn:hover { background: var(--terracotta-deep); }
+.btn:hover .disc { transform: translateX(3px); }
+.btn-sm { padding: 7px 7px 7px 15px; gap: 8px; font-size: .78rem; }
+.btn-sm .disc { width: 20px; height: 20px; }
+.btn-sm .disc svg { width: 9px; height: 9px; }
+.btn-text { display: inline-flex; align-items: center; gap: 8px; padding: 12px 4px; font-weight: 600; font-size: .95rem; text-decoration: none; color: var(--fg); }
+.btn-text svg { width: 12px; height: 12px; color: var(--acc); transition: transform .25s ease; }
+.btn-text:hover svg { transform: translateX(3px); }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; margin-top: clamp(32px, 4vw, 48px); }
+.cta-row .hint { font-size: .85rem; color: var(--fg-muted); max-width: 32em; }
+
+section { padding-block: clamp(72px, 9vw, 120px); position: relative; }
+.rule { border-top: 1px solid var(--ln); }
+.sec-head { display: grid; gap: 18px; max-width: 46em; margin-bottom: clamp(36px, 5vw, 60px); }
+
+/* Nav (fixed: transparent over the black hero, tinted black once scrolled, cream over the cream band) */
+.nav { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 50; color: var(--cream); transition: background-color .4s ease, border-color .4s ease, color .4s ease; border-bottom: 1px solid transparent; }
+.nav.is-dark { background: rgba(19, 17, 16, .78); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-color: rgba(243, 236, 220, .12); }
+.nav.is-light { color: var(--ink); background: rgba(243, 236, 220, .86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-color: rgba(33, 29, 25, .14); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 56px; }
+.logo { display: flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 1.05rem; letter-spacing: -0.02em; line-height: 1; }
+.logo svg { width: 20px; height: 20px; }
+.logo .tik { color: var(--terracotta); }
+.nav-links { display: flex; gap: 28px; font-size: .82rem; font-weight: 500; opacity: .85; }
+.nav-links a { text-decoration: none; }
+.nav-links a:hover { color: var(--terracotta-light); }
+.nav.is-light .nav-links a:hover { color: var(--terracotta); }
+@media (max-width: 860px) { .nav-links { display: none; } }
+
+/* Hero: copy on the left, the system itself on the right (the three headline lines, as three live panels) */
+.hero { padding-top: calc(56px + clamp(48px, 7vw, 88px)); padding-bottom: clamp(40px, 5vw, 64px); overflow: hidden; }
+.hero::before { content: ""; position: absolute; left: -10%; right: -10%; top: -30%; height: 130%; background: radial-gradient(50% 45% at 74% 32%, rgba(196, 85, 43, .17), transparent 70%); pointer-events: none; }
+.hero .wrap { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+@media (max-width: 1000px) { .hero .wrap { grid-template-columns: 1fr; } }
+.hero-copy { display: grid; gap: 24px; max-width: 36rem; }
+.hero h1 { max-width: 22ch; }
+@media (min-width: 700px) { .hero h1 .l { display: block; } }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; }
+.hero-note { font-size: .85rem; color: var(--fg-muted); }
+[data-hero] { animation: heroIn .9s cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+@keyframes heroIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+.hero-stage { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: .84rem; position: relative; padding-bottom: 24px; min-width: 0; }
+.hero-stage .ui { background: linear-gradient(180deg, #241F1B, #1B1815); --knock: #1F1B17; box-shadow: inset 0 1px 0 rgba(243, 236, 220, .06), 0 30px 60px -40px rgba(0, 0, 0, .9); }
+.hero-stage .ui-call { grid-column: 1 / -1; }
+.hero-stage .bars { height: 64px; }
+.hero-stage .stage-note { position: absolute; left: 0; bottom: 0; }
+@media (max-width: 560px) { .hero-stage { grid-template-columns: 1fr; } }
+
+/* Tile band: two opposing rows, the marketplace at work (Solink's hero rows, in HTML) */
+.rows-band { padding-block: clamp(28px, 4vw, 48px); overflow: hidden; position: relative; border-top: 1px solid var(--ln); border-bottom: 1px solid var(--ln); background: var(--black-2); }
+.rows { display: grid; gap: 14px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.row { display: flex; width: max-content; will-change: transform; }
+.row-l { animation: slideL 64s linear infinite; }
+.row-r { animation: slideR 72s linear infinite; }
+.rows:hover .row { animation-play-state: paused; }
+@keyframes slideL { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes slideR { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+.tile { width: 272px; flex: none; margin-right: 14px; background: var(--surface); --knock: var(--surface); border: 1px solid var(--ln); border-radius: 12px; padding: 14px 16px; display: grid; gap: 9px; color: var(--cream); }
+.tile-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; min-height: 18px; }
+.tile .lg { height: 15px; width: auto; color: rgba(243, 236, 220, .82); }
+.tile .lg-cloudtalk { height: 11px; }
+.tile .lg-monday { height: 17px; }
+.tile .tile-name { font-weight: 600; font-size: .88rem; }
+.tile-time { font-size: .7rem; color: var(--fg-soft); font-variant-numeric: tabular-nums; }
+.tile-main { font-weight: 600; font-size: .95rem; line-height: 1.3; letter-spacing: -0.01em; }
+.tile-sub { font-size: .76rem; color: var(--fg-muted); display: flex; align-items: center; gap: 8px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green-light); flex: none; }
+.dot.t { background: var(--terracotta-light); }
+.rows-note { position: absolute; left: max(24px, env(safe-area-inset-left, 0px)); bottom: 10px; }
+
+/* Logos: real vendor marks, normalized to one colour (currentColor); knockouts take the surface colour */
+.lg { display: inline-block; height: 26px; width: auto; color: currentColor; vertical-align: middle; }
+.lg [fill]:not([fill="none"]):not([fill="white"]):not([fill="#fff"]):not([fill="#FFF"]):not([fill="#ffffff"]) { fill: currentColor; }
+.lg [stroke]:not([stroke="none"]) { stroke: currentColor; }
+.lg [fill="white"], .lg [fill="#fff"], .lg [fill="#FFF"], .lg [fill="#ffffff"] { fill: var(--knock); }
+.lg .cls-1 { fill: currentColor; }
+.lg-monday circle { display: none; }
+.lg-cloudtalk { height: 17px; }
+.lg-hubspot { height: 25px; }
+.lg-zapier { height: 23px; }
+.lg-dialpad, .lg-databox { height: 28px; }
+.mark-monday { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 1.05rem; letter-spacing: -0.02em; white-space: nowrap; }
+
+/* Partner strip */
+.strip { border-bottom: 1px solid var(--ln); padding-block: 36px 30px; }
+.strip-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px 20px; align-items: start; }
+.strip-item { display: grid; gap: 10px; justify-items: start; color: var(--fg); min-width: 0; }
+.strip-item .lg, .strip-item .mark-monday { opacity: .82; }
+.strip-item .label { line-height: 1.5; }
+.strip-foot { margin-top: 26px; font-size: .78rem; color: var(--fg-soft); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+@media (max-width: 900px) { .strip-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .strip-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Group reveals: a module fades up once, as a unit. Nothing is hidden unless JS adds .rv. */
+.rv { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.rv.in { opacity: 1; transform: none; }
+.strip-grid.rv > * { opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--i, 0) * 70ms); }
+.strip-grid.rv.in > * { opacity: 1; transform: none; }
+
+/* Ledger idiom: the offer, who pays whom, the steps */
+.ledger { display: grid; border-top: 1px solid var(--ln); margin: 0; padding: 0; list-style: none; }
+.ledger-row { display: grid; grid-template-columns: minmax(200px, .8fr) 1.2fr; gap: 12px 40px; padding: 26px 0; border-bottom: 1px solid var(--ln); align-items: start; }
+.ledger-row .who { font-family: var(--display); font-variation-settings: "opsz" 36; font-size: clamp(1.3rem, 2.2vw, 1.8rem); line-height: 1.2; letter-spacing: -0.015em; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.ledger-row .who .arrow { color: var(--acc); font-family: var(--ui); font-weight: 400; }
+.ledger-row p { color: var(--fg-muted); max-width: 38em; }
+.ledger-row p strong { color: var(--fg); font-weight: 600; }
+.ledger-row .cost { display: block; margin-top: 10px; }
+.ledger-end { font-size: .82rem; color: var(--fg-muted); padding-top: 14px; }
+@media (max-width: 720px) { .ledger-row { grid-template-columns: 1fr; gap: 8px; } }
+
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(40px, 6vw, 72px); border-top: 1px solid var(--ln); }
+.stat { padding: 28px 24px 28px 0; border-right: 1px solid var(--ln); display: grid; gap: 6px; align-content: start; min-width: 0; }
+.stat + .stat { padding-left: 24px; }
+.stat:last-child { border-right: 0; }
+.stat .num { font-family: var(--display); font-size: clamp(3rem, 6vw, 5rem); line-height: 1; letter-spacing: -0.03em; color: var(--acc); font-variant-numeric: tabular-nums; }
+.stat .num small { font-size: .42em; letter-spacing: 0; }
+.stat .lbl { font-size: .84rem; color: var(--fg-muted); max-width: 16em; }
+@media (max-width: 640px) { .stats { grid-template-columns: 1fr; } .stat { border-right: 0; border-bottom: 1px solid var(--ln); padding-left: 0; } .stat:last-child { border-bottom: 0; } }
+
+/* Systems: tabs with progress (Solink's tabs module); panels share one cell so nothing below shifts */
+.tabs-bar { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding: 4px; margin: -4px -4px 28px; }
+.tabs-bar::-webkit-scrollbar { display: none; }
+.tab { --p: 0; position: relative; flex: none; background: transparent; border: 1px solid var(--ln); color: var(--fg); font: 500 .82rem/1 var(--ui); padding: 11px 16px 13px; border-radius: 10px; cursor: pointer; overflow: hidden; transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
+.tab::after { content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: var(--acc); transform: scaleX(calc(var(--p) / 100)); transform-origin: left; }
+.tab.is-active { background: var(--cream); color: var(--ink); border-color: var(--cream); }
+.tab:not(.is-active)::after { transform: scaleX(0); }
+.tabs-panels { display: grid; }
+.panel { grid-area: 1 / 1; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: start; visibility: hidden; opacity: 0; transition: opacity .4s ease; }
+.panel.is-active { visibility: visible; opacity: 1; }
+.panel-copy { display: grid; gap: 20px; min-width: 0; }
+.panel-copy .links { margin-top: -8px; }
+.shelf { display: grid; border-top: 1px solid var(--ln); }
+.item { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--ln); align-items: start; min-width: 0; }
+.item-logo { color: var(--fg); display: flex; align-items: center; min-height: 28px; }
+.item-logo .lg, .item-logo .mark-monday { opacity: .9; }
+.item-logo .name { font-weight: 600; font-size: 1.02rem; letter-spacing: -0.015em; }
+.item-body { display: grid; gap: 6px; min-width: 0; }
+.item-tag { font-family: var(--display); font-variation-settings: "opsz" 24; font-size: 1.12rem; line-height: 1.35; }
+.item-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .74rem; color: var(--fg-muted); }
+.item-meta .st { display: inline-flex; align-items: center; gap: 6px; }
+.item-meta .st::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green-light); }
+.item-meta .st.aff::before { background: var(--ln-strong); }
+.item-meta .st.own::before { background: var(--acc); }
+.item-meta .price { color: var(--fg); font-weight: 500; }
+.item-meta .price.doc { color: var(--green-light); font-weight: 600; }
+@media (max-width: 960px) { .panel { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .item { grid-template-columns: 1fr; gap: 8px; } }
+
+/* Stage: example UI per system, plainly labelled, Sora throughout */
+.stage { background: linear-gradient(180deg, var(--surface), #191613); border: 1px solid var(--ln); border-radius: 18px; padding: 22px; display: grid; gap: 16px; --knock: var(--surface); min-width: 0; box-shadow: inset 0 1px 0 rgba(243, 236, 220, .05); }
+.ui { background: var(--surface-2); --knock: var(--surface-2); border: 1px solid var(--ln); border-radius: 12px; padding: 16px; display: grid; gap: 12px; font-size: .84rem; align-content: start; min-width: 0; }
+.ui-row { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.ui-h { font-weight: 600; font-size: 1.05rem; letter-spacing: -0.01em; line-height: 1.3; }
+.ui-sub { color: var(--fg-soft); font-size: .76rem; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { font-size: .68rem; padding: 4px 9px; border-radius: 999px; border: 1px solid var(--ln); color: var(--fg-muted); white-space: nowrap; }
+.chip.on { background: var(--terracotta); border-color: transparent; color: var(--cream); }
+.chip.done { border-color: transparent; background: rgba(127, 169, 139, .18); color: var(--green-light); }
+.ui-list { display: grid; gap: 8px; }
+.ui-list div { display: grid; grid-template-columns: 52px 1fr; gap: 10px; align-items: baseline; }
+.ui-list span:first-child { color: var(--fg-soft); font-variant-numeric: tabular-nums; font-size: .74rem; }
+.bars { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; align-items: end; height: 96px; }
+.bars div { background: rgba(243, 236, 220, .16); border-radius: 4px 4px 0 0; position: relative; }
+.bars div.hi { background: var(--terracotta-light); }
+.bars div::after { content: attr(data-l); position: absolute; top: 100%; left: 0; right: 0; text-align: center; font-size: .66rem; color: var(--fg-soft); padding-top: 6px; }
+.flow { display: grid; gap: 8px; }
+.flow div { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border: 1px solid var(--ln); border-radius: 8px; font-size: .8rem; }
+.flow .lg { height: 14px; color: rgba(243, 236, 220, .75); flex: none; }
+.flow .who { margin-left: auto; color: var(--fg-soft); font-size: .72rem; white-space: nowrap; }
+.ui-btns { display: flex; gap: 8px; flex: none; }
+.ui-btns span { padding: 8px 14px; border-radius: 999px; font-size: .78rem; font-weight: 600; white-space: nowrap; }
+.ui-btns .a { background: var(--terracotta); color: var(--cream); }
+.ui-btns .b { border: 1px solid var(--ln); }
+.foot-note { font-size: .74rem; color: var(--fg-soft); margin-top: 20px; max-width: 60em; }
+
+/* RevOps layer: six operations, each tagged with the systems it runs across */
+.ops { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.op { background: var(--surface); border: 1px solid var(--ln); border-radius: 16px; padding: 24px 24px 28px; display: grid; gap: 14px; align-content: start; min-width: 0; box-shadow: inset 0 1px 0 rgba(243, 236, 220, .04); }
+.op-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.op .n { font-family: var(--display); font-variation-settings: "opsz" 36; font-size: 1.15rem; color: var(--acc); letter-spacing: 0; }
+.op .sys { display: flex; flex-wrap: wrap; gap: 5px; justify-content: flex-end; }
+.op .sys span { font-size: .6rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--fg-muted); padding: 4px 8px; border: 1px solid var(--ln); border-radius: 999px; white-space: nowrap; }
+.op h3 { font-size: 1.45rem; }
+.op p { color: var(--fg-muted); font-size: .95rem; }
+@media (max-width: 960px) { .ops { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .ops { grid-template-columns: 1fr; } }
+
+/* Sample blueprint: the deliverable, shown as paper on the black */
+.how-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px, 4vw, 64px); align-items: start; }
+@media (max-width: 1100px) { .how-grid { grid-template-columns: 1fr; } }
+.paper { background: #FBF7EE; color: var(--ink); --fg: var(--ink); --fg-muted: #5F5347; --fg-soft: #857666; --ln: rgba(33, 29, 25, .14); --knock: #FBF7EE; border: 1px solid rgba(33, 29, 25, .1); border-radius: 8px; padding: 26px 26px 22px; display: grid; gap: 16px; box-shadow: 0 50px 90px -50px rgba(0, 0, 0, .9); min-width: 0; }
+.paper .tbl { overflow-x: auto; }
+@media (max-width: 520px) { .paper th:last-child, .paper td:last-child { display: none; } }
+.paper-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--ln); padding-bottom: 12px; }
+.paper-top .t { font-family: var(--display); font-variation-settings: "opsz" 36; font-size: 1.35rem; letter-spacing: -0.015em; }
+.paper table { width: 100%; border-collapse: collapse; font-size: .84rem; }
+.paper th { text-align: left; font-size: .62rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--fg-muted); padding: 0 12px 8px 0; border-bottom: 1px solid var(--ln); white-space: nowrap; }
+.paper td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--ln); vertical-align: top; }
+.paper td:last-child, .paper th:last-child { padding-right: 0; }
+.paper td.n { font-variant-numeric: tabular-nums; }
+.paper td.g { color: var(--green); font-weight: 600; }
+.paper .sum { display: grid; gap: 6px; font-size: .9rem; }
+.paper .sum div { display: flex; justify-content: space-between; gap: 12px; }
+.paper .sum strong { font-weight: 600; }
+.paper .fine { font-size: .74rem; color: var(--fg-muted); }
+
+/* Stacks */
+.stacks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.stack { border: 1px solid var(--ln); border-radius: 16px; padding: 26px 24px; display: grid; gap: 16px; align-content: start; min-width: 0; background: var(--surface); --knock: var(--surface); box-shadow: inset 0 1px 0 rgba(243, 236, 220, .04); }
+.stack h3 { font-size: 1.5rem; }
+.stack .for { color: var(--fg-muted); font-size: .95rem; }
+.stack .tools { display: flex; flex-wrap: wrap; gap: 14px 18px; align-items: center; color: rgba(243, 236, 220, .85); padding: 6px 0 4px; }
+.stack .tools .lg { height: 18px; }
+.stack .tools .lg-cloudtalk { height: 12px; }
+.stack .tools .lg-monday { height: 20px; }
+.stack .tools .txt { font-weight: 600; font-size: .95rem; letter-spacing: -0.01em; }
+.stack .price-row { display: grid; gap: 4px; padding-top: 14px; border-top: 1px solid var(--ln); }
+.stack .from { font-family: var(--display); font-variation-settings: "opsz" 36; font-size: 1.7rem; line-height: 1.1; letter-spacing: -0.02em; color: var(--acc); display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.stack .from small { font-family: var(--ui); font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--fg-muted); }
+.stack .price-meta { font-size: .8rem; color: var(--fg-muted); }
+@media (max-width: 900px) { .stacks { grid-template-columns: 1fr; } }
+
+/* The scope, counted: what every fixed fee covers, what costs extra, who should not buy */
+.scope { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 14px; margin-top: 14px; }
+.scope-col { border: 1px solid var(--ln); border-radius: 16px; padding: 22px 24px 24px; background: var(--black-2); display: grid; gap: 14px; align-content: start; min-width: 0; }
+.scope-col h3 { font-size: 1.2rem; }
+.scope-col ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; font-size: .9rem; line-height: 1.5; color: var(--fg-muted); }
+.scope-col li { position: relative; padding-left: 20px; }
+.scope-col li::before { content: ""; position: absolute; left: 0; top: .5em; width: 7px; height: 7px; border-radius: 50%; background: var(--green-light); }
+.scope-col.x li::before { background: var(--ln-strong); }
+.scope-col li strong { color: var(--fg); font-weight: 500; }
+.scope-col .sub { font-size: .76rem; color: var(--fg-soft); }
+.scope-lock { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: .85rem; color: var(--fg-muted); }
+.scope-lock strong { color: var(--fg); font-weight: 600; }
+@media (max-width: 900px) { .scope { grid-template-columns: 1fr; } }
+
+/* FAQ, open on the page */
+.faq { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px 56px; }
+.q { display: grid; gap: 10px; min-width: 0; }
+.q h3 { font-size: 1.3rem; }
+.q p { color: var(--fg-muted); }
+@media (max-width: 760px) { .faq { grid-template-columns: 1fr; } }
+
+/* Two doors: the free call with an agenda, the paid Fix-it Session */
+.doors { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: clamp(40px, 6vw, 72px); }
+.door { background: var(--surface); border: 1px solid var(--ln); border-radius: 16px; padding: 24px 24px 26px; display: grid; gap: 14px; align-content: start; min-width: 0; box-shadow: inset 0 1px 0 rgba(243, 236, 220, .04); }
+.door-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.door-price { font-family: var(--display); font-variation-settings: "opsz" 36; font-size: 1.7rem; letter-spacing: -0.02em; color: var(--acc); }
+.door h3 { font-size: 1.45rem; }
+.door p { color: var(--fg-muted); font-size: .95rem; }
+.door-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: .9rem; color: var(--fg-muted); }
+.door-list li { position: relative; padding-left: 20px; }
+.door-list li::before { content: ""; position: absolute; left: 0; top: .5em; width: 7px; height: 7px; border-radius: 50%; background: var(--green-light); }
+@media (max-width: 760px) { .doors { grid-template-columns: 1fr; } }
+
+/* The 30-day plan with gates */
+.plan { margin-top: clamp(40px, 6vw, 72px); display: grid; gap: 18px; }
+.plan-head { display: grid; gap: 8px; max-width: 46em; }
+.plan-head .muted { font-size: .95rem; }
+.plan-rows { display: grid; border-top: 1px solid var(--ln); }
+.plan-row { display: grid; grid-template-columns: 110px 1fr 90px; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--ln); align-items: baseline; font-size: .92rem; }
+.plan-row .d { font-variant-numeric: tabular-nums; color: var(--fg-soft); font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; font-weight: 600; }
+.plan-row .w { color: var(--fg-muted); }
+.plan-row .who { justify-self: end; font-size: .66rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; border: 1px solid var(--ln); color: var(--fg-muted); white-space: nowrap; }
+.plan-row .who.you { background: var(--terracotta); border-color: transparent; color: var(--cream); }
+.plan-row .who.us { background: rgba(127, 169, 139, .18); border-color: transparent; color: var(--green-light); }
+.plan-live { font-size: .92rem; color: var(--fg-muted); max-width: 52em; }
+.plan-live strong { color: var(--fg); font-weight: 600; }
+@media (max-width: 600px) { .plan-row { grid-template-columns: 1fr auto; } .plan-row .d { grid-column: 1 / -1; } }
+
+/* Direct vs through Stacktik */
+.compare { display: grid; grid-template-columns: .7fr 1fr 1fr; border-top: 1px solid var(--ln); margin-top: clamp(40px, 6vw, 72px); font-size: .95rem; }
+.compare > div { padding: 16px 20px 16px 0; border-bottom: 1px solid var(--ln); min-width: 0; }
+.compare .h { padding-top: 0; padding-bottom: 12px; }
+.compare .k { font-family: var(--display); font-variation-settings: "opsz" 24; font-size: 1.15rem; color: var(--fg); }
+.compare .d { color: var(--fg-muted); }
+.compare .s { color: var(--fg); }
+@media (max-width: 720px) { .compare { grid-template-columns: 1fr; } .compare > div { border-bottom: 0; padding: 6px 0; } .compare .k { padding-top: 18px; border-top: 1px solid var(--ln); } .compare .h { display: none; } .compare .d::before { content: "Direct: "; font-weight: 600; color: var(--fg); } .compare .s::before { content: "Through Stacktik: "; font-weight: 600; } .compare .s { padding-bottom: 18px; } }
+
+/* Stack checker: runs in the browser, stores nothing */
+.checker { display: grid; grid-template-columns: 1.3fr .9fr; gap: 16px; align-items: start; }
+.check-form { display: grid; gap: 12px; min-width: 0; }
+.cat { border: 1px solid var(--ln); border-radius: 14px; padding: 12px 16px 16px; margin: 0; display: grid; gap: 10px; min-width: 0; }
+.cat legend { padding: 0 6px; margin-left: -6px; }
+.opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px solid var(--ln); border-radius: 999px; font-size: .84rem; cursor: pointer; color: var(--fg-muted); transition: background-color .2s ease, color .2s ease, border-color .2s ease; user-select: none; }
+.opt input { appearance: none; -webkit-appearance: none; width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--ln-strong); margin: 0; flex: none; background: transparent; }
+.opt input:checked { background: var(--acc); border-color: var(--acc); }
+.opt:has(input:checked) { color: var(--fg); border-color: var(--ln-strong); background: var(--surface); }
+.opt input:focus-visible { outline: 3px solid var(--acc); outline-offset: 2px; }
+.reps { display: flex; align-items: center; gap: 14px; }
+.reps input[type="range"] { flex: 1; accent-color: var(--terracotta); min-width: 0; }
+.reps output { font-family: var(--display); font-variation-settings: "opsz" 36; font-size: 1.5rem; min-width: 2ch; text-align: right; line-height: 1; }
+.check-result { position: sticky; top: 72px; background: linear-gradient(180deg, var(--surface), #191613); border: 1px solid var(--ln); border-radius: 18px; padding: 22px; display: grid; gap: 14px; box-shadow: inset 0 1px 0 rgba(243, 236, 220, .05); min-width: 0; }
+.res-big { font-family: var(--display); font-variation-settings: "opsz" 36; font-size: clamp(1.4rem, 2.4vw, 1.9rem); line-height: 1.2; letter-spacing: -0.015em; }
+.res-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: .9rem; color: var(--fg-muted); }
+.res-list:empty { display: none; }
+.res-list li { position: relative; padding-left: 20px; }
+.res-list li::before { content: ""; position: absolute; left: 0; top: .5em; width: 7px; height: 7px; border-radius: 50%; background: var(--terracotta-light); }
+.res-list li.ok::before { background: var(--green-light); }
+.res-list li.gap::before { background: transparent; border: 1.5px solid var(--terracotta-light); }
+.res-stack { border-top: 1px solid var(--ln); padding-top: 12px; display: grid; gap: 4px; font-size: .9rem; }
+.res-stack:empty { display: none; }
+.res-stack strong { font-family: var(--display); font-variation-settings: "opsz" 36; font-size: 1.3rem; font-weight: 500; letter-spacing: -0.015em; }
+.res-stack .muted { font-size: .84rem; }
+@media (max-width: 900px) { .checker { grid-template-columns: 1fr; } .check-result { position: static; } }
+
+/* Close + footer */
+.close { background: var(--black-2); }
+.close .wrap { display: grid; gap: 26px; }
+.close h2 { font-size: clamp(2.6rem, 6vw, 4.6rem); max-width: 12ch; }
+footer { border-top: 1px solid var(--ln); background: var(--black-2); padding-block: 28px 40px; font-size: .8rem; color: var(--fg-muted); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; align-items: center; }
+.email { font-weight: 600; color: var(--fg); user-select: all; }
+
+@media (prefers-reduced-motion: reduce) {
+  .row-l, .row-r { animation: none; }
+  [data-hero] { animation: none; }
+  .rv { opacity: 1; transform: none; transition: none; }
+  .strip-grid.rv > * { opacity: 1; transform: none; transition: none; }
+  .panel { transition: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+<style>
+/* Home additions. One business, three doors: choose the software, get it, connect it. */
+.ledger-row p a, .q p a, .lede a, .hint a, .partners-foot a, footer a, .price-note a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--ln-strong); }
+.ledger-row p a:hover, .q p a:hover, .lede a:hover, footer a:hover { text-decoration-color: var(--acc); }
+.ledger-row .n { color: var(--acc); font-family: var(--ui); font-weight: 500; font-size: .72rem; letter-spacing: .14em; margin-right: 12px; vertical-align: middle; }
+.ledger-row .who.ask { font-style: italic; font-variation-settings: "opsz" 36; }
+.hero-stage .ui-list > div > span:first-child { min-width: 18px; }
+.hero-stage .ui-list .ok { color: var(--green-light); }
+.flows { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.flows .ui { background: var(--surface); --knock: var(--surface); padding: 20px; gap: 14px; }
+.flows .ui-list > div > span:first-child { min-width: 22px; color: var(--acc); font-family: var(--ui); font-weight: 600; font-size: .7rem; letter-spacing: .1em; }
+.flows .ui-h { font-size: 1.05rem; }
+.flows .res { display: flex; align-items: center; gap: 8px; font-size: .8rem; color: var(--fg-muted); padding-top: 12px; border-top: 1px solid var(--ln); }
+.flows .res::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--green-light); flex: none; }
+@media (max-width: 900px) { .flows { grid-template-columns: 1fr; } }
+.ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: clamp(36px, 5vw, 60px); }
+.ways .scope-col h3 { font-size: 1.25rem; }
+.ways .scope-col p { font-size: .92rem; color: var(--fg-muted); line-height: 1.55; }
+.ways .scope-col .label { margin-top: auto; padding-top: 10px; }
+@media (max-width: 860px) { .ways { grid-template-columns: 1fr; } }
+.partners-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px 20px; align-items: center; margin-top: clamp(36px, 5vw, 60px); padding-top: 32px; border-top: 1px solid var(--ln); }
+.partners-grid .pi { display: grid; gap: 10px; justify-items: start; min-width: 0; }
+.partners-grid .lg, .partners-grid .mark-monday { opacity: .82; }
+@media (max-width: 900px) { .partners-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 520px) { .partners-grid { grid-template-columns: repeat(2, 1fr); } }
+.partners-foot { margin-top: 26px; font-size: .85rem; color: var(--fg-muted); max-width: 52em; line-height: 1.6; }
+.price-note { margin-top: clamp(28px, 4vw, 40px); font-size: .92rem; color: var(--fg-muted); display: grid; gap: 6px; max-width: 48em; }
+.price-note strong { color: var(--fg); font-weight: 600; }
+.cta-row .alt { font-size: .9rem; color: var(--fg-muted); }
+.cta-row .alt a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--ln-strong); }
+.ops .op .sys span { border-color: var(--ln); }
+@media (max-width: 560px) { .hero-stage .ui-row { flex-wrap: wrap; } }
+/* Orbit: the vendors we work with, moving around the Stacktik mark, linked to it and to each other. Positions are set by
+   script each frame in a 600-unit square; without script the satellites still sit on their rings from the inline styles. */
+.orbit-wrap { display: block; padding-bottom: 28px; }
+.orbit { position: relative; width: min(100%, 560px); aspect-ratio: 1; margin: 0 auto; will-change: transform; }
+.orbit-glow { position: absolute; left: 50%; top: 50%; width: 46%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(217, 119, 71, .28), rgba(217, 119, 71, .08) 45%, transparent 70%); animation: orbit-breathe 5s ease-in-out infinite; }
+@keyframes orbit-breathe { 0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: .8; } 50% { transform: translate(-50%, -50%) scale(1.18); opacity: 1; } }
+.orbit-lines .ring { transform-box: fill-box; transform-origin: center; }
+.orbit-lines .ring.r1 { animation: orbit-ring 80s linear infinite; }
+.orbit-lines .ring.r2 { stroke-dasharray: 2 10; animation: orbit-ring 120s linear infinite reverse; }
+@keyframes orbit-ring { to { transform: rotate(360deg); } }
+.orbit-lines g .link { stroke: url(#spoke-fade); }
+.orbit-lines g .link.chord { stroke: rgba(217, 119, 71, .32); stroke-dasharray: 3 6; animation: orbit-dash 4s linear infinite; }
+@keyframes orbit-dash { to { stroke-dashoffset: -36; } }
+.orbit-lines g .pulse { fill: url(#pulse-glow); filter: none; }
+.orbit-lines .trail { fill: var(--terracotta-light); }
+.orbit-core { animation: orbit-core 5s ease-in-out infinite; }
+@keyframes orbit-core { 0%, 100% { box-shadow: 0 0 0 10px rgba(217, 119, 71, .06), 0 0 60px -10px rgba(217, 119, 71, .45), inset 0 1px 0 rgba(243, 236, 220, .08); } 50% { box-shadow: 0 0 0 16px rgba(217, 119, 71, .09), 0 0 90px -10px rgba(217, 119, 71, .7), inset 0 1px 0 rgba(243, 236, 220, .08); } }
+.sat { will-change: transform; pointer-events: none; transition: border-color .35s ease, box-shadow .35s ease, opacity .6s ease; }
+.sat > * { display: inline-block; }
+.sat.lit { border-color: var(--terracotta-light); box-shadow: 0 0 0 4px rgba(217, 119, 71, .14), 0 0 28px -4px rgba(217, 119, 71, .85), inset 0 1px 0 rgba(243, 236, 220, .06); }
+@media (prefers-reduced-motion: reduce) { .orbit-glow, .orbit-lines .ring, .orbit-lines .link.chord, .orbit-core { animation: none; } .orbit { transition: none; } }
+.orbit-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.orbit-lines .ring { fill: none; stroke: rgba(243, 236, 220, .16); stroke-width: 1; stroke-dasharray: 2 8; }
+.orbit-lines .link { stroke: rgba(243, 236, 220, .3); stroke-width: 1; fill: none; }
+.orbit-lines .link.chord { stroke: rgba(217, 119, 71, .28); stroke-dasharray: 2 5; }
+.orbit-lines .pulse { fill: var(--terracotta-light); filter: drop-shadow(0 0 6px rgba(217, 119, 71, .9)); }
+.orbit-core { position: absolute; left: 50%; top: 50%; width: clamp(64px, 14%, 86px); aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; display: grid; place-items: center;
+  background: radial-gradient(circle at 50% 40%, #2A2521, #1B1815 70%); border: 1px solid var(--ln-strong); box-shadow: 0 0 0 10px rgba(217, 119, 71, .06), 0 0 60px -10px rgba(217, 119, 71, .45), inset 0 1px 0 rgba(243, 236, 220, .08); }
+.orbit-core svg { width: 56%; height: 56%; }
+.sat { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: clamp(34px, 7.6%, 46px); padding: 0 clamp(10px, 2.4%, 16px); display: inline-flex; align-items: center; justify-content: center; white-space: nowrap;
+  background: var(--surface); --knock: var(--surface); border: 1px solid var(--ln); border-radius: 999px; box-shadow: inset 0 1px 0 rgba(243, 236, 220, .06), 0 18px 30px -22px rgba(0, 0, 0, .9); color: var(--fg); }
+.sat .lg { height: 15px; color: rgba(243, 236, 220, .92); }
+.sat .lg-cloudtalk { height: 11px; }
+.sat .lg-hubspot, .sat .lg-dialpad, .sat .lg-databox { height: 19px; }
+.sat .lg-zapier { height: 16px; }
+.sat .mark-monday { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; font-size: clamp(.62rem, 1.7vw, .78rem); letter-spacing: -0.01em; }
+.sat .mark-monday .lg-monday { height: 15px; }
+.sat .nm { font-family: var(--ui); font-weight: 600; font-size: clamp(.6rem, 1.7vw, .76rem); letter-spacing: .02em; color: rgba(243, 236, 220, .9); }
+@media (max-width: 1000px) { .orbit { width: min(100%, 460px); } }
+@media (max-width: 560px) { .sat { height: 32px; padding: 0 9px; } .sat .lg { height: 12px; } .sat .lg-hubspot, .sat .lg-dialpad, .sat .lg-databox { height: 15px; } .sat .lg-cloudtalk { height: 9px; } .sat .lg-zapier { height: 13px; } .sat .mark-monday .lg-monday { height: 12px; } }
+@media (prefers-reduced-motion: reduce) { .orbit-lines .pulse { display: none; } }
+/* Lead journey: eight stages in a snake, a lead travelling the path and lighting each stage; terracotta marks AI steps. */
+.journey { position: relative; }
+.journey-path { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 0; }
+.journey-path path { fill: none; stroke: rgba(243, 236, 220, .28); stroke-width: 1.5; stroke-dasharray: 4 8; }
+.journey-path .jlead { fill: url(#pulse-glow); opacity: 0; }
+.journey-path .jlead-trail { fill: var(--terracotta-light); opacity: 0; }
+.jgrid { position: relative; z-index: 1; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.jnode { background: var(--surface); border: 1px solid var(--ln); border-radius: 16px; padding: 20px 20px 18px; display: grid; gap: 10px; align-content: start; min-width: 0; transition: border-color .4s ease, box-shadow .4s ease, transform .4s ease; box-shadow: inset 0 1px 0 rgba(243, 236, 220, .05); }
+.jnode.on { border-color: var(--terracotta-light); box-shadow: inset 0 1px 0 rgba(243, 236, 220, .06), 0 0 0 4px rgba(217, 119, 71, .12), 0 24px 50px -30px rgba(217, 119, 71, .7); transform: translateY(-3px); }
+.jnode .jn { font-family: var(--ui); font-weight: 600; font-size: .68rem; letter-spacing: .18em; color: var(--acc); }
+.jnode h3 { font-size: 1.2rem; }
+.jnode p { color: var(--fg-muted); font-size: .92rem; line-height: 1.5; }
+.jtags { display: flex; flex-wrap: wrap; gap: 5px; }
+.jtags span { font-size: .58rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--fg-muted); padding: 4px 8px; border: 1px solid var(--ln); border-radius: 999px; }
+.jai { margin-top: 4px; padding-top: 12px; border-top: 1px dashed var(--ln); display: flex; gap: 10px; align-items: flex-start; font-size: .84rem; line-height: 1.5; color: var(--fg); }
+.jai.rule { color: var(--fg-muted); }
+.jai-k { flex: none; font-family: var(--ui); font-size: .58rem; font-weight: 700; letter-spacing: .16em; padding: 4px 8px; border-radius: 999px; background: var(--terracotta); color: var(--cream); margin-top: 2px; }
+.jai.rule .jai-k { background: transparent; color: var(--fg-muted); border: 1px solid var(--ln-strong); }
+.jnode.on .jai:not(.rule) .jai-k { animation: jai-pulse 1.2s ease-in-out infinite; }
+@keyframes jai-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(217, 119, 71, .5); } 50% { box-shadow: 0 0 0 6px rgba(217, 119, 71, 0); } }
+.jlegend { margin-top: 22px; font-size: .84rem; color: var(--fg-muted); display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; }
+.jk { width: 10px; height: 10px; border-radius: 50%; display: inline-block; } .jk.ai { background: var(--terracotta); } .jk.rule { border: 1px solid var(--ln-strong); margin-left: 14px; }
+@media (max-width: 1000px) { .jgrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .jgrid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .jnode.on .jai:not(.rule) .jai-k { animation: none; } .jnode { transition: none; } }
+
+/* Five small illustrations, one per way to start. Each loops every 6 seconds with a long hold, and sits still under reduced motion. */
+#problems .ledger-row.has-illo { grid-template-columns: 72px minmax(180px, .8fr) 1.2fr; gap: 12px 28px; }
+.illo { width: 72px; height: 56px; overflow: visible; }
+.illo .opt, .illo .card { fill: rgba(243, 236, 220, .06); stroke: rgba(243, 236, 220, .2); stroke-width: 1; }
+.illo .ln, .illo .track { stroke: rgba(243, 236, 220, .22); stroke-width: 1.5; stroke-linecap: round; }
+.illo .pick { fill: none; stroke: var(--terracotta-light); stroke-width: 1.5; animation: illo-pick 6s ease-in-out infinite; }
+.illo .tick { fill: none; stroke: var(--green-light); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 16; stroke-dashoffset: 16; animation: illo-tick 6s ease-out infinite; }
+.illo .stamp circle { fill: var(--terracotta); } .illo .stamp path { fill: none; stroke: var(--cream); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.illo .stamp { transform-box: fill-box; transform-origin: center; animation: illo-stamp 6s ease-out infinite; }
+.illo .wire { fill: none; stroke: rgba(243, 236, 220, .4); stroke-width: 1.5; stroke-linejoin: round; stroke-dasharray: 160; stroke-dashoffset: 160; animation: illo-wire 6s ease-in-out infinite; }
+.illo .node { fill: var(--surface); stroke: rgba(243, 236, 220, .45); stroke-width: 1.5; animation: illo-node 6s ease-in-out infinite; }
+.illo .step { fill: var(--surface); stroke: rgba(243, 236, 220, .4); stroke-width: 1.5; animation: illo-step 6s ease-out infinite; }
+.illo .s2 { animation-delay: .6s; } .illo .s3 { animation-delay: 1.2s; }
+.illo .reply, .illo .reply-head { fill: none; stroke: var(--green-light); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.illo .reply { stroke-dasharray: 32; stroke-dashoffset: 32; animation: illo-reply 6s ease-out infinite; }
+.illo .reply-head { opacity: 0; animation: illo-replyhead 6s ease-out infinite; }
+.illo .knob { fill: var(--terracotta-light); animation: illo-knob 6s cubic-bezier(.2, .7, .2, 1) infinite; }
+.illo .k1 { --to: 36px; } .illo .k2 { --to: 18px; animation-delay: .4s; } .illo .k3 { --to: 44px; animation-delay: .8s; }
+@keyframes illo-pick { 0%, 18% { transform: translateY(0); } 30% { transform: translateY(17px); } 42% { transform: translateY(34px); } 54%, 92% { transform: translateY(17px); } 100% { transform: translateY(0); } }
+@keyframes illo-tick { 0%, 60% { stroke-dashoffset: 16; } 70%, 92% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 16; } }
+@keyframes illo-stamp { 0%, 35% { transform: scale(0); opacity: 0; } 45% { transform: scale(1.15); opacity: 1; } 50%, 92% { transform: scale(1); opacity: 1; } 100% { transform: scale(0); opacity: 0; } }
+@keyframes illo-wire { 0%, 10% { stroke-dashoffset: 160; } 55%, 92% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 160; } }
+@keyframes illo-node { 0%, 50% { stroke: rgba(243, 236, 220, .45); fill: var(--surface); } 60%, 92% { stroke: var(--terracotta-light); fill: #2A2521; } 100% { stroke: rgba(243, 236, 220, .45); fill: var(--surface); } }
+@keyframes illo-step { 0%, 12% { fill: var(--surface); stroke: rgba(243, 236, 220, .4); } 22%, 92% { fill: var(--terracotta-light); stroke: var(--terracotta-light); } 100% { fill: var(--surface); stroke: rgba(243, 236, 220, .4); } }
+@keyframes illo-reply { 0%, 58% { stroke-dashoffset: 32; } 70%, 92% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 32; } }
+@keyframes illo-replyhead { 0%, 68% { opacity: 0; } 74%, 92% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes illo-knob { 0%, 10% { transform: translateX(0); } 35%, 92% { transform: translateX(var(--to)); } 100% { transform: translateX(0); } }
+@media (max-width: 720px) { #problems .ledger-row.has-illo { grid-template-columns: 1fr; gap: 10px; } .illo { width: 64px; height: 50px; } }
+@media (prefers-reduced-motion: reduce) {
+  .illo .pick, .illo .tick, .illo .stamp, .illo .wire, .illo .node, .illo .step, .illo .reply, .illo .reply-head, .illo .knob { animation: none; }
+  .illo .pick { transform: translateY(17px); } .illo .tick, .illo .wire, .illo .reply { stroke-dashoffset: 0; } .illo .stamp { transform: none; opacity: 1; } .illo .reply-head { opacity: 1; }
+  .illo .node { stroke: var(--terracotta-light); } .illo .step { fill: var(--terracotta-light); stroke: var(--terracotta-light); } .illo .knob { transform: translateX(var(--to)); }
+}
+
+
+
+/* Film */
+.film-player { position: relative; margin: 0; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 14px; border: 1px solid var(--ln-strong); background: #14110E; box-shadow: 0 30px 80px rgba(0, 0, 0, .35); }
+.film-player video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.film-play { position: absolute; inset: 0; width: 100%; padding: 0; border: 0; cursor: pointer; display: grid; place-items: center; background: rgba(20, 17, 14, .12); color: var(--cream); font: inherit; transition: background .25s ease; }
+.film-play:hover { background: rgba(20, 17, 14, 0); }
+.film-play:focus-visible { outline: 2px solid var(--acc); outline-offset: -6px; }
+.film-play .disc { width: clamp(64px, 9vw, 92px); height: clamp(64px, 9vw, 92px); border-radius: 50%; background: var(--terracotta); display: grid; place-items: center; box-shadow: 0 14px 44px rgba(196, 85, 43, .45); transition: transform .25s ease; }
+.film-play:hover .disc { transform: scale(1.06); }
+.film-play .disc svg { width: 34%; height: 34%; margin-left: 6%; display: block; }
+.film-player.playing .film-play { display: none; }
+.film-note { margin-top: 14px; font-size: .8rem; line-height: 1.5; color: var(--fg-soft); }
+</style>
+<style>
+
+/* Illustrations: small looping SVG scenes used across both pages. Colours come from the page tokens, so the same
+   drawing works on the black surface and on the cream band. Every loop is 6 s with a long hold; reduced motion shows the finished state. */
+.illo { width: 72px; height: 56px; overflow: visible; display: block; }
+.illo .f { fill: var(--ln); stroke: var(--ln-strong); stroke-width: 1; }
+.illo .fs { fill: var(--ln); stroke: var(--ln-strong); stroke-width: 1.5; animation: il-fill 6s ease-out infinite; }
+.illo .l { fill: none; stroke: var(--ln-strong); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.illo .a { fill: var(--terracotta-light); }
+.illo .al { fill: none; stroke: var(--terracotta-light); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.illo .g { fill: none; stroke: var(--green-light); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.band-light .illo .a { fill: var(--terracotta); } .band-light .illo .al { stroke: var(--terracotta); } .band-light .illo .g { stroke: var(--green); }
+.illo .tick { fill: none; stroke: var(--green-light); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 16; stroke-dashoffset: 16; animation: il-tick 6s ease-out infinite; }
+.band-light .illo .tick { stroke: var(--green); }
+.illo .d1 { animation-delay: .45s; } .illo .d2 { animation-delay: .9s; } .illo .d3 { animation-delay: 1.35s; }
+.illo .pick { animation: il-pick 6s ease-in-out infinite; }
+.illo .gridpick { animation: il-gridpick 6s ease-in-out infinite; }
+.illo .draw { stroke-dasharray: var(--len, 100); stroke-dashoffset: var(--len, 100); animation: il-draw 6s ease-in-out infinite; }
+.illo .show { opacity: 0; animation: il-show 6s ease-out infinite; }
+.illo .late { animation-delay: 1.6s; }
+.illo .pop { transform-box: fill-box; transform-origin: center; animation: il-pop 6s ease-out infinite; }
+.illo .grow { transform-box: fill-box; transform-origin: bottom; animation: il-grow 6s cubic-bezier(.2, .7, .2, 1) infinite; }
+.illo .rip { opacity: 0; animation: il-ripple 2.4s ease-out infinite; } .illo .r2 { animation-delay: .35s; }
+.illo .shake { transform-box: fill-box; transform-origin: center; animation: il-shake 2.4s ease-in-out infinite; }
+.illo .write { transform-box: fill-box; transform-origin: left; animation: il-write 6s ease-out infinite; }
+.illo .spin { transform-box: fill-box; transform-origin: center; animation: il-spin 14s linear infinite; }
+.illo .spin-rev { transform-box: fill-box; transform-origin: center; animation: il-spin 14s linear infinite reverse; }
+.illo .bob { animation: il-bob 2.4s ease-in infinite; }
+.illo .blink { animation: il-blink 2.4s ease-in-out infinite; }
+.illo .env { animation: il-send 6s ease-in infinite; } .illo .e2 { animation-delay: .5s; } .illo .e3 { animation-delay: 1s; }
+.illo .pd { animation: il-p-down 3s ease-in infinite; } .illo .pl { animation: il-p-left 3s ease-in infinite .75s; }
+.illo .pu { animation: il-p-up 3s ease-in infinite 1.5s; } .illo .pr { animation: il-p-right 3s ease-in infinite 2.25s; }
+.illo .la { animation: il-link-a 6s ease-in-out infinite; } .illo .lb { animation: il-link-b 6s ease-in-out infinite; }
+.illo .day { animation: il-day 6s steps(1, end) infinite; }
+.illo .shackle { animation: il-shackle 6s ease-in-out infinite; }
+.illo .shackle-open { animation: il-shackle-open 6s ease-in-out infinite; }
+.illo .key { animation: il-key 6s cubic-bezier(.2, .7, .2, 1) infinite; }
+.illo .beat { stroke-dasharray: 110; stroke-dashoffset: 110; animation: il-beat 3s linear infinite; }
+.illo .mag { animation: il-mag 3s ease-in-out infinite alternate; }
+.illo .wave { transform-box: fill-box; transform-origin: center; animation: il-wave 1.4s ease-in-out infinite alternate; }
+.illo .wave.d1 { animation-delay: .2s; } .illo .wave.d2 { animation-delay: .4s; } .illo .wave.d3 { animation-delay: .6s; }
+@keyframes il-fill { 0%, 12% { fill: var(--ln); stroke: var(--ln-strong); } 22%, 92% { fill: var(--terracotta-light); stroke: var(--terracotta-light); } 100% { fill: var(--ln); stroke: var(--ln-strong); } }
+@keyframes il-tick { 0%, 60% { stroke-dashoffset: 16; } 70%, 92% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 16; } }
+@keyframes il-pick { 0%, 18% { transform: translateY(0); } 30% { transform: translateY(17px); } 42% { transform: translateY(34px); } 54%, 92% { transform: translateY(17px); } 100% { transform: translateY(0); } }
+@keyframes il-gridpick { 0%, 10% { transform: translate(0, 0); } 20% { transform: translate(21px, 0); } 30% { transform: translate(42px, 0); } 40% { transform: translate(0, 22px); } 50%, 92% { transform: translate(21px, 22px); } 100% { transform: translate(0, 0); } }
+@keyframes il-draw { 0%, 10% { stroke-dashoffset: var(--len, 100); } 45%, 92% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: var(--len, 100); } }
+@keyframes il-show { 0%, 40% { opacity: 0; } 48%, 92% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes il-pop { 0%, 30% { transform: scale(0); opacity: 0; } 40% { transform: scale(1.12); opacity: 1; } 46%, 92% { transform: scale(1); opacity: 1; } 100% { transform: scale(0); opacity: 0; } }
+@keyframes il-grow { 0%, 8% { transform: scaleY(.08); } 40%, 92% { transform: scaleY(1); } 100% { transform: scaleY(.08); } }
+@keyframes il-ripple { 0%, 15% { opacity: 0; } 35% { opacity: 1; } 55%, 100% { opacity: 0; } }
+@keyframes il-shake { 0%, 14% { transform: rotate(0); } 17% { transform: rotate(-6deg); } 20% { transform: rotate(6deg); } 23% { transform: rotate(-6deg); } 26% { transform: rotate(6deg); } 30%, 100% { transform: rotate(0); } }
+@keyframes il-write { 0%, 10% { transform: scaleX(0); } 30%, 92% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+@keyframes il-spin { to { transform: rotate(360deg); } }
+@keyframes il-bob { 0% { transform: translateY(-4px); opacity: 0; } 20% { opacity: 1; } 70% { transform: translateY(5px); opacity: 1; } 100% { transform: translateY(8px); opacity: 0; } }
+@keyframes il-blink { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+@keyframes il-send { 0%, 8% { transform: translateX(0); opacity: 1; } 40% { transform: translateX(34px); opacity: 0; } 41%, 100% { transform: translateX(0); opacity: 1; } }
+@keyframes il-p-down { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } 55% { transform: translateY(18px); opacity: 0; } 100% { transform: translateY(18px); opacity: 0; } }
+@keyframes il-p-left { 0% { transform: translateX(0); opacity: 0; } 15% { opacity: 1; } 55% { transform: translateX(-24px); opacity: 0; } 100% { transform: translateX(-24px); opacity: 0; } }
+@keyframes il-p-up { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } 55% { transform: translateY(-18px); opacity: 0; } 100% { transform: translateY(-18px); opacity: 0; } }
+@keyframes il-p-right { 0% { transform: translateX(0); opacity: 0; } 15% { opacity: 1; } 55% { transform: translateX(24px); opacity: 0; } 100% { transform: translateX(24px); opacity: 0; } }
+@keyframes il-link-a { 0%, 15% { transform: translateX(0); } 40%, 92% { transform: translateX(6px); } 100% { transform: translateX(0); } }
+@keyframes il-link-b { 0%, 15% { transform: translateX(0); } 40%, 92% { transform: translateX(-6px); } 100% { transform: translateX(0); } }
+@keyframes il-day { 0% { transform: translate(0, 0); } 16% { transform: translate(14px, 0); } 32% { transform: translate(28px, 0); } 48% { transform: translate(0, 12px); } 64% { transform: translate(14px, 12px); } 80% { transform: translate(28px, 12px); } 100% { transform: translate(28px, 12px); } }
+@keyframes il-shackle { 0%, 25% { transform: translateY(-5px); } 45%, 92% { transform: translateY(0); } 100% { transform: translateY(-5px); } }
+@keyframes il-shackle-open { 0%, 50% { transform: translateY(0); } 62%, 92% { transform: translateY(-4px); } 100% { transform: translateY(0); } }
+@keyframes il-key { 0%, 15% { transform: translateX(0); } 45%, 92% { transform: translateX(8px); } 100% { transform: translateX(0); } }
+@keyframes il-beat { 0% { stroke-dashoffset: 110; opacity: 1; } 70% { stroke-dashoffset: 0; opacity: 1; } 90%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+@keyframes il-mag { from { transform: translate(-2px, -2px); } to { transform: translate(3px, 3px); } }
+@keyframes il-wave { from { transform: scaleY(.35); } to { transform: scaleY(1); } }
+/* Placement */
+.ledger-row.has-illo { grid-template-columns: 72px minmax(180px, .8fr) 1.2fr; gap: 12px 28px; }
+.op-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.op-top .illo { width: 64px; height: 50px; margin-top: -8px; }
+.flows .ui-row .illo { width: 60px; height: 46px; flex: none; }
+.ways .illo, .scope .scope-col .illo { width: 64px; height: 50px; }
+.cat .illo { width: 64px; height: 50px; margin-bottom: 6px; }
+.sec-head .illo { width: 72px; height: 56px; }
+@media (max-width: 720px) { .ledger-row.has-illo { grid-template-columns: 1fr; gap: 10px; } .illo { width: 64px; height: 50px; } }
+@media (prefers-reduced-motion: reduce) {
+  .illo * { animation: none !important; }
+  .illo .tick, .illo .draw, .illo .beat { stroke-dashoffset: 0; }
+  .illo .show, .illo .rip, .illo .pop, .illo .blink { opacity: 1; transform: none; }
+  .illo .pick { transform: translateY(17px); } .illo .gridpick { transform: translate(21px, 22px); }
+  .illo .fs { fill: var(--terracotta-light); stroke: var(--terracotta-light); }
+  .illo .write { transform: scaleX(1); } .illo .grow { transform: scaleY(1); } .illo .wave { transform: scaleY(.7); }
+  .illo .shackle { transform: translateY(0); } .illo .shackle-open { transform: translateY(-4px); } .illo .key { transform: translateX(8px); }
+  .illo .la { transform: translateX(6px); } .illo .lb { transform: translateX(-6px); } .illo .day { transform: translate(28px, 12px); }
+}
+</style>
+<style>
+/* Network: the wider technology we can source. One ledger row per solution area, a few known names in view,
+   and the supplier list opening in place. */
+.net-row .who { display: grid; gap: 10px; justify-items: start; align-content: start; }
+.net-tag { font-family: var(--ui); font-size: .6rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; line-height: 1; padding: 5px 9px; border-radius: 999px; background: var(--terracotta-deep); color: var(--cream); }
+.net-body { display: grid; gap: 14px; min-width: 0; }
+.net-names { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; font-weight: 600; font-size: .95rem; letter-spacing: -0.01em; color: var(--fg); }
+.net-all summary { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; list-style: none; font-weight: 600; font-size: .85rem; color: var(--fg); padding: 4px 0; }
+.net-all summary::-webkit-details-marker { display: none; }
+.net-all summary svg { width: 12px; height: 12px; color: var(--acc); transition: transform .25s ease; transform: rotate(90deg); }
+.net-all[open] summary svg { transform: rotate(-90deg); }
+.net-group { margin-top: 18px; display: grid; gap: 10px; }
+.net-list { margin: 0; padding: 0; list-style: none; columns: 3; column-gap: 24px; font-size: .86rem; line-height: 1.45; color: var(--fg-muted); }
+.net-list li { break-inside: avoid; padding: 3px 0; overflow-wrap: anywhere; }
+.net-nw { white-space: nowrap; }
+.net-vh { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 1040px) { .net-list { columns: 2; } }
+/* Hero headline: one flowing line group, so the longer wording sets in the same number of lines as before; a touch
+   smaller on phones for the same reason. */
+@media (max-width: 480px) { .hero h1 { font-size: 2.25rem; } }
+/* Band under the hero: marks beside names, and the same scroll speed now that each row holds ten tiles. */
+.tile .tile-mk { display: inline-flex; align-items: center; gap: 7px; }
+.tile .lg-zoom { height: 11px; }
+.tile .lg-cisco { height: 20px; }
+.tile .tile-mk .lg-monday { height: 15px; }
+.row-l { animation-duration: 80s; }
+.row-r { animation-duration: 90s; }
+/* Orbit, outer ring: the wider technology. A cropped official mark, alone when it is a wordmark, else beside the name. */
+.sat .mk { display: inline-flex; align-items: center; gap: 6px; }
+.sat .mk .lg { height: 14px; }
+.sat .lg-zoom { height: 10px; }
+.sat .lg-cisco { height: 20px; }
+@media (max-width: 560px) { .sat .mk { gap: 5px; } .sat .mk .lg { height: 11px; } .sat .lg-zoom { height: 8px; } .sat .lg-cisco { height: 16px; } }
+@media (prefers-reduced-motion: reduce) { .net-all summary svg { transition: none; } }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="chev" viewBox="0 0 12 12"><path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Stacktik home">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M22 32 L43 46 L80 13" fill="none" stroke="#C4552B" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="56" width="68" height="14" rx="7" fill="#C4552B"></rect><rect x="16" y="78" width="68" height="14" rx="7" fill="#C4552B"></rect></svg>
+      <span>stack<span class="tik">tik</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#help">What we do</a>
+      <a href="#journey">Lead journey</a>
+      <a href="#examples">Examples</a>
+      <a href="#how">How it works</a>
+      <a href="#fees">Fees</a>
+      <a href="#faq">Questions</a>
+      <a href="details.html">Details</a>
+    </nav>
+    <a class="btn btn-sm" href="https://stacktik.com/blueprint/">Book a call <span class="disc" aria-hidden="true"><svg><use href="#chev"/></svg></span></a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" data-tone="dark">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow" data-hero style="--i:0">For sales and customer-facing teams</span>
+      <h1 data-hero style="--i:1"><span class="l">We set up the software and technology that grow your <em class="acc">revenue</em>.</span></h1>
+      <p class="lede" data-hero style="--i:2">The right CRM, calling, outreach and reporting tools, installed, connected, your team trained on them, AI agents built on Claude and OpenAI handling the routine steps, and a live scoreboard that gamifies revenue: targets, leaderboards and today's numbers in front of every rep. Come for the software, the setup, or both.</p>
+      <div class="hero-ctas" data-hero style="--i:3">
+        <a class="btn" href="https://stacktik.com/blueprint/">Book a call <span class="disc" aria-hidden="true"><svg><use href="#chev"/></svg></span></a>
+        <a class="btn-text" href="#how">How it works <svg aria-hidden="true"><use href="#chev"/></svg></a>
+      </div>
+      <p class="hero-note" data-hero style="--i:4">A free call to understand what you use today, what isn't working, and the right next step. No obligation. From there, a technical RevOps consultant is assigned specifically to your project, from the first idea to fully deployed: one person who can build anything it needs.</p>
+    </div>
+    <div class="hero-stage orbit-wrap" data-hero style="--i:2" role="img" aria-label="The platforms, AI models and technology suppliers Stacktik works with, orbiting the Stacktik mark and linked to it and to each other">
+      <div class="orbit" id="orbit">
+        <div class="orbit-glow" aria-hidden="true"></div>
+        <svg class="orbit-lines" viewBox="0 0 600 600" aria-hidden="true">
+          <defs>
+            <radialGradient id="spoke-fade" gradientUnits="userSpaceOnUse" cx="300" cy="300" r="270">
+              <stop offset="0" stop-color="#F3ECDC" stop-opacity=".55"/><stop offset=".55" stop-color="#F3ECDC" stop-opacity=".22"/><stop offset="1" stop-color="#F3ECDC" stop-opacity=".06"/>
+            </radialGradient>
+            <radialGradient id="pulse-glow"><stop offset="0" stop-color="#FFD9C2" stop-opacity="1"/><stop offset=".45" stop-color="#D97747" stop-opacity=".9"/><stop offset="1" stop-color="#D97747" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle class="ring r1" cx="300" cy="300" r="165"/>
+          <circle class="ring r2" cx="300" cy="300" r="262"/>
+          <g id="orbit-links"></g>
+          <g id="orbit-pulses"></g>
+        </svg>
+        <div class="orbit-core"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M22 32 L43 46 L80 13" fill="none" stroke="#C4552B" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="56" width="68" height="14" rx="7" fill="#C4552B"></rect><rect x="16" y="78" width="68" height="14" rx="7" fill="#C4552B"></rect></svg></div>
+        <div class="sat" data-ring="1" data-i="0"><svg class="lg lg-hubspot" role="img" aria-label="hubspot" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1913.298 542.363"> <defs> <style> .cls-1 { fill: #ff2f00; } </style> </defs> <g> <g> <polygon class="cls-1" points="207.213 306.956 66.717 306.956 66.717 454.956 0 454.956 0 89.777 66.717 89.777 66.717 242.77 207.213 242.77 207.213 89.777 273.915 89.777 273.915 454.956 207.213 454.956 207.213 306.956"/> <path class="cls-1" d="M487.389,336.922c0,30.414-24.775,55.161-55.183,55.161s-55.175-24.747-55.175-55.161v-156.409h-63.176v156.409c0,65.254,53.093,118.334,118.351,118.334s118.337-53.08,118.337-118.334v-156.409h-63.154v156.409Z"/> <path class="cls-1" d="M956.173,196.617c0-32.068,21.226-42.237,44.464-42.237,18.712,0,43.472,14.241,59.627,31.545l41.43-48.838c-20.703-27.972-62.642-47.311-97.008-47.311-68.741,0-118.268,40.193-118.268,106.84,0,123.616,151.117,84.432,151.117,153.636,0,21.342-20.714,40.182-44.459,40.182-37.41,0-49.545-18.315-66.721-37.649l-45.998,47.811c29.328,36.122,65.706,54.447,109.171,54.447,65.194,0,117.756-40.7,117.756-104.3,0-137.35-151.112-94.612-151.112-154.127Z"/> <path class="cls-1" d="M1891.044,396.619c-37.384,0-47.994-16.163-47.994-40.937v-109.66h58.105v-55.586h-58.105v-73.29l-64.167,28.803v223.382c0,57.114,39.404,85.926,93.46,85.926,8.086,0,19.216-.522,25.286-2.021l15.67-57.609c-7.073.488-15.156.992-22.255.992Z"/> <path class="cls-1" d="M728.198,182.343c-31.337,0-53.21,9.096-74.334,29.83v-120.215h-63.378v222.795c0,83.391,60.291,140.504,128.034,140.504,75.304,0,141.284-58.129,141.284-136.451,0-77.33-60.842-136.462-131.606-136.462ZM727.804,391.472c-39.703,0-71.884-32.183-71.884-71.883s32.181-71.883,71.884-71.883,71.882,32.184,71.882,71.883-32.184,71.883-71.882,71.883Z"/> <path class="cls-1" d="M1416.266,315.515c0-78.323-65.98-136.451-141.284-136.451-67.743,0-128.034,57.113-128.034,140.504v222.795h63.378v-120.215c21.124,20.734,42.997,29.83,74.334,29.83,70.764,0,131.606-59.132,131.606-136.462ZM1356.148,314.733c0,39.699-32.184,71.883-71.882,71.883s-71.884-32.184-71.884-71.883,32.181-71.883,71.884-71.883,71.882,32.183,71.882,71.883Z"/> <path class="cls-1" d="M1621.06,175.994v-63.662c16.616-7.85,28.259-24.661,28.259-44.172v-1.471c0-26.924-22.03-48.953-48.953-48.953h-1.47c-26.925,0-48.955,22.029-48.955,48.953v1.471c0,19.51,11.645,36.324,28.262,44.173v63.662c-24.741,3.822-47.348,14.026-66,29.043l-174.793-135.972c1.15-4.428,1.957-8.99,1.962-13.778C1339.412,24.793,1314.722.039,1284.225,0c-30.497-.038-55.251,24.652-55.29,55.149-.037,30.496,24.652,55.249,55.15,55.288,9.939.012,19.137-2.81,27.201-7.396l171.944,133.759c-14.625,22.072-23.188,48.512-23.188,76.973,0,29.799,9.412,57.359,25.322,80.031l-52.291,52.291c-4.134-1.24-8.425-2.108-12.965-2.108-25.059,0-45.375,20.316-45.375,45.375s20.317,45.375,45.375,45.375,45.375-20.316,45.375-45.375c0-4.538-.867-8.83-2.108-12.964l51.725-51.724c23.478,17.924,52.715,28.689,84.534,28.689,77.092,0,139.588-62.498,139.588-139.592,0-69.789-51.27-127.446-118.163-137.778ZM1599.635,385.339c-39.526,0-71.572-32.041-71.572-71.567s32.046-71.567,71.572-71.567,71.567,32.042,71.567,71.567-32.046,71.567-71.567,71.567Z"/> </g> </g> </svg></div>
+        <div class="sat" data-ring="1" data-i="1"><span class="mark-monday"><svg class="lg lg-monday" role="img" aria-label="monday" focusable="false" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx="24" cy="24" r="24" transform="matrix(-1 0 0 1 48.0001 0)" fill="white"/> <path d="M14.1414 31.6061C13.0802 31.6052 12.1032 31.0526 11.5896 30.1629C11.076 29.2732 11.1068 28.1866 11.67 27.3249L16.9249 19.2872C17.4647 18.412 18.4576 17.8863 19.5182 17.9141C20.5788 17.942 21.5402 18.519 22.0291 19.4213C22.518 20.3235 22.4574 21.4088 21.8709 22.2559L16.6191 30.2937C16.0849 31.1115 15.1484 31.6076 14.1414 31.6061Z" fill="#FB275D"/> <path d="M23.0947 31.6061C22.0352 31.6052 21.0598 31.0539 20.547 30.1663C20.0343 29.2788 20.065 28.1947 20.6273 27.3351L25.872 19.3164C26.4033 18.4285 27.3997 17.8902 28.4683 17.9138C29.5369 17.9375 30.5063 18.5192 30.9941 19.4298C31.482 20.3403 31.4101 21.4334 30.8068 22.2781L25.562 30.2968C25.0299 31.1108 24.0977 31.6055 23.0947 31.6061Z" fill="#FFCC00"/> <path d="M31.8237 31.6222C33.4286 31.6222 34.7297 30.3234 34.7297 28.7213C34.7297 27.1191 33.4286 25.8203 31.8237 25.8203C30.2187 25.8203 28.9177 27.1191 28.9177 28.7213C28.9177 30.3234 30.2187 31.6222 31.8237 31.6222Z" fill="#00CA72"/> </svg>monday.com</span></div>
+        <div class="sat" data-ring="1" data-i="2"><svg class="lg lg-cloudtalk" role="img" aria-label="cloudtalk" focusable="false" viewBox="0 0 136 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_17890_30691)"> <path d="M7.19771 13.172C7.4899 13.172 7.55773 13.352 7.64773 13.622L8.07558 14.9721C8.11993 15.1299 8.20993 15.1964 8.34559 15.1964H8.5256C8.65995 15.1964 8.74996 15.1286 8.79561 14.9721L9.22346 13.622C9.31346 13.352 9.33564 13.1498 9.89783 13.1498C11.1579 13.1498 12.3488 12.9698 13.2489 12.0932C13.6767 11.6654 14.1932 11.5089 14.6889 11.8454L15.1168 12.1376C15.7246 12.542 15.9046 13.3077 15.409 13.8242C14.1489 15.1064 12.3723 15.8708 10.3479 15.8708H6.97466C2.96883 15.8708 0 12.902 0 8.96659V7.03215C0 3.09676 2.96883 0.12793 6.97205 0.12793H10.3452C12.3697 0.12793 14.1463 0.892312 15.4063 2.17454C15.9007 2.69239 15.7207 3.45677 15.1142 3.86114L14.6863 4.15333C14.1919 4.49117 13.6741 4.33334 13.2462 3.90549C12.3462 3.02893 11.154 2.84892 9.89523 2.84892L7.19641 2.82675C4.40759 2.80457 2.92317 4.53552 2.92317 7.03215V8.96659C2.92317 11.4632 4.40759 13.172 7.19641 13.172H7.19771Z" fill="black"/> <path d="M19.7699 1.20651L19.7477 14.9041C19.7477 15.1063 19.8377 15.1963 20.0399 15.1963H20.2199C20.3777 15.1963 20.4678 15.1284 20.5121 14.9941L20.9399 13.644C21.03 13.374 21.03 13.1718 21.5922 13.1718H27.642C28.2264 13.1718 28.6542 13.5997 28.6542 14.1841V14.8584C28.6542 15.4428 28.2264 15.8706 27.642 15.8706H17.8355C17.2511 15.8706 16.8232 15.4428 16.8232 14.8584L16.8454 1.20651C16.8454 0.59866 17.3176 0.126465 17.9255 0.126465H18.6898C19.2977 0.126465 19.7699 0.59866 19.7699 1.20651Z" fill="black"/> <path d="M45.1173 7.03215V8.96659C45.1173 12.902 42.1485 15.8708 38.1452 15.8708H35.4008C31.3975 15.8708 28.4287 12.902 28.4287 8.96659V7.03215C28.4287 3.09676 31.3975 0.12793 35.4008 0.12793H38.1452C42.1485 0.12793 45.1173 3.09676 45.1173 7.03215ZM35.4008 13.172H38.1452C40.7097 13.172 42.1941 11.5976 42.1941 8.96659V7.03215C42.1941 4.40116 40.7097 2.82675 38.1452 2.82675H35.4008C32.8363 2.82675 31.3519 4.40116 31.3519 7.03215V8.96659C31.3519 11.5976 32.8363 13.172 35.4008 13.172Z" fill="black"/> <path d="M53.6631 13.1718H55.5076C58.072 13.1718 59.5564 11.5974 59.5564 8.96642V1.20651C59.5564 0.59866 60.0286 0.126465 60.6365 0.126465H61.4009C62.0087 0.126465 62.4809 0.59866 62.4809 1.20651V8.96642C62.4809 12.9018 59.5121 15.8706 55.5089 15.8706H53.6644C49.6612 15.8706 46.6924 12.9018 46.6924 8.96642V1.20651C46.6924 0.59866 47.1646 0.126465 47.7724 0.126465H48.5368C49.1447 0.126465 49.6169 0.59866 49.6169 1.20651V8.96642C49.6169 11.5974 51.1013 13.1718 53.6657 13.1718H53.6631Z" fill="black"/> <path d="M65.4481 0.12793H72.4423C76.4012 0.12793 79.4601 3.09676 79.4601 6.80779V9.19225C79.4601 12.9033 76.4469 15.8721 72.4423 15.8721H65.4481C64.6837 15.8721 64.0537 15.2421 64.0537 14.4777V1.52234C64.0537 0.757958 64.6837 0.12793 65.4481 0.12793ZM67.2704 13.1733H72.4437C75.0081 13.1733 76.4925 11.5989 76.4925 9.19225V6.80779C76.4925 4.40116 75.0081 2.82675 72.4437 2.82675H67.2704C67.0682 2.82675 66.9782 2.91675 66.9782 3.11893V12.8798C66.9782 13.082 67.0682 13.172 67.2704 13.172V13.1733Z" fill="black"/> <path d="M79.347 1.81453V1.14015C79.347 0.555775 79.7749 0.12793 80.3592 0.12793H92.5046C93.0889 0.12793 93.5168 0.555775 93.5168 1.14015V1.81453C93.5168 2.3989 93.0889 2.82675 92.5046 2.82675H87.8935L87.8713 14.7921C87.8713 15.3999 87.3991 15.8721 86.7913 15.8721H86.0269C85.419 15.8721 84.9468 15.3999 84.9468 14.7921L84.969 2.82675H80.3579C79.7735 2.82675 79.3457 2.3989 79.3457 1.81453H79.347Z" fill="black"/> <path d="M93.4033 11.9134V10.3168C93.4033 7.93235 95.1799 6.38141 97.6766 6.38141H104.356C104.559 6.38141 104.649 6.29141 104.649 6.08923V4.53698C104.649 3.30041 104.176 2.82821 102.94 2.82821H95.5856C95.0012 2.82821 94.5734 2.40037 94.5734 1.81599V1.14161C94.5734 0.55724 95.0012 0.129395 95.5856 0.129395H102.94C106.066 0.129395 107.573 1.68164 107.573 4.76265V14.4766C107.573 15.2409 106.943 15.871 106.179 15.871H97.6322C95.1812 15.871 93.4033 14.3187 93.4033 11.9121V11.9134ZM97.8566 13.1735H104.356C104.559 13.1735 104.649 13.0835 104.649 12.8813V7.34798C104.649 7.1458 104.559 7.05579 104.356 7.05579H104.176C104.019 7.05579 103.929 7.12362 103.884 7.25797L103.456 8.60804C103.366 8.87805 103.366 9.08023 102.804 9.08023H97.9009C96.8443 9.08023 96.3265 9.46242 96.3265 10.5425V11.689C96.3265 12.7913 96.8443 13.1735 97.8553 13.1735H97.8566Z" fill="black"/> <path d="M112.094 1.20651L112.072 14.9041C112.072 15.1063 112.162 15.1963 112.364 15.1963H112.544C112.702 15.1963 112.792 15.1284 112.836 14.9941L113.264 13.644C113.354 13.374 113.354 13.1718 113.916 13.1718H119.966C120.551 13.1718 120.978 13.5997 120.978 14.1841V14.8584C120.978 15.4428 120.551 15.8706 119.966 15.8706H110.16C109.575 15.8706 109.147 15.4428 109.147 14.8584L109.17 1.20651C109.17 0.59866 109.642 0.126465 110.25 0.126465H111.014C111.622 0.126465 112.094 0.59866 112.094 1.20651Z" fill="black"/> <path d="M123.182 0.128091H123.946C124.554 0.128091 125.026 0.600286 125.026 1.20814V6.53794C125.026 6.65012 125.116 6.74013 125.229 6.74013L126.825 6.7623C126.983 6.7623 127.14 6.69447 127.23 6.58229L132.695 0.398103C133.099 -0.0740916 133.775 -0.119746 134.269 0.308099L134.652 0.645941C135.124 1.07379 135.146 1.72599 134.719 2.19818L129.636 7.888L135.618 13.4878C136.09 13.9378 136.136 14.6344 135.686 15.1301L135.258 15.6023C134.808 16.0966 134.134 16.1201 133.639 15.6479L127.184 9.57591C127.094 9.4859 126.96 9.44155 126.824 9.44155H125.227C125.115 9.44155 125.025 9.53156 125.025 9.64373V14.7948C125.025 15.4027 124.553 15.8749 123.945 15.8749H123.181C122.573 15.8749 122.101 15.4027 122.101 14.7948V1.20684C122.101 0.598982 122.573 0.126787 123.181 0.126787L123.182 0.128091Z" fill="black"/> </g> <defs> <clipPath> <rect width="136" height="15.9738" fill="white" transform="translate(0 0.0131836)"/> </clipPath> </defs> </svg></div>
+        <div class="sat" data-ring="1" data-i="3"><svg class="lg lg-dialpad" role="img" aria-label="dialpad" focusable="false" viewBox="0 0 94 33" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M18.3259 27.6509C14.4999 27.6509 11.7516 24.5636 11.7516 20.3387C11.7516 16.1139 14.4999 13.0536 18.3259 13.0536C20.1042 13.0536 21.8017 13.9473 22.5561 15.1118V7.58294H25.6816V27.3801H22.5561V25.5656C21.8017 26.7301 20.1042 27.6509 18.3259 27.6509ZM18.8378 24.9156C20.8586 24.9156 22.3675 23.3449 22.5561 21.2054V19.4179C22.3675 17.2784 20.8586 15.7889 18.8378 15.7889C16.5745 15.7889 14.9579 17.6034 14.9579 20.3116C14.9579 23.0199 16.5745 24.9156 18.8378 24.9156Z" fill="black"/> <path d="M30.6833 27.3801H27.5309V13.3244H30.6833V27.3801ZM29.0667 11.4015C27.962 11.4015 27.1267 10.5349 27.1267 9.42454C27.1267 8.34124 27.962 7.47461 29.0667 7.47461C30.2253 7.47461 31.0875 8.34124 31.0875 9.42454C31.0875 10.5349 30.2253 11.4015 29.0667 11.4015Z" fill="black"/> <path d="M49.2213 27.3801H46.0689V7.58294H49.2213V27.3801Z" fill="black"/> <path d="M51.1402 32.4445V13.3244H54.2926V15.1389C55.0201 13.9744 56.7176 13.0536 58.5767 13.0536C62.3489 13.0536 65.0972 16.141 65.0972 20.3658C65.0972 24.5906 62.3489 27.6509 58.5228 27.6509C56.7176 27.6509 55.0201 26.7301 54.2926 25.5656V32.4445H51.1402ZM58.0109 24.9156C60.2473 24.9156 61.8908 23.1011 61.8908 20.3929C61.8908 17.6846 60.2473 15.7889 58.0648 15.7889C55.9632 15.7889 54.4812 17.3597 54.2926 19.4992V21.2866C54.4543 23.4261 55.9632 24.9156 58.0109 24.9156Z" fill="black"/> <path d="M86.3798 27.6509C82.5538 27.6509 79.8055 24.5636 79.8055 20.3387C79.8055 16.1139 82.5538 13.0536 86.3798 13.0536C88.1581 13.0536 89.8556 13.9473 90.61 15.1118V7.58294H93.7355V27.3801H90.61V25.5656C89.8556 26.7301 88.1581 27.6509 86.3798 27.6509ZM86.8917 24.9156C88.9125 24.9156 90.4214 23.3449 90.61 21.2054V19.4179C90.4214 17.2784 88.9125 15.7889 86.8917 15.7889C84.6285 15.7889 83.0118 17.6034 83.0118 20.3116C83.0118 23.0199 84.6285 24.9156 86.8917 24.9156Z" fill="black"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M66.1534 23.5615C66.1534 25.9177 68.2012 27.6509 71.0303 27.6509C72.5391 27.6509 74.1019 27.0822 75.1258 25.5385V27.3801H78.2513V18.2805C78.2513 15.0035 75.8802 13.0536 72.4044 13.0536C69.0012 13.0536 67.0445 14.9489 66.3826 17.0617L69.3726 17.4554C69.8069 16.287 70.793 15.491 72.4044 15.491C73.9672 15.491 75.1258 16.4118 75.1258 18.0909V18.5784L71.0572 19.1742C67.9856 19.6075 66.1534 21.097 66.1534 23.5615ZM71.5692 25.2948C70.222 25.2948 69.3597 24.4823 69.3597 23.4261C69.3597 22.2886 70.1411 21.6658 71.5692 21.422L75.1258 20.7991V22.5053C74.6408 23.9677 73.4552 25.2948 71.5692 25.2948Z" fill="black"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M32.1191 23.5615C32.1191 25.9176 34.1668 27.6509 36.9959 27.6509C38.5048 27.6509 40.0676 27.0822 41.0914 25.5385V27.3801H44.2169V18.2804C44.2169 15.0034 41.8459 13.0535 38.3701 13.0535C34.9669 13.0535 33.0102 14.9488 32.3483 17.0617L35.3383 17.4553C35.7725 16.287 36.7587 15.4909 38.3701 15.4909C39.9328 15.4909 41.0914 16.4117 41.0914 18.0908V18.5783L37.0229 19.1741C33.9513 19.6074 32.1191 21.097 32.1191 23.5615ZM37.5348 25.2947C36.1876 25.2947 35.3254 24.4823 35.3254 23.426C35.3254 22.2886 36.1068 21.6657 37.5348 21.4219L41.0914 20.7991V22.5052C40.6064 23.9677 39.4209 25.2947 37.5348 25.2947Z" fill="black"/> <path d="M14.7974 7.43848C14.9975 7.48324 15.0372 7.80998 14.8501 7.89512C11.2371 9.125 8.39325 12.2693 6.90835 16.4551C6.82708 16.6581 6.47057 16.6091 6.43706 16.3925C5.92911 13.1096 3.66093 10.4884 0.738931 9.78109C0.545298 9.73422 0.508733 9.43003 0.688975 9.34393C4.39869 7.81758 7.18675 4.68653 8.47503 0.686265C8.55549 0.477551 8.94421 0.530264 8.97728 0.751999C9.47675 4.10041 11.8058 6.76949 14.7974 7.43848Z" fill="#7C52FF"/> </svg></div>
+        <div class="sat" data-ring="1" data-i="4"><span class="nm">Claude</span></div>
+        <div class="sat" data-ring="1" data-i="5"><span class="nm">OpenAI</span></div>
+        <div class="sat" data-ring="2" data-i="0"><svg class="lg lg-zoom" role="img" aria-label="Zoom" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 9.271 24 5.458"><path fill="currentColor" d="M5.033 14.649H.743a.74.74 0 0 1-.686-.458.74.74 0 0 1 .16-.808L3.19 10.41H1.06A1.06 1.06 0 0 1 0 9.35h3.957c.301 0 .57.18.686.458a.74.74 0 0 1-.161.808L1.51 13.59h2.464c.585 0 1.06.475 1.06 1.06zM24 11.338c0-1.14-.927-2.066-2.066-2.066-.61 0-1.158.265-1.537.686a2.061 2.061 0 0 0-1.536-.686c-1.14 0-2.066.926-2.066 2.066v3.311a1.06 1.06 0 0 0 1.06-1.06v-2.251a1.004 1.004 0 0 1 2.013 0v2.251c0 .586.474 1.06 1.06 1.06v-3.311a1.004 1.004 0 0 1 2.012 0v2.251c0 .586.475 1.06 1.06 1.06zM16.265 12a2.728 2.728 0 1 1-5.457 0 2.728 2.728 0 0 1 5.457 0zm-1.06 0a1.669 1.669 0 1 0-3.338 0 1.669 1.669 0 0 0 3.338 0zm-4.82 0a2.728 2.728 0 1 1-5.458 0 2.728 2.728 0 0 1 5.457 0zm-1.06 0a1.669 1.669 0 1 0-3.338 0 1.669 1.669 0 0 0 3.338 0z"/></svg></div>
+        <div class="sat" data-ring="2" data-i="1"><span class="nm">RingCentral</span></div>
+        <div class="sat" data-ring="2" data-i="2"><svg class="lg lg-cisco" role="img" aria-label="Cisco" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 5.673 24 12.652"><path fill="currentColor" d="M16.331 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.186 1.186 0 01-.806-.237 1.038 1.038 0 01-.352-.498 1.21 1.21 0 01-.023-.667c.052-.225.178-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.34 2.34 0 00-.903.206c-.287.132-.54.327-.739.571a2.221 2.221 0 00-.04 2.705c.295.378.709.645 1.175.756.491.12 1.006.102 1.487-.052l.082-.023M5.336 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.183 1.183 0 01-.806-.237 1.03 1.03 0 01-.351-.498 1.202 1.202 0 01-.024-.667c.052-.225.177-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.344 2.344 0 00-.903.206 2.08 2.08 0 00-.74.571 2.224 2.224 0 00-.041 2.705 2.11 2.11 0 001.176.756c.491.12 1.005.102 1.487-.052l.083-.023M9.26 17.249l-.004.957.07.012c.22.041.441.069.664.085.195.019.391.022.587.012.187-.014.372-.049.551-.104.21-.06.405-.163.571-.305a1.16 1.16 0 00.333-.478 1.31 1.31 0 00-.007-.96 1.068 1.068 0 00-.298-.414 1.261 1.261 0 00-.438-.255l-.722-.268a.388.388 0 01-.197-.188.245.245 0 01.008-.219.382.382 0 01.154-.142.798.798 0 01.257-.074c.153-.022.308-.021.46.005.18.02.358.051.533.096l.038.008v-.883l-.069-.015a4.749 4.749 0 00-.543-.097 2.844 2.844 0 00-.714-.003c-.3.027-.585.143-.821.33-.16.126-.281.293-.351.484-.104.29-.105.608 0 .899.054.145.14.274.252.381.097.093.207.173.327.236.157.084.324.149.497.195.057.017.114.035.17.054l.085.031.024.01c.084.03.162.078.226.14.045.042.08.094.101.151a.325.325 0 01.001.161.339.339 0 01-.166.198.856.856 0 01-.275.086 2.032 2.032 0 01-.427.021 5.208 5.208 0 01-.557-.074 9.195 9.195 0 01-.287-.067l-.033-.006zm-2.475.995h1.05v-4.167h-1.05v4.167zm12.162-2.936a1.095 1.095 0 011.541.158 1.094 1.094 0 01-.157 1.541l-.017.014a1.096 1.096 0 01-1.367-1.713m-1.525.854a2.193 2.193 0 002.666 2.107 2.139 2.139 0 00.701-3.937 2.207 2.207 0 00-3.367 1.83M22.961 10.728a.52.52 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M20.117 10.728a.522.522 0 001.041 0V8.139a.521.521 0 00-1.04 0v2.589M17.231 11.771a.521.521 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M14.393 10.728a.521.521 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M11.494 10.728a.522.522 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M8.624 10.728a.52.52 0 001.039 0V8.139a.52.52 0 00-1.039 0v2.589M5.737 11.771a.52.52 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M2.876 10.728a.522.522 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M0 10.728a.521.521 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155"/></svg></div>
+        <div class="sat" data-ring="2" data-i="3"><span class="nm">Five9</span></div>
+        <div class="sat" data-ring="2" data-i="4"><span class="mk"><svg class="lg " aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0.067 24 23.866"><path fill="currentColor" d="M4.584 21.438a12.077 12.077 0 0 0 7.349 2.495 12 12 0 0 0 7.887-2.967c-.944.607-3.64 2.023-7.887 2.023-3.708 0-6.068-.81-7.349-1.55m8.158.606c2.966 0 6.202-.809 8.09-2.427.539-.405 1.01-1.011 1.483-1.753.27-.472.539-1.011.741-1.483-1.82 2.63-7.011 4.315-12.404 4.315-3.776 0-7.888-1.214-9.506-3.573 1.483 3.236 6 4.92 11.596 4.92m-3.236-5.257C3.37 16.787.472 13.955 0 12c0 .674.067 1.483.202 2.09.068.27.27.674.607 1.079 1.483 1.55 5.191 3.707 11.595 3.707 8.697 0 10.72-2.898 11.124-3.842.27-.674.472-1.888.472-2.967v-.674c-.607 2.292-8.022 5.394-14.494 5.394m-8.427-9.91C.742 7.55.337 8.763.202 9.37c-.067.27 0 .404.068.607.741 1.55 4.45 4.044 13.078 4.044 5.259 0 9.371-1.28 10.045-3.64.135-.404.135-.876 0-1.483-.202-.674-.472-1.483-.809-2.09.068 3.101-8.562 5.124-12.944 5.124-4.719 0-8.696-1.888-8.696-4.248.067-.337.135-.606.135-.809M19.82 3.034c.068.067.068.135.068.27 0 1.348-4.045 3.64-10.517 3.64-4.787 0-5.663-1.753-5.663-2.9 0-.404.135-.808.472-1.213-.607.607-1.146 1.147-1.686 1.82-.202.27-.337.54-.337.675 0 2.36 5.865 3.977 11.259 3.977 5.797 0 8.427-1.887 8.427-3.573 0-.606-.203-.943-.81-1.618a17.301 17.301 0 0 0-1.213-1.078m-1.753-1.281A11.794 11.794 0 0 0 11.933.067C9.64.067 7.55.674 5.73 1.82c-.539.27-.876.54-.876.877 0 1.01 2.36 2.09 6.54 2.09 4.112 0 7.348-1.214 7.348-2.36.067-.202-.203-.405-.675-.674"/></svg><span class="nm">AT&amp;T</span></span></div>
+        <div class="sat" data-ring="2" data-i="5"><span class="nm">Genesys</span></div>
+        <div class="sat" data-ring="2" data-i="6"><span class="nm">Verizon</span></div>
+        <div class="sat" data-ring="2" data-i="7"><span class="nm">Rogers</span></div>
+        <div class="sat" data-ring="2" data-i="8"><span class="mk"><svg class="lg " aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0.961 0 22.078 24"><path fill="currentColor" d="M13.0548 0C6.384 0 .961 5.3802.961 12.0078.961 18.6354 6.3698 24 13.0548 24c.6168 0 .6454-.3572.0859-.5293-4.9349-1.5063-8.5352-6.069-8.5352-11.4629 0-5.4656 3.6725-10.0706 8.6934-11.5195C13.8153.3448 13.6716 0 13.0548 0Zm2.3242 1.8223c-5.2648 0-9.5254 4.2606-9.5254 9.5254 0 1.2193.2285 2.3818.6445 3.4433.1722.459.4454.4584.4024.0137-.0287-.3156-.0567-.6447-.0567-.9746 0-5.2648 4.2606-9.5254 9.5254-9.5254 4.9779 0 6.4698 2.2235 6.6563 2.08.2008-.1577-1.808-4.5624-7.6465-4.5624zm.4687 4.0703c-1.8622.0592-3.651.7168-5.1035 1.8554-.2582.2009-.1567.3284.1445.1993 2.4675-1.076 5.5812-1.1046 8.6368-.043 2.0514.7173 3.2413 1.7364 3.3418 1.6934.1578-.0718-1.1915-2.2226-3.6446-3.1407-1.1135-.4196-2.2576-.6-3.375-.5644z"/></svg><span class="nm">Akamai</span></span></div>
+        <div class="sat" data-ring="2" data-i="9"><span class="nm">8x8</span></div>
+      </div>
+      <span class="label stage-note">The platforms and suppliers we work with, connected</span>
+    </div>
+  </div>
+</section>
+
+<div class="rows-band" data-tone="dark">
+  <div class="rows" aria-hidden="true">
+    <div class="row row-l" id="row1"></div>
+    <div class="row row-r" id="row2"></div>
+  </div>
+  <span class="label rows-note">Choosing, buying and connecting, step by step</span>
+</div>
+
+<section id="film" class="rule" data-tone="dark">
+  <div class="wrap">
+    <div class="sec-head" data-reveal-group>
+      <span class="eyebrow">See it in 50 seconds</span>
+      <h2>Every deal, lead and number in one live system.</h2>
+      <p class="lede">A short film of what we set up. AI spots the deal going quiet, qualifies the new lead and drafts the reply. Your rep makes the call and hits send, and the number stays on the wall.</p>
+    </div>
+    <div data-reveal-group>
+      <figure class="film-player" id="film-player">
+        <video preload="none" playsinline poster="media/stacktik-film-poster.jpg" aria-label="Stacktik film: a live revenue system catching a dying deal, qualifying a new lead and showing the month's number. On-screen captions follow the narration."><source src="media/stacktik-film.mp4" type="video/mp4"></video>
+        <button class="film-play" type="button" aria-label="Play the 50-second film, with sound"><span class="disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 3.5v17a1 1 0 0 0 1.5.87l14-8.5a1 1 0 0 0 0-1.74l-14-8.5A1 1 0 0 0 6 3.5z"/></svg></span></button>
+      </figure>
+      <p class="film-note">Sound on. Names and figures in the film are example data.</p>
+    </div>
+  </div>
+</section>
+
+<section id="problems" class="rule" data-tone="dark">
+  <div class="wrap">
+    <div class="sec-head" data-reveal-group>
+      <span class="eyebrow">Where people start</span>
+      <h2>Five ways to start. One team.</h2>
+      <p class="lede">You will probably recognise one of these. Each is a different starting point, and the same people handle all of them.</p>
+    </div>
+    <div class="ledger" data-reveal-group>
+      <div class="ledger-row has-illo">
+        <svg class="illo illo-choose" viewBox="0 0 72 56" aria-hidden="true">
+          <rect class="opt" x="8" y="5" width="56" height="12" rx="3"/><rect class="opt" x="8" y="22" width="56" height="12" rx="3"/><rect class="opt" x="8" y="39" width="56" height="12" rx="3"/>
+          <rect class="pick" x="7" y="4" width="58" height="14" rx="4"/>
+          <path class="tick" d="M50 28.5 l3 3 l6 -7"/>
+        </svg>
+        <div class="who ask">"Which CRM or phone system should we buy?"</div>
+        <p>We map how your team sells and supports today, then shortlist the tools that fit, with the monthly cost of each, so you decide on fit and cost, not on demos.</p>
+      </div>
+      <div class="ledger-row has-illo">
+        <svg class="illo illo-get" viewBox="0 0 72 56" aria-hidden="true">
+          <rect class="card" x="10" y="7" width="52" height="42" rx="4"/>
+          <line class="ln" x1="18" y1="19" x2="44" y2="19"/><line class="ln" x1="18" y1="27" x2="36" y2="27"/><line class="ln" x1="18" y1="35" x2="40" y2="35"/>
+          <g class="stamp"><circle cx="52" cy="39" r="8.5"/><path d="M47.5 39 l3 3 l6 -6.5"/></g>
+        </svg>
+        <div class="who ask">"Can you help us get this software?"</div>
+        <p>Yes. We handle the purchase through our partner programs where it helps: the right plan and seat count, any partner offer the program provides, and one contact for the whole purchase.</p>
+      </div>
+      <div class="ledger-row has-illo">
+        <svg class="illo illo-connect" viewBox="0 0 72 56" aria-hidden="true">
+          <path class="wire" d="M13 44 L36 11 L59 44 Z"/>
+          <circle class="node" cx="13" cy="44" r="5"/><circle class="node" cx="36" cy="11" r="5"/><circle class="node" cx="59" cy="44" r="5"/>
+        </svg>
+        <div class="who ask">"We have the tools, but they don't work together."</div>
+        <p>We connect what you own: calls logged to the CRM, leads sent to the right rep, follow-ups going out on time, reports pulled from every system. Replace only what has to go.</p>
+      </div>
+      <div class="ledger-row has-illo">
+        <svg class="illo illo-outbound" viewBox="0 0 72 56" aria-hidden="true">
+          <line class="track" x1="10" y1="34" x2="62" y2="34"/>
+          <circle class="step s1" cx="14" cy="34" r="4"/><circle class="step s2" cx="32" cy="34" r="4"/><circle class="step s3" cx="50" cy="34" r="4"/>
+          <path class="reply" d="M50 26 q0 -10 10 -10 h4"/><path class="reply-head" d="M61 12.5 l3.5 3.5 l-3.5 3.5"/>
+        </svg>
+        <div class="who ask">"We need better outbound, or follow-up that doesn't rely on memory."</div>
+        <p>Call logging, AI call notes, email sequences and rep-to-rep handoffs, built into the tools you already use. A missed call becomes a callback task, a reply stops the sequence, and a booked call lands on the record.</p>
+      </div>
+      <div class="ledger-row has-illo">
+        <svg class="illo illo-setup" viewBox="0 0 72 56" aria-hidden="true">
+          <line class="track" x1="10" y1="14" x2="62" y2="14"/><circle class="knob k1" cx="10" cy="14" r="4"/>
+          <line class="track" x1="10" y1="28" x2="62" y2="28"/><circle class="knob k2" cx="10" cy="28" r="4"/>
+          <line class="track" x1="10" y1="42" x2="62" y2="42"/><circle class="knob k3" cx="10" cy="42" r="4"/>
+        </svg>
+        <div class="who ask">"We bought it. We need it set up properly."</div>
+        <p>Setup, your data moved over, the tools connected to each other, and training, across every tool rather than one vendor's, scoped in writing. If the vendor's own onboarding is enough for your case, we say so.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="help" class="rule" data-tone="dark">
+  <div class="wrap">
+    <div class="sec-head" data-reveal-group>
+      <span class="eyebrow">What we do</span>
+      <h2>Choose. Buy. Connect.</h2>
+      <p class="lede">Three parts of one job: the right tools, bought the right way, working as one system that grows revenue. Use the part you need.</p>
+    </div>
+    <div class="ops" data-reveal-group>
+      <article class="op">
+        <div class="op-top"><span class="n">01 · Choose</span><svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><g class="f"><rect x="8" y="9" width="14" height="14" rx="3"/><rect x="29" y="9" width="14" height="14" rx="3"/><rect x="50" y="9" width="14" height="14" rx="3"/><rect x="8" y="31" width="14" height="14" rx="3"/><rect x="29" y="31" width="14" height="14" rx="3"/><rect x="50" y="31" width="14" height="14" rx="3"/></g><rect class="al gridpick" x="7" y="8" width="16" height="16" rx="4"/><path class="tick d1" d="M53 38 l3 3 l6 -6"/><path class="tick d0" d="M32 16 l3 3 l6 -6"/></svg></div>
+        <h3>Tools picked around your workflow</h3>
+        <p>We start from how leads, calls and follow-ups move through your team, then shortlist software that fits, from the platforms we know well. You see each option's monthly cost before anyone commits.</p>
+        <div class="sys"><span>CRM</span><span>Calling</span><span>Outreach</span><span>Reporting</span></div>
+      </article>
+      <article class="op">
+        <div class="op-top"><span class="n">02 · Buy</span><svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><rect class="f" x="8" y="6" width="56" height="44" rx="5"/><line class="l" x1="16" y1="16" x2="40" y2="16"/><circle class="fs d0" cx="18" cy="34" r="4.5"/><circle class="fs d1" cx="29" cy="34" r="4.5"/><circle class="fs d2" cx="40" cy="34" r="4.5"/><circle class="fs d3" cx="51" cy="34" r="4.5"/><path class="tick d2" d="M52 14 l3 3 l6 -6"/></svg></div>
+        <h3>Bought through our partner programs</h3>
+        <p>We are in vendor programs with most of the platforms we work with. That gives us a direct line for fit and pricing questions, the right plan and seats, and any customer offer the program provides, whether or not we do your setup.</p>
+        <div class="sys"><span>Partner offers</span><span>Plans and seats</span><span>One contact</span></div>
+      </article>
+      <article class="op">
+        <div class="op-top"><span class="n">03 · Connect</span><svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><g class="l"><line x1="36" y1="28" x2="36" y2="8"/><line x1="36" y1="28" x2="62" y2="28"/><line x1="36" y1="28" x2="36" y2="48"/><line x1="36" y1="28" x2="10" y2="28"/></g><g class="f"><circle cx="36" cy="8" r="4.5"/><circle cx="62" cy="28" r="4.5"/><circle cx="36" cy="48" r="4.5"/><circle cx="10" cy="28" r="4.5"/></g><circle class="a" cx="36" cy="28" r="6"/><circle class="a pd" cx="36" cy="8" r="2"/><circle class="a pl" cx="62" cy="28" r="2"/><circle class="a pu" cx="36" cy="48" r="2"/><circle class="a pr" cx="10" cy="28" r="2"/></svg></div>
+        <h3>Set up, connected, team trained</h3>
+        <p>Setup, data moved over, tools connected, routine steps automated: a web form becomes a CRM record, a call logs itself, a follow-up goes out, and your dashboard updates. AI agents built on Claude and OpenAI take the routine steps: call notes on the record, inbound leads qualified, follow-ups drafted for a rep to approve. Your team is trained on the setup, on your own data, and a revenue scoreboard keeps the score in front of them. When nothing off the shelf fits, we build the tool, portal or connector that does.</p>
+        <div class="sys"><span>Integration</span><span>AI agents</span><span>Training</span><span>Scoreboard</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="journey" class="rule" data-tone="dark">
+  <div class="wrap">
+    <div class="sec-head" data-reveal-group>
+      <span class="eyebrow">From lead to revenue</span>
+      <h2>What happens to a lead, step by step.</h2>
+      <p class="lede">The same path for every lead, whether it arrives by form, phone, email or chat. Terracotta marks where an AI agent does the work. Everything else is a rule the tools follow on their own.</p>
+    </div>
+    <div class="journey" id="journey-map">
+      <svg class="journey-path" aria-hidden="true"><path id="jpath"/><circle class="jlead-trail" r="3"/><circle class="jlead" r="6"/></svg>
+      <ol class="jgrid">
+        <li class="jnode"><span class="jn">01</span><h3>A lead comes in</h3><p>Web form, phone call, email or site chat. Your team types nothing.</p><div class="jtags"><span>Form</span><span>Phone</span><span>Chat</span></div><div class="jai"><span class="jai-k">AI</span><span>Site chat answers the first question and captures who they are and what they need.</span></div></li>
+        <li class="jnode"><span class="jn">02</span><h3>Captured in the CRM</h3><p>A record is created, duplicates merged, the source attached, missing details filled from your contact-data tools.</p><div class="jtags"><span>CRM</span><span>Contact data</span></div><div class="jai rule"><span class="jai-k">Rule</span><span>No judgement needed here, so no AI. The tools do it the same way every time.</span></div></li>
+        <li class="jnode"><span class="jn">03</span><h3>Qualified</h3><p>Checked against your fit rules: size, location, what they are asking for, and whether they are already a customer.</p><div class="jtags"><span>CRM</span></div><div class="jai"><span class="jai-k">AI</span><span>An agent built on Claude or OpenAI reads the message, scores the fit, and declines politely when it isn't one.</span></div></li>
+        <li class="jnode"><span class="jn">04</span><h3>Routed to a rep</h3><p>An owner within minutes, in turn or by territory. A task is created and the rep's phone rings.</p><div class="jtags"><span>CRM</span><span>Phone</span></div><div class="jai rule"><span class="jai-k">Rule</span><span>Routing is a rule you set once. It never needs to guess.</span></div></li>
+        <li class="jnode"><span class="jn">05</span><h3>First contact</h3><p>The rep calls from inside the CRM or sends the first reply. The record is already open.</p><div class="jtags"><span>Phone</span><span>Email</span></div><div class="jai"><span class="jai-k">AI</span><span>The first reply is drafted in your tone with the details already in, for the rep to approve and send.</span></div></li>
+        <li class="jnode"><span class="jn">06</span><h3>Logged, automatically</h3><p>Recording and transcript land on the record. The next step is set.</p><div class="jtags"><span>Phone</span><span>Call notes</span></div><div class="jai"><span class="jai-k">AI</span><span>Call notes and next steps are written to the CRM without anyone typing.</span></div></li>
+        <li class="jnode"><span class="jn">07</span><h3>Follow-up runs</h3><p>A sequence goes out until they reply. A reply stops it and books the call.</p><div class="jtags"><span>Outreach</span><span>Automation</span></div><div class="jai"><span class="jai-k">AI</span><span>Follow-ups drafted and timed from the conversation so far. The rep approves; the sequence stops itself on a reply.</span></div></li>
+        <li class="jnode"><span class="jn">08</span><h3>Won, and on the scoreboard</h3><p>The stage moves, revenue counts, the leaderboard updates for the whole team.</p><div class="jtags"><span>CRM</span><span>Reporting</span></div><div class="jai"><span class="jai-k">AI</span><span>Stale deals flagged, next actions suggested, a weekly summary written for the owner.</span></div></li>
+      </ol>
+    </div>
+    <p class="jlegend"><span class="jk ai"></span>Where an AI agent does the work<span class="jk rule"></span>A rule the tools follow</p>
+  </div>
+</section>
+
+<section id="examples" class="rule" data-tone="dark">
+  <div class="wrap">
+    <div class="sec-head" data-reveal-group>
+      <span class="eyebrow">What connected looks like</span>
+      <h2>Four workflows that move revenue.</h2>
+      <p class="lede">Illustrative examples built from the platforms we work with. The point is the same each time: the record updates itself and nothing waits on someone remembering.</p>
+    </div>
+    <div class="flows" data-reveal-group>
+      <div class="ui">
+        <div class="ui-row"><div><div class="ui-sub">Inbound lead</div><div class="ui-h">From web form to first call</div></div><svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><rect class="f" x="6" y="12" width="24" height="32" rx="3"/><line class="l" x1="11" y1="20" x2="25" y2="20"/><line class="l" x1="11" y1="27" x2="21" y2="27"/><rect class="a blink" x="11" y="34" width="14" height="5" rx="2"/><path class="al draw" style="--len:12" d="M33 28 h9"/><path class="al show" d="M39 24.5 l3.5 3.5 l-3.5 3.5"/><rect class="f shake" x="47" y="14" width="14" height="28" rx="3"/><path class="g rip r1" d="M64 22 q4 6 0 12"/><path class="g rip r2" d="M67.5 18 q7 10 0 20"/></svg></div>
+        <div class="ui-list">
+          <div><span>01</span><span>Form submitted. CRM record created and assigned to a rep.</span></div>
+          <div><span>02</span><span>Rep gets a call task. Calls from inside the CRM.</span></div>
+          <div><span>03</span><span>Call logged with the recording and AI notes.</span></div>
+          <div><span>04</span><span>Follow-up email sent the same afternoon.</span></div>
+        </div>
+        <div class="res">Nothing typed twice. Nothing waiting on memory.</div>
+      </div>
+      <div class="ui">
+        <div class="ui-row"><div><div class="ui-sub">Outbound</div><div class="ui-h">Sequence to booked call</div></div><svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><g class="env e1"><rect class="f" x="6" y="10" width="18" height="12" rx="2"/><path class="l" d="M6 10 l9 7 l9 -7"/></g><g class="env e2"><rect class="f" x="6" y="26" width="18" height="12" rx="2"/><path class="l" d="M6 26 l9 7 l9 -7"/></g><g class="env e3"><rect class="f" x="6" y="42" width="18" height="12" rx="2"/><path class="l" d="M6 42 l9 7 l9 -7"/></g><path class="g draw late" style="--len:24" d="M64 32 h-20"/><path class="g show late" d="M48 28.5 l-3.5 3.5 l3.5 3.5"/></svg></div>
+        <div class="ui-list">
+          <div><span>01</span><span>Prospect list loaded. Email and call sequence starts.</span></div>
+          <div><span>02</span><span>A reply on step three stops the sequence automatically.</span></div>
+          <div><span>03</span><span>Deal created. The rep books the call from the thread.</span></div>
+          <div><span>04</span><span>Call notes land on the deal. Pipeline moves.</span></div>
+        </div>
+        <div class="res">Handoffs happen in the tools, not in Slack.</div>
+      </div>
+      <div class="ui">
+        <div class="ui-row"><div><div class="ui-sub">The scoreboard</div><div class="ui-h">Revenue, gamified</div></div><svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><line class="l" x1="8" y1="48" x2="64" y2="48"/><rect class="f grow d0" x="12" y="30" width="8" height="18" rx="1.5"/><rect class="f grow d1" x="24" y="22" width="8" height="26" rx="1.5"/><rect class="f grow d2" x="36" y="34" width="8" height="14" rx="1.5"/><rect class="a grow d3" x="48" y="12" width="8" height="36" rx="1.5"/></svg></div>
+        <div class="ui-list">
+          <div><span>01</span><span>Targets set per rep and per team, from the plan.</span></div>
+          <div><span>02</span><span>Calls, booked meetings and closed deals count up live.</span></div>
+          <div><span>03</span><span>A leaderboard every rep can see, on the wall or on their phone.</span></div>
+          <div><span>04</span><span>The owner sees pipeline and revenue by day. No spreadsheet.</span></div>
+        </div>
+        <div class="res">Everyone knows the score. Revenue stops being a month-end surprise.</div>
+      </div>
+      <div class="ui">
+        <div class="ui-row"><div><div class="ui-sub">AI agent</div><div class="ui-h">From inbox to qualified lead</div></div><svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><rect class="f" x="8" y="10" width="34" height="36" rx="4"/><line class="l write d0" x1="15" y1="20" x2="35" y2="20"/><line class="l write d1" x1="15" y1="28" x2="31" y2="28"/><line class="l write d2" x1="15" y1="36" x2="33" y2="36"/><path class="a pop" d="M56 8 l2.6 7.4 L66 18 l-7.4 2.6 L56 28 l-2.6 -7.4 L46 18 l7.4 -2.6 z"/><path class="tick d1" d="M48 38 l3 3 l6 -6"/><path class="al draw late" style="--len:14" d="M42 28 h6"/></svg></div>
+        <div class="ui-list">
+          <div><span>01</span><span>A new lead writes in. An agent built on Claude or OpenAI reads it against your fit rules.</span></div>
+          <div><span>02</span><span>Qualified: it creates the CRM record, books the call and drafts the first reply for a rep to approve.</span></div>
+          <div><span>03</span><span>Not a fit: it answers politely and logs why.</span></div>
+          <div><span>04</span><span>Every answer stays in your CRM, with its source attached.</span></div>
+        </div>
+        <div class="res">Triage in seconds. People on the calls that matter.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="rule" data-tone="dark">
+  <div class="wrap">
+    <div class="sec-head" data-reveal-group>
+      <span class="eyebrow">How it works</span>
+      <h2>A call, a written proposal, then the work you actually need.</h2>
+    </div>
+    <ol class="ledger" data-reveal-group>
+      <li class="ledger-row has-illo"><svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><g class="shake"><rect class="f" x="26" y="8" width="20" height="40" rx="4"/><line class="l" x1="33" y1="13" x2="39" y2="13"/><circle class="a" cx="36" cy="41" r="2"/></g><path class="g rip r1" d="M50 20 q5 8 0 16"/><path class="g rip r2" d="M55 15 q8 13 0 26"/><path class="g rip r1" d="M22 20 q-5 8 0 16"/><path class="g rip r2" d="M17 15 q-8 13 0 26"/></svg><div class="who"><span class="n">01</span>A call</div><p>Free. We go through what you use, what isn't working, and whether the next step is software, implementation, both, or nothing yet. <span class="cost label">No obligation</span></p></li>
+      <li class="ledger-row has-illo"><svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><rect class="f" x="14" y="5" width="44" height="46" rx="4"/><line class="l write d0" x1="22" y1="16" x2="50" y2="16"/><line class="l write d1" x1="22" y1="24" x2="44" y2="24"/><line class="l write d2" x1="22" y1="32" x2="48" y2="32"/><path class="al draw late" style="--len:40" d="M22 43 c4 -6 6 4 10 -1 s6 3 10 -2 s5 2 8 0"/></svg><div class="who"><span class="n">02</span>A written proposal, if there's a fit</div><p>The tools and why, the monthly software cost, and the scope and fee of any implementation or support, in writing before you commit to anything. <span class="cost label">Costs and scope up front</span></p></li>
+      <li class="ledger-row has-illo"><svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><g class="f spin"><path d="M39.0 31.0 L42.9 33.1 L41.9 36.7 L37.5 36.6 L35.8 38.8 L37.0 43.0 L33.7 44.9 L30.7 41.7 L28.0 42.0 L25.9 45.9 L22.3 44.9 L22.4 40.5 L20.2 38.8 L16.0 40.0 L14.1 36.7 L17.3 33.7 L17.0 31.0 L13.1 28.9 L14.1 25.3 L18.5 25.4 L20.2 23.2 L19.0 19.0 L22.3 17.1 L25.3 20.3 L28.0 20.0 L30.1 16.1 L33.7 17.1 L33.6 21.5 L35.8 23.2 L40.0 22.0 L41.9 25.3 L38.7 28.3 Z"/><circle cx="28" cy="31" r="4"/></g><g class="f spin-rev"><path d="M58.0 16.0 L60.8 17.9 L59.7 21.0 L56.3 20.6 L54.5 22.1 L54.3 25.4 L51.0 26.0 L49.7 22.9 L47.5 22.1 L44.5 23.6 L42.3 21.0 L44.4 18.3 L44.0 16.0 L41.2 14.1 L42.3 11.0 L45.7 11.4 L47.5 9.9 L47.7 6.6 L51.0 6.0 L52.3 9.1 L54.5 9.9 L57.5 8.4 L59.7 11.0 L57.6 13.7 Z"/><circle cx="51" cy="16" r="2.5"/></g></svg><div class="who"><span class="n">03</span>The work</div><p>One of the three paths below, or a combination, with the steps, their order and what we need from your team on the proposal. A technical RevOps consultant is assigned to your project and stays with it from ideation to fully deployed, building whatever it needs rather than handing it off. Then optional monthly support for teams that want someone keeping the system current. <span class="cost label">Scoped per project</span></p></li>
+    </ol>
+    <div class="ways" data-reveal-group>
+      <div class="scope-col">
+        <svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><path class="al bob" d="M36 6 v16 m-5 -5 l5 5 l5 -5"/><rect class="f" x="16" y="28" width="40" height="22" rx="3"/><line class="l" x1="16" y1="36" x2="56" y2="36"/><rect class="a blink" x="44" y="40" width="8" height="5" rx="1"/></svg>
+        <h3>Software only</h3>
+        <p>You know what you need, or the proposal's shortlist settles it. We set the plan, seats and phone numbers up through the partner program, in your name, and hand the account to you or your own IT. When the vendor's own onboarding is the better path, we say so.</p>
+        <span class="label">Choose and buy</span>
+      </div>
+      <div class="scope-col">
+        <svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><g class="f"><rect x="10" y="8" width="10" height="10" rx="2"/><rect x="10" y="23" width="10" height="10" rx="2"/><rect x="10" y="38" width="10" height="10" rx="2"/></g><g class="l"><line x1="26" y1="13" x2="60" y2="13"/><line x1="26" y1="28" x2="54" y2="28"/><line x1="26" y1="43" x2="58" y2="43"/></g><path class="tick d0" d="M12 13 l2.5 2.5 l4.5 -5"/><path class="tick d1" d="M12 28 l2.5 2.5 l4.5 -5"/><path class="tick d2" d="M12 43 l2.5 2.5 l4.5 -5"/></svg>
+        <h3>Implementation</h3>
+        <p>A scoped project: install, setup, your data moved over, the tools connected, automation, your team trained on their own data, and a revenue scoreboard. Quoted as a fixed fee in writing, with what counts as done.</p>
+        <span class="label">Choose, buy and connect</span>
+      </div>
+      <div class="scope-col">
+        <svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><rect class="f la" x="8" y="22" width="22" height="12" rx="6"/><rect class="f lb" x="42" y="22" width="22" height="12" rx="6"/><path class="tick" d="M31 29 l3 3 l6 -6"/></svg>
+        <h3>Improve what you have</h3>
+        <p>Keep your tools. We connect them, fix the calls that don't log and the leads that don't reach a rep, add the email sequences and automations you are missing, and write down how it runs.</p>
+        <span class="label">Connect</span>
+      </div>
+    </div>
+    <div class="cta-row">
+      <a class="btn" href="https://stacktik.com/blueprint/">Book a call <span class="disc" aria-hidden="true"><svg><use href="#chev"/></svg></span></a>
+      <span class="alt">Not ready for a call? Email a few lines about your tools and the problem to <a href="mailto:hello@stacktik.com?subject=Our%20tools">hello@stacktik.com</a>.</span>
+    </div>
+  </div>
+</section>
+
+<section id="partners" class="rule" data-tone="dark">
+  <div class="wrap">
+    <div class="sec-head" data-reveal-group>
+      <span class="eyebrow">Partnerships</span>
+      <h2>The platforms we work with.</h2>
+      <p class="lede">We are enrolled in vendor programs with most of the platforms we set up. That gives you a direct line to the vendor when a fit or pricing question comes up, and any customer offer a program provides. It does not make us a neutral review of the whole market: we know these tools best, and every proposal states our relationship with each one next to its price.</p>
+    </div>
+    <div class="partners-grid" data-reveal-group>
+      <div class="pi" style="--i:0"><svg class="lg lg-hubspot" role="img" aria-label="hubspot" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1913.298 542.363"> <defs> <style> .cls-1 { fill: #ff2f00; } </style> </defs> <g> <g> <polygon class="cls-1" points="207.213 306.956 66.717 306.956 66.717 454.956 0 454.956 0 89.777 66.717 89.777 66.717 242.77 207.213 242.77 207.213 89.777 273.915 89.777 273.915 454.956 207.213 454.956 207.213 306.956"/> <path class="cls-1" d="M487.389,336.922c0,30.414-24.775,55.161-55.183,55.161s-55.175-24.747-55.175-55.161v-156.409h-63.176v156.409c0,65.254,53.093,118.334,118.351,118.334s118.337-53.08,118.337-118.334v-156.409h-63.154v156.409Z"/> <path class="cls-1" d="M956.173,196.617c0-32.068,21.226-42.237,44.464-42.237,18.712,0,43.472,14.241,59.627,31.545l41.43-48.838c-20.703-27.972-62.642-47.311-97.008-47.311-68.741,0-118.268,40.193-118.268,106.84,0,123.616,151.117,84.432,151.117,153.636,0,21.342-20.714,40.182-44.459,40.182-37.41,0-49.545-18.315-66.721-37.649l-45.998,47.811c29.328,36.122,65.706,54.447,109.171,54.447,65.194,0,117.756-40.7,117.756-104.3,0-137.35-151.112-94.612-151.112-154.127Z"/> <path class="cls-1" d="M1891.044,396.619c-37.384,0-47.994-16.163-47.994-40.937v-109.66h58.105v-55.586h-58.105v-73.29l-64.167,28.803v223.382c0,57.114,39.404,85.926,93.46,85.926,8.086,0,19.216-.522,25.286-2.021l15.67-57.609c-7.073.488-15.156.992-22.255.992Z"/> <path class="cls-1" d="M728.198,182.343c-31.337,0-53.21,9.096-74.334,29.83v-120.215h-63.378v222.795c0,83.391,60.291,140.504,128.034,140.504,75.304,0,141.284-58.129,141.284-136.451,0-77.33-60.842-136.462-131.606-136.462ZM727.804,391.472c-39.703,0-71.884-32.183-71.884-71.883s32.181-71.883,71.884-71.883,71.882,32.184,71.882,71.883-32.184,71.883-71.882,71.883Z"/> <path class="cls-1" d="M1416.266,315.515c0-78.323-65.98-136.451-141.284-136.451-67.743,0-128.034,57.113-128.034,140.504v222.795h63.378v-120.215c21.124,20.734,42.997,29.83,74.334,29.83,70.764,0,131.606-59.132,131.606-136.462ZM1356.148,314.733c0,39.699-32.184,71.883-71.882,71.883s-71.884-32.184-71.884-71.883,32.181-71.883,71.884-71.883,71.882,32.183,71.882,71.883Z"/> <path class="cls-1" d="M1621.06,175.994v-63.662c16.616-7.85,28.259-24.661,28.259-44.172v-1.471c0-26.924-22.03-48.953-48.953-48.953h-1.47c-26.925,0-48.955,22.029-48.955,48.953v1.471c0,19.51,11.645,36.324,28.262,44.173v63.662c-24.741,3.822-47.348,14.026-66,29.043l-174.793-135.972c1.15-4.428,1.957-8.99,1.962-13.778C1339.412,24.793,1314.722.039,1284.225,0c-30.497-.038-55.251,24.652-55.29,55.149-.037,30.496,24.652,55.249,55.15,55.288,9.939.012,19.137-2.81,27.201-7.396l171.944,133.759c-14.625,22.072-23.188,48.512-23.188,76.973,0,29.799,9.412,57.359,25.322,80.031l-52.291,52.291c-4.134-1.24-8.425-2.108-12.965-2.108-25.059,0-45.375,20.316-45.375,45.375s20.317,45.375,45.375,45.375,45.375-20.316,45.375-45.375c0-4.538-.867-8.83-2.108-12.964l51.725-51.724c23.478,17.924,52.715,28.689,84.534,28.689,77.092,0,139.588-62.498,139.588-139.592,0-69.789-51.27-127.446-118.163-137.778ZM1599.635,385.339c-39.526,0-71.572-32.041-71.572-71.567s32.046-71.567,71.572-71.567,71.567,32.042,71.567,71.567-32.046,71.567-71.567,71.567Z"/> </g> </g> </svg></div>
+      <div class="pi" style="--i:1"><span class="mark-monday"><svg class="lg lg-monday" role="img" aria-label="monday" focusable="false" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx="24" cy="24" r="24" transform="matrix(-1 0 0 1 48.0001 0)" fill="white"/> <path d="M14.1414 31.6061C13.0802 31.6052 12.1032 31.0526 11.5896 30.1629C11.076 29.2732 11.1068 28.1866 11.67 27.3249L16.9249 19.2872C17.4647 18.412 18.4576 17.8863 19.5182 17.9141C20.5788 17.942 21.5402 18.519 22.0291 19.4213C22.518 20.3235 22.4574 21.4088 21.8709 22.2559L16.6191 30.2937C16.0849 31.1115 15.1484 31.6076 14.1414 31.6061Z" fill="#FB275D"/> <path d="M23.0947 31.6061C22.0352 31.6052 21.0598 31.0539 20.547 30.1663C20.0343 29.2788 20.065 28.1947 20.6273 27.3351L25.872 19.3164C26.4033 18.4285 27.3997 17.8902 28.4683 17.9138C29.5369 17.9375 30.5063 18.5192 30.9941 19.4298C31.482 20.3403 31.4101 21.4334 30.8068 22.2781L25.562 30.2968C25.0299 31.1108 24.0977 31.6055 23.0947 31.6061Z" fill="#FFCC00"/> <path d="M31.8237 31.6222C33.4286 31.6222 34.7297 30.3234 34.7297 28.7213C34.7297 27.1191 33.4286 25.8203 31.8237 25.8203C30.2187 25.8203 28.9177 27.1191 28.9177 28.7213C28.9177 30.3234 30.2187 31.6222 31.8237 31.6222Z" fill="#00CA72"/> </svg>monday.com</span></div>
+      <div class="pi" style="--i:2"><svg class="lg lg-cloudtalk" role="img" aria-label="cloudtalk" focusable="false" viewBox="0 0 136 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_17890_30691)"> <path d="M7.19771 13.172C7.4899 13.172 7.55773 13.352 7.64773 13.622L8.07558 14.9721C8.11993 15.1299 8.20993 15.1964 8.34559 15.1964H8.5256C8.65995 15.1964 8.74996 15.1286 8.79561 14.9721L9.22346 13.622C9.31346 13.352 9.33564 13.1498 9.89783 13.1498C11.1579 13.1498 12.3488 12.9698 13.2489 12.0932C13.6767 11.6654 14.1932 11.5089 14.6889 11.8454L15.1168 12.1376C15.7246 12.542 15.9046 13.3077 15.409 13.8242C14.1489 15.1064 12.3723 15.8708 10.3479 15.8708H6.97466C2.96883 15.8708 0 12.902 0 8.96659V7.03215C0 3.09676 2.96883 0.12793 6.97205 0.12793H10.3452C12.3697 0.12793 14.1463 0.892312 15.4063 2.17454C15.9007 2.69239 15.7207 3.45677 15.1142 3.86114L14.6863 4.15333C14.1919 4.49117 13.6741 4.33334 13.2462 3.90549C12.3462 3.02893 11.154 2.84892 9.89523 2.84892L7.19641 2.82675C4.40759 2.80457 2.92317 4.53552 2.92317 7.03215V8.96659C2.92317 11.4632 4.40759 13.172 7.19641 13.172H7.19771Z" fill="black"/> <path d="M19.7699 1.20651L19.7477 14.9041C19.7477 15.1063 19.8377 15.1963 20.0399 15.1963H20.2199C20.3777 15.1963 20.4678 15.1284 20.5121 14.9941L20.9399 13.644C21.03 13.374 21.03 13.1718 21.5922 13.1718H27.642C28.2264 13.1718 28.6542 13.5997 28.6542 14.1841V14.8584C28.6542 15.4428 28.2264 15.8706 27.642 15.8706H17.8355C17.2511 15.8706 16.8232 15.4428 16.8232 14.8584L16.8454 1.20651C16.8454 0.59866 17.3176 0.126465 17.9255 0.126465H18.6898C19.2977 0.126465 19.7699 0.59866 19.7699 1.20651Z" fill="black"/> <path d="M45.1173 7.03215V8.96659C45.1173 12.902 42.1485 15.8708 38.1452 15.8708H35.4008C31.3975 15.8708 28.4287 12.902 28.4287 8.96659V7.03215C28.4287 3.09676 31.3975 0.12793 35.4008 0.12793H38.1452C42.1485 0.12793 45.1173 3.09676 45.1173 7.03215ZM35.4008 13.172H38.1452C40.7097 13.172 42.1941 11.5976 42.1941 8.96659V7.03215C42.1941 4.40116 40.7097 2.82675 38.1452 2.82675H35.4008C32.8363 2.82675 31.3519 4.40116 31.3519 7.03215V8.96659C31.3519 11.5976 32.8363 13.172 35.4008 13.172Z" fill="black"/> <path d="M53.6631 13.1718H55.5076C58.072 13.1718 59.5564 11.5974 59.5564 8.96642V1.20651C59.5564 0.59866 60.0286 0.126465 60.6365 0.126465H61.4009C62.0087 0.126465 62.4809 0.59866 62.4809 1.20651V8.96642C62.4809 12.9018 59.5121 15.8706 55.5089 15.8706H53.6644C49.6612 15.8706 46.6924 12.9018 46.6924 8.96642V1.20651C46.6924 0.59866 47.1646 0.126465 47.7724 0.126465H48.5368C49.1447 0.126465 49.6169 0.59866 49.6169 1.20651V8.96642C49.6169 11.5974 51.1013 13.1718 53.6657 13.1718H53.6631Z" fill="black"/> <path d="M65.4481 0.12793H72.4423C76.4012 0.12793 79.4601 3.09676 79.4601 6.80779V9.19225C79.4601 12.9033 76.4469 15.8721 72.4423 15.8721H65.4481C64.6837 15.8721 64.0537 15.2421 64.0537 14.4777V1.52234C64.0537 0.757958 64.6837 0.12793 65.4481 0.12793ZM67.2704 13.1733H72.4437C75.0081 13.1733 76.4925 11.5989 76.4925 9.19225V6.80779C76.4925 4.40116 75.0081 2.82675 72.4437 2.82675H67.2704C67.0682 2.82675 66.9782 2.91675 66.9782 3.11893V12.8798C66.9782 13.082 67.0682 13.172 67.2704 13.172V13.1733Z" fill="black"/> <path d="M79.347 1.81453V1.14015C79.347 0.555775 79.7749 0.12793 80.3592 0.12793H92.5046C93.0889 0.12793 93.5168 0.555775 93.5168 1.14015V1.81453C93.5168 2.3989 93.0889 2.82675 92.5046 2.82675H87.8935L87.8713 14.7921C87.8713 15.3999 87.3991 15.8721 86.7913 15.8721H86.0269C85.419 15.8721 84.9468 15.3999 84.9468 14.7921L84.969 2.82675H80.3579C79.7735 2.82675 79.3457 2.3989 79.3457 1.81453H79.347Z" fill="black"/> <path d="M93.4033 11.9134V10.3168C93.4033 7.93235 95.1799 6.38141 97.6766 6.38141H104.356C104.559 6.38141 104.649 6.29141 104.649 6.08923V4.53698C104.649 3.30041 104.176 2.82821 102.94 2.82821H95.5856C95.0012 2.82821 94.5734 2.40037 94.5734 1.81599V1.14161C94.5734 0.55724 95.0012 0.129395 95.5856 0.129395H102.94C106.066 0.129395 107.573 1.68164 107.573 4.76265V14.4766C107.573 15.2409 106.943 15.871 106.179 15.871H97.6322C95.1812 15.871 93.4033 14.3187 93.4033 11.9121V11.9134ZM97.8566 13.1735H104.356C104.559 13.1735 104.649 13.0835 104.649 12.8813V7.34798C104.649 7.1458 104.559 7.05579 104.356 7.05579H104.176C104.019 7.05579 103.929 7.12362 103.884 7.25797L103.456 8.60804C103.366 8.87805 103.366 9.08023 102.804 9.08023H97.9009C96.8443 9.08023 96.3265 9.46242 96.3265 10.5425V11.689C96.3265 12.7913 96.8443 13.1735 97.8553 13.1735H97.8566Z" fill="black"/> <path d="M112.094 1.20651L112.072 14.9041C112.072 15.1063 112.162 15.1963 112.364 15.1963H112.544C112.702 15.1963 112.792 15.1284 112.836 14.9941L113.264 13.644C113.354 13.374 113.354 13.1718 113.916 13.1718H119.966C120.551 13.1718 120.978 13.5997 120.978 14.1841V14.8584C120.978 15.4428 120.551 15.8706 119.966 15.8706H110.16C109.575 15.8706 109.147 15.4428 109.147 14.8584L109.17 1.20651C109.17 0.59866 109.642 0.126465 110.25 0.126465H111.014C111.622 0.126465 112.094 0.59866 112.094 1.20651Z" fill="black"/> <path d="M123.182 0.128091H123.946C124.554 0.128091 125.026 0.600286 125.026 1.20814V6.53794C125.026 6.65012 125.116 6.74013 125.229 6.74013L126.825 6.7623C126.983 6.7623 127.14 6.69447 127.23 6.58229L132.695 0.398103C133.099 -0.0740916 133.775 -0.119746 134.269 0.308099L134.652 0.645941C135.124 1.07379 135.146 1.72599 134.719 2.19818L129.636 7.888L135.618 13.4878C136.09 13.9378 136.136 14.6344 135.686 15.1301L135.258 15.6023C134.808 16.0966 134.134 16.1201 133.639 15.6479L127.184 9.57591C127.094 9.4859 126.96 9.44155 126.824 9.44155H125.227C125.115 9.44155 125.025 9.53156 125.025 9.64373V14.7948C125.025 15.4027 124.553 15.8749 123.945 15.8749H123.181C122.573 15.8749 122.101 15.4027 122.101 14.7948V1.20684C122.101 0.598982 122.573 0.126787 123.181 0.126787L123.182 0.128091Z" fill="black"/> </g> <defs> <clipPath> <rect width="136" height="15.9738" fill="white" transform="translate(0 0.0131836)"/> </clipPath> </defs> </svg></div>
+      <div class="pi" style="--i:3"><svg class="lg lg-dialpad" role="img" aria-label="dialpad" focusable="false" viewBox="0 0 94 33" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M18.3259 27.6509C14.4999 27.6509 11.7516 24.5636 11.7516 20.3387C11.7516 16.1139 14.4999 13.0536 18.3259 13.0536C20.1042 13.0536 21.8017 13.9473 22.5561 15.1118V7.58294H25.6816V27.3801H22.5561V25.5656C21.8017 26.7301 20.1042 27.6509 18.3259 27.6509ZM18.8378 24.9156C20.8586 24.9156 22.3675 23.3449 22.5561 21.2054V19.4179C22.3675 17.2784 20.8586 15.7889 18.8378 15.7889C16.5745 15.7889 14.9579 17.6034 14.9579 20.3116C14.9579 23.0199 16.5745 24.9156 18.8378 24.9156Z" fill="black"/> <path d="M30.6833 27.3801H27.5309V13.3244H30.6833V27.3801ZM29.0667 11.4015C27.962 11.4015 27.1267 10.5349 27.1267 9.42454C27.1267 8.34124 27.962 7.47461 29.0667 7.47461C30.2253 7.47461 31.0875 8.34124 31.0875 9.42454C31.0875 10.5349 30.2253 11.4015 29.0667 11.4015Z" fill="black"/> <path d="M49.2213 27.3801H46.0689V7.58294H49.2213V27.3801Z" fill="black"/> <path d="M51.1402 32.4445V13.3244H54.2926V15.1389C55.0201 13.9744 56.7176 13.0536 58.5767 13.0536C62.3489 13.0536 65.0972 16.141 65.0972 20.3658C65.0972 24.5906 62.3489 27.6509 58.5228 27.6509C56.7176 27.6509 55.0201 26.7301 54.2926 25.5656V32.4445H51.1402ZM58.0109 24.9156C60.2473 24.9156 61.8908 23.1011 61.8908 20.3929C61.8908 17.6846 60.2473 15.7889 58.0648 15.7889C55.9632 15.7889 54.4812 17.3597 54.2926 19.4992V21.2866C54.4543 23.4261 55.9632 24.9156 58.0109 24.9156Z" fill="black"/> <path d="M86.3798 27.6509C82.5538 27.6509 79.8055 24.5636 79.8055 20.3387C79.8055 16.1139 82.5538 13.0536 86.3798 13.0536C88.1581 13.0536 89.8556 13.9473 90.61 15.1118V7.58294H93.7355V27.3801H90.61V25.5656C89.8556 26.7301 88.1581 27.6509 86.3798 27.6509ZM86.8917 24.9156C88.9125 24.9156 90.4214 23.3449 90.61 21.2054V19.4179C90.4214 17.2784 88.9125 15.7889 86.8917 15.7889C84.6285 15.7889 83.0118 17.6034 83.0118 20.3116C83.0118 23.0199 84.6285 24.9156 86.8917 24.9156Z" fill="black"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M66.1534 23.5615C66.1534 25.9177 68.2012 27.6509 71.0303 27.6509C72.5391 27.6509 74.1019 27.0822 75.1258 25.5385V27.3801H78.2513V18.2805C78.2513 15.0035 75.8802 13.0536 72.4044 13.0536C69.0012 13.0536 67.0445 14.9489 66.3826 17.0617L69.3726 17.4554C69.8069 16.287 70.793 15.491 72.4044 15.491C73.9672 15.491 75.1258 16.4118 75.1258 18.0909V18.5784L71.0572 19.1742C67.9856 19.6075 66.1534 21.097 66.1534 23.5615ZM71.5692 25.2948C70.222 25.2948 69.3597 24.4823 69.3597 23.4261C69.3597 22.2886 70.1411 21.6658 71.5692 21.422L75.1258 20.7991V22.5053C74.6408 23.9677 73.4552 25.2948 71.5692 25.2948Z" fill="black"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M32.1191 23.5615C32.1191 25.9176 34.1668 27.6509 36.9959 27.6509C38.5048 27.6509 40.0676 27.0822 41.0914 25.5385V27.3801H44.2169V18.2804C44.2169 15.0034 41.8459 13.0535 38.3701 13.0535C34.9669 13.0535 33.0102 14.9488 32.3483 17.0617L35.3383 17.4553C35.7725 16.287 36.7587 15.4909 38.3701 15.4909C39.9328 15.4909 41.0914 16.4117 41.0914 18.0908V18.5783L37.0229 19.1741C33.9513 19.6074 32.1191 21.097 32.1191 23.5615ZM37.5348 25.2947C36.1876 25.2947 35.3254 24.4823 35.3254 23.426C35.3254 22.2886 36.1068 21.6657 37.5348 21.4219L41.0914 20.7991V22.5052C40.6064 23.9677 39.4209 25.2947 37.5348 25.2947Z" fill="black"/> <path d="M14.7974 7.43848C14.9975 7.48324 15.0372 7.80998 14.8501 7.89512C11.2371 9.125 8.39325 12.2693 6.90835 16.4551C6.82708 16.6581 6.47057 16.6091 6.43706 16.3925C5.92911 13.1096 3.66093 10.4884 0.738931 9.78109C0.545298 9.73422 0.508733 9.43003 0.688975 9.34393C4.39869 7.81758 7.18675 4.68653 8.47503 0.686265C8.55549 0.477551 8.94421 0.530264 8.97728 0.751999C9.47675 4.10041 11.8058 6.76949 14.7974 7.43848Z" fill="#7C52FF"/> </svg></div>
+      <div class="pi" style="--i:4"><svg class="lg lg-zapier" role="img" aria-label="zapier" focusable="false" viewBox="0 0 244 66" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M57.1877 45.2253L57.1534 45.1166L78.809 25.2914V15.7391H44.0663V25.2914H64.8181L64.8524 25.3829L43.4084 45.2253V54.7775H79.1579V45.2253H57.1877Z" fill="#201515"></path><path d="M100.487 14.8297C96.4797 14.8297 93.2136 15.434 90.6892 16.6429C88.3376 17.6963 86.3568 19.4321 85.0036 21.6249C83.7091 23.8321 82.8962 26.2883 82.6184 28.832L93.1602 30.3135C93.5415 28.0674 94.3042 26.4754 95.4482 25.5373C96.7486 24.5562 98.3511 24.0605 99.9783 24.136C102.118 24.136 103.67 24.7079 104.634 25.8519C105.59 26.9959 106.076 28.5803 106.076 30.6681V31.7091H95.9401C90.7807 31.7091 87.0742 32.8531 84.8206 35.1411C82.5669 37.429 81.442 40.4492 81.4458 44.2014C81.4458 48.0452 82.5707 50.9052 84.8206 52.7813C87.0704 54.6574 89.8999 55.5897 93.3089 55.5783C97.5379 55.5783 100.791 54.1235 103.067 51.214C104.412 49.426 105.372 47.3793 105.887 45.2024H106.27L107.723 54.7546H117.275V30.5651C117.275 25.5659 115.958 21.6936 113.323 18.948C110.688 16.2024 106.409 14.8297 100.487 14.8297ZM103.828 44.6475C102.312 45.9116 100.327 46.5408 97.8562 46.5408C95.8199 46.5408 94.4052 46.1843 93.6121 45.4712C93.2256 45.1338 92.9182 44.7155 92.7116 44.246C92.505 43.7764 92.4043 43.2671 92.4166 42.7543C92.3941 42.2706 92.4702 41.7874 92.6403 41.3341C92.8104 40.8808 93.071 40.4668 93.4062 40.1174C93.7687 39.7774 94.1964 39.5145 94.6633 39.3444C95.1303 39.1743 95.6269 39.1006 96.1231 39.1278H106.093V39.7856C106.113 40.7154 105.919 41.6374 105.527 42.4804C105.134 43.3234 104.553 44.0649 103.828 44.6475Z" fill="#201515"></path><path d="M175.035 15.7391H163.75V54.7833H175.035V15.7391Z" fill="#201515"></path><path d="M241.666 15.7391C238.478 15.7391 235.965 16.864 234.127 19.1139C232.808 20.7307 231.805 23.1197 231.119 26.2809H230.787L229.311 15.7391H219.673V54.7775H230.959V34.7578C230.959 32.2335 231.55 30.2982 232.732 28.9521C233.914 27.606 236.095 26.933 239.275 26.933H243.559V15.7391H241.666Z" fill="#201515"></path><path d="M208.473 17.0147C205.839 15.4474 202.515 14.6657 198.504 14.6695C192.189 14.6695 187.247 16.4675 183.678 20.0634C180.108 23.6593 178.324 28.6166 178.324 34.9352C178.233 38.7553 179.067 42.5407 180.755 45.9689C182.3 49.0238 184.706 51.5592 187.676 53.2618C190.665 54.9892 194.221 55.8548 198.344 55.8586C201.909 55.8586 204.887 55.3095 207.278 54.2113C209.526 53.225 211.483 51.6791 212.964 49.7211C214.373 47.7991 215.42 45.6359 216.052 43.3377L206.329 40.615C205.919 42.1094 205.131 43.4728 204.041 44.5732C202.942 45.6714 201.102 46.2206 198.521 46.2206C195.451 46.2206 193.163 45.3416 191.657 43.5837C190.564 42.3139 189.878 40.5006 189.575 38.1498H216.201C216.31 37.0515 216.367 36.1306 216.367 35.387V32.9561C216.431 29.6903 215.757 26.4522 214.394 23.4839C213.118 20.7799 211.054 18.5248 208.473 17.0147ZM198.178 23.9758C202.754 23.9758 205.348 26.2275 205.962 30.731H189.775C190.032 29.2284 190.655 27.8121 191.588 26.607C193.072 24.8491 195.268 23.972 198.178 23.9758Z" fill="#201515"></path><path d="M169.515 0.00366253C168.666 -0.0252113 167.82 0.116874 167.027 0.421484C166.234 0.726094 165.511 1.187 164.899 1.77682C164.297 2.3723 163.824 3.08658 163.512 3.87431C163.2 4.66204 163.055 5.50601 163.086 6.35275C163.056 7.20497 163.201 8.05433 163.514 8.84781C163.826 9.64129 164.299 10.3619 164.902 10.9646C165.505 11.5673 166.226 12.0392 167.02 12.3509C167.814 12.6626 168.663 12.8074 169.515 12.7762C170.362 12.8082 171.206 12.6635 171.994 12.3514C172.782 12.0392 173.496 11.5664 174.091 10.963C174.682 10.3534 175.142 9.63077 175.446 8.83849C175.75 8.04621 175.89 7.20067 175.859 6.35275C175.898 5.50985 175.761 4.66806 175.456 3.88115C175.151 3.09424 174.686 2.37951 174.09 1.78258C173.493 1.18565 172.779 0.719644 171.992 0.414327C171.206 0.109011 170.364 -0.0288946 169.521 0.00938803L169.515 0.00366253Z" fill="#201515"></path><path d="M146.201 14.6695C142.357 14.6695 139.268 15.8764 136.935 18.2902C135.207 20.0786 133.939 22.7479 133.131 26.2981H132.771L131.295 15.7563H121.657V66H132.942V45.3054H133.354C133.698 46.6852 134.181 48.0267 134.795 49.3093C135.75 51.3986 137.316 53.1496 139.286 54.3314C141.328 55.446 143.629 56.0005 145.955 55.9387C150.68 55.9387 154.277 54.0988 156.748 50.419C159.219 46.7392 160.455 41.6046 160.455 35.0153C160.455 28.6509 159.259 23.6689 156.869 20.0691C154.478 16.4694 150.922 14.6695 146.201 14.6695ZM147.345 42.9602C146.029 44.8668 143.97 45.8201 141.167 45.8201C140.012 45.8735 138.86 45.6507 137.808 45.1703C136.755 44.6898 135.832 43.9656 135.116 43.0574C133.655 41.2233 132.927 38.7122 132.931 35.5243V34.7807C132.931 31.5432 133.659 29.0646 135.116 27.3448C136.572 25.625 138.59 24.7747 141.167 24.7937C144.02 24.7937 146.092 25.6994 147.385 27.5107C148.678 29.322 149.324 31.8483 149.324 35.0896C149.332 38.4414 148.676 41.065 147.356 42.9602H147.345Z" fill="#201515"></path><path d="M39.0441 45.2253H0V54.789H39.0441V45.2253Z" fill="#ff4f00"></path></svg></div>
+      <div class="pi" style="--i:5"><svg class="lg lg-databox" role="img" aria-label="databox" focusable="false" viewBox="0 0 154 34" xmlns="http://www.w3.org/2000/svg"><path d="m30.71 23.25v-12.49c0-1.61-.86-3.1-2.26-3.9l-10.84-6.26c-1.4-.81-3.12-.81-4.52 0l-10.83 6.25c-1.4.81-2.26 2.29-2.26 3.9v12.49c0 1.61.86 3.1 2.26 3.9l10.84 6.25c1.4.81 3.12.81 4.52 0l10.84-6.25c1.4-.81 2.26-2.29 2.26-3.9z" fill="#4d71f1"/><g fill="#fff"><path d="m15.3 7.22h1.25c.25 0 .45.2.45.45v15.36c0 .92-.75 1.67-1.67 1.67s-1.67-.75-1.67-1.67v-14.17c0-.9.73-1.64 1.64-1.64z"/><path d="m21.13 11.98h1.26c.25 0 .45.2.45.45v10.59c0 .92-.75 1.67-1.67 1.67s-1.67-.75-1.67-1.67v-9.4c0-.9.73-1.64 1.64-1.64z"/><path d="m9.5 18.02h1.25c.25 0 .45.2.45.45v4.6c0 .92-.75 1.67-1.67 1.67s-1.67-.75-1.67-1.67v-3.41c0-.9.73-1.64 1.64-1.64z"/></g><g fill="#311b48"><path d="m55.82 21.47c0 2.3-.43 3.52-1.5 4.44-1.1.93-2.9 1.5-5.5 1.5s-4.1-.45-5.17-1.34c-1.37-1.15-1.97-3.1-1.97-6.08v-1.31c0-2.94.6-4.64 1.9-5.88 1.16-1.12 2.77-1.63 5.03-1.63 1.27 0 2.4.32 3.17.8h.07v-5.69c0-.64.2-.8.93-.8h2.1c.73 0 .93.16.93.8v15.19zm-3.97-4.38c0-1.28-.27-1.82-.66-2.17-.47-.42-1.13-.67-2.23-.67-1.17 0-1.9.35-2.4.93-.7.8-.83 1.82-.83 3.61v.99c0 2.05.2 3.04.8 3.74.5.58 1.17.83 2.3.83 1.3 0 1.93-.22 2.4-.7s.63-1.28.63-2.37v-4.19z" fill-rule="evenodd"/><path d="m69.35 25.79c-.63 1.06-1.67 1.63-3.67 1.63h-1.23c-1.73 0-2.77-.29-3.67-1.02-.97-.8-1.43-2.05-1.43-3.58v-.73c0-1.73.43-2.94 1.4-3.71 1.03-.83 2.6-1.18 4.87-1.18h1.2c.6 0 1.3.03 1.87.06v-.86c0-.83-.17-1.31-.57-1.63-.47-.35-1.1-.45-2.3-.45s-2.77.22-4.1.61c-.53.16-.73-.06-.83-.51l-.3-1.5c-.13-.54-.07-.8.5-.96 1.23-.38 3.27-.77 5.03-.77 2.37 0 3.67.29 4.8 1.02 1.2.8 1.73 1.95 1.73 4.22v10.1c0 .42-.23.61-.7.61h-1.53c-.5 0-.7-.16-.8-.58l-.2-.77zm-.67-5.5c-.57-.03-1.27-.06-1.93-.06h-1.17c-.77 0-1.4.1-1.73.38-.37.29-.5.83-.5 1.57v.38c0 .7.17 1.15.5 1.44.27.22.73.38 1.47.38h1.2c1.53 0 2.17-.67 2.17-2.14v-1.95z" fill-rule="evenodd"/><path d="m81.75 11.47h3.3c.57 0 .7.19.7.83v1.57c0 .54-.13.8-.7.8h-3.3v6.97c0 1.15.07 1.53.4 1.89.3.32.67.41 1.57.41h1.63c.7 0 .8.19.8.83v1.57c0 .61-.07.8-.8.8h-2.4c-1.93 0-3.06-.29-3.9-1.02-.87-.77-1.27-2.01-1.27-3.84v-7.61h-2c-.5 0-.67-.13-.67-.61v-1.41c0-.51.13-.61.53-.67l2.13-.35v-3.62c0-.64.2-.8.93-.8h2.1c.73 0 .93.16.93.8v3.46z"/><g fill-rule="evenodd"><path d="m98.42 25.79c-.63 1.06-1.67 1.63-3.67 1.63h-1.23c-1.73 0-2.77-.29-3.67-1.02-.97-.8-1.43-2.05-1.43-3.58v-.73c0-1.73.43-2.94 1.4-3.71 1.03-.83 2.6-1.18 4.87-1.18h1.2c.6 0 1.3.03 1.87.06v-.86c0-.83-.17-1.31-.57-1.63-.47-.35-1.1-.45-2.3-.45s-2.77.22-4.1.61c-.53.16-.73-.06-.83-.51l-.3-1.5c-.13-.54-.07-.8.5-.96 1.23-.38 3.27-.77 5.03-.77 2.37 0 3.67.29 4.8 1.02 1.2.8 1.73 1.95 1.73 4.22v10.1c0 .42-.23.61-.7.61h-1.53c-.5 0-.7-.16-.8-.58l-.2-.77zm-.67-5.5c-.57-.03-1.27-.06-1.93-.06h-1.17c-.77 0-1.4.1-1.73.38-.37.29-.5.83-.5 1.57v.38c0 .7.17 1.15.5 1.44.27.22.73.38 1.47.38h1.2c1.53 0 2.17-.67 2.17-2.14v-1.95z"/><path d="m109.85 12.36h.07c.93-.77 2.2-1.18 4-1.18 2.07 0 3.57.48 4.6 1.63 1.1 1.18 1.53 3.16 1.53 5.88v1.34c0 2.78-.57 4.64-1.77 5.79-1.23 1.18-2.93 1.6-5.5 1.6-2.13 0-3.63-.19-4.83-.93-1.3-.83-2.07-1.98-2.07-4.64v-15.57c0-.64.2-.8.93-.8h2.1c.73 0 .93.16.93.8v6.08zm6.16 6.45c0-1.85-.07-2.91-.63-3.68-.47-.64-1.3-.86-2.47-.86-1.1 0-1.87.19-2.33.58-.43.35-.73.86-.73 2.14v4.32c0 1.28.13 1.79.46 2.24.47.54 1.17.8 2.5.8 1.23 0 2.04-.29 2.5-.86.5-.61.7-1.44.7-3.68v-.99z"/><path d="m135.35 13.07c1.23 1.34 1.7 3.36 1.7 5.76v.96c0 2.46-.46 4.41-1.7 5.76-1.1 1.18-2.83 1.89-5.3 1.89s-4.2-.7-5.3-1.89c-1.23-1.34-1.7-3.29-1.7-5.76v-.96c0-2.4.46-4.41 1.7-5.76 1.1-1.21 2.8-1.89 5.3-1.89s4.2.67 5.3 1.89zm-3.07 10.45c.57-.7.73-1.95.73-3.9v-.67c0-1.95-.17-3.17-.73-3.87-.47-.58-1.03-.86-2.23-.86s-1.77.29-2.23.86c-.57.7-.73 1.92-.73 3.87v.67c0 1.95.17 3.2.73 3.9.47.54 1.03.86 2.23.86s1.77-.32 2.23-.86z"/></g><path d="m153.45 26.43c.2.35.16.7-.57.7h-2.66c-.7 0-.8-.1-1.07-.61l-2.4-5.15c-.23-.48-.33-.67-.5-.67h-.4c-.17 0-.3.26-.5.67l-2.46 5.15c-.24.51-.37.61-1.07.61h-2.66c-.73 0-.77-.35-.57-.7l3.9-7.04c.14-.22.14-.38 0-.61l-3.67-6.62c-.2-.35-.17-.7.57-.7h2.6c.7 0 .8.1 1.07.61l2.3 4.76c.2.38.3.61.5.61h.4c.2 0 .33-.22.54-.61l2.33-4.76c.27-.51.37-.61 1.06-.61h2.6c.73 0 .77.35.57.7l-3.8 6.62c-.13.22-.13.38 0 .61l3.9 7.04z"/></g></svg></div>
+    </div>
+    <p class="partners-foot">Also Claude, OpenAI, Kixie, Close, Nutshell, Capsule, HighLevel, lemlist, Instantly, Smartlead, Saleshandy, Reply.io, Expandi, Waalaxy, MailReach, Lusha, Seamless.AI, RB2B, Fireflies.ai, Relevance AI, Chatbase, Tidio and Freshdesk. <a href="details.html#platforms">All of them, by the job they do.</a></p>
+  </div>
+</section>
+
+<section id="network" class="rule" data-tone="dark">
+  <div class="wrap">
+    <div class="sec-head" data-reveal-group>
+      <span class="eyebrow">Beyond the sales stack</span>
+      <h2>RevOps is our specialty. The rest of your technology can come through us too.</h2>
+      <p class="lede">Revenue operations is the work we do ourselves, every day. For the technology around it, we work with a technology distributor. That one relationship gives you access to more than 400 suppliers it has vetted, through the same team and the same written proposal, whether or not we do your RevOps work.</p>
+    </div>
+    <div class="ledger" data-reveal-group>
+      <div class="ledger-row net-row">
+        <div class="who">Customer experience <span class="net-tag">Closest to RevOps</span></div>
+        <div class="net-body">
+          <p>Contact centres, including service in English and French, business phone systems and video meetings, conversational AI, workforce tools and outsourced agents. Where it meets your CRM, it is the RevOps work described above.</p>
+          <ul class="net-names"><li>Zoom</li><li>RingCentral</li><li>8x8</li><li>Dialpad</li><li>Nextiva</li><li>Vonage</li><li>GoTo</li><li>Cisco</li><li>Aircall</li><li>Five9</li><li>Genesys</li><li>NiCE</li><li>Talkdesk</li></ul>
+          <details class="net-all">
+            <summary><span>85 <span class="net-vh">customer experience </span>suppliers</span> <svg aria-hidden="true"><use href="#chev"/></svg></summary>
+            <div class="net-group"><span class="label">Calling and collaboration</span><ul class="net-list"><li>8x8</li><li>Aircall</li><li>Avaya</li><li>BCM One</li><li>Bluetone Communications</li><li>BridgeConnex Communications</li><li>Broadvoice</li><li>CallTower</li><li>CBTS</li><li>Cisco</li><li>Cloudli</li><li>Continuant</li><li>Dialpad</li><li>Evolve IP</li><li>FreeConferenceCall<wbr>.com</li><li>Fusion Connect</li><li>G12 Communications</li><li>GoTo</li><li>Granite</li><li>Liminal</li><li>Momentum Telecom</li><li>net2phone</li><li>Nexogy</li><li>Nextiva</li><li>NTT</li><li>NUWAVE Communications</li><li>OneStream Networks</li><li>OnSIP</li><li>Ooma</li><li>PGi</li><li>RingCentral</li><li>SCB Global</li><li>Simplicity VoIP</li><li>SIPPIO</li><li>TeligentIP</li><li>TNS</li><li>TouchTone Communications</li><li>Verve</li><li>Vocal IP</li><li>Vonage</li><li>Zoom</li><li>Zultys</li></ul></div>
+            <div class="net-group"><span class="label">Contact centre</span><ul class="net-list"><li>Alvaria</li><li>Ascent Business Partners</li><li>Blitzz</li><li>Broadvoice GoContact</li><li>Bucher + Suter</li><li>Call Criteria</li><li>Carahsoft</li><li>Cisco</li><li>Clear Software</li><li>Content Guru</li><li>Customer Dynamics</li><li>FirstFire</li><li>Five9</li><li>Front</li><li>Frontline Services</li><li>Fusion Connect</li><li>Genesys</li><li>Gladly</li><li>Glia</li><li>Hiya</li><li>LivePro</li><li>Mercuricall</li><li>NiCE</li><li>Observe.AI</li><li>Quiq</li><li>Regal</li><li>Sanas</li><li>Sharpen</li><li>SpiceCSM</li><li>SuccessKPI</li><li>Talkdesk</li><li>TCN</li><li>UJET</li></ul></div>
+            <div class="net-group"><span class="label">AI and automation</span><ul class="net-list"><li>boost.ai</li><li>Hootsuite</li><li>Krisp</li><li>PolyAI</li></ul></div>
+            <div class="net-group"><span class="label">Outsourcing</span><ul class="net-list"><li>ACD Direct</li><li>CallCenterPower</li><li>Epic Connections</li><li>Eventus</li><li>Inflow Communications</li><li>Outsource Consultants</li><li>PPT Solutions</li><li>SmartAction</li></ul></div>
+          </details>
+        </div>
+      </div>
+      <div class="ledger-row net-row">
+        <div class="who">Cybersecurity</div>
+        <div class="net-body">
+          <p>A part-time security lead (vCISO), penetration tests and compliance, <span class="net-nw">zero-trust</span> access, email, endpoint and identity protection, staff training, and threat detection and response, including a managed security operations centre (SOC).</p>
+          <ul class="net-names"><li>Akamai</li><li>Cato Networks</li><li>eSentire</li><li>LevelBlue</li><li>Nord Security</li><li>Appgate</li><li>Aryaka</li><li>Everbridge</li></ul>
+          <details class="net-all">
+            <summary><span>55 <span class="net-vh">cybersecurity </span>suppliers</span> <svg aria-hidden="true"><use href="#chev"/></svg></summary>
+            <div class="net-group"><span class="label">Security</span><ul class="net-list"><li>11:11 Systems</li><li>360 SOC</li><li>Acrisure Cyber Services</li><li>AgileBlue</li><li>Akamai</li><li>Ancero</li><li>Appgate</li><li>Ariento</li><li>Aryaka</li><li>Blue Mantis</li><li>C3 Integrated Solutions</li><li>Cato Networks</li><li>CBTS</li><li>Cipher</li><li>Claro Enterprise Solutions</li><li>Comcast Business</li><li>Cyber Defense Group</li><li>CyberCompass</li><li>CyberMaxx</li><li>Dataprise</li><li>Echelon</li><li>ECI</li><li>eSentire</li><li>Everbridge</li><li>Flexential</li><li>Foresite</li><li>Granite</li><li>Intelligent Technical Solutions</li><li>Keystone Solutions</li><li>LevelBlue</li><li>Lumen</li><li>Magna5</li><li>Maxxsure</li><li>Nord Security</li><li>OneSource</li><li>Ontinue</li><li>Open Systems</li><li>Parameter Security</li><li>PhySaaS</li><li>Quest Technology Management</li><li>Risk Cognizance</li><li>RSI</li><li>Secuvy AI</li><li>SilverSky</li><li>SteelDome</li><li>Telesystem</li><li>Thrive</li><li>TierPoint</li><li>TPx</li><li>TRUU</li><li>Valor</li><li>Verizon Business</li><li>Vigilant Technology Solutions</li><li>Xcitium</li><li>YourSix</li></ul></div>
+          </details>
+        </div>
+      </div>
+      <div class="ledger-row net-row">
+        <div class="who">Cloud and managed services</div>
+        <div class="net-body">
+          <p>AWS, Azure, Google Cloud and Oracle, including their Canadian regions for data that has to stay in Canada. Infrastructure, disaster recovery, colocation, migration, IT helpdesk, and data and AI platforms.</p>
+          <ul class="net-names"><li>Rackspace Technology</li><li>Equinix</li><li>Digital Realty</li><li>Fastly</li><li>Unisys</li><li>NTT DATA</li><li>TierPoint</li><li>Flexential</li><li>Megaport</li></ul>
+          <details class="net-all">
+            <summary><span>75 <span class="net-vh">cloud and managed services </span>suppliers</span> <svg aria-hidden="true"><use href="#chev"/></svg></summary>
+            <div class="net-group"><span class="label">Cloud</span><ul class="net-list"><li>11:11 Systems</li><li>Acrisure Cyber Services</li><li>Akamai</li><li>Ancero</li><li>Aptum</li><li>Assured Data Protection</li><li>CBTS</li><li>Center Square</li><li>Claro Enterprise Solutions</li><li>DartPoints</li><li>DataBank</li><li>DataCanopy</li><li>Dataprise</li><li>ECI</li><li>Effectual</li><li>Effortless</li><li>Enzu</li><li>Evolve IP</li><li>Expedient</li><li>Fastly</li><li>Flexential</li><li>GHA Technologies</li><li>Graphiant</li><li>Lightedge</li><li>Lumen</li><li>Lunavi</li><li>Magna5</li><li>Managed Solution</li><li>Megaport</li><li>Netrality Data Centers</li><li>Netrix Global</li><li>NewCloud Networks</li><li>Ntirety</li><li>NTT DATA</li><li>OneMind Services</li><li>Otava</li><li>Performive</li><li>phoenixNAP</li><li>Quest Technology Management</li><li>Rackspace Technology</li><li>RapidScale</li><li>Reelay</li><li>Remend</li><li>Sky Data Vault</li><li>Splice</li><li>SteelDome</li><li>Summit Hosting</li><li>Tangoe</li><li>Thrive</li><li>Thryv</li><li>TierPoint</li><li>Titan Cloud Storage</li><li>TPx</li><li>trins.io</li><li>Unisys</li><li>Upcurve Cloud</li></ul></div>
+            <div class="net-group"><span class="label">Data centre and colocation</span><ul class="net-list"><li>365 Data Centers</li><li>Center Square</li><li>Cologix</li><li>CoreSite</li><li>DataBank</li><li>DataCanopy</li><li>DC BLOX</li><li>Digital Fortress</li><li>Digital Realty</li><li>Equinix</li><li>Expedient</li><li>Flexential</li><li>HGC Global Communications</li><li>Iron Mountain Data Centers</li><li>Lunavi</li><li>Metrobloks</li><li>NTT</li><li>Otava</li><li>phoenixNAP</li><li>Quest Technology Management</li><li>Rackspace Technology</li><li>TierPoint</li><li>Valor</li></ul></div>
+            <div class="net-group"><span class="label">Managed services</span><ul class="net-list"><li>CentricsIT</li><li>Mereo Networks</li><li>MetTel</li><li>Park Place Technologies</li><li>Qeagle</li><li>QOS Networks</li><li>Splice</li><li>US Signal</li></ul></div>
+          </details>
+        </div>
+      </div>
+      <div class="ledger-row net-row">
+        <div class="who">Advanced networking</div>
+        <div class="net-body">
+          <p>Fibre and broadband, 4G, 5G and satellite, secure connections between your sites, staff and the cloud (SD-WAN and SASE), managed <span class="net-nw">Wi-Fi</span> and monitoring.</p>
+          <ul class="net-names"><li>Rogers</li><li>Beanfield Metroconnect</li><li>Lumen</li><li>Zayo</li><li>AT&amp;T</li><li>Verizon Business</li><li>Comcast Business</li><li>Vodafone</li><li>Telefónica</li></ul>
+          <details class="net-all">
+            <summary><span>94 <span class="net-vh">advanced networking </span>suppliers</span> <svg aria-hidden="true"><use href="#chev"/></svg></summary>
+            <div class="net-group"><span class="label">Network and connectivity</span><ul class="net-list"><li>123NET</li><li>ACC Business</li><li>AireSpring</li><li>Allied</li><li>Altafiber</li><li>Amazon Leo</li><li>Arelion</li><li>Astound Business Solutions</li><li>AT&amp;T</li><li>Beanfield Metroconnect</li><li>Blue Stream Fiber</li><li>Bluebird Network</li><li>Breezeline</li><li>Brightspeed</li><li>CBTS</li><li>CentraCom</li><li>Cirion</li><li>Claro Enterprise Solutions</li><li>Comcast Business</li><li>Consolidated Communications</li><li>Convergia</li><li>Cox Business</li><li>Crown Castle</li><li>DIRECTV for Business</li><li>Dobson Fiber</li><li>EarthLink Business</li><li>Everfast Fiber Networks</li><li>Fatbeam</li><li>FiberLight</li><li>FirstLight</li><li>Frontier</li><li>Hawaiian Telcom</li><li>KsFiberNet</li><li>LOGIX Fiber Networks</li><li>Lumen</li><li>Mediacom Business</li><li>Mereo Fiber</li><li>Meter</li><li>Metro Wireless</li><li>Metronet</li><li>Optimum Business</li><li>Pilot</li><li>Pulse Technologies</li><li>Rogers</li><li>Segra</li><li>Smartaira</li><li>Spectrum</li><li>Summit Broadband</li><li>T-Mobile for Business</li><li>Telefónica</li><li>Tellennium</li><li>Telstra</li><li>Uniti</li><li>Verizon Business</li><li>Vodafone</li><li>Warner Telecomm</li><li>WOW!</li><li>Zayo</li><li>Zero Outages</li><li>Ziply Fiber</li></ul></div>
+            <div class="net-group"><span class="label">Aggregators</span><ul class="net-list"><li>AireSpring</li><li>APX Net</li><li>BCN</li><li>C Spire Business</li><li>Comm-Core</li><li>CommandLink</li><li>Consolidated Communications</li><li>DynaLink Communications</li><li>Entelegent Solutions</li><li>Expereo</li><li>Fusion Connect</li><li>Granite</li><li>GTT</li><li>iTel</li><li>Lingo</li><li>Massive Networks</li><li>MetTel</li><li>Momentum</li><li>NetWolves</li><li>NHC</li><li>Nitel</li><li>Peerless Network</li><li>Powernet</li><li>Sangoma</li><li>Spectrotel</li><li>Syringa</li><li>Telesystem</li><li>TPx</li><li>Vocal IP</li></ul></div>
+            <div class="net-group"><span class="label">SD-WAN</span><ul class="net-list"><li>Adaptiv Networks</li><li>Aryaka</li><li>Bigleaf Networks</li><li>Cato Networks</li><li>FatPipe</li><li>Halo Global</li><li>Megaport</li><li>Meter</li><li>Zero Outages</li></ul></div>
+          </details>
+        </div>
+      </div>
+      <div class="ledger-row net-row">
+        <div class="who">Mobility and IoT</div>
+        <div class="net-body">
+          <p>Devices and eSIM, private LTE and 5G, managed mobility, cellular replacements for copper phone lines, expense management, sensors and telematics, video analytics, energy and EV chargers.</p>
+          <ul class="net-names"><li>Rogers</li><li>T-Mobile for Business</li><li>Verizon Business</li><li>AT&amp;T</li><li>KORE</li><li>Tangoe</li><li>Semtech</li><li>MetTel</li></ul>
+          <details class="net-all">
+            <summary><span>26 <span class="net-vh">mobility and IoT </span>suppliers</span> <svg aria-hidden="true"><use href="#chev"/></svg></summary>
+            <div class="net-group"><span class="label">Mobility and IoT</span><ul class="net-list"><li>Abundant IoT</li><li>AT&amp;T</li><li>BeyondReach</li><li>Calero</li><li>Claro Enterprise Solutions</li><li>Data2Go Wireless</li><li>Dataprise</li><li>EPIC iO</li><li>For2Fi</li><li>GlobalGig</li><li>Granite</li><li>KORE</li><li>Metro Wireless</li><li>MetTel</li><li>MobilSense</li><li>PhySaaS</li><li>Ready Wireless</li><li>Rogers</li><li>Semtech</li><li>Source Inc.</li><li>T-Mobile for Business</li><li>Tangoe</li><li>Telefónica</li><li>vCom</li><li>Verizon Business</li><li>vMOX</li></ul></div>
+          </details>
+        </div>
+      </div>
+      <div class="ledger-row net-row">
+        <div class="who">Other services</div>
+        <div class="net-body">
+          <p>Answering services, marketing services such as email campaigns, website design and content, physical security such as video surveillance and access control, expense management for phone and internet lines, and a few specialist suppliers outside the areas above.</p>
+          <ul class="net-names"><li>PhySaaS</li><li>Cleaner Air</li><li>Hiya</li><li>IPv4 Depot</li><li>Square</li></ul>
+        </div>
+      </div>
+    </div>
+    <p class="ledger-end">A selection of the suppliers we can source, which changes over time, and not every supplier serves every location. The proposal names who is current for what you need, on the supplier's own terms and pricing, and states next to each whether we are paid anything for it.</p>
+  </div>
+</section>
+
+<section id="fees" class="band-light" data-tone="light">
+  <div class="wrap">
+    <div class="sec-head" data-reveal-group>
+      <span class="eyebrow">Fees</span>
+      <h2>In writing before you commit.</h2>
+      <p class="lede">Two separate numbers, both on the proposal: what the software costs you each month, and what our work costs. If you only want help choosing and buying, the proposal says whether that carries a fee at all.</p>
+    </div>
+    <div class="ledger" data-reveal-group>
+      <div class="ledger-row has-illo">
+        <svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><rect class="f" x="12" y="10" width="48" height="40" rx="4"/><line class="l" x1="12" y1="20" x2="60" y2="20"/><g class="f"><rect x="18" y="26" width="8" height="7" rx="1.5"/><rect x="32" y="26" width="8" height="7" rx="1.5"/><rect x="46" y="26" width="8" height="7" rx="1.5"/><rect x="18" y="38" width="8" height="7" rx="1.5"/><rect x="32" y="38" width="8" height="7" rx="1.5"/><rect x="46" y="38" width="8" height="7" rx="1.5"/></g><rect class="a day" x="18" y="26" width="8" height="7" rx="1.5"/></svg>
+        <div class="who">The software</div>
+        <p>On the vendor's own plan and pricing. Where a partner program provides a customer offer, it is applied and shown; where none exists, you pay the vendor's own price. The monthly figure for each tool, and how it is billed, is on the proposal.</p>
+      </div>
+      <div class="ledger-row has-illo">
+        <svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><path class="f" d="M12 16 h28 l12 12 l-12 12 h-28 z"/><circle class="a" cx="20" cy="28" r="2.5"/><rect class="f" x="50" y="30" width="14" height="12" rx="2"/><path class="l shackle" d="M53 30 v-5 a4 4 0 0 1 8 0 v5"/></svg>
+        <div class="who">Implementation and improvements</div>
+        <p>Scoped and quoted as a fixed fee, in writing, before work starts. What is in scope, what is not, and what an addition would cost.</p>
+      </div>
+      <div class="ledger-row has-illo">
+        <svg class="illo" viewBox="0 0 72 56" aria-hidden="true"><path class="l" d="M6 30 h60"/><path class="g beat" d="M6 30 h14 l5 -12 l7 24 l6 -18 l4 6 h24"/></svg>
+        <div class="who">Ongoing support</div>
+        <p>Optional and monthly, for teams that want the people who built the system to keep it current. Scope and fee go on the proposal.</p>
+      </div>
+    </div>
+    <div class="price-note" data-reveal-group>
+      <p><strong>There are no prices on this page because every job is scoped.</strong> The call is where we learn enough to quote, and the proposal is where it is written down.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="rule" data-tone="dark">
+  <div class="wrap">
+    <div class="sec-head" data-reveal-group>
+      <span class="eyebrow">Before you book</span>
+      <h2>Questions we get first.</h2>
+    </div>
+    <div class="faq" data-reveal-group>
+      <div class="q"><h3>We already have software. Can you work with it?</h3><p>Yes. The proposal says what to keep, what to connect and what, if anything, to replace, and we won't recommend a switch we can't justify in writing.</p></div>
+      <div class="q"><h3>What happens if we buy the software through you?</h3><p>We set the purchase up through the vendor's program: plan, seats, phone numbers, and any customer offer the program provides. The monthly cost and how the subscription is billed are on the proposal. You can also buy direct and hire us only for the implementation, or buy through us and run the setup yourself.</p></div>
+      <div class="q"><h3>What do you charge?</h3><p>The monthly software cost for each tool is on the proposal, with any partner offer a program provides shown next to it, and so is whether help choosing and buying carries a fee on its own. Implementation and improvement work is quoted as a fixed fee, in writing, before it starts. Ongoing support is optional and monthly. Nothing is charged for the first call.</p></div>
+      <div class="q"><h3>Do your partnerships bias your advice?</h3><p>They shape it, so we show them. We are not a neutral marketplace of everything; we know the platforms in our programs best, and the proposal states our relationship with each tool next to its price. If a tool outside our programs fits you better, that is what goes on the proposal.</p></div>
+      <div class="q"><h3>Who does the work?</h3><p>A technical RevOps consultant assigned specifically to your project, with you from the ideation stage to fully deployed: the same person on the call, the proposal and the build, and able to build anything the project needs, from the CRM setup to a custom tool. Stacktik is based in Woodbridge, Ontario, and the handover notes say who built each piece and who to call about it.</p></div>
+      <div class="q"><h3>What if nothing off the shelf does what we need?</h3><p>Then we build it: an internal tool, a customer portal, or a connector between two systems, scoped and quoted on the same proposal and living inside the same CRM, calling and reporting setup.</p></div>
+      <div class="q"><h3>How do you use AI?</h3><p>Where it does routine work reliably. AI call notes written to the record. Agents built on Claude and OpenAI that qualify inbound leads, draft follow-ups for a rep to approve, and keep the CRM current. Chat on your site that answers the first question and hands off the rest. Every agent runs inside your tools with its source attached, and a person approves anything that reaches a customer.</p></div>
+      <div class="q"><h3>What do you mean by a revenue scoreboard?</h3><p>Targets per rep and per team, a live leaderboard of calls, booked meetings and closed deals pulled from the CRM and the phone system, and the owner's revenue and pipeline view, all updating without anyone typing. Reps see the score. Owners see what is coming.</p></div>
+      <div class="q"><h3>What happens on the call?</h3><p>We ask what you use, what isn't working, and what you are trying to get to. You get a straight answer on whether the next step is software, implementation, both, or nothing yet. If there is a fit, a written proposal follows.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="close rule" data-tone="dark">
+  <div class="wrap">
+    <span class="eyebrow">Stacktik</span>
+    <h2>Software and technology that grow <em class="acc">revenue</em>.</h2>
+    <p class="lede">Installed, connected, your team trained, and the score on the wall. Start with a call about what you use today and what isn't working.</p>
+    <div><a class="btn" href="https://stacktik.com/blueprint/">Book a call <span class="disc" aria-hidden="true"><svg><use href="#chev"/></svg></span></a></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Stacktik Solutions Inc. · Woodbridge, Ontario</span>
+    <span><a href="details.html">Platforms, implementation scope and buying details</a> · <span class="email">hello@stacktik.com</span></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Tile band: choosing, buying and connecting, as one set of moments. Row two is the same set from a different point. */
+  var logoHTML = {};
+  document.querySelectorAll('.partners-grid .lg').forEach(function (svg) {
+    var m = svg.className.baseVal.match(/lg-([a-z]+)/); if (m) logoHTML[m[1]] = svg.outerHTML;
+  });
+  function mark(name, text) { return name && logoHTML[name] ? logoHTML[name] : '<span class="tile-name">' + text + '</span>'; }
+  var extraMarks = {"zoom":"<svg class=\"lg lg-zoom\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 9.271 24 5.458\"><path fill=\"currentColor\" d=\"M5.033 14.649H.743a.74.74 0 0 1-.686-.458.74.74 0 0 1 .16-.808L3.19 10.41H1.06A1.06 1.06 0 0 1 0 9.35h3.957c.301 0 .57.18.686.458a.74.74 0 0 1-.161.808L1.51 13.59h2.464c.585 0 1.06.475 1.06 1.06zM24 11.338c0-1.14-.927-2.066-2.066-2.066-.61 0-1.158.265-1.537.686a2.061 2.061 0 0 0-1.536-.686c-1.14 0-2.066.926-2.066 2.066v3.311a1.06 1.06 0 0 0 1.06-1.06v-2.251a1.004 1.004 0 0 1 2.013 0v2.251c0 .586.474 1.06 1.06 1.06v-3.311a1.004 1.004 0 0 1 2.012 0v2.251c0 .586.475 1.06 1.06 1.06zM16.265 12a2.728 2.728 0 1 1-5.457 0 2.728 2.728 0 0 1 5.457 0zm-1.06 0a1.669 1.669 0 1 0-3.338 0 1.669 1.669 0 0 0 3.338 0zm-4.82 0a2.728 2.728 0 1 1-5.458 0 2.728 2.728 0 0 1 5.457 0zm-1.06 0a1.669 1.669 0 1 0-3.338 0 1.669 1.669 0 0 0 3.338 0z\"/></svg>","cisco":"<svg class=\"lg lg-cisco\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 5.673 24 12.652\"><path fill=\"currentColor\" d=\"M16.331 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.186 1.186 0 01-.806-.237 1.038 1.038 0 01-.352-.498 1.21 1.21 0 01-.023-.667c.052-.225.178-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.34 2.34 0 00-.903.206c-.287.132-.54.327-.739.571a2.221 2.221 0 00-.04 2.705c.295.378.709.645 1.175.756.491.12 1.006.102 1.487-.052l.082-.023M5.336 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.183 1.183 0 01-.806-.237 1.03 1.03 0 01-.351-.498 1.202 1.202 0 01-.024-.667c.052-.225.177-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.344 2.344 0 00-.903.206 2.08 2.08 0 00-.74.571 2.224 2.224 0 00-.041 2.705 2.11 2.11 0 001.176.756c.491.12 1.005.102 1.487-.052l.083-.023M9.26 17.249l-.004.957.07.012c.22.041.441.069.664.085.195.019.391.022.587.012.187-.014.372-.049.551-.104.21-.06.405-.163.571-.305a1.16 1.16 0 00.333-.478 1.31 1.31 0 00-.007-.96 1.068 1.068 0 00-.298-.414 1.261 1.261 0 00-.438-.255l-.722-.268a.388.388 0 01-.197-.188.245.245 0 01.008-.219.382.382 0 01.154-.142.798.798 0 01.257-.074c.153-.022.308-.021.46.005.18.02.358.051.533.096l.038.008v-.883l-.069-.015a4.749 4.749 0 00-.543-.097 2.844 2.844 0 00-.714-.003c-.3.027-.585.143-.821.33-.16.126-.281.293-.351.484-.104.29-.105.608 0 .899.054.145.14.274.252.381.097.093.207.173.327.236.157.084.324.149.497.195.057.017.114.035.17.054l.085.031.024.01c.084.03.162.078.226.14.045.042.08.094.101.151a.325.325 0 01.001.161.339.339 0 01-.166.198.856.856 0 01-.275.086 2.032 2.032 0 01-.427.021 5.208 5.208 0 01-.557-.074 9.195 9.195 0 01-.287-.067l-.033-.006zm-2.475.995h1.05v-4.167h-1.05v4.167zm12.162-2.936a1.095 1.095 0 011.541.158 1.094 1.094 0 01-.157 1.541l-.017.014a1.096 1.096 0 01-1.367-1.713m-1.525.854a2.193 2.193 0 002.666 2.107 2.139 2.139 0 00.701-3.937 2.207 2.207 0 00-3.367 1.83M22.961 10.728a.52.52 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M20.117 10.728a.522.522 0 001.041 0V8.139a.521.521 0 00-1.04 0v2.589M17.231 11.771a.521.521 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M14.393 10.728a.521.521 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M11.494 10.728a.522.522 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M8.624 10.728a.52.52 0 001.039 0V8.139a.52.52 0 00-1.039 0v2.589M5.737 11.771a.52.52 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M2.876 10.728a.522.522 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M0 10.728a.521.521 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155\"/></svg>","att":"<span class=\"tile-mk\"><svg class=\"lg \" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0.067 24 23.866\"><path fill=\"currentColor\" d=\"M4.584 21.438a12.077 12.077 0 0 0 7.349 2.495 12 12 0 0 0 7.887-2.967c-.944.607-3.64 2.023-7.887 2.023-3.708 0-6.068-.81-7.349-1.55m8.158.606c2.966 0 6.202-.809 8.09-2.427.539-.405 1.01-1.011 1.483-1.753.27-.472.539-1.011.741-1.483-1.82 2.63-7.011 4.315-12.404 4.315-3.776 0-7.888-1.214-9.506-3.573 1.483 3.236 6 4.92 11.596 4.92m-3.236-5.257C3.37 16.787.472 13.955 0 12c0 .674.067 1.483.202 2.09.068.27.27.674.607 1.079 1.483 1.55 5.191 3.707 11.595 3.707 8.697 0 10.72-2.898 11.124-3.842.27-.674.472-1.888.472-2.967v-.674c-.607 2.292-8.022 5.394-14.494 5.394m-8.427-9.91C.742 7.55.337 8.763.202 9.37c-.067.27 0 .404.068.607.741 1.55 4.45 4.044 13.078 4.044 5.259 0 9.371-1.28 10.045-3.64.135-.404.135-.876 0-1.483-.202-.674-.472-1.483-.809-2.09.068 3.101-8.562 5.124-12.944 5.124-4.719 0-8.696-1.888-8.696-4.248.067-.337.135-.606.135-.809M19.82 3.034c.068.067.068.135.068.27 0 1.348-4.045 3.64-10.517 3.64-4.787 0-5.663-1.753-5.663-2.9 0-.404.135-.808.472-1.213-.607.607-1.146 1.147-1.686 1.82-.202.27-.337.54-.337.675 0 2.36 5.865 3.977 11.259 3.977 5.797 0 8.427-1.887 8.427-3.573 0-.606-.203-.943-.81-1.618a17.301 17.301 0 0 0-1.213-1.078m-1.753-1.281A11.794 11.794 0 0 0 11.933.067C9.64.067 7.55.674 5.73 1.82c-.539.27-.876.54-.876.877 0 1.01 2.36 2.09 6.54 2.09 4.112 0 7.348-1.214 7.348-2.36.067-.202-.203-.405-.675-.674\"/></svg><span class=\"tile-name\">AT&amp;T</span></span>","akamai":"<span class=\"tile-mk\"><svg class=\"lg \" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0.961 0 22.078 24\"><path fill=\"currentColor\" d=\"M13.0548 0C6.384 0 .961 5.3802.961 12.0078.961 18.6354 6.3698 24 13.0548 24c.6168 0 .6454-.3572.0859-.5293-4.9349-1.5063-8.5352-6.069-8.5352-11.4629 0-5.4656 3.6725-10.0706 8.6934-11.5195C13.8153.3448 13.6716 0 13.0548 0Zm2.3242 1.8223c-5.2648 0-9.5254 4.2606-9.5254 9.5254 0 1.2193.2285 2.3818.6445 3.4433.1722.459.4454.4584.4024.0137-.0287-.3156-.0567-.6447-.0567-.9746 0-5.2648 4.2606-9.5254 9.5254-9.5254 4.9779 0 6.4698 2.2235 6.6563 2.08.2008-.1577-1.808-4.5624-7.6465-4.5624zm.4687 4.0703c-1.8622.0592-3.651.7168-5.1035 1.8554-.2582.2009-.1567.3284.1445.1993 2.4675-1.076 5.5812-1.1046 8.6368-.043 2.0514.7173 3.2413 1.7364 3.3418 1.6934.1578-.0718-1.1915-2.2226-3.6446-3.1407-1.1135-.4196-2.2576-.6-3.375-.5644z\"/></svg><span class=\"tile-name\">Akamai</span></span>","aircall":"<span class=\"tile-mk\"><svg class=\"lg \" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0.034 0 23.932 24\"><path fill=\"currentColor\" d=\"M23.451 5.906a6.978 6.978 0 0 0-5.375-5.39C16.727.204 14.508 0 12 0S7.273.204 5.924.516a6.978 6.978 0 0 0-5.375 5.39C.237 7.26.034 9.485.034 12s.203 4.74.515 6.094a6.978 6.978 0 0 0 5.375 5.39C7.273 23.796 9.492 24 12 24s4.727-.204 6.076-.516a6.978 6.978 0 0 0 5.375-5.39c.311-1.354.515-3.578.515-6.094 0-2.515-.203-4.74-.515-6.094zm-5.873 12.396l-.003.001c-.428.152-1.165.283-2.102.377l-.147.014a.444.444 0 0 1-.45-.271 1.816 1.816 0 0 0-1.296-1.074c-.351-.081-.928-.134-1.58-.134s-1.229.053-1.58.134a1.817 1.817 0 0 0-1.291 1.062.466.466 0 0 1-.471.281 8 8 0 0 0-.129-.012c-.938-.094-1.676-.224-2.105-.377l-.003-.001a.76.76 0 0 1-.492-.713c0-.032.003-.066.005-.098.073-.979.666-3.272 1.552-5.89C8.5 8.609 9.559 6.187 10.037 5.714a1.029 1.029 0 0 1 .404-.26l.004-.002c.314-.106.892-.178 1.554-.178.663 0 1.241.071 1.554.178l.005.002a1.025 1.025 0 0 1 .405.26c.478.472 1.537 2.895 2.549 5.887.886 2.617 1.479 4.91 1.552 5.89.002.032.005.066.005.098a.76.76 0 0 1-.491.713z\"/></svg><span class=\"tile-name\">Aircall</span></span>","vonage":"<span class=\"tile-mk\"><svg class=\"lg \" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 1.547 24 20.906\"><path fill=\"currentColor\" d=\"M9.279 11.617l-4.54-10.07H0l6.797 15.296a.084.084 0 0 0 .153 0zm9.898-10.07s-6.148 13.868-6.917 15.565c-1.838 4.056-3.2 5.07-4.588 5.289a.026.026 0 0 0 .004.052h4.34c1.911 0 3.219-1.285 5.06-5.341C17.72 15.694 24 1.547 24 1.547z\"/></svg><span class=\"tile-name\">Vonage</span></span>","claude":"<span class=\"tile-mk\"><svg class=\"lg \" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0.009 0 23.982 24\"><path fill=\"currentColor\" d=\"m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z\"/></svg><span class=\"tile-name\">Claude</span></span>"};
+  Object.keys(extraMarks).forEach(function (k) { logoHTML[k] = extraMarks[k]; });
+  if (logoHTML.monday) logoHTML.monday = '<span class="tile-mk">' + logoHTML.monday + '<span class="tile-name">monday.com</span></span>';
+  var rowOne = [
+    {"l":"hubspot","n":"HubSpot","t":"Choose","main":"Two CRMs that fit how you sell","sub":"Monthly cost beside each"},
+    {"l":"zoom","n":"Zoom","t":"Buy","main":"Phone system quoted and ordered","sub":"On the supplier's own terms"},
+    {"l":"claude","n":"Claude","t":"Connect","main":"Follow-up drafted after the call","sub":"A rep approves and sends"},
+    {"l":"cisco","n":"Cisco","t":"Choose","main":"Contact centre options compared","sub":"Fit and cost, side by side"},
+    {"l":null,"n":"lemlist","t":"Connect","main":"Sequence stops when they reply","sub":"Reply lands on the record"},
+    {"l":"att","n":"AT&amp;T","t":"Buy","main":"Internet and mobile lines quoted","sub":"On the same proposal"},
+    {"l":"dialpad","n":"Dialpad","t":"Connect","main":"Call logged with the recording","sub":"Nobody typed it"},
+    {"l":null,"n":"8x8","t":"Buy","main":"Proposal ready for finance","sub":"What recurs and what doesn't"},
+    {"l":"monday","n":"monday.com","t":"Connect","main":"Form → record → rep","sub":"Assigned in seconds"},
+    {"l":null,"n":"Five9","t":"Connect","main":"Support call on the CRM record","sub":"Beside the sales history"}
+  ];
+  var rowTwo = [
+    {"l":null,"n":"Rogers","t":"Buy","main":"Internet for the new office","sub":"Ordered ahead of the move"},
+    {"l":"aircall","n":"Aircall","t":"Connect","main":"Caller matched to the CRM record","sub":"The rep sees who is calling"},
+    {"l":"cloudtalk","n":"CloudTalk","t":"Buy","main":"Seats and phone numbers set up","sub":"Through the partner program"},
+    {"l":"zapier","n":"Zapier","t":"Connect","main":"Signed contract moves the deal","sub":"Stage updated on its own"},
+    {"l":null,"n":"Genesys","t":"Choose","main":"Contact centre must-haves listed","sub":"Channels, hours, reporting"},
+    {"l":null,"n":"RingCentral","t":"Connect","main":"Dialled from the CRM record","sub":"No copying numbers across"},
+    {"l":"akamai","n":"Akamai","t":"Choose","main":"Website protection shortlisted","sub":"What each covers, in writing"},
+    {"l":null,"n":"OpenAI","t":"Connect","main":"Handover note drafted for support","sub":"A person checks it first"},
+    {"l":"vonage","n":"Vonage","t":"Choose","main":"Phone system checked for CRM fit","sub":"Before anything is signed"},
+    {"l":"databox","n":"Databox","t":"Connect","main":"The week on one screen","sub":"Three tools, one dashboard"}
+  ];
+  function tile(d) {
+    return '<div class="tile"><div class="tile-top">' + mark(d.l, d.n) + '<span class="tile-time">' + d.t + '</span></div><div class="tile-main">' + d.main + '</div><div class="tile-sub"><span class="dot"></span>' + d.sub + '</div></div>';
+  }
+  var r1 = document.getElementById('row1'), r2 = document.getElementById('row2');
+  if (r1 && r2) {
+    var h1 = rowOne.map(tile).join('');
+    var h2 = rowTwo.map(tile).join('');
+    r1.innerHTML = h1 + h1; r2.innerHTML = h2 + h2;
+  }
+
+  /* Orbit: two rings turning in opposite directions, a launch from the core, floating satellites, spokes to the core,
+     flowing chords between neighbours, pulses with trails that light a satellite when they land, and a gentle cursor tilt. */
+  var orbit = document.getElementById('orbit');
+  if (orbit) {
+    var SVGNS = 'http://www.w3.org/2000/svg';
+    var C = 300, R = { 1: 165, 2: 262 }, SPEED = { 1: 0.05, 2: -0.028 }, PHASE = { 1: -Math.PI / 2, 2: -Math.PI / 2 + Math.PI / 10 };
+    var W = orbit.clientWidth || 560;
+    if ('ResizeObserver' in window) new ResizeObserver(function () { W = orbit.clientWidth || W; }).observe(orbit);
+    var sats = Array.prototype.slice.call(orbit.querySelectorAll('.sat')).map(function (el, k) {
+      var ring = +el.getAttribute('data-ring'), i = +el.getAttribute('data-i');
+      var count = orbit.querySelectorAll('.sat[data-ring="' + ring + '"]').length;
+      el.style.opacity = '0';
+      return { el: el, ring: ring, base: PHASE[ring] + i * Math.PI * 2 / count, i: i, k: k, count: count, x: C, y: C, bob: Math.random() * Math.PI * 2 };
+    });
+    var links = document.getElementById('orbit-links'), pulses = document.getElementById('orbit-pulses');
+    var spokes = sats.map(function () { var l = document.createElementNS(SVGNS, 'line'); l.setAttribute('class', 'link'); links.appendChild(l); return l; });
+    var chords = sats.map(function () { var l = document.createElementNS(SVGNS, 'line'); l.setAttribute('class', 'link chord'); links.appendChild(l); return l; });
+    var dots = [];
+    for (var d = 0; d < 6; d++) {
+      var tr = document.createElementNS(SVGNS, 'circle'); tr.setAttribute('class', 'trail'); tr.setAttribute('r', '1.6'); pulses.appendChild(tr);
+      var c = document.createElementNS(SVGNS, 'circle'); c.setAttribute('class', 'pulse'); c.setAttribute('r', '5'); pulses.appendChild(c);
+      dots.push({ el: c, tr: tr, sat: (d * 5) % sats.length, t: d / 6, dur: 2.2 + d * 0.25, out: d % 2 === 0 });
+    }
+    function ease(p) { return 1 - Math.pow(1 - p, 3); }
+    function place(t, launch) {
+      var L = ease(Math.min(1, launch));
+      sats.forEach(function (s) {
+        var a = s.base + t * SPEED[s.ring];
+        var r = R[s.ring] * L, wob = Math.sin(t * 1.1 + s.bob) * 3.5;
+        s.x = C + r * Math.cos(a); s.y = C + r * Math.sin(a) + wob * L;
+        var dx = (s.x - C) / 600 * W, dy = (s.y - C) / 600 * W;
+        s.el.style.transform = 'translate(-50%, -50%) translate3d(' + dx.toFixed(2) + 'px,' + dy.toFixed(2) + 'px,0)';
+        s.el.style.opacity = (0.2 + 0.8 * L).toFixed(2);
+      });
+      sats.forEach(function (s, k) {
+        spokes[k].setAttribute('x1', C); spokes[k].setAttribute('y1', C); spokes[k].setAttribute('x2', s.x.toFixed(1)); spokes[k].setAttribute('y2', s.y.toFixed(1));
+        spokes[k].setAttribute('opacity', L.toFixed(2));
+        var n = sats.filter(function (o) { return o.ring === s.ring && o.i === (s.i + 1) % s.count; })[0];
+        if (n) { chords[k].setAttribute('x1', s.x.toFixed(1)); chords[k].setAttribute('y1', s.y.toFixed(1)); chords[k].setAttribute('x2', n.x.toFixed(1)); chords[k].setAttribute('y2', n.y.toFixed(1)); chords[k].setAttribute('opacity', L.toFixed(2)); }
+      });
+    }
+    function light(s) { s.el.classList.add('lit'); setTimeout(function () { s.el.classList.remove('lit'); }, 520); }
+    function movePulses(dt, launch) {
+      if (launch < 1) return;
+      dots.forEach(function (p) {
+        var was = p.t; p.t += dt / p.dur;
+        if (p.t >= 1) { if (p.out) light(sats[p.sat]); p.t = 0; p.out = !p.out; if (p.out) p.sat = (p.sat + 5) % sats.length; }
+        var s = sats[p.sat], f = p.out ? p.t : 1 - p.t, e = f < .5 ? 4 * f * f * f : 1 - Math.pow(-2 * f + 2, 3) / 2;
+        var ft = Math.max(0, Math.min(1, p.out ? p.t - 0.07 : 1 - (p.t - 0.07))), et = ft < .5 ? 4 * ft * ft * ft : 1 - Math.pow(-2 * ft + 2, 3) / 2;
+        p.el.setAttribute('cx', (C + (s.x - C) * e).toFixed(1)); p.el.setAttribute('cy', (C + (s.y - C) * e).toFixed(1));
+        p.tr.setAttribute('cx', (C + (s.x - C) * et).toFixed(1)); p.tr.setAttribute('cy', (C + (s.y - C) * et).toFixed(1));
+        var op = (0.15 + 0.85 * Math.sin(Math.PI * f)).toFixed(2);
+        p.el.setAttribute('opacity', op); p.tr.setAttribute('opacity', (op * 0.5).toFixed(2));
+      });
+    }
+    var t0 = null, last = null, running = false, visible = true, launchT = 0;
+    var tiltX = 0, tiltY = 0, tgtX = 0, tgtY = 0;
+    function settle() {
+      tiltX += (tgtX - tiltX) * 0.07; tiltY += (tgtY - tiltY) * 0.07;
+      if (Math.abs(tiltX) < 0.01 && Math.abs(tiltY) < 0.01 && tgtX === 0 && tgtY === 0) { if (orbit.style.transform) orbit.style.transform = ''; return; }
+      orbit.style.transform = 'perspective(1100px) rotateX(' + tiltX.toFixed(3) + 'deg) rotateY(' + tiltY.toFixed(3) + 'deg)';
+    }
+    function tick(ts) {
+      if (!running) return;
+      if (t0 === null) { t0 = ts; last = ts; }
+      var t = (ts - t0) / 1000; launchT = Math.min(1, launchT + (ts - last) / 1600);
+      place(t, launchT); movePulses((ts - last) / 1000, launchT); settle(); last = ts; requestAnimationFrame(tick);
+    }
+    function start() { if (running || !visible) return; running = true; last = null; t0 = null; requestAnimationFrame(tick); }
+    if (reduce) { launchT = 1; place(0, 1); }
+    else {
+      place(0, 0);
+      var b0 = orbit.getBoundingClientRect(); if (b0.bottom > 0 && b0.top < window.innerHeight) start();
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible) start(); else running = false; }, { threshold: 0.05 }).observe(orbit);
+      } else { start(); }
+      document.addEventListener('visibilitychange', function () { if (document.hidden) running = false; else start(); });
+      /* Cursor tilt on devices with a fine pointer */
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        var hero = orbit.closest('.hero') || orbit;
+        hero.addEventListener('pointermove', function (e) {
+          var b = orbit.getBoundingClientRect(), cx = b.left + b.width / 2, cy = b.top + b.height / 2;
+          tgtY = Math.max(-1, Math.min(1, (e.clientX - cx) / b.width)) * 5; tgtX = Math.max(-1, Math.min(1, (e.clientY - cy) / b.height)) * -5;
+        });
+        hero.addEventListener('pointerleave', function () { tgtX = 0; tgtY = 0; });
+      }
+    }
+  }
+
+  /* Lead journey: a path through the stage cards (hidden under them, visible in the gutters), a lead that travels it, pauses on each stage and lights it */
+  var jm = document.getElementById('journey-map');
+  if (jm) {
+    var jnodes = Array.prototype.slice.call(jm.querySelectorAll('.jnode')), jpath = document.getElementById('jpath'), jsvg = jm.querySelector('.journey-path');
+    var jlead = jm.querySelector('.jlead'), jtrail = jm.querySelector('.jlead-trail');
+    var cum = [], jL = 0;
+    function jlayout() {
+      var b = jm.getBoundingClientRect();
+      jsvg.setAttribute('viewBox', '0 0 ' + Math.round(b.width) + ' ' + Math.round(b.height));
+      var pts = jnodes.map(function (n) { var r = n.getBoundingClientRect(); return { x: r.left - b.left + r.width / 2, y: r.top - b.top + r.height / 2 }; });
+      var d = 'M' + pts[0].x.toFixed(1) + ' ' + pts[0].y.toFixed(1), len = 0, prev = pts[0]; cum = [0];
+      for (var i = 1; i < pts.length; i++) {
+        var p = pts[i], q = pts[i - 1], seg = [];
+        if (Math.abs(p.y - q.y) < 2) seg = [p];
+        else { var my = (q.y + p.y) / 2; seg = [{ x: q.x, y: my }, { x: p.x, y: my }, p]; }
+        seg.forEach(function (t) { d += ' L' + t.x.toFixed(1) + ' ' + t.y.toFixed(1); len += Math.hypot(t.x - prev.x, t.y - prev.y); prev = t; });
+        cum.push(len);
+      }
+      jpath.setAttribute('d', d); jL = len;
+    }
+    jlayout();
+    if ('ResizeObserver' in window) new ResizeObserver(jlayout).observe(jm);
+    var jseg = 0, jt = 0, jpause = 0, jrun = false, jvis = true, jlast = null, JTRAVEL = 1.1, JPAUSE = 1.5;
+    function jlight(i) { jnodes.forEach(function (n, k) { n.classList.toggle('on', k === i); }); }
+    function jframe(ts) {
+      if (!jrun) return;
+      if (jlast === null) jlast = ts; var dt = Math.min(0.05, (ts - jlast) / 1000); jlast = ts;
+      if (jpause > 0) { jpause -= dt; jlead.setAttribute('opacity', '0'); jtrail.setAttribute('opacity', '0'); }
+      else {
+        jt += dt / JTRAVEL;
+        if (jt >= 1) { jt = 0; jseg = (jseg + 1) % (jnodes.length - 1); jpause = JPAUSE; jlight(jseg === 0 ? 0 : jseg); if (jseg === 0) jlight(0); }
+        else {
+          var a = cum[jseg], bb = cum[jseg + 1], e = jt < .5 ? 2 * jt * jt : -1 + (4 - 2 * jt) * jt, l = a + (bb - a) * e;
+          var pt = jpath.getPointAtLength(l), pt2 = jpath.getPointAtLength(Math.max(0, l - 16));
+          jlead.setAttribute('cx', pt.x.toFixed(1)); jlead.setAttribute('cy', pt.y.toFixed(1)); jlead.setAttribute('opacity', (Math.sin(Math.PI * jt) * 0.95 + 0.05).toFixed(2));
+          jtrail.setAttribute('cx', pt2.x.toFixed(1)); jtrail.setAttribute('cy', pt2.y.toFixed(1)); jtrail.setAttribute('opacity', (Math.sin(Math.PI * jt) * 0.5).toFixed(2));
+          if (jt > 0.5) jlight(jseg + 1); else jlight(jseg);
+        }
+      }
+      requestAnimationFrame(jframe);
+    }
+    function jstart() { if (jrun || !jvis) return; jrun = true; jlast = null; requestAnimationFrame(jframe); }
+    if (reduce) { jlight(0); }
+    else {
+      jlight(0); jpause = JPAUSE;
+      var jb = jm.getBoundingClientRect(); if (jb.bottom > 0 && jb.top < window.innerHeight) jstart();
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { jvis = es[0].isIntersecting; if (jvis) jstart(); else jrun = false; }, { threshold: 0.05 }).observe(jm);
+      else jstart();
+      document.addEventListener('visibilitychange', function () { if (document.hidden) jrun = false; else jstart(); });
+    }
+  }
+
+  /* Nav: transparent at the top of the black hero, tinted black once scrolled, cream over the cream band */
+  var nav = document.getElementById('nav');
+  var tones = document.querySelectorAll('[data-tone]');
+  function setNav() {
+    var y = window.scrollY + 40, tone = 'dark', scrolled = window.scrollY > 24;
+    tones.forEach(function (s) { if (s.offsetTop <= y) tone = s.getAttribute('data-tone'); });
+    nav.classList.toggle('is-dark', tone === 'dark' && scrolled);
+    nav.classList.toggle('is-light', tone === 'light');
+  }
+  setNav(); window.addEventListener('scroll', setNav, { passive: true }); window.addEventListener('resize', setNav);
+
+  /* Group reveals (IntersectionObserver + CSS). Without JS or IO, nothing is ever hidden. */
+  var groups = document.querySelectorAll('[data-reveal-group]');
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    groups.forEach(function (g) { if (g.getBoundingClientRect().top > window.innerHeight) { g.classList.add('rv'); io.observe(g); } });
+  }
+})();
+
+/* Film: click to play with sound, pause off screen, return to the poster at the end */
+(function () {
+  var f = document.getElementById('film-player');
+  if (!f) return;
+  var v = f.querySelector('video'), b = f.querySelector('.film-play');
+  function reset() { f.classList.remove('playing'); v.controls = false; }
+  b.addEventListener('click', function () {
+    f.classList.add('playing'); v.controls = true;
+    var p = v.play();
+    if (p && p.catch) p.catch(reset);
+  });
+  v.addEventListener('ended', function () { reset(); v.load(); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (!e.isIntersecting && !v.paused) v.pause(); });
+    }, { threshold: .15 }).observe(f);
+  }
+})();
+</script>
+
