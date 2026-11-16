@@ -46,6 +46,7 @@ for (const f of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
     if (/!/.test(t)) H.push(`${where}: exclamation mark`);
     if (/—|–/.test(t)) H.push(`${where}: dash character`);
     if (/<[a-z/]|\[[^\]]+\]\(/i.test(t)) H.push(`${where}: markup`);
+    if (/\bCanad(a|ian)\b/.test(t) && !/United States|\bUS\b/.test(t) && !/^faq \d+ q$/.test(where)) R.push(`${where}: names Canada without the United States; check it does not read as Canada-only`);
     for (const [re, label] of [[HYPE, "hype word"], [DEAL, "deal language"], [STATUS, "status claim"], [TIME, "duration"]]) { const m = t.match(re); if (m) R.push(`${where}: ${label} "${m[0]}" in: ${t.slice(Math.max(0, m.index - 60), m.index + 70)}`); }
     const d = t.replace(OKNUM, "").match(/[$€£]\s?\d|\d+\s?%|\b\d{2,}\b/); if (d) R.push(`${where}: number "${d[0]}" in: ${t.slice(Math.max(0, d.index - 50), d.index + 60)}`);
   }

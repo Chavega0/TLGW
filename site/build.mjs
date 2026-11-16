@@ -192,13 +192,14 @@ const orgNode = () => ({
   image: url("/og/home.png"),
   description: ORG.description,
   email: ORG.email,
+  contactPoint: { "@type": "ContactPoint", contactType: "sales", email: ORG.email, areaServed: ORG.areas.map((name) => ({ "@type": "Country", name })), availableLanguage: "English" },
   address: { "@type": "PostalAddress", addressLocality: ORG.locality, addressRegion: ORG.region, addressCountry: ORG.country },
   areaServed: ORG.areas.map((name) => ({ "@type": "Country", name })),
-  knowsAbout: ["Revenue operations", "CRM implementation", "HubSpot", "monday CRM", "Business phone systems", "Contact centre software", "AI agents", "AI receptionist", "Sales automation", "Sales reporting"],
+  knowsAbout: ["Revenue operations", "CRM implementation", "HubSpot", "monday CRM", "Business phone systems", "Contact center software", "AI agents", "AI receptionist", "Sales automation", "Sales reporting"],
   hasOfferCatalog: { "@type": "OfferCatalog", name: "Services", itemListElement: services.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", "@id": url(s.path + "#service"), name: s.name, url: url(s.path) } })) },
 });
-const siteNode = () => ({ "@type": "WebSite", "@id": url("/#website"), url: url("/"), name: ORG.name, inLanguage: "en-CA", publisher: { "@id": url("/#organization") } });
-const pageNode = (page, extra = {}) => ({ "@type": "WebPage", "@id": url(page.path + "#webpage"), url: url(page.path), name: page.title, description: page.description, inLanguage: "en-CA", isPartOf: { "@id": url("/#website") }, about: { "@id": url("/#organization") }, primaryImageOfPage: { "@type": "ImageObject", url: url(`/og/${page.og}.png`) }, dateModified: TODAY, ...extra });
+const siteNode = () => ({ "@type": "WebSite", "@id": url("/#website"), url: url("/"), name: ORG.name, inLanguage: "en", publisher: { "@id": url("/#organization") } });
+const pageNode = (page, extra = {}) => ({ "@type": "WebPage", "@id": url(page.path + "#webpage"), url: url(page.path), name: page.title, description: page.description, inLanguage: "en", isPartOf: { "@id": url("/#website") }, about: { "@id": url("/#organization") }, primaryImageOfPage: { "@type": "ImageObject", url: url(`/og/${page.og}.png`) }, dateModified: TODAY, ...extra });
 const crumbNode = (page, trail) => ({ "@type": "BreadcrumbList", "@id": url(page.path + "#breadcrumb"), itemListElement: trail.map((t, i) => ({ "@type": "ListItem", position: i + 1, name: t.name, item: url(t.path) })) });
 const faqNode = (page, items) => ({ "@type": "FAQPage", "@id": url(page.path + "#faq"), mainEntity: items.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) });
 const stripTags = (s) => s.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, " ").trim();
@@ -268,7 +269,7 @@ ${facts.map(([k, v]) => `      <div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
   const video = { "@type": "VideoObject", "@id": url("/#film"), name: "Stacktik: every deal, lead and number in one live system", description: "A 50-second film of the revenue system Stacktik sets up: AI spots a deal going quiet, qualifies a new lead and drafts the reply, and the month's number stays in front of the team. Names and figures in the film are example data.", thumbnailUrl: url("/media/stacktik-film-poster.jpg"), contentUrl: url("/media/stacktik-film.mp4"), uploadDate: "2026-11-01", duration: "PT50S", publisher: { "@id": url("/#organization") } };
   const schema = [orgNode(), siteNode(), pageNode(HOME, { video: { "@id": url("/#film") } }), video, ...(faq.length ? [faqNode(HOME, faq)] : [])];
   return `<!doctype html>
-<html lang="en-CA">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -296,7 +297,6 @@ function partsOfDetails() {
 }
 function buildDetails() {
   let { html } = partsOfDetails();
-  html = swap(html, '<html lang="en">', '<html lang="en-CA">');
   html = swap(html, 'href="index.html"', 'href="/"', { all: true });
   html = swap(html, 'href="https://stacktik.com/blueprint/"', 'href="/blueprint/"', { all: true });
   const faq = faqFromHtml(html);
@@ -312,7 +312,7 @@ function buildDetails() {
 function shell(page, { schema, navLinks, main, type = "website", extraScript = "" }) {
   const t = partsOfDetails();
   return `<!doctype html>
-<html lang="en-CA">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">

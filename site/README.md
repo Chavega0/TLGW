@@ -37,13 +37,14 @@ BreadcrumbList, Service, FAQPage, VideoObject), footer links to every service pa
 
 ## Rules for copy
 
-Keep it short: `lint-pages.mjs` holds each field to a word limit. RevOps is the specialty, and Stacktik serves
-Canada and the United States. No invented numbers, results, prices or timelines. No discount language. The technology
+Keep it short: `lint-pages.mjs` holds each field to a word limit. RevOps is the specialty. Stacktik is based in
+Woodbridge, Ontario, and serves teams in Canada and the United States: an FAQ question may target a Canadian search
+phrase, but no copy may say or imply that Stacktik serves Canada only. No invented numbers, results, prices or timelines. No discount language. The technology
 distributor is never named. No claims of certified or official partner status. `check.mjs` enforces the mechanical
 ones (one H1 per page, unique titles and descriptions, working links, valid structured data).
 
 ## Adding a landing page
 
 1. Add the terms to `src/search-map.json` so no two pages target the same search.
-2. Add `src/pages/<slug>.json` in the same shape as the others, and a name for it in `NAV_NAME` in `build.mjs`.
+2. Add `src/pages/<slug>.json` in the same shape as the others, and an entry for it in `META` in `build.mjs` (its menu name, group and related pages).
 3. Run `og.mjs`, `build.mjs` and `check.mjs`.

@@ -18,7 +18,7 @@ for (const p of pages) {
   if (!title) F("no title"); else { if (title.length > 60) W(`title is ${title.length} characters`); if (titles.has(title)) F("duplicate title with " + titles.get(title)); titles.set(title, p.path); }
   if (!desc) F("no meta description"); else { if (desc.length < 110 || desc.length > 160) W(`meta description is ${desc.length} characters`); if (descs.has(desc)) F("duplicate description with " + descs.get(desc)); descs.set(desc, p.path); }
   const h1 = (p.html.match(/<h1[\s>]/g) || []).length; if (h1 !== 1) F(`${h1} h1 elements`);
-  if (!/<html lang="en-CA">/.test(p.html)) F("html lang missing");
+  if (!/<html lang="en">/.test(p.html)) F("html lang missing");
   if (!/<meta name="viewport"/.test(p.html)) F("viewport missing");
   if (one(p.html, /<link rel="canonical" href="([^"]*)"/) !== ORIGIN + p.path) F("canonical is not " + ORIGIN + p.path);
   for (const k of ["og:title", "og:description", "og:url", "og:image", "og:type", "og:site_name"]) if (!new RegExp(`<meta property="${k}" content="[^"]+"`).test(p.html)) F("missing " + k);

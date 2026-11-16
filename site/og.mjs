@@ -27,7 +27,7 @@ html,body{margin:0}body{width:1200px;height:630px;background:#131110;color:#F3EC
 .eyebrow{font-size:17px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:rgba(243,236,220,.62);margin-bottom:22px}
 h1{font-family:Newsreader,serif;font-weight:500;font-variation-settings:"opsz" 72;letter-spacing:-.02em;line-height:1.06;margin:0;max-width:980px;text-wrap:balance}
 .foot{display:flex;justify-content:space-between;align-items:center;font-size:19px;color:rgba(243,236,220,.62);border-top:1px solid rgba(243,236,220,.16);padding-top:22px}.foot b{color:#F3ECDC;font-weight:600}
-</style><div class="glow"></div><div class="frame"><div class="logo">${mark("#C4552B", 44)}<span>stack<b>tik</b></span></div><div><div class="eyebrow">${esc(c.eyebrow)}</div><h1 id="h">${esc(c.head)}</h1></div><div class="foot"><span>RevOps consultancy · Woodbridge, Ontario</span><b>stacktik.com</b></div></div>
+</style><div class="glow"></div><div class="frame"><div class="logo">${mark("#C4552B", 44)}<span>stack<b>tik</b></span></div><div><div class="eyebrow">${esc(c.eyebrow)}</div><h1 id="h">${esc(c.head)}</h1></div><div class="foot"><span>RevOps consultancy · Woodbridge, Ontario · Serving Canada and the US</span><b>stacktik.com</b></div></div>
 <script>var h=document.getElementById('h'),s=86;h.style.fontSize=s+'px';while(h.getBoundingClientRect().height>290&&s>44){s-=2;h.style.fontSize=s+'px';}</script>`;
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });

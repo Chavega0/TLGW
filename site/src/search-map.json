@@ -60,10 +60,11 @@
     {
      "keyword": "revenue operations consultant",
      "ca": 10,
-     "us": null,
+     "us": 390,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 5.8
+     "kd_us": 17,
+     "cpc_ca": 5.8,
+     "cpc_us": 9.56
     },
     {
      "keyword": "fractional revops",
@@ -76,18 +77,20 @@
     {
      "keyword": "revops as a service",
      "ca": 20,
-     "us": null,
+     "us": 210,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 14.87
+     "kd_us": 17,
+     "cpc_ca": 14.87,
+     "cpc_us": 14.38
     },
     {
      "keyword": "revops services",
      "ca": 20,
-     "us": null,
+     "us": 50,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 0.0
+     "kd_us": 22,
+     "cpc_ca": 0.0,
+     "cpc_us": 13.21
     },
     {
      "keyword": "revops",
@@ -108,26 +111,29 @@
     {
      "keyword": "revenue operations",
      "ca": 140,
-     "us": null,
+     "us": 2400,
      "kd_ca": 45,
-     "kd_us": null,
-     "cpc_ca": 7.36
+     "kd_us": 44,
+     "cpc_ca": 7.36,
+     "cpc_us": 9.71
     },
     {
      "keyword": "sales operations",
      "ca": 140,
-     "us": null,
+     "us": 1600,
      "kd_ca": 23,
-     "kd_us": null,
-     "cpc_ca": 4.47
+     "kd_us": 42,
+     "cpc_ca": 4.47,
+     "cpc_us": 7.95
     },
     {
      "keyword": "sales consulting",
      "ca": 140,
-     "us": null,
+     "us": 1600,
      "kd_ca": 13,
-     "kd_us": null,
-     "cpc_ca": 5.48
+     "kd_us": 17,
+     "cpc_ca": 5.48,
+     "cpc_us": 6.41
     },
     {
      "keyword": "sales automation",
@@ -140,30 +146,33 @@
     {
      "keyword": "sales tech stack",
      "ca": 20,
-     "us": null,
+     "us": 390,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 0.0
+     "kd_us": 22,
+     "cpc_ca": 0.0,
+     "cpc_us": 14.64
     },
     {
      "keyword": "sales dashboard",
      "ca": 140,
-     "us": null,
+     "us": 3600,
      "kd_ca": 38,
-     "kd_us": null,
-     "cpc_ca": 8.59
+     "kd_us": 32,
+     "cpc_ca": 8.59,
+     "cpc_us": 12.64
     },
     {
      "keyword": "sales leaderboard",
      "ca": 20,
-     "us": null,
+     "us": 390,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 9.79
+     "kd_us": 19,
+     "cpc_ca": 9.79,
+     "cpc_us": 14.62
     }
    ],
    "ca_total": 1590,
-   "us_total": 9060
+   "us_total": 19690
   },
   {
    "slug": "crm-implementation",
@@ -228,10 +237,11 @@
     {
      "keyword": "crm consulting services",
      "ca": 50,
-     "us": null,
+     "us": 1000,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 0.0
+     "kd_us": 29,
+     "cpc_ca": 0.0,
+     "cpc_us": 10.38
     },
     {
      "keyword": "crm implementation consultant",
@@ -268,26 +278,29 @@
     {
      "keyword": "crm implementation steps",
      "ca": 20,
-     "us": null,
+     "us": 170,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 0.0
+     "kd_us": 30,
+     "cpc_ca": 0.0,
+     "cpc_us": 6.46
     },
     {
      "keyword": "crm implementation cost",
      "ca": 30,
-     "us": null,
+     "us": 90,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 0.0
+     "kd_us": 31,
+     "cpc_ca": 0.0,
+     "cpc_us": 0.0
     },
     {
      "keyword": "crm setup",
      "ca": 20,
-     "us": null,
+     "us": 140,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 7.7
+     "kd_us": 14,
+     "cpc_ca": 7.7,
+     "cpc_us": 18.38
     },
     {
      "keyword": "crm canada",
@@ -324,14 +337,15 @@
     {
      "keyword": "sales crm",
      "ca": 260,
-     "us": null,
+     "us": 4400,
      "kd_ca": 49,
-     "kd_us": null,
-     "cpc_ca": 23.34
+     "kd_us": 45,
+     "cpc_ca": 23.34,
+     "cpc_us": 29.64
     }
    ],
    "ca_total": 1620,
-   "us_total": 4620
+   "us_total": 10420
   },
   {
    "slug": "hubspot-implementation",
@@ -394,18 +408,20 @@
     {
      "keyword": "hubspot implementation services",
      "ca": 40,
-     "us": null,
+     "us": 720,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 0.0
+     "kd_us": 16,
+     "cpc_ca": 0.0,
+     "cpc_us": 36.49
     },
     {
      "keyword": "hubspot onboarding services",
      "ca": 20,
-     "us": null,
+     "us": 590,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 13.5
+     "kd_us": 21,
+     "cpc_ca": 13.5,
+     "cpc_us": 19.17
     },
     {
      "keyword": "hubspot agency",
@@ -450,30 +466,33 @@
     {
      "keyword": "hubspot crm implementation",
      "ca": 20,
-     "us": null,
+     "us": 480,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 0.0
+     "kd_us": 16,
+     "cpc_ca": 0.0,
+     "cpc_us": 15.03
     },
     {
      "keyword": "hubspot crm setup",
      "ca": 20,
-     "us": null,
+     "us": 140,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 0.0
+     "kd_us": 54,
+     "cpc_ca": 0.0,
+     "cpc_us": 78.41
     },
     {
      "keyword": "hubspot setup",
      "ca": 20,
-     "us": null,
+     "us": 210,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 73.88
+     "kd_us": 43,
+     "cpc_ca": 73.88,
+     "cpc_us": 87.63
     }
    ],
    "ca_total": 760,
-   "us_total": 9590
+   "us_total": 11730
   },
   {
    "slug": "monday-crm-implementation",
@@ -520,10 +539,11 @@
     {
      "keyword": "monday.com expert",
      "ca": 20,
-     "us": null,
+     "us": 40,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 0.0
+     "kd_us": 32,
+     "cpc_ca": 0.0,
+     "cpc_us": 32.91
     },
     {
      "keyword": "monday crm",
@@ -552,30 +572,33 @@
     {
      "keyword": "monday sales crm",
      "ca": 20,
-     "us": null,
+     "us": 1600,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 10.99
+     "kd_us": 41,
+     "cpc_ca": 10.99,
+     "cpc_us": 19.87
     },
     {
      "keyword": "monday crm review",
      "ca": 20,
-     "us": null,
+     "us": 320,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 8.58
+     "kd_us": 28,
+     "cpc_ca": 8.58,
+     "cpc_us": 9.71
     },
     {
      "keyword": "hubspot vs monday",
      "ca": 20,
-     "us": null,
+     "us": 260,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 0.0
+     "kd_us": 17,
+     "cpc_ca": 0.0,
+     "cpc_us": 15.02
     }
    ],
    "ca_total": 1900,
-   "us_total": 15280
+   "us_total": 17500
   },
   {
    "slug": "business-phone-systems",
@@ -708,34 +731,38 @@
     {
      "keyword": "business voip",
      "ca": 260,
-     "us": null,
+     "us": 5400,
      "kd_ca": 48,
-     "kd_us": null,
-     "cpc_ca": 35.9
+     "kd_us": 61,
+     "cpc_ca": 35.9,
+     "cpc_us": 50.83
     },
     {
      "keyword": "hosted pbx",
      "ca": 260,
-     "us": null,
+     "us": 1600,
      "kd_ca": 49,
-     "kd_us": null,
-     "cpc_ca": 0.0
+     "kd_us": 62,
+     "cpc_ca": 0.0,
+     "cpc_us": 0.0
     },
     {
      "keyword": "cloud pbx",
      "ca": 210,
-     "us": null,
+     "us": 2400,
      "kd_ca": 34,
-     "kd_us": null,
-     "cpc_ca": 21.57
+     "kd_us": 42,
+     "cpc_ca": 21.57,
+     "cpc_us": 18.72
     },
     {
      "keyword": "business phone",
      "ca": 590,
-     "us": null,
+     "us": 12100,
      "kd_ca": 30,
-     "kd_us": null,
-     "cpc_ca": 20.96
+     "kd_us": 38,
+     "cpc_ca": 20.96,
+     "cpc_us": 36.27
     },
     {
      "keyword": "ringcentral pricing",
@@ -788,22 +815,24 @@
     {
      "keyword": "voip implementation",
      "ca": 20,
-     "us": null,
+     "us": 90,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 0.0
+     "kd_us": 19,
+     "cpc_ca": 0.0,
+     "cpc_us": 8.3
     },
     {
      "keyword": "power dialer",
      "ca": 110,
-     "us": null,
+     "us": 2400,
      "kd_ca": 42,
-     "kd_us": null,
-     "cpc_ca": 32.63
+     "kd_us": 45,
+     "cpc_ca": 32.63,
+     "cpc_us": 29.92
     }
    ],
    "ca_total": 5110,
-   "us_total": 34800
+   "us_total": 58790
   },
   {
    "slug": "ai-receptionist",
@@ -892,38 +921,42 @@
     {
      "keyword": "ai phone receptionist",
      "ca": 50,
-     "us": null,
+     "us": 720,
      "kd_ca": 41,
-     "kd_us": null,
-     "cpc_ca": 13.78
+     "kd_us": 57,
+     "cpc_ca": 13.78,
+     "cpc_us": 17.24
     },
     {
      "keyword": "ai appointment setter",
      "ca": 40,
-     "us": null,
+     "us": 480,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 8.1
+     "kd_us": 15,
+     "cpc_ca": 8.1,
+     "cpc_us": 20.98
     },
     {
      "keyword": "auto attendant",
      "ca": 90,
-     "us": null,
+     "us": 1000,
      "kd_ca": 35,
-     "kd_us": null,
-     "cpc_ca": 22.38
+     "kd_us": 46,
+     "cpc_ca": 22.38,
+     "cpc_us": 19.44
     },
     {
      "keyword": "ai virtual receptionist",
      "ca": 20,
-     "us": null,
+     "us": 590,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 0.0
+     "kd_us": 61,
+     "cpc_ca": 0.0,
+     "cpc_us": 21.47
     }
    ],
    "ca_total": 2280,
-   "us_total": 25560
+   "us_total": 28350
   },
   {
    "slug": "ai-agents",
@@ -1035,78 +1068,87 @@
     {
      "keyword": "ai agent implementation",
      "ca": 10,
-     "us": null,
+     "us": 30,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 0.0
+     "kd_us": 0,
+     "cpc_ca": 0.0,
+     "cpc_us": 10.02
     },
     {
      "keyword": "claude ai for business",
      "ca": 50,
-     "us": null,
+     "us": 320,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 6.99
+     "kd_us": 34,
+     "cpc_ca": 6.99,
+     "cpc_us": 8.81
     },
     {
      "keyword": "ai sales agent",
      "ca": 90,
-     "us": null,
+     "us": 2400,
      "kd_ca": 44,
-     "kd_us": null,
-     "cpc_ca": 19.61
+     "kd_us": 41,
+     "cpc_ca": 19.61,
+     "cpc_us": 23.66
     },
     {
      "keyword": "ai agents for sales",
      "ca": 20,
-     "us": null,
+     "us": 590,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 20.4
+     "kd_us": 49,
+     "cpc_ca": 20.4,
+     "cpc_us": 41.28
     },
     {
      "keyword": "ai sdr",
      "ca": 170,
-     "us": null,
+     "us": 2400,
      "kd_ca": 52,
-     "kd_us": null,
-     "cpc_ca": 23.12
+     "kd_us": 58,
+     "cpc_ca": 23.12,
+     "cpc_us": 40.97
     },
     {
      "keyword": "ai lead generation",
      "ca": 170,
-     "us": null,
+     "us": 2900,
      "kd_ca": 59,
-     "kd_us": null,
-     "cpc_ca": 9.27
+     "kd_us": 52,
+     "cpc_ca": 9.27,
+     "cpc_us": 15.86
     },
     {
      "keyword": "ai workflow automation",
      "ca": 260,
-     "us": null,
+     "us": 5400,
      "kd_ca": 69,
-     "kd_us": null,
-     "cpc_ca": 10.26
+     "kd_us": 73,
+     "cpc_ca": 10.26,
+     "cpc_us": 16.27
     },
     {
      "keyword": "ai for small business",
      "ca": 210,
-     "us": null,
+     "us": 5400,
      "kd_ca": 66,
-     "kd_us": null,
-     "cpc_ca": 5.89
+     "kd_us": 64,
+     "cpc_ca": 5.89,
+     "cpc_us": 10.28
     },
     {
      "keyword": "workflow automation consultant",
      "ca": 40,
-     "us": null,
+     "us": 110,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": 6.81
+     "kd_us": 6,
+     "cpc_ca": 6.81,
+     "cpc_us": 15.26
     }
    ],
    "ca_total": 9540,
-   "us_total": 72020
+   "us_total": 91570
   },
   {
    "slug": "close-crm-implementation",
@@ -1315,14 +1357,15 @@
     {
      "keyword": "hubspot migration",
      "ca": 20,
-     "us": null,
+     "us": 320,
      "kd_ca": null,
-     "kd_us": null,
-     "cpc_ca": null
+     "kd_us": 42,
+     "cpc_ca": null,
+     "cpc_us": 19.98
     }
    ],
    "ca_total": 180,
-   "us_total": 1530
+   "us_total": 1850
   },
   {
    "slug": "hubspot-audit",
@@ -1906,60 +1949,68 @@
  ],
  "next": [
   {
-   "name": "Contact centre software",
+   "name": "Contact center software",
    "primary": "contact center software",
    "ca_total": 980,
-   "us_total": 17200,
-   "keywords": []
+   "us_total": 3600,
+   "keywords": [],
+   "kd_us": 57
   },
   {
    "name": "What is RevOps (guide)",
    "primary": "what is revops",
    "ca_total": 870,
-   "us_total": 4600,
-   "keywords": []
+   "us_total": 1000,
+   "keywords": [],
+   "kd_us": 44
   },
   {
    "name": "Lead routing setup",
    "primary": "lead routing",
    "ca_total": 40,
-   "us_total": 1470,
-   "keywords": []
+   "us_total": 590,
+   "keywords": [],
+   "kd_us": 28
   },
   {
    "name": "Cold email setup and deliverability",
    "primary": "cold email setup",
    "ca_total": 80,
-   "us_total": 1220,
-   "keywords": []
+   "us_total": 30,
+   "keywords": [],
+   "kd_us": 33
   },
   {
    "name": "Zoom and HubSpot integration (own page)",
    "primary": "zoom hubspot integration",
    "ca_total": 40,
-   "us_total": 870,
-   "keywords": []
+   "us_total": 390,
+   "keywords": [],
+   "kd_us": 25
   },
   {
    "name": "monday.com and HubSpot integration (own page)",
    "primary": "monday hubspot integration",
    "ca_total": 50,
-   "us_total": 320,
-   "keywords": []
+   "us_total": 110,
+   "keywords": [],
+   "kd_us": 21
   },
   {
    "name": "Dialpad and HubSpot integration (own page)",
    "primary": "dialpad hubspot integration",
    "ca_total": 40,
-   "us_total": 210,
-   "keywords": []
+   "us_total": 170,
+   "keywords": [],
+   "kd_us": 27
   },
   {
    "name": "CloudTalk and HubSpot integration (own page)",
    "primary": "cloudtalk hubspot integration",
    "ca_total": 20,
    "us_total": 140,
-   "keywords": []
+   "keywords": [],
+   "kd_us": 28
   }
  ],
  "source": "Semrush keyword overview, Canada and US databases, pulled 2026-11-16"
