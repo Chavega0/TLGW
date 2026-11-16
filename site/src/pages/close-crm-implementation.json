@@ -1,0 +1,163 @@
+{
+  "slug": "close-crm-implementation",
+  "title": "Close CRM implementation and setup | Stacktik",
+  "metaDescription": "Close CRM implementation by Stacktik: pipeline, data migration, calling, sequences and reporting set up, and your sales team trained on it.",
+  "eyebrow": "Close CRM implementation",
+  "h1": "Close CRM implementation, set up around how your team sells.",
+  "lede": "Close CRM implementation is the work of putting Close, a sales CRM with calling and email built in, into daily use: the pipeline, your data, the sequences, the reporting and the people who use it.",
+  "summary": [
+    {
+      "label": "What it is",
+      "text": "Setting up Close for a sales team: pipeline and rules, data moved in, calling and email sequences working, reporting built, and the team trained."
+    },
+    {
+      "label": "Who it is for",
+      "text": "Sales teams that work mostly by phone and email and have chosen Close, are weighing it, or have it but never set it up properly."
+    },
+    {
+      "label": "What you get",
+      "text": "Close configured in your own account, your data moved in with duplicates merged, sequences and routing working, recorded training and written handover notes."
+    },
+    {
+      "label": "How it is priced",
+      "text": "A fixed fee for the implementation, quoted in writing before work starts. Close stays on its own plan and pricing."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "rows",
+      "id": "included",
+      "eyebrow": "What is included",
+      "h2": "What a Close CRM implementation covers.",
+      "intro": "Every project is scoped on the proposal, so this is the list we draw from, not a fixed package.",
+      "items": [
+        {
+          "title": "Pipeline and stage rules",
+          "body": "Pipeline stages that match how a deal really moves, with written rules for when it moves forward."
+        },
+        {
+          "title": "Your data moved in",
+          "body": "Leads, contacts, opportunities and history moved from your current system or spreadsheets, with duplicates merged."
+        },
+        {
+          "title": "Calling set up",
+          "body": "Numbers, users and call settings arranged so calls are placed from the record and logged to it with the recording."
+        },
+        {
+          "title": "Email sequences and their rules",
+          "body": "Sequences sent from your reps' own inboxes, stopped when a reply comes in. We build the sequence. Your team writes and sends the copy."
+        },
+        {
+          "title": "Lead routing",
+          "body": "New leads assigned in turn, by territory, or to whoever is on duty, so a form submission becomes a record with an owner."
+        },
+        {
+          "title": "Reporting and the scoreboard",
+          "body": "The reports the owner actually reads, and a revenue scoreboard with targets and a leaderboard, pulled from the CRM without anyone typing."
+        }
+      ]
+    },
+    {
+      "type": "rows",
+      "id": "fit",
+      "eyebrow": "Is Close the right CRM",
+      "h2": "When Close CRM fits, and when it does not.",
+      "intro": "Close suits some sales teams well and others poorly. We say which on the first call.",
+      "items": [
+        {
+          "title": "A team that sells by phone and email",
+          "body": "Close is built around calling and emailing from inside the CRM. A team that spends its day in conversations gets the most from it."
+        },
+        {
+          "title": "A team without a full-time admin",
+          "body": "If nobody on your team will own the CRM day to day, a simpler system with fewer moving parts is the safer choice."
+        },
+        {
+          "title": "When a broader platform fits better",
+          "body": "If marketing, service and sales all need to work in one system, a broader CRM such as HubSpot may be the better shortlist."
+        },
+        {
+          "title": "Close CRM pricing, in structure",
+          "body": "Close is priced per user on its own plans and billed by Close, with separate charges for phone numbers, calls and texts."
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "id": "process",
+      "eyebrow": "How it works",
+      "h2": "How Stacktik runs a Close CRM implementation.",
+      "intro": "One technical RevOps consultant is assigned to your project and stays with it.",
+      "items": [
+        {
+          "title": "A free call",
+          "body": "We go through how leads, calls and follow-ups move through your team today, what you use, and what isn't working."
+        },
+        {
+          "title": "A written proposal",
+          "body": "What to keep, connect or replace, the monthly cost of each tool, and our fee for the work, fixed before it starts."
+        },
+        {
+          "title": "Setup in your account",
+          "body": "We work inside your own Close account through an admin seat you create for us and revoke at handover."
+        },
+        {
+          "title": "Data moved and tools connected",
+          "body": "Your records are moved in and checked against the source. Calling, outreach and reporting are connected and tested with real examples from your team."
+        },
+        {
+          "title": "Training and handover",
+          "body": "Training sessions on your own data, recorded for the team. Handover notes say how each piece runs and who to call."
+        }
+      ]
+    }
+  ],
+  "platforms": {
+    "h2": "Close and the tools we connect to it.",
+    "intro": "Close is one of the CRMs Stacktik sets up.",
+    "names": [
+      "Close",
+      "CloudTalk",
+      "Dialpad",
+      "Kixie",
+      "lemlist",
+      "Instantly",
+      "Fireflies.ai",
+      "Zapier",
+      "Claude",
+      "OpenAI",
+      "Databox"
+    ]
+  },
+  "faq": [
+    {
+      "q": "What is Close CRM?",
+      "a": "Close is a sales CRM made for teams that sell by phone and email. Calling and email work from inside the CRM, so conversations are logged on the record as they happen. Stacktik lists Close among the CRMs it sets up, alongside HubSpot, monday.com CRM, Nutshell, Capsule and HighLevel."
+    },
+    {
+      "q": "How much does a Close CRM implementation cost?",
+      "a": "It is a fixed fee, quoted in writing before work starts, and it depends on scope: how much data moves, how many tools connect, and whether automation or AI agents are part of it. Close itself is billed by Close on its own plans. The proposal shows both numbers separately."
+    },
+    {
+      "q": "Can you set up a Close account we already have?",
+      "a": "Yes. The proposal says what to keep, what to connect and what, if anything, to rebuild. Smaller improvements to an existing setup draw from the same list as a full implementation, and they are quoted the same way, as a fixed fee in writing."
+    },
+    {
+      "q": "Do we have to buy Close through Stacktik?",
+      "a": "No. You can buy Close direct and hire us only for the implementation, or buy through us and run the setup yourself. Where a vendor program helps, the proposal says so and states our relationship with the vendor next to the price."
+    },
+    {
+      "q": "Which tools integrate with Close CRM?",
+      "a": "Close has its own integrations, and many other tools can be connected through Zapier or a custom connector. Stacktik connects calling, email outreach, conversation notes, reporting and AI agents to the CRM, and documents each connection so your team knows how it runs."
+    },
+    {
+      "q": "How do you move our data into Close?",
+      "a": "We map your fields to Close, clean the data, merge duplicates, run a test import and check it against the source before the final move. The old system stays read-only during the switch. Salesforce and ERP migrations are not usually in scope, so ask on the call."
+    }
+  ],
+  "closeH2": "Start with how your team sells today.",
+  "closeLede": "A free call about what you use and what isn't working.",
+  "keywordsUsed": [],
+  "keywordsSkipped": [],
+  "sources": []
+}

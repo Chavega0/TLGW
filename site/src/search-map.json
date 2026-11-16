@@ -1,0 +1,2017 @@
+{
+ "pages": [
+  {
+   "slug": "",
+   "path": "/",
+   "name": "Homepage",
+   "role": "RevOps consultancy: the brand and the specialty",
+   "primary": "revops agency",
+   "secondary": [
+    "revops consulting",
+    "revops consultant",
+    "revenue operations consulting",
+    "revenue operations consultant",
+    "fractional revops",
+    "revops as a service",
+    "revops services",
+    "revops",
+    "what is revops",
+    "revenue operations",
+    "sales operations",
+    "sales consulting",
+    "sales automation",
+    "sales tech stack",
+    "sales dashboard",
+    "sales leaderboard"
+   ],
+   "keywords": [
+    {
+     "keyword": "revops agency",
+     "ca": 90,
+     "us": 480,
+     "kd_ca": 10,
+     "kd_us": 19,
+     "cpc_ca": 5.88
+    },
+    {
+     "keyword": "revops consulting",
+     "ca": 50,
+     "us": 320,
+     "kd_ca": null,
+     "kd_us": 25,
+     "cpc_ca": 6.04
+    },
+    {
+     "keyword": "revops consultant",
+     "ca": 0,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 16,
+     "cpc_ca": 6.04
+    },
+    {
+     "keyword": "revenue operations consulting",
+     "ca": 20,
+     "us": 480,
+     "kd_ca": null,
+     "kd_us": 16,
+     "cpc_ca": 5.8
+    },
+    {
+     "keyword": "revenue operations consultant",
+     "ca": 10,
+     "us": 390,
+     "kd_ca": null,
+     "kd_us": 17,
+     "cpc_ca": 5.8,
+     "cpc_us": 9.56
+    },
+    {
+     "keyword": "fractional revops",
+     "ca": 20,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 2,
+     "cpc_ca": 8.84
+    },
+    {
+     "keyword": "revops as a service",
+     "ca": 20,
+     "us": 210,
+     "kd_ca": null,
+     "kd_us": 17,
+     "cpc_ca": 14.87,
+     "cpc_us": 14.38
+    },
+    {
+     "keyword": "revops services",
+     "ca": 20,
+     "us": 50,
+     "kd_ca": null,
+     "kd_us": 22,
+     "cpc_ca": 0.0,
+     "cpc_us": 13.21
+    },
+    {
+     "keyword": "revops",
+     "ca": 480,
+     "us": 3600,
+     "kd_ca": 39,
+     "kd_us": 51,
+     "cpc_ca": 8.16
+    },
+    {
+     "keyword": "what is revops",
+     "ca": 110,
+     "us": 1000,
+     "kd_ca": 32,
+     "kd_us": 44,
+     "cpc_ca": 3.41
+    },
+    {
+     "keyword": "revenue operations",
+     "ca": 140,
+     "us": 2400,
+     "kd_ca": 45,
+     "kd_us": 44,
+     "cpc_ca": 7.36,
+     "cpc_us": 9.71
+    },
+    {
+     "keyword": "sales operations",
+     "ca": 140,
+     "us": 1600,
+     "kd_ca": 23,
+     "kd_us": 42,
+     "cpc_ca": 4.47,
+     "cpc_us": 7.95
+    },
+    {
+     "keyword": "sales consulting",
+     "ca": 140,
+     "us": 1600,
+     "kd_ca": 13,
+     "kd_us": 17,
+     "cpc_ca": 5.48,
+     "cpc_us": 6.41
+    },
+    {
+     "keyword": "sales automation",
+     "ca": 170,
+     "us": 2900,
+     "kd_ca": 39,
+     "kd_us": 49,
+     "cpc_ca": 12.48
+    },
+    {
+     "keyword": "sales tech stack",
+     "ca": 20,
+     "us": 390,
+     "kd_ca": null,
+     "kd_us": 22,
+     "cpc_ca": 0.0,
+     "cpc_us": 14.64
+    },
+    {
+     "keyword": "sales dashboard",
+     "ca": 140,
+     "us": 3600,
+     "kd_ca": 38,
+     "kd_us": 32,
+     "cpc_ca": 8.59,
+     "cpc_us": 12.64
+    },
+    {
+     "keyword": "sales leaderboard",
+     "ca": 20,
+     "us": 390,
+     "kd_ca": null,
+     "kd_us": 19,
+     "cpc_ca": 9.79,
+     "cpc_us": 14.62
+    }
+   ],
+   "ca_total": 1590,
+   "us_total": 19690
+  },
+  {
+   "slug": "crm-implementation",
+   "path": "/crm-implementation/",
+   "name": "CRM implementation",
+   "role": "Implementation landing page",
+   "primary": "crm implementation",
+   "secondary": [
+    "crm implementation services",
+    "crm consultant",
+    "crm consulting",
+    "crm consulting services",
+    "crm implementation consultant",
+    "crm implementation partner",
+    "crm implementation plan",
+    "crm implementation process",
+    "crm implementation steps",
+    "crm implementation cost",
+    "crm data migration",
+    "crm migration",
+    "crm integration",
+    "crm setup",
+    "crm canada",
+    "crm software canada",
+    "best crm for small business canada",
+    "crm consultant toronto",
+    "sales crm"
+   ],
+   "keywords": [
+    {
+     "keyword": "crm implementation",
+     "ca": 260,
+     "us": 1900,
+     "kd_ca": 28,
+     "kd_us": 35,
+     "cpc_ca": 13.44
+    },
+    {
+     "keyword": "crm implementation services",
+     "ca": 110,
+     "us": 720,
+     "kd_ca": 23,
+     "kd_us": 20,
+     "cpc_ca": 0.0
+    },
+    {
+     "keyword": "crm consultant",
+     "ca": 170,
+     "us": 480,
+     "kd_ca": 15,
+     "kd_us": 21,
+     "cpc_ca": 0.0
+    },
+    {
+     "keyword": "crm consulting",
+     "ca": 110,
+     "us": 880,
+     "kd_ca": 9,
+     "kd_us": 21,
+     "cpc_ca": 0.0
+    },
+    {
+     "keyword": "crm consulting services",
+     "ca": 50,
+     "us": 1000,
+     "kd_ca": null,
+     "kd_us": 29,
+     "cpc_ca": 0.0,
+     "cpc_us": 10.38
+    },
+    {
+     "keyword": "crm implementation consultant",
+     "ca": 50,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 10,
+     "cpc_ca": 0.0
+    },
+    {
+     "keyword": "crm implementation partner",
+     "ca": 40,
+     "us": 70,
+     "kd_ca": null,
+     "kd_us": 2,
+     "cpc_ca": 0.0
+    },
+    {
+     "keyword": "crm implementation plan",
+     "ca": 70,
+     "us": 260,
+     "kd_ca": 14,
+     "kd_us": 34,
+     "cpc_ca": 0.0
+    },
+    {
+     "keyword": "crm implementation process",
+     "ca": 70,
+     "us": 170,
+     "kd_ca": 6,
+     "kd_us": 29,
+     "cpc_ca": 0.0
+    },
+    {
+     "keyword": "crm implementation steps",
+     "ca": 20,
+     "us": 170,
+     "kd_ca": null,
+     "kd_us": 30,
+     "cpc_ca": 0.0,
+     "cpc_us": 6.46
+    },
+    {
+     "keyword": "crm implementation cost",
+     "ca": 30,
+     "us": 90,
+     "kd_ca": null,
+     "kd_us": 31,
+     "cpc_ca": 0.0,
+     "cpc_us": 0.0
+    },
+    {
+     "keyword": "crm setup",
+     "ca": 20,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 14,
+     "cpc_ca": 7.7,
+     "cpc_us": 18.38
+    },
+    {
+     "keyword": "crm canada",
+     "ca": 170,
+     "us": null,
+     "kd_ca": 24,
+     "kd_us": null,
+     "cpc_ca": 11.23
+    },
+    {
+     "keyword": "crm software canada",
+     "ca": 110,
+     "us": null,
+     "kd_ca": 18,
+     "kd_us": null,
+     "cpc_ca": 16.02
+    },
+    {
+     "keyword": "best crm for small business canada",
+     "ca": 50,
+     "us": null,
+     "kd_ca": 18,
+     "kd_us": null,
+     "cpc_ca": 17.27
+    },
+    {
+     "keyword": "crm consultant toronto",
+     "ca": 30,
+     "us": null,
+     "kd_ca": null,
+     "kd_us": null,
+     "cpc_ca": 0.0
+    },
+    {
+     "keyword": "sales crm",
+     "ca": 260,
+     "us": 4400,
+     "kd_ca": 49,
+     "kd_us": 45,
+     "cpc_ca": 23.34,
+     "cpc_us": 29.64
+    }
+   ],
+   "ca_total": 1620,
+   "us_total": 10420
+  },
+  {
+   "slug": "hubspot-implementation",
+   "path": "/hubspot-implementation/",
+   "name": "HubSpot implementation",
+   "role": "Implementation landing page",
+   "primary": "hubspot implementation",
+   "secondary": [
+    "hubspot consultant",
+    "hubspot onboarding",
+    "hubspot implementation partner",
+    "hubspot implementation services",
+    "hubspot onboarding services",
+    "hubspot agency",
+    "hubspot partner",
+    "hubspot solutions partner",
+    "hubspot partner canada",
+    "hubspot partner toronto",
+    "hubspot crm implementation",
+    "hubspot crm setup",
+    "hubspot setup",
+    "hubspot migration",
+    "hubspot expert",
+    "hubspot audit",
+    "hubspot integrations"
+   ],
+   "keywords": [
+    {
+     "keyword": "hubspot implementation",
+     "ca": 50,
+     "us": 1300,
+     "kd_ca": 24,
+     "kd_us": 25,
+     "cpc_ca": 21.33
+    },
+    {
+     "keyword": "hubspot consultant",
+     "ca": 90,
+     "us": 1600,
+     "kd_ca": 15,
+     "kd_us": 24,
+     "cpc_ca": 21.39
+    },
+    {
+     "keyword": "hubspot onboarding",
+     "ca": 30,
+     "us": 1600,
+     "kd_ca": null,
+     "kd_us": 30,
+     "cpc_ca": 20.68
+    },
+    {
+     "keyword": "hubspot implementation partner",
+     "ca": 30,
+     "us": 210,
+     "kd_ca": null,
+     "kd_us": 25,
+     "cpc_ca": 15.32
+    },
+    {
+     "keyword": "hubspot implementation services",
+     "ca": 40,
+     "us": 720,
+     "kd_ca": null,
+     "kd_us": 16,
+     "cpc_ca": 0.0,
+     "cpc_us": 36.49
+    },
+    {
+     "keyword": "hubspot onboarding services",
+     "ca": 20,
+     "us": 590,
+     "kd_ca": null,
+     "kd_us": 21,
+     "cpc_ca": 13.5,
+     "cpc_us": 19.17
+    },
+    {
+     "keyword": "hubspot agency",
+     "ca": 170,
+     "us": 2400,
+     "kd_ca": 35,
+     "kd_us": 55,
+     "cpc_ca": 7.69
+    },
+    {
+     "keyword": "hubspot partner",
+     "ca": 140,
+     "us": 1600,
+     "kd_ca": 42,
+     "kd_us": 49,
+     "cpc_ca": 18.92
+    },
+    {
+     "keyword": "hubspot solutions partner",
+     "ca": 50,
+     "us": 880,
+     "kd_ca": null,
+     "kd_us": 21,
+     "cpc_ca": 15.43
+    },
+    {
+     "keyword": "hubspot partner canada",
+     "ca": 50,
+     "us": null,
+     "kd_ca": null,
+     "kd_us": null,
+     "cpc_ca": 12.34
+    },
+    {
+     "keyword": "hubspot partner toronto",
+     "ca": 30,
+     "us": null,
+     "kd_ca": null,
+     "kd_us": null,
+     "cpc_ca": 0.0
+    },
+    {
+     "keyword": "hubspot crm implementation",
+     "ca": 20,
+     "us": 480,
+     "kd_ca": null,
+     "kd_us": 16,
+     "cpc_ca": 0.0,
+     "cpc_us": 15.03
+    },
+    {
+     "keyword": "hubspot crm setup",
+     "ca": 20,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 54,
+     "cpc_ca": 0.0,
+     "cpc_us": 78.41
+    },
+    {
+     "keyword": "hubspot setup",
+     "ca": 20,
+     "us": 210,
+     "kd_ca": null,
+     "kd_us": 43,
+     "cpc_ca": 73.88,
+     "cpc_us": 87.63
+    }
+   ],
+   "ca_total": 760,
+   "us_total": 11730
+  },
+  {
+   "slug": "monday-crm-implementation",
+   "path": "/monday-crm-implementation/",
+   "name": "monday CRM implementation",
+   "role": "Implementation landing page",
+   "primary": "monday.com implementation",
+   "secondary": [
+    "monday.com consultant",
+    "monday.com partner",
+    "monday.com expert",
+    "monday crm",
+    "monday.com crm",
+    "monday crm pricing",
+    "monday sales crm",
+    "monday crm review",
+    "hubspot vs monday"
+   ],
+   "keywords": [
+    {
+     "keyword": "monday.com implementation",
+     "ca": 10,
+     "us": 170,
+     "kd_ca": null,
+     "kd_us": 4,
+     "cpc_ca": 0.0
+    },
+    {
+     "keyword": "monday.com consultant",
+     "ca": 10,
+     "us": 320,
+     "kd_ca": null,
+     "kd_us": 14,
+     "cpc_ca": 17.15
+    },
+    {
+     "keyword": "monday.com partner",
+     "ca": 20,
+     "us": 90,
+     "kd_ca": null,
+     "kd_us": 33,
+     "cpc_ca": 6.24
+    },
+    {
+     "keyword": "monday.com expert",
+     "ca": 20,
+     "us": 40,
+     "kd_ca": null,
+     "kd_us": 32,
+     "cpc_ca": 0.0,
+     "cpc_us": 32.91
+    },
+    {
+     "keyword": "monday crm",
+     "ca": 1600,
+     "us": 9900,
+     "kd_ca": 31,
+     "kd_us": 28,
+     "cpc_ca": 9.14
+    },
+    {
+     "keyword": "monday.com crm",
+     "ca": 70,
+     "us": 2900,
+     "kd_ca": 35,
+     "kd_us": 45,
+     "cpc_ca": 4.76
+    },
+    {
+     "keyword": "monday crm pricing",
+     "ca": 110,
+     "us": 1900,
+     "kd_ca": 32,
+     "kd_us": 50,
+     "cpc_ca": 6.41
+    },
+    {
+     "keyword": "monday sales crm",
+     "ca": 20,
+     "us": 1600,
+     "kd_ca": null,
+     "kd_us": 41,
+     "cpc_ca": 10.99,
+     "cpc_us": 19.87
+    },
+    {
+     "keyword": "monday crm review",
+     "ca": 20,
+     "us": 320,
+     "kd_ca": null,
+     "kd_us": 28,
+     "cpc_ca": 8.58,
+     "cpc_us": 9.71
+    },
+    {
+     "keyword": "hubspot vs monday",
+     "ca": 20,
+     "us": 260,
+     "kd_ca": null,
+     "kd_us": 17,
+     "cpc_ca": 0.0,
+     "cpc_us": 15.02
+    }
+   ],
+   "ca_total": 1900,
+   "us_total": 17500
+  },
+  {
+   "slug": "business-phone-systems",
+   "path": "/business-phone-systems/",
+   "name": "Business phone systems",
+   "role": "Implementation landing page",
+   "primary": "business phone system",
+   "secondary": [
+    "small business phone system",
+    "business phone service",
+    "cloud phone system",
+    "voip phone system for small business",
+    "business phone system canada",
+    "phone system for small business canada",
+    "business phone plans canada",
+    "voip canada",
+    "voip providers canada",
+    "voip toronto",
+    "office phone system",
+    "business voip",
+    "hosted pbx",
+    "cloud pbx",
+    "business phone",
+    "ringcentral pricing",
+    "zoom phone pricing",
+    "dialpad pricing",
+    "ringcentral canada",
+    "dialpad canada",
+    "zoom phone canada",
+    "voip implementation",
+    "power dialer"
+   ],
+   "keywords": [
+    {
+     "keyword": "business phone system",
+     "ca": 320,
+     "us": 5400,
+     "kd_ca": 31,
+     "kd_us": 38,
+     "cpc_ca": 38.83
+    },
+    {
+     "keyword": "small business phone system",
+     "ca": 210,
+     "us": 5400,
+     "kd_ca": 24,
+     "kd_us": 31,
+     "cpc_ca": 32.98
+    },
+    {
+     "keyword": "business phone service",
+     "ca": 260,
+     "us": 9900,
+     "kd_ca": 25,
+     "kd_us": 52,
+     "cpc_ca": 25.0
+    },
+    {
+     "keyword": "cloud phone system",
+     "ca": 210,
+     "us": 4400,
+     "kd_ca": 30,
+     "kd_us": 51,
+     "cpc_ca": 22.34
+    },
+    {
+     "keyword": "voip phone system for small business",
+     "ca": 140,
+     "us": 1900,
+     "kd_ca": 30,
+     "kd_us": 56,
+     "cpc_ca": 37.32
+    },
+    {
+     "keyword": "business phone system canada",
+     "ca": 110,
+     "us": null,
+     "kd_ca": 24,
+     "kd_us": null,
+     "cpc_ca": 34.63
+    },
+    {
+     "keyword": "phone system for small business canada",
+     "ca": 90,
+     "us": null,
+     "kd_ca": 23,
+     "kd_us": null,
+     "cpc_ca": 19.15
+    },
+    {
+     "keyword": "business phone plans canada",
+     "ca": 110,
+     "us": null,
+     "kd_ca": 24,
+     "kd_us": null,
+     "cpc_ca": 18.25
+    },
+    {
+     "keyword": "voip canada",
+     "ca": 880,
+     "us": null,
+     "kd_ca": 25,
+     "kd_us": null,
+     "cpc_ca": 10.8
+    },
+    {
+     "keyword": "voip providers canada",
+     "ca": 320,
+     "us": null,
+     "kd_ca": 24,
+     "kd_us": null,
+     "cpc_ca": 12.42
+    },
+    {
+     "keyword": "voip toronto",
+     "ca": 140,
+     "us": null,
+     "kd_ca": 15,
+     "kd_us": null,
+     "cpc_ca": 9.42
+    },
+    {
+     "keyword": "office phone system",
+     "ca": 90,
+     "us": 1300,
+     "kd_ca": 19,
+     "kd_us": 38,
+     "cpc_ca": 26.44
+    },
+    {
+     "keyword": "business voip",
+     "ca": 260,
+     "us": 5400,
+     "kd_ca": 48,
+     "kd_us": 61,
+     "cpc_ca": 35.9,
+     "cpc_us": 50.83
+    },
+    {
+     "keyword": "hosted pbx",
+     "ca": 260,
+     "us": 1600,
+     "kd_ca": 49,
+     "kd_us": 62,
+     "cpc_ca": 0.0,
+     "cpc_us": 0.0
+    },
+    {
+     "keyword": "cloud pbx",
+     "ca": 210,
+     "us": 2400,
+     "kd_ca": 34,
+     "kd_us": 42,
+     "cpc_ca": 21.57,
+     "cpc_us": 18.72
+    },
+    {
+     "keyword": "business phone",
+     "ca": 590,
+     "us": 12100,
+     "kd_ca": 30,
+     "kd_us": 38,
+     "cpc_ca": 20.96,
+     "cpc_us": 36.27
+    },
+    {
+     "keyword": "ringcentral pricing",
+     "ca": 140,
+     "us": 3600,
+     "kd_ca": 35,
+     "kd_us": 46,
+     "cpc_ca": 14.27
+    },
+    {
+     "keyword": "zoom phone pricing",
+     "ca": 90,
+     "us": 1300,
+     "kd_ca": 37,
+     "kd_us": 50,
+     "cpc_ca": 34.77
+    },
+    {
+     "keyword": "dialpad pricing",
+     "ca": 70,
+     "us": 1600,
+     "kd_ca": 41,
+     "kd_us": 39,
+     "cpc_ca": 23.49
+    },
+    {
+     "keyword": "ringcentral canada",
+     "ca": 390,
+     "us": null,
+     "kd_ca": 41,
+     "kd_us": null,
+     "cpc_ca": 11.43
+    },
+    {
+     "keyword": "dialpad canada",
+     "ca": 50,
+     "us": null,
+     "kd_ca": 19,
+     "kd_us": null,
+     "cpc_ca": 15.96
+    },
+    {
+     "keyword": "zoom phone canada",
+     "ca": 40,
+     "us": null,
+     "kd_ca": null,
+     "kd_us": null,
+     "cpc_ca": 31.9
+    },
+    {
+     "keyword": "voip implementation",
+     "ca": 20,
+     "us": 90,
+     "kd_ca": null,
+     "kd_us": 19,
+     "cpc_ca": 0.0,
+     "cpc_us": 8.3
+    },
+    {
+     "keyword": "power dialer",
+     "ca": 110,
+     "us": 2400,
+     "kd_ca": 42,
+     "kd_us": 45,
+     "cpc_ca": 32.63,
+     "cpc_us": 29.92
+    }
+   ],
+   "ca_total": 5110,
+   "us_total": 58790
+  },
+  {
+   "slug": "ai-receptionist",
+   "path": "/ai-receptionist/",
+   "name": "AI receptionist",
+   "role": "Implementation landing page",
+   "primary": "ai receptionist",
+   "secondary": [
+    "virtual receptionist",
+    "ai receptionist for small business",
+    "ai answering service",
+    "ai phone answering service",
+    "ai voice agent",
+    "ai phone agent",
+    "ai receptionist canada",
+    "ai phone receptionist",
+    "ai appointment setter",
+    "auto attendant",
+    "ai virtual receptionist"
+   ],
+   "keywords": [
+    {
+     "keyword": "ai receptionist",
+     "ca": 1000,
+     "us": 9900,
+     "kd_ca": 33,
+     "kd_us": 42,
+     "cpc_ca": 11.02
+    },
+    {
+     "keyword": "virtual receptionist",
+     "ca": 480,
+     "us": 5400,
+     "kd_ca": 26,
+     "kd_us": 50,
+     "cpc_ca": 20.15
+    },
+    {
+     "keyword": "ai receptionist for small business",
+     "ca": 110,
+     "us": 1600,
+     "kd_ca": 40,
+     "kd_us": 60,
+     "cpc_ca": 16.0
+    },
+    {
+     "keyword": "ai answering service",
+     "ca": 110,
+     "us": 2900,
+     "kd_ca": 49,
+     "kd_us": 62,
+     "cpc_ca": 14.74
+    },
+    {
+     "keyword": "ai phone answering service",
+     "ca": 70,
+     "us": 880,
+     "kd_ca": 9,
+     "kd_us": 47,
+     "cpc_ca": 15.94
+    },
+    {
+     "keyword": "ai voice agent",
+     "ca": 170,
+     "us": 4400,
+     "kd_ca": 55,
+     "kd_us": 68,
+     "cpc_ca": 13.87
+    },
+    {
+     "keyword": "ai phone agent",
+     "ca": 70,
+     "us": 480,
+     "kd_ca": 68,
+     "kd_us": 47,
+     "cpc_ca": 17.07
+    },
+    {
+     "keyword": "ai receptionist canada",
+     "ca": 70,
+     "us": null,
+     "kd_ca": 12,
+     "kd_us": null,
+     "cpc_ca": 16.88
+    },
+    {
+     "keyword": "ai phone receptionist",
+     "ca": 50,
+     "us": 720,
+     "kd_ca": 41,
+     "kd_us": 57,
+     "cpc_ca": 13.78,
+     "cpc_us": 17.24
+    },
+    {
+     "keyword": "ai appointment setter",
+     "ca": 40,
+     "us": 480,
+     "kd_ca": null,
+     "kd_us": 15,
+     "cpc_ca": 8.1,
+     "cpc_us": 20.98
+    },
+    {
+     "keyword": "auto attendant",
+     "ca": 90,
+     "us": 1000,
+     "kd_ca": 35,
+     "kd_us": 46,
+     "cpc_ca": 22.38,
+     "cpc_us": 19.44
+    },
+    {
+     "keyword": "ai virtual receptionist",
+     "ca": 20,
+     "us": 590,
+     "kd_ca": null,
+     "kd_us": 61,
+     "cpc_ca": 0.0,
+     "cpc_us": 21.47
+    }
+   ],
+   "ca_total": 2280,
+   "us_total": 28350
+  },
+  {
+   "slug": "ai-agents",
+   "path": "/ai-agents/",
+   "name": "AI agents for business",
+   "role": "Implementation landing page",
+   "primary": "ai agents for business",
+   "secondary": [
+    "ai agents",
+    "ai automation agency",
+    "ai agency",
+    "ai automation",
+    "ai automation services",
+    "ai consulting",
+    "ai consultant",
+    "ai integration services",
+    "ai implementation consultant",
+    "ai agent implementation",
+    "claude ai for business",
+    "ai sales agent",
+    "ai agents for sales",
+    "ai sdr",
+    "ai lead generation",
+    "ai workflow automation",
+    "ai for small business",
+    "workflow automation consultant"
+   ],
+   "keywords": [
+    {
+     "keyword": "ai agents for business",
+     "ca": 50,
+     "us": 2400,
+     "kd_ca": null,
+     "kd_us": 31,
+     "cpc_ca": 31.39
+    },
+    {
+     "keyword": "ai agents",
+     "ca": 3600,
+     "us": 27100,
+     "kd_ca": 25,
+     "kd_us": 71,
+     "cpc_ca": 6.87
+    },
+    {
+     "keyword": "ai automation agency",
+     "ca": 480,
+     "us": 3600,
+     "kd_ca": 34,
+     "kd_us": 47,
+     "cpc_ca": 5.08
+    },
+    {
+     "keyword": "ai agency",
+     "ca": 1600,
+     "us": 12100,
+     "kd_ca": 44,
+     "kd_us": 57,
+     "cpc_ca": 0.0
+    },
+    {
+     "keyword": "ai automation",
+     "ca": 1300,
+     "us": 12100,
+     "kd_ca": 55,
+     "kd_us": 72,
+     "cpc_ca": 5.37
+    },
+    {
+     "keyword": "ai automation services",
+     "ca": 170,
+     "us": 1900,
+     "kd_ca": 17,
+     "kd_us": 29,
+     "cpc_ca": 9.76
+    },
+    {
+     "keyword": "ai consulting",
+     "ca": 720,
+     "us": 6600,
+     "kd_ca": 55,
+     "kd_us": 71,
+     "cpc_ca": 5.48
+    },
+    {
+     "keyword": "ai consultant",
+     "ca": 390,
+     "us": 3600,
+     "kd_ca": 46,
+     "kd_us": 39,
+     "cpc_ca": 5.48
+    },
+    {
+     "keyword": "ai integration services",
+     "ca": 140,
+     "us": 1900,
+     "kd_ca": 41,
+     "kd_us": 38,
+     "cpc_ca": 8.87
+    },
+    {
+     "keyword": "ai implementation consultant",
+     "ca": 70,
+     "us": 720,
+     "kd_ca": 48,
+     "kd_us": 32,
+     "cpc_ca": 7.89
+    },
+    {
+     "keyword": "ai agent implementation",
+     "ca": 10,
+     "us": 30,
+     "kd_ca": null,
+     "kd_us": 0,
+     "cpc_ca": 0.0,
+     "cpc_us": 10.02
+    },
+    {
+     "keyword": "claude ai for business",
+     "ca": 50,
+     "us": 320,
+     "kd_ca": null,
+     "kd_us": 34,
+     "cpc_ca": 6.99,
+     "cpc_us": 8.81
+    },
+    {
+     "keyword": "ai sales agent",
+     "ca": 90,
+     "us": 2400,
+     "kd_ca": 44,
+     "kd_us": 41,
+     "cpc_ca": 19.61,
+     "cpc_us": 23.66
+    },
+    {
+     "keyword": "ai agents for sales",
+     "ca": 20,
+     "us": 590,
+     "kd_ca": null,
+     "kd_us": 49,
+     "cpc_ca": 20.4,
+     "cpc_us": 41.28
+    },
+    {
+     "keyword": "ai sdr",
+     "ca": 170,
+     "us": 2400,
+     "kd_ca": 52,
+     "kd_us": 58,
+     "cpc_ca": 23.12,
+     "cpc_us": 40.97
+    },
+    {
+     "keyword": "ai lead generation",
+     "ca": 170,
+     "us": 2900,
+     "kd_ca": 59,
+     "kd_us": 52,
+     "cpc_ca": 9.27,
+     "cpc_us": 15.86
+    },
+    {
+     "keyword": "ai workflow automation",
+     "ca": 260,
+     "us": 5400,
+     "kd_ca": 69,
+     "kd_us": 73,
+     "cpc_ca": 10.26,
+     "cpc_us": 16.27
+    },
+    {
+     "keyword": "ai for small business",
+     "ca": 210,
+     "us": 5400,
+     "kd_ca": 66,
+     "kd_us": 64,
+     "cpc_ca": 5.89,
+     "cpc_us": 10.28
+    },
+    {
+     "keyword": "workflow automation consultant",
+     "ca": 40,
+     "us": 110,
+     "kd_ca": null,
+     "kd_us": 6,
+     "cpc_ca": 6.81,
+     "cpc_us": 15.26
+    }
+   ],
+   "ca_total": 9540,
+   "us_total": 91570
+  },
+  {
+   "slug": "close-crm-implementation",
+   "path": "/close-crm-implementation/",
+   "name": "Close CRM implementation",
+   "role": "Implementation landing page",
+   "primary": "close crm implementation",
+   "secondary": [
+    "close crm",
+    "close crm pricing",
+    "close crm integrations",
+    "close crm review"
+   ],
+   "keywords": [
+    {
+     "keyword": "close crm",
+     "ca": 720,
+     "us": 5400,
+     "kd_ca": null,
+     "kd_us": 12,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "close crm pricing",
+     "ca": 40,
+     "us": 480,
+     "kd_ca": null,
+     "kd_us": 21,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "close crm integrations",
+     "ca": 20,
+     "us": 70,
+     "kd_ca": null,
+     "kd_us": 18,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "close crm review",
+     "ca": 20,
+     "us": 70,
+     "kd_ca": null,
+     "kd_us": 28,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "close crm implementation",
+     "ca": null,
+     "us": 10,
+     "kd_ca": null,
+     "kd_us": null,
+     "cpc_ca": null
+    }
+   ],
+   "ca_total": 800,
+   "us_total": 6030
+  },
+  {
+   "slug": "gohighlevel-setup",
+   "path": "/gohighlevel-setup/",
+   "name": "GoHighLevel setup",
+   "role": "Implementation landing page",
+   "primary": "gohighlevel setup",
+   "secondary": [
+    "highlevel crm",
+    "gohighlevel agency",
+    "gohighlevel expert",
+    "gohighlevel consultant",
+    "go high level setup",
+    "gohighlevel onboarding",
+    "gohighlevel implementation"
+   ],
+   "keywords": [
+    {
+     "keyword": "highlevel crm",
+     "ca": 140,
+     "us": 1600,
+     "kd_ca": null,
+     "kd_us": 59,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "gohighlevel agency",
+     "ca": 20,
+     "us": 320,
+     "kd_ca": null,
+     "kd_us": 24,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "gohighlevel expert",
+     "ca": 10,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 9,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "gohighlevel consultant",
+     "ca": 10,
+     "us": 90,
+     "kd_ca": null,
+     "kd_us": 7,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "gohighlevel setup",
+     "ca": 10,
+     "us": 50,
+     "kd_ca": null,
+     "kd_us": 45,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "go high level setup",
+     "ca": 20,
+     "us": 50,
+     "kd_ca": null,
+     "kd_us": 26,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "gohighlevel onboarding",
+     "ca": 20,
+     "us": 30,
+     "kd_ca": null,
+     "kd_us": null,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "gohighlevel implementation",
+     "ca": null,
+     "us": 30,
+     "kd_ca": null,
+     "kd_us": null,
+     "cpc_ca": null
+    }
+   ],
+   "ca_total": 230,
+   "us_total": 2310
+  },
+  {
+   "slug": "crm-migration",
+   "path": "/crm-migration/",
+   "name": "CRM migration",
+   "role": "Implementation landing page",
+   "primary": "crm migration",
+   "secondary": [
+    "crm data migration",
+    "hubspot crm migration",
+    "salesforce to hubspot migration",
+    "hubspot data migration",
+    "pipedrive to hubspot migration",
+    "hubspot migration"
+   ],
+   "keywords": [
+    {
+     "keyword": "crm migration",
+     "ca": 30,
+     "us": 480,
+     "kd_ca": null,
+     "kd_us": 24,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "crm data migration",
+     "ca": 70,
+     "us": 320,
+     "kd_ca": null,
+     "kd_us": 20,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot crm migration",
+     "ca": 10,
+     "us": 320,
+     "kd_ca": null,
+     "kd_us": 29,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "salesforce to hubspot migration",
+     "ca": 10,
+     "us": 210,
+     "kd_ca": null,
+     "kd_us": 24,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot data migration",
+     "ca": 20,
+     "us": 110,
+     "kd_ca": null,
+     "kd_us": 34,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "pipedrive to hubspot migration",
+     "ca": 20,
+     "us": 90,
+     "kd_ca": null,
+     "kd_us": 17,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot migration",
+     "ca": 20,
+     "us": 320,
+     "kd_ca": null,
+     "kd_us": 42,
+     "cpc_ca": null,
+     "cpc_us": 19.98
+    }
+   ],
+   "ca_total": 180,
+   "us_total": 1850
+  },
+  {
+   "slug": "hubspot-audit",
+   "path": "/hubspot-audit/",
+   "name": "HubSpot audit",
+   "role": "Implementation landing page",
+   "primary": "hubspot audit",
+   "secondary": [
+    "hubspot expert",
+    "hubspot administrator",
+    "hubspot admin",
+    "fractional hubspot admin",
+    "hubspot workflows",
+    "hubspot reporting",
+    "hubspot dashboard",
+    "hubspot automation"
+   ],
+   "keywords": [
+    {
+     "keyword": "hubspot audit",
+     "ca": 20,
+     "us": 390,
+     "kd_ca": null,
+     "kd_us": 16,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot expert",
+     "ca": 20,
+     "us": 320,
+     "kd_ca": null,
+     "kd_us": 34,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot administrator",
+     "ca": 20,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 24,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot admin",
+     "ca": 20,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 42,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "fractional hubspot admin",
+     "ca": null,
+     "us": 50,
+     "kd_ca": null,
+     "kd_us": null,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot workflows",
+     "ca": null,
+     "us": 720,
+     "kd_ca": null,
+     "kd_us": 53,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot reporting",
+     "ca": null,
+     "us": 880,
+     "kd_ca": null,
+     "kd_us": 61,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot dashboard",
+     "ca": null,
+     "us": 880,
+     "kd_ca": null,
+     "kd_us": 44,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot automation",
+     "ca": null,
+     "us": 590,
+     "kd_ca": null,
+     "kd_us": 61,
+     "cpc_ca": null
+    }
+   ],
+   "ca_total": 80,
+   "us_total": 4110
+  },
+  {
+   "slug": "zapier-consultant",
+   "path": "/zapier-consultant/",
+   "name": "Zapier consulting and CRM automation",
+   "role": "Implementation landing page",
+   "primary": "zapier consultant",
+   "secondary": [
+    "zapier expert",
+    "zapier agency",
+    "zapier setup",
+    "crm automation",
+    "crm workflow automation",
+    "sales workflow automation",
+    "zapier integrations"
+   ],
+   "keywords": [
+    {
+     "keyword": "zapier consultant",
+     "ca": 20,
+     "us": 210,
+     "kd_ca": null,
+     "kd_us": 28,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "zapier expert",
+     "ca": 20,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 19,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "zapier agency",
+     "ca": 90,
+     "us": 110,
+     "kd_ca": null,
+     "kd_us": 64,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "zapier setup",
+     "ca": 20,
+     "us": 20,
+     "kd_ca": null,
+     "kd_us": null,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "crm automation",
+     "ca": 110,
+     "us": 2400,
+     "kd_ca": null,
+     "kd_us": 49,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "crm workflow automation",
+     "ca": 20,
+     "us": 390,
+     "kd_ca": null,
+     "kd_us": 34,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "sales workflow automation",
+     "ca": 20,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 18,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "zapier integrations",
+     "ca": 140,
+     "us": 1900,
+     "kd_ca": null,
+     "kd_us": 42,
+     "cpc_ca": null
+    }
+   ],
+   "ca_total": 440,
+   "us_total": 5310
+  },
+  {
+   "slug": "crm-integration",
+   "path": "/crm-integration/",
+   "name": "CRM integration services",
+   "role": "Integration landing page",
+   "primary": "crm integration services",
+   "secondary": [
+    "crm integration",
+    "crm integrations",
+    "hubspot integrations",
+    "hubspot integration",
+    "hubspot integration services",
+    "crm email integration",
+    "hubspot monday integration",
+    "monday hubspot integration",
+    "monday.com hubspot integration",
+    "lemlist hubspot integration",
+    "instantly hubspot integration"
+   ],
+   "keywords": [
+    {
+     "keyword": "crm integration services",
+     "ca": 30,
+     "us": 1000,
+     "kd_ca": null,
+     "kd_us": 28,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "crm integration",
+     "ca": 320,
+     "us": 4400,
+     "kd_ca": null,
+     "kd_us": 55,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "crm integrations",
+     "ca": 10,
+     "us": 590,
+     "kd_ca": null,
+     "kd_us": 50,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot integrations",
+     "ca": 210,
+     "us": 3600,
+     "kd_ca": null,
+     "kd_us": 52,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot integration",
+     "ca": 40,
+     "us": 1300,
+     "kd_ca": null,
+     "kd_us": 47,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot integration services",
+     "ca": null,
+     "us": 170,
+     "kd_ca": null,
+     "kd_us": 12,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "crm email integration",
+     "ca": 20,
+     "us": 260,
+     "kd_ca": null,
+     "kd_us": 28,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot monday integration",
+     "ca": 20,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 24,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "monday hubspot integration",
+     "ca": 20,
+     "us": 110,
+     "kd_ca": null,
+     "kd_us": 21,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "monday.com hubspot integration",
+     "ca": 10,
+     "us": 70,
+     "kd_ca": null,
+     "kd_us": 22,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "lemlist hubspot integration",
+     "ca": 20,
+     "us": 170,
+     "kd_ca": null,
+     "kd_us": 11,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "instantly hubspot integration",
+     "ca": 20,
+     "us": 110,
+     "kd_ca": null,
+     "kd_us": 18,
+     "cpc_ca": null
+    }
+   ],
+   "ca_total": 720,
+   "us_total": 11920
+  },
+  {
+   "slug": "hubspot-phone-integration",
+   "path": "/hubspot-phone-integration/",
+   "name": "HubSpot phone integration",
+   "role": "Integration landing page",
+   "primary": "hubspot phone integration",
+   "secondary": [
+    "hubspot calling",
+    "hubspot voip integration",
+    "voip crm integration",
+    "crm phone integration",
+    "crm voip integration",
+    "hubspot zoom integration",
+    "zoom hubspot integration",
+    "dialpad hubspot integration",
+    "hubspot dialpad integration",
+    "cloudtalk hubspot integration",
+    "kixie hubspot integration"
+   ],
+   "keywords": [
+    {
+     "keyword": "hubspot phone integration",
+     "ca": 20,
+     "us": 320,
+     "kd_ca": null,
+     "kd_us": 49,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot calling",
+     "ca": 20,
+     "us": 260,
+     "kd_ca": null,
+     "kd_us": 46,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot voip integration",
+     "ca": 20,
+     "us": 210,
+     "kd_ca": null,
+     "kd_us": 36,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "voip crm integration",
+     "ca": 30,
+     "us": 260,
+     "kd_ca": null,
+     "kd_us": 24,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "crm phone integration",
+     "ca": 20,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 17,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "crm voip integration",
+     "ca": 10,
+     "us": 90,
+     "kd_ca": null,
+     "kd_us": 18,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot zoom integration",
+     "ca": 20,
+     "us": 480,
+     "kd_ca": null,
+     "kd_us": 40,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "zoom hubspot integration",
+     "ca": 20,
+     "us": 390,
+     "kd_ca": null,
+     "kd_us": 25,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "dialpad hubspot integration",
+     "ca": 20,
+     "us": 170,
+     "kd_ca": null,
+     "kd_us": 27,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot dialpad integration",
+     "ca": 20,
+     "us": 40,
+     "kd_ca": null,
+     "kd_us": 8,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "cloudtalk hubspot integration",
+     "ca": 20,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 28,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "kixie hubspot integration",
+     "ca": 20,
+     "us": 20,
+     "kd_ca": null,
+     "kd_us": null,
+     "cpc_ca": null
+    }
+   ],
+   "ca_total": 240,
+   "us_total": 2520
+  },
+  {
+   "slug": "ringcentral-hubspot-integration",
+   "path": "/ringcentral-hubspot-integration/",
+   "name": "RingCentral and HubSpot integration",
+   "role": "Integration landing page",
+   "primary": "ringcentral hubspot integration",
+   "secondary": [
+    "hubspot ringcentral integration",
+    "ringcentral integrations",
+    "ringcentral crm integration"
+   ],
+   "keywords": [
+    {
+     "keyword": "ringcentral hubspot integration",
+     "ca": 30,
+     "us": 390,
+     "kd_ca": null,
+     "kd_us": 23,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot ringcentral integration",
+     "ca": 20,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 21,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "ringcentral integrations",
+     "ca": 20,
+     "us": 1300,
+     "kd_ca": null,
+     "kd_us": 38,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "ringcentral crm integration",
+     "ca": 20,
+     "us": 70,
+     "kd_ca": null,
+     "kd_us": 33,
+     "cpc_ca": null
+    }
+   ],
+   "ca_total": 90,
+   "us_total": 1900
+  },
+  {
+   "slug": "aircall-hubspot-integration",
+   "path": "/aircall-hubspot-integration/",
+   "name": "Aircall and HubSpot integration",
+   "role": "Integration landing page",
+   "primary": "aircall hubspot integration",
+   "secondary": [
+    "hubspot aircall integration",
+    "aircall integrations"
+   ],
+   "keywords": [
+    {
+     "keyword": "aircall hubspot integration",
+     "ca": 20,
+     "us": 170,
+     "kd_ca": null,
+     "kd_us": 35,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot aircall integration",
+     "ca": 20,
+     "us": 140,
+     "kd_ca": null,
+     "kd_us": 34,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "aircall integrations",
+     "ca": 20,
+     "us": 70,
+     "kd_ca": null,
+     "kd_us": 30,
+     "cpc_ca": null
+    }
+   ],
+   "ca_total": 60,
+   "us_total": 380
+  },
+  {
+   "slug": "hubspot-ai-integration",
+   "path": "/hubspot-ai-integration/",
+   "name": "HubSpot with Claude and ChatGPT",
+   "role": "Integration landing page",
+   "primary": "hubspot chatgpt integration",
+   "secondary": [
+    "hubspot claude integration",
+    "claude hubspot",
+    "chatgpt hubspot",
+    "hubspot mcp",
+    "hubspot ai agent",
+    "hubspot ai"
+   ],
+   "keywords": [
+    {
+     "keyword": "hubspot chatgpt integration",
+     "ca": null,
+     "us": 210,
+     "kd_ca": null,
+     "kd_us": 46,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot claude integration",
+     "ca": 20,
+     "us": 70,
+     "kd_ca": null,
+     "kd_us": 39,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "claude hubspot",
+     "ca": 20,
+     "us": 70,
+     "kd_ca": null,
+     "kd_us": 26,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "chatgpt hubspot",
+     "ca": null,
+     "us": 30,
+     "kd_ca": null,
+     "kd_us": 51,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot mcp",
+     "ca": 90,
+     "us": 1000,
+     "kd_ca": null,
+     "kd_us": 53,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot ai agent",
+     "ca": 10,
+     "us": 70,
+     "kd_ca": null,
+     "kd_us": 47,
+     "cpc_ca": null
+    },
+    {
+     "keyword": "hubspot ai",
+     "ca": 170,
+     "us": 2400,
+     "kd_ca": null,
+     "kd_us": 50,
+     "cpc_ca": null
+    }
+   ],
+   "ca_total": 310,
+   "us_total": 3850
+  }
+ ],
+ "next": [
+  {
+   "name": "Contact center software",
+   "primary": "contact center software",
+   "ca_total": 980,
+   "us_total": 3600,
+   "keywords": [],
+   "kd_us": 57
+  },
+  {
+   "name": "What is RevOps (guide)",
+   "primary": "what is revops",
+   "ca_total": 870,
+   "us_total": 1000,
+   "keywords": [],
+   "kd_us": 44
+  },
+  {
+   "name": "Lead routing setup",
+   "primary": "lead routing",
+   "ca_total": 40,
+   "us_total": 590,
+   "keywords": [],
+   "kd_us": 28
+  },
+  {
+   "name": "Cold email setup and deliverability",
+   "primary": "cold email setup",
+   "ca_total": 80,
+   "us_total": 30,
+   "keywords": [],
+   "kd_us": 33
+  },
+  {
+   "name": "Zoom and HubSpot integration (own page)",
+   "primary": "zoom hubspot integration",
+   "ca_total": 40,
+   "us_total": 390,
+   "keywords": [],
+   "kd_us": 25
+  },
+  {
+   "name": "monday.com and HubSpot integration (own page)",
+   "primary": "monday hubspot integration",
+   "ca_total": 50,
+   "us_total": 110,
+   "keywords": [],
+   "kd_us": 21
+  },
+  {
+   "name": "Dialpad and HubSpot integration (own page)",
+   "primary": "dialpad hubspot integration",
+   "ca_total": 40,
+   "us_total": 170,
+   "keywords": [],
+   "kd_us": 27
+  },
+  {
+   "name": "CloudTalk and HubSpot integration (own page)",
+   "primary": "cloudtalk hubspot integration",
+   "ca_total": 20,
+   "us_total": 140,
+   "keywords": [],
+   "kd_us": 28
+  }
+ ],
+ "source": "Semrush keyword overview, Canada and US databases, pulled 2026-11-16"
+}

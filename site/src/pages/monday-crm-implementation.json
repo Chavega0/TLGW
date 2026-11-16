@@ -1,0 +1,214 @@
+{
+  "slug": "monday-crm-implementation",
+  "title": "monday.com implementation: monday CRM setup | Stacktik",
+  "metaDescription": "monday.com implementation for sales teams: monday CRM pipeline, lead routing, calling, dashboards and training, scoped in writing for a fixed fee.",
+  "eyebrow": "monday sales CRM setup",
+  "h1": "A monday.com implementation built around how your team sells.",
+  "lede": "A monday.com implementation for a sales team turns monday CRM, the sales CRM from monday.com, into the system the team runs on: boards and pipeline, forms routed to reps, automations, calling and email connected, dashboards, and training.",
+  "summary": [
+    {
+      "label": "What it is",
+      "text": "Setting up monday CRM, the sales CRM from monday.com: boards, pipeline, forms, automations and dashboards built around your sales process, then the team trained."
+    },
+    {
+      "label": "Who it is for",
+      "text": "Sales and customer-facing teams that bought monday CRM, or are deciding on it, and want it set up properly by one person."
+    },
+    {
+      "label": "What you get",
+      "text": "A pipeline with written stage rules, leads routed to reps, calling and email connected, dashboards, recorded training and handover notes."
+    },
+    {
+      "label": "How it is priced",
+      "text": "The software is per seat, on monday.com's own plans. Stacktik's implementation is a separate fixed fee, quoted in writing before work starts."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "rows",
+      "id": "what-it-covers",
+      "eyebrow": "What gets set up",
+      "h2": "What a monday.com implementation covers.",
+      "intro": "Every project is scoped on a written proposal, so this is the list Stacktik draws from, not a fixed package.",
+      "items": [
+        {
+          "title": "Boards and pipeline",
+          "body": "Pipeline stages set up on the boards your reps work from, with written rules for when an opportunity moves forward."
+        },
+        {
+          "title": "Forms routed to reps",
+          "body": "A web form becomes a CRM record with its source attached. A routing rule assigns an owner in turn, by territory, or to whoever is on duty."
+        },
+        {
+          "title": "Automations and AI agents",
+          "body": "Documented rules turn a missed call into a callback task. Agents on Claude or OpenAI qualify inbound leads and draft follow-ups for a rep to approve."
+        },
+        {
+          "title": "Calling and email connected",
+          "body": "Calls are logged on the CRM record with the recording. Email sequences go out from your reps' own inboxes and stop when a reply comes in."
+        },
+        {
+          "title": "Dashboards and a revenue scoreboard",
+          "body": "Targets per rep and per team, a live leaderboard of calls, booked meetings and closed sales, and the owner's view of pipeline and revenue."
+        },
+        {
+          "title": "Data moved over, team trained",
+          "body": "Your data is migrated from the current system or spreadsheets, with duplicates merged. Training sessions run on your own data and are recorded for the team."
+        }
+      ]
+    },
+    {
+      "type": "rows",
+      "id": "when-it-fits",
+      "eyebrow": "Choosing a CRM",
+      "h2": "When monday CRM fits, and when a heavier CRM does.",
+      "intro": "The right CRM is the one your reps keep current.",
+      "items": [
+        {
+          "title": "Your sales process is easy to draw",
+          "body": "A lead comes in, a rep qualifies it, a quote goes out, and the sale closes or it does not."
+        },
+        {
+          "title": "Your company already works in monday.com",
+          "body": "When the people your reps hand work to already use monday.com, a CRM from the same vendor is a reasonable place to start."
+        },
+        {
+          "title": "Nobody is a full-time CRM admin",
+          "body": "If the person who maintains the CRM also runs the team, a setup with fewer moving parts is easier to keep current."
+        },
+        {
+          "title": "When a heavier CRM is the better fit",
+          "body": "A heavier CRM tends to fit when several departments share one system, a dedicated admin runs it, or the process has many exceptions and approval layers."
+        },
+        {
+          "title": "HubSpot vs monday CRM",
+          "body": "We set up both, and Close, Nutshell, Capsule and HighLevel too. We shortlist from how your team works, not from a feature list."
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "id": "how-we-work",
+      "eyebrow": "How Stacktik does the work",
+      "h2": "What a monday.com consultant does, step by step.",
+      "intro": "A monday.com consultant, sometimes called a monday.com expert, turns a new account into a working sales system.",
+      "items": [
+        {
+          "title": "A free first call",
+          "body": "We go through what you use today, what isn't working, and what you are trying to get to."
+        },
+        {
+          "title": "A written proposal",
+          "body": "The proposal sets out the tools and why, the monthly software cost, the implementation scope, the fixed fee and what counts as done."
+        },
+        {
+          "title": "The purchase, through us or direct",
+          "body": "Where it helps, we set the plan and seats up through the vendor's program, in your name. Where it does not, we tell you to buy direct."
+        },
+        {
+          "title": "The build",
+          "body": "Your consultant works inside your account through an admin seat you create and can revoke at handover."
+        },
+        {
+          "title": "Data moved over",
+          "body": "Records come across from your current system or spreadsheets, with duplicates merged. The old system stays read-only during the switch, then it is yours to close."
+        },
+        {
+          "title": "Training and handover",
+          "body": "Your team is trained on the setup, then gets handover notes on how each piece runs and who to call."
+        }
+      ]
+    },
+    {
+      "type": "rows",
+      "id": "pricing",
+      "eyebrow": "What it costs",
+      "h2": "How monday CRM pricing works.",
+      "intro": "There are two separate numbers, and both are on the proposal: what the software costs you each month, and what our work costs.",
+      "items": [
+        {
+          "title": "The software: per seat",
+          "body": "monday CRM is priced per seat, on monday.com's own plans. Your cost depends on the plan and the number of seats."
+        },
+        {
+          "title": "Partner program offers, shown",
+          "body": "Where a vendor partner program provides a customer offer, it is applied and shown on the proposal. Where none exists, you pay the vendor's own price."
+        },
+        {
+          "title": "Implementation: a fixed fee",
+          "body": "Stacktik's implementation work is scoped and quoted as a fixed fee, in writing, before it starts."
+        },
+        {
+          "title": "Software and setup are separate",
+          "body": "You can buy the software direct and hire us only for the implementation, or buy through us and run the setup yourself."
+        },
+        {
+          "title": "Ongoing support: optional",
+          "body": "Monthly support is for teams that want the people who built the system to keep it current. It is optional."
+        }
+      ]
+    }
+  ],
+  "platforms": {
+    "h2": "The platforms around monday CRM.",
+    "intro": "The CRM is the system the others connect to.",
+    "names": [
+      "monday.com CRM",
+      "CloudTalk",
+      "Dialpad",
+      "Kixie",
+      "lemlist",
+      "Instantly",
+      "Fireflies.ai",
+      "Zapier",
+      "Claude",
+      "OpenAI",
+      "Databox"
+    ]
+  },
+  "faq": [
+    {
+      "q": "What is monday CRM?",
+      "a": "monday CRM, also written monday.com CRM, is the sales CRM from monday.com. It is where a sales team keeps every customer, opportunity and conversation, on boards with a pipeline, forms, automations and dashboards."
+    },
+    {
+      "q": "How does monday CRM pricing work?",
+      "a": "monday CRM is priced per seat, on monday.com's own plans, so the cost depends on the plan you choose and how many people need a seat. Stacktik's proposal shows the monthly software cost for your seat count and how it is billed."
+    },
+    {
+      "q": "How does a monday.com implementation work?",
+      "a": "It runs as a free first call, a written proposal, then the build. The proposal sets the scope, the order of the steps, what we need from your team and what counts as done."
+    },
+    {
+      "q": "HubSpot vs monday CRM: how do we choose?",
+      "a": "Choose on how your team sells and what each option costs you a month, not on demos. Stacktik sets up both. We map how leads, calls and follow-ups move through your team, then put the CRMs that fit on a written proposal with the monthly cost of each."
+    },
+    {
+      "q": "Do we need a monday.com partner or consultant to set up monday CRM?",
+      "a": "No. Some teams set it up themselves, and if the vendor's own onboarding is enough for your case, we say so. A consultant helps when the CRM has to work with calling, outreach and reporting tools as one system. The proposal states our relationship with each vendor next to its price."
+    },
+    {
+      "q": "Can you move our data into monday CRM from spreadsheets or another CRM?",
+      "a": "Yes. Data migration from your current system or spreadsheets is part of what an implementation can include, with duplicates merged on the way in. The old system stays read-only during the switch. Salesforce and ERP migrations are not usually in scope."
+    }
+  ],
+  "closeH2": "Start with a call about your monday CRM setup.",
+  "closeLede": "A free first call about what you use today and what isn't working.",
+  "keywordsUsed": [
+    "monday.com implementation",
+    "monday.com consultant",
+    "monday.com partner",
+    "monday.com expert",
+    "monday crm",
+    "monday.com crm",
+    "monday crm pricing",
+    "monday sales crm",
+    "hubspot vs monday"
+  ],
+  "keywordsSkipped": [
+    {
+      "keyword": "monday crm review",
+      "reason": "A review would need ratings and specific product features that the site text does not state, and the site says Stacktik is not a neutral review of the market. The fit and comparison block answers the same intent without those claims."
+    }
+  ]
+}

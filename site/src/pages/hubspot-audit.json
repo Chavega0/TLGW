@@ -1,0 +1,167 @@
+{
+  "slug": "hubspot-audit",
+  "title": "HubSpot audit: find what to fix and why | Stacktik",
+  "metaDescription": "A HubSpot audit by Stacktik reviews your pipeline, data, workflows, connections and reports, then gives you written findings and a fixed-fee plan.",
+  "eyebrow": "HubSpot audit",
+  "h1": "A HubSpot audit that ends in a written plan.",
+  "lede": "A HubSpot audit is a review of a HubSpot account that is already in use: the pipeline, the data, the workflows, the connected tools and the reports.",
+  "summary": [
+    {
+      "label": "What it is",
+      "text": "A review of a HubSpot account in use, covering pipeline, data quality, workflows, connections and reporting, ending in written findings."
+    },
+    {
+      "label": "Who it is for",
+      "text": "Teams that already have HubSpot and find it cluttered, half used, or no longer trusted by the people who report from it."
+    },
+    {
+      "label": "What you get",
+      "text": "Written findings in plain language, a proposal that says what to keep, connect or rebuild, and a fixed fee for each fix worth doing."
+    },
+    {
+      "label": "How it is priced",
+      "text": "The first call is free. If a deeper review inside your account is needed, its scope and fee are quoted in writing first."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "rows",
+      "id": "what-we-review",
+      "eyebrow": "What we review",
+      "h2": "What a HubSpot audit looks at.",
+      "intro": "The same scope list as a new implementation, read against what your account does today.",
+      "items": [
+        {
+          "title": "Pipeline stages and their rules",
+          "body": "Whether each stage means the same thing to every rep, and whether there are written rules for when a deal moves forward."
+        },
+        {
+          "title": "Properties and data quality",
+          "body": "Which fields are filled in, which are ignored, where duplicates sit, and which records have no owner."
+        },
+        {
+          "title": "HubSpot workflows and automation",
+          "body": "What each workflow does, whether anyone remembers why it exists, and which ones conflict or fire on the wrong records."
+        },
+        {
+          "title": "Lead routing",
+          "body": "How a new lead gets an owner: in turn, by territory, or by whoever is on duty, and how long leads sit unassigned."
+        },
+        {
+          "title": "Calling and email connections",
+          "body": "Whether calls are logged to the record with recordings, and whether sequences stop when a reply comes in."
+        },
+        {
+          "title": "HubSpot reporting and dashboards",
+          "body": "Whether the reports answer the questions the owner asks, and whether the numbers match what the team believes."
+        }
+      ]
+    },
+    {
+      "type": "rows",
+      "id": "audit-or-admin",
+      "eyebrow": "Which help you need",
+      "h2": "A HubSpot audit, a HubSpot expert or an ongoing admin.",
+      "intro": "People search for all three when the account is not working.",
+      "items": [
+        {
+          "title": "A one-time audit",
+          "body": "Right when the account has drifted and nobody is sure what is wrong. You get findings and a plan, then decide what to fix."
+        },
+        {
+          "title": "A HubSpot expert for a defined fix",
+          "body": "Right when you already know the problem: routing, a broken workflow, a report that will not add up. It is scoped and quoted on its own."
+        },
+        {
+          "title": "An ongoing HubSpot administrator",
+          "body": "Right when the real gap is ownership. Stacktik's ongoing support is optional and monthly."
+        },
+        {
+          "title": "Training your own admin",
+          "body": "Often the simplest fix. We train the person who owns HubSpot on your own data and leave handover notes they can work from."
+        },
+        {
+          "title": "When a rebuild is the answer",
+          "body": "Sometimes cleaning costs more than starting again in the same account. We say so in writing, with the reasons, before you commit."
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "id": "process",
+      "eyebrow": "How it works",
+      "h2": "How Stacktik runs a HubSpot audit.",
+      "intro": "One technical RevOps consultant is assigned to your account and stays with it.",
+      "items": [
+        {
+          "title": "A free call",
+          "body": "We go through how leads, calls and follow-ups move through your team today, what you use, and what isn't working."
+        },
+        {
+          "title": "Scope in writing, access you control",
+          "body": "If the account needs a deeper review, its scope and fee are quoted in writing first. You create our admin seat and revoke it at handover."
+        },
+        {
+          "title": "The review",
+          "body": "We go through pipeline, data, workflows, routing, connections and reports, and check what we find against how your team says it works."
+        },
+        {
+          "title": "Written findings and a proposal",
+          "body": "What to keep, what to connect and what to rebuild, in plain language, with a fixed fee beside each fix worth doing."
+        },
+        {
+          "title": "The fixes you choose",
+          "body": "You pick what to fix. The work is done in your account, and your team is trained on the changes."
+        }
+      ]
+    }
+  ],
+  "platforms": {
+    "h2": "HubSpot and the tools we check around it.",
+    "intro": "An audit covers HubSpot and the tools connected to it.",
+    "names": [
+      "HubSpot",
+      "CloudTalk",
+      "Dialpad",
+      "Kixie",
+      "lemlist",
+      "Instantly",
+      "Fireflies.ai",
+      "Zapier",
+      "Claude",
+      "OpenAI",
+      "Databox"
+    ]
+  },
+  "faq": [
+    {
+      "q": "What is a HubSpot audit?",
+      "a": "A HubSpot audit is a structured review of a HubSpot account already in use. It covers pipeline stages, data quality, workflows, lead routing, connected tools and reports. Stacktik's audit ends in written findings and a proposal that says what to keep, connect or rebuild."
+    },
+    {
+      "q": "How much does a HubSpot audit cost?",
+      "a": "The first call is free. If a deeper review inside your account is needed, its scope and fee are quoted in writing before it starts. Every fix that follows is also a fixed fee in writing."
+    },
+    {
+      "q": "Do we need a HubSpot expert or a HubSpot administrator?",
+      "a": "It depends on the gap. A HubSpot expert fits a defined problem that can be scoped and fixed once. A HubSpot administrator fits an account that needs someone to keep it current. Stacktik offers both: fixed-fee fixes, and optional monthly support."
+    },
+    {
+      "q": "Can you fix our HubSpot workflows and reports?",
+      "a": "Yes. Workflows are documented, tested against real records and rebuilt where they conflict. Reports and dashboards are rebuilt around the questions the owner actually asks, and a revenue scoreboard can sit on top. Each fix is quoted in writing first."
+    },
+    {
+      "q": "Do you offer a fractional HubSpot admin?",
+      "a": "Stacktik offers ongoing support that is optional and monthly, for teams that want the people who built or fixed the system to keep it current. What it covers and what it costs go on the proposal like everything else."
+    },
+    {
+      "q": "Will an audit change anything in our account?",
+      "a": "No. The review reads the account through an admin seat you create and control. Nothing is changed until you have the written findings and have chosen which fixes to go ahead with."
+    }
+  ],
+  "closeH2": "Start with what your HubSpot does today.",
+  "closeLede": "A free call about what you use and what isn't working.",
+  "keywordsUsed": [],
+  "keywordsSkipped": [],
+  "sources": []
+}

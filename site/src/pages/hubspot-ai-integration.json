@@ -1,0 +1,161 @@
+{
+  "slug": "hubspot-ai-integration",
+  "title": "HubSpot ChatGPT and Claude integration | Stacktik",
+  "metaDescription": "HubSpot ChatGPT integration and Claude integration by Stacktik: an AI model connected to your CRM, with what it may read and write set in writing.",
+  "eyebrow": "HubSpot with Claude and ChatGPT",
+  "h1": "HubSpot ChatGPT integration, with a person still approving.",
+  "lede": "A HubSpot ChatGPT integration, or a HubSpot Claude integration, connects an AI model to your CRM so it can read records and help with routine work: summarizing an account, drafting a follow-up, qualifying a lead.",
+  "summary": [
+    {
+      "label": "What it is",
+      "text": "Connecting Claude or ChatGPT to HubSpot so an AI model can read CRM records and handle routine steps, within rules you set."
+    },
+    {
+      "label": "Who it is for",
+      "text": "Sales and customer-facing teams on HubSpot that want AI help with notes, follow-ups and lead qualifying without losing control of the record."
+    },
+    {
+      "label": "What you get",
+      "text": "The connection built in your own accounts, written rules for what the AI reads and writes, an approval point, tests on your data and training."
+    },
+    {
+      "label": "How it is priced",
+      "text": "A fixed fee for the build, quoted in writing before work starts. HubSpot and the AI provider each stay on their own plan and pricing."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "rows",
+      "id": "ways-to-connect",
+      "eyebrow": "How to connect",
+      "h2": "Ways to connect HubSpot to Claude or ChatGPT.",
+      "intro": "There is no single HubSpot AI integration. There are several routes, and the proposal says which one fits and why.",
+      "items": [
+        {
+          "title": "HubSpot's own connectors",
+          "body": "HubSpot publishes connectors for Claude and for ChatGPT. They let a person ask questions of their CRM data from inside the assistant."
+        },
+        {
+          "title": "HubSpot MCP",
+          "body": "HubSpot offers an MCP server. MCP, the Model Context Protocol, is an open standard AI assistants use to reach other tools."
+        },
+        {
+          "title": "An automation tool in between",
+          "body": "A connector such as Zapier can pass a record to an AI model and write the result back. It fits a single, simple step."
+        },
+        {
+          "title": "A custom HubSpot AI agent",
+          "body": "When the step needs rules, memory of the account and an approval point, Stacktik builds the agent on Claude or OpenAI and connects it to HubSpot directly."
+        },
+        {
+          "title": "HubSpot's built-in AI",
+          "body": "HubSpot also has AI features of its own inside the product. Where they already do the job on your plan, we say so."
+        }
+      ]
+    },
+    {
+      "type": "rows",
+      "id": "decide-first",
+      "eyebrow": "Decide first",
+      "h2": "What to decide before connecting AI to your CRM.",
+      "intro": "The technology is the easy part. These decisions make the result safe to use, and each is written down before anything is connected.",
+      "items": [
+        {
+          "title": "What the AI may read",
+          "body": "Which records, which fields and whose. Contact notes and deal values may be fine. Some fields should stay out of reach."
+        },
+        {
+          "title": "What the AI may change",
+          "body": "Reading carries less risk than writing. We decide whether the AI drafts for a person, updates a record, or does neither."
+        },
+        {
+          "title": "Where a person approves",
+          "body": "In what Stacktik builds, a person approves anything that reaches a customer. A rep reads the draft, edits it and sends it."
+        },
+        {
+          "title": "Who can use it",
+          "body": "The AI should see what the user is allowed to see, and no more."
+        },
+        {
+          "title": "Where the data goes",
+          "body": "Ask what the AI provider keeps and for how long. We go through the provider's terms with you before recommending a route."
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "id": "process",
+      "eyebrow": "How it works",
+      "h2": "How Stacktik builds a HubSpot AI agent.",
+      "intro": "One technical RevOps consultant is assigned to your project and stays with it.",
+      "items": [
+        {
+          "title": "A free call",
+          "body": "We go through how leads, calls and follow-ups move through your team today, what you use, and what isn't working."
+        },
+        {
+          "title": "A written proposal",
+          "body": "What to keep, connect or replace, the monthly cost of each tool, and our fixed fee. Our relationship with each vendor is stated next to its price."
+        },
+        {
+          "title": "Map the step",
+          "body": "We choose one routine step and write down what the AI reads, the rules it follows, what it may change and what a correct result looks like."
+        },
+        {
+          "title": "Connect and set the approval point",
+          "body": "The agent is connected to HubSpot through a seat you control. Drafts go to a rep to approve, and every output keeps its source attached."
+        },
+        {
+          "title": "Test on your own data, then train",
+          "body": "The agent is tested on examples from your own records before it goes live. Your team is trained, and handover notes say how it runs."
+        }
+      ]
+    }
+  ],
+  "platforms": {
+    "h2": "HubSpot and the AI models we build on.",
+    "intro": "Stacktik builds AI agents on Claude and OpenAI and connects them to the CRM. These are the platforms involved.",
+    "names": [
+      "HubSpot",
+      "Claude",
+      "OpenAI",
+      "Zapier",
+      "Relevance AI",
+      "Chatbase",
+      "Fireflies.ai"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Is there a HubSpot ChatGPT integration?",
+      "a": "Yes. HubSpot publishes a connector for ChatGPT, and one for Claude, that lets a user work with CRM data from inside the assistant. What it can read or change depends on your HubSpot plan and permissions. Stacktik checks that before recommending it and sets it up."
+    },
+    {
+      "q": "Can Claude connect to HubSpot?",
+      "a": "Yes. HubSpot offers a connector for Claude, and Claude can also reach HubSpot through an MCP server or through a custom agent. Stacktik builds agents on Claude and connects them to HubSpot with written rules for what they read and write."
+    },
+    {
+      "q": "What is HubSpot MCP?",
+      "a": "HubSpot MCP is HubSpot's server for the Model Context Protocol, an open standard that lets AI assistants reach other tools. A compatible AI client can connect to it to work with HubSpot data, within the permissions the user already has."
+    },
+    {
+      "q": "What can a HubSpot AI agent do for a sales team?",
+      "a": "It can take routine steps that need reading or writing: summarizing an account before a call, writing call notes to the record, qualifying an inbound lead, drafting a follow-up for a rep to approve. In what Stacktik builds, a person approves anything that reaches a customer."
+    },
+    {
+      "q": "How much does a HubSpot AI integration cost?",
+      "a": "The build is a fixed fee, quoted in writing before work starts. HubSpot stays on HubSpot's own plan and pricing, and model usage is charged at the AI provider's own pricing. Nothing is charged for the first call."
+    },
+    {
+      "q": "Is it safe to connect ChatGPT or Claude to our CRM?",
+      "a": "It can be, if the limits are set first: what the AI may read, what it may change, who can use it and where a person approves. Stacktik writes those rules down before anything is connected and tests them on your own data before the agent goes live."
+    }
+  ],
+  "closeH2": "Start with one routine step in HubSpot.",
+  "closeLede": "A free call about how your team uses HubSpot and which step an AI should take.",
+  "keywordsUsed": [],
+  "keywordsSkipped": [],
+  "sources": [
+    "https://www.hubspot.com/ai-tools"
+  ]
+}

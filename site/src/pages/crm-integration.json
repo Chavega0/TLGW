@@ -1,0 +1,170 @@
+{
+  "slug": "crm-integration",
+  "title": "CRM integration services for sales teams | Stacktik",
+  "metaDescription": "CRM integration services from Stacktik: your phone system, outreach, forms, reporting and AI agents connected to the CRM, tested and documented.",
+  "eyebrow": "CRM integration services",
+  "h1": "CRM integration services, tested and documented.",
+  "lede": "CRM integration is connecting the tools your team uses to the CRM, so a call, an email, a form or a signed deal lands on the customer record without anyone retyping it.",
+  "summary": [
+    {
+      "label": "What it is",
+      "text": "Connecting the phone system, outreach tools, forms, reporting and AI agents to the CRM so activity lands on the record automatically."
+    },
+    {
+      "label": "Who it is for",
+      "text": "Sales and customer-facing teams whose tools work on their own but not together, so people copy information from one screen to another."
+    },
+    {
+      "label": "What you get",
+      "text": "Each connection mapped, built in your own accounts, tested with real examples, written down, and your team trained on how it runs."
+    },
+    {
+      "label": "How it is priced",
+      "text": "A fixed fee quoted in writing before work starts, set by how many tools connect and how. Software stays on each vendor's own plan."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "rows",
+      "id": "common-integrations",
+      "eyebrow": "What we connect",
+      "h2": "The CRM integrations a sales team needs most.",
+      "intro": "The CRM is the system the others connect to. These are the connections Stacktik sets up.",
+      "items": [
+        {
+          "title": "Phone system to CRM",
+          "body": "Calls placed from the CRM and logged to the record with the recording attached."
+        },
+        {
+          "title": "Email and outreach to CRM",
+          "body": "Sequences your reps send from their own inboxes, with replies landing on the record and stopping the sequence."
+        },
+        {
+          "title": "Forms and lead routing",
+          "body": "A form submission becomes a record with an owner, assigned in turn, by territory, or to whoever is on duty."
+        },
+        {
+          "title": "Conversation notes",
+          "body": "Call notes and next steps written to the record without anyone typing them."
+        },
+        {
+          "title": "Reporting and the scoreboard",
+          "body": "Dashboards and the revenue scoreboard pulling from the CRM, the phone system and the outreach tool, updating on their own."
+        },
+        {
+          "title": "A second system beside the CRM",
+          "body": "Where two systems must both stay, such as monday.com for delivery beside HubSpot for sales, we connect them so a won deal starts the work."
+        }
+      ]
+    },
+    {
+      "type": "rows",
+      "id": "three-ways",
+      "eyebrow": "How to integrate",
+      "h2": "Ways to integrate a tool with your CRM.",
+      "intro": "Most connections can be made in more than one way.",
+      "items": [
+        {
+          "title": "The vendor's own integration",
+          "body": "When the two tools already integrate, use that first. HubSpot integrations and those of other CRMs are maintained by the vendors."
+        },
+        {
+          "title": "A connector such as Zapier",
+          "body": "Fits a simple step between two tools with no integration of their own. Quick to build and easy for your team to read."
+        },
+        {
+          "title": "A custom connector",
+          "body": "When a step needs logic a general connector cannot express, or a tool has no integration at all, Stacktik builds the connector."
+        },
+        {
+          "title": "An AI agent on top",
+          "body": "Where a step needs reading or writing, an agent built on Claude or OpenAI does it, with a person approving anything that reaches a customer."
+        },
+        {
+          "title": "Fewer connections, documented",
+          "body": "Each connection is something to maintain. We build the ones that earn their place and write down how each one runs."
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "id": "process",
+      "eyebrow": "How it works",
+      "h2": "How Stacktik delivers CRM integration services.",
+      "intro": "One technical RevOps consultant is assigned to your project and stays with it.",
+      "items": [
+        {
+          "title": "A free call",
+          "body": "We go through how leads, calls and follow-ups move through your team today, what you use, and what isn't working."
+        },
+        {
+          "title": "A written proposal",
+          "body": "What to keep, connect or replace, the monthly cost of each tool, and our fee for the work, fixed before it starts."
+        },
+        {
+          "title": "Map each connection",
+          "body": "For each integration we write down what starts it, what moves, where it lands in the CRM and what a correct result looks like."
+        },
+        {
+          "title": "Build and test in your accounts",
+          "body": "We work through an admin seat you create and revoke at handover. Each connection is tested with real examples before it runs on live records."
+        },
+        {
+          "title": "Document, train and hand over",
+          "body": "Each connection is written up: what it does, where it lives and how to change it. Your team is trained on your own data."
+        }
+      ]
+    }
+  ],
+  "platforms": {
+    "h2": "The platforms we connect.",
+    "intro": "Stacktik sets up and connects these CRM, calling, outreach, AI and reporting platforms. The proposal states our relationship with each.",
+    "names": [
+      "HubSpot",
+      "monday.com CRM",
+      "Close",
+      "HighLevel",
+      "CloudTalk",
+      "Dialpad",
+      "Kixie",
+      "lemlist",
+      "Instantly",
+      "Fireflies.ai",
+      "Zapier",
+      "Claude",
+      "OpenAI",
+      "Databox"
+    ]
+  },
+  "faq": [
+    {
+      "q": "What are CRM integration services?",
+      "a": "CRM integration services connect your other tools to the CRM so information moves by itself: calls, emails, form submissions, notes and deal updates land on the customer record. Stacktik maps each connection, builds and tests it in your own accounts, and documents how it runs."
+    },
+    {
+      "q": "How much do CRM integration services cost?",
+      "a": "Stacktik quotes a fixed fee in writing before work starts. The fee depends on how many tools are connected and whether each uses the vendor's own integration, a connector such as Zapier, or a custom connector. Nothing is charged for the first call."
+    },
+    {
+      "q": "Can you connect our phone system to the CRM?",
+      "a": "Yes. A phone system connected to the CRM, with calls logged and recordings attached, is on the list of work a Stacktik implementation can include. If you do not have a phone system that integrates well, we can shortlist one on the same proposal."
+    },
+    {
+      "q": "Do you set up HubSpot integrations?",
+      "a": "Yes. HubSpot is one of the CRMs we set up, and we connect calling, outreach, conversation notes, reporting and AI agents to it. Where HubSpot or the other vendor provides an integration, we use it. Where none exists, we build the connection."
+    },
+    {
+      "q": "Can monday.com and HubSpot work together?",
+      "a": "Yes, when each has a clear job. A common arrangement keeps sales in HubSpot and delivery in monday.com, with a won deal creating the work on the other side. Stacktik sets up both systems and builds the connection between them."
+    },
+    {
+      "q": "What if two of our tools have no integration?",
+      "a": "Then we connect them another way: through a connector such as Zapier for a simple step, or a custom connector built by Stacktik when the step needs more logic. The proposal says which route each connection takes."
+    }
+  ],
+  "closeH2": "Start with what gets retyped today.",
+  "closeLede": "A free call about the tools you use and where information is copied by hand.",
+  "keywordsUsed": [],
+  "keywordsSkipped": [],
+  "sources": []
+}

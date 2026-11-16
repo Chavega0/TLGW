@@ -1,0 +1,180 @@
+{
+  "slug": "ringcentral-hubspot-integration",
+  "title": "RingCentral HubSpot integration setup | Stacktik",
+  "metaDescription": "RingCentral HubSpot integration set up by Stacktik: calls placed from HubSpot, logged on the contact record, and tested with your sales team.",
+  "eyebrow": "RingCentral and HubSpot integration",
+  "h1": "RingCentral HubSpot integration, set up and tested.",
+  "lede": "A RingCentral HubSpot integration connects the RingCentral phone system to HubSpot, so calls are placed from the CRM and logged to the contact record with the recording.",
+  "summary": [
+    {
+      "label": "What it is",
+      "text": "Connecting RingCentral to HubSpot so calls are placed from the CRM and logged on the contact record with the recording."
+    },
+    {
+      "label": "Who it is for",
+      "text": "Teams that use, or are choosing, RingCentral for calls and HubSpot as their CRM, and want every call on the record without typing."
+    },
+    {
+      "label": "What you get",
+      "text": "The integration connected in your own accounts, logging rules agreed in writing, test calls placed, your team trained and handover notes."
+    },
+    {
+      "label": "How it is priced",
+      "text": "A fixed fee for the setup, quoted in writing before work starts. RingCentral and HubSpot each stay on their own plan and pricing."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "rows",
+      "id": "what-it-does",
+      "eyebrow": "What it does",
+      "h2": "What the RingCentral HubSpot integration is for.",
+      "intro": "The call and the customer record stay together. The integration's details depend on your plans, so we confirm them on the proposal.",
+      "items": [
+        {
+          "title": "Calls placed from HubSpot",
+          "body": "A rep starts the call from the contact or deal they are working on, without copying a number into another app."
+        },
+        {
+          "title": "Calls logged on the record",
+          "body": "Each call appears on the contact's timeline with its direction, length and outcome, so the next person can see what happened."
+        },
+        {
+          "title": "Recordings and notes attached",
+          "body": "Where call recording is turned on in RingCentral, a playback link sits with the call and its notes on the record."
+        },
+        {
+          "title": "The caller's record in view",
+          "body": "When a known contact calls, the rep sees who it is and can open the record with its history."
+        }
+      ]
+    },
+    {
+      "type": "rows",
+      "id": "fit",
+      "eyebrow": "Where it fits",
+      "h2": "When RingCentral with HubSpot is the right setup.",
+      "intro": "RingCentral is usually the phone system for a whole company, not only for the sales team.",
+      "items": [
+        {
+          "title": "A company-wide phone system",
+          "body": "Connect the people who work in HubSpot and leave everyone else alone. Finance and operations do not need their calls on a sales record."
+        },
+        {
+          "title": "Main lines and extensions",
+          "body": "Decide how a call to the main number or to an extension is logged, and to whom, before the integration is switched on."
+        },
+        {
+          "title": "Messaging and video",
+          "body": "RingCentral also carries team messaging and video meetings. We agree which of these, if any, should appear on the HubSpot record."
+        },
+        {
+          "title": "If you are still choosing",
+          "body": "If RingCentral is on your shortlist beside other phone systems, the proposal compares them with the monthly cost of each."
+        }
+      ]
+    },
+    {
+      "type": "rows",
+      "id": "before-connecting",
+      "eyebrow": "Before connecting",
+      "h2": "What to decide before you integrate RingCentral with HubSpot.",
+      "intro": "An integration is only as good as the decisions made before it is switched on.",
+      "items": [
+        {
+          "title": "Which users and numbers",
+          "body": "Decide who is connected and which numbers are included. Shared lines and personal lines usually need different rules."
+        },
+        {
+          "title": "What gets logged",
+          "body": "Every call, or only calls with a known contact. Logging everything is complete but noisy. Logging selectively is cleaner but can hide activity."
+        },
+        {
+          "title": "Who owns an unknown caller",
+          "body": "When a number matches no record, decide whether a new contact is created, who owns it, and how a duplicate is avoided."
+        },
+        {
+          "title": "Where recordings and notes go",
+          "body": "Whether the recording, the notes and the outcome are written to the contact, the deal or both, and who is allowed to listen."
+        },
+        {
+          "title": "What else depends on the call",
+          "body": "Lead routing, follow-up tasks and the revenue scoreboard often read from call activity. We check each one still works after RingCentral is connected."
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "id": "process",
+      "eyebrow": "How it works",
+      "h2": "How Stacktik connects RingCentral and HubSpot.",
+      "intro": "One technical RevOps consultant is assigned to your project and stays with it.",
+      "items": [
+        {
+          "title": "A free call",
+          "body": "We go through how leads, calls and follow-ups move through your team today, what you use, and what isn't working."
+        },
+        {
+          "title": "A written proposal",
+          "body": "What will be connected, the logging rules, what else has to change, and our fixed fee for the setup."
+        },
+        {
+          "title": "Connect in your accounts",
+          "body": "We work through admin seats you create in RingCentral and HubSpot and revoke at handover. Users, numbers and logging rules are set as agreed."
+        },
+        {
+          "title": "Test with real calls",
+          "body": "We place test calls for each case you care about: a known contact, an unknown caller, a missed call, a transfer."
+        },
+        {
+          "title": "Training and handover",
+          "body": "Training sessions on your own data, recorded for the team. Handover notes say how each piece runs and who to call."
+        }
+      ]
+    }
+  ],
+  "platforms": {
+    "h2": "RingCentral, HubSpot and what connects around them.",
+    "intro": "RingCentral comes through Stacktik's supplier network on the same written proposal, on RingCentral's own terms and pricing.",
+    "names": [
+      "RingCentral",
+      "HubSpot",
+      "Zapier",
+      "Fireflies.ai",
+      "Claude",
+      "OpenAI",
+      "Databox"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Does RingCentral integrate with HubSpot?",
+      "a": "Yes. RingCentral provides an integration for HubSpot. It is meant to let reps call from HubSpot and to log calls on the contact record. Stacktik sets it up, agrees the logging rules with you and tests it with real calls."
+    },
+    {
+      "q": "How do I integrate RingCentral with HubSpot?",
+      "a": "Connect the two accounts through the integration, choose which users and numbers are included, set what gets logged and where, then test with real calls. Stacktik does this in your own accounts through admin seats you control, and writes down how it runs."
+    },
+    {
+      "q": "How much does the RingCentral HubSpot integration cost to set up?",
+      "a": "Stacktik quotes the setup as a fixed fee in writing before work starts. RingCentral and HubSpot each stay on the vendor's own plan and pricing. Nothing is charged for the first call."
+    },
+    {
+      "q": "Can we buy RingCentral through Stacktik?",
+      "a": "Yes. RingCentral is available through our supplier network, on the same written proposal and on RingCentral's own terms and pricing. The proposal states whether we are paid anything for it. You can also buy direct and hire us only for the setup."
+    },
+    {
+      "q": "Which RingCentral integrations do you set up?",
+      "a": "Mostly the ones around the CRM: RingCentral with HubSpot first, then the reporting and automation that depend on call activity. If you need a RingCentral CRM integration with another system we set up, the proposal covers it."
+    },
+    {
+      "q": "What if calls are not logging correctly today?",
+      "a": "The cause is often in the setup: the wrong users connected, unknown callers with no owner, or duplicates. We review the setup, fix the rules and test again with real calls."
+    }
+  ],
+  "closeH2": "Start with how your team calls today.",
+  "closeLede": "A free call about your RingCentral setup and your HubSpot account. You get a written proposal with a fixed fee.",
+  "keywordsUsed": [],
+  "keywordsSkipped": [],
+  "sources": []
+}
