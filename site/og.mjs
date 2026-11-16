@@ -14,6 +14,7 @@ const cards = [
   { slug: "home", eyebrow: "RevOps consulting for sales and customer-facing teams", head: "We set up the software and technology that grow your revenue." },
   { slug: "details", eyebrow: "Details", head: "The platforms, the scope, and how buying works." },
   { slug: "blueprint", eyebrow: "Book a call", head: "A free call about what you use today." },
+  { slug: "services", eyebrow: "Services", head: "RevOps services and integrations." },
   ...(existsSync(join(ROOT, "src", "pages")) ? readdirSync(join(ROOT, "src", "pages")) : []).filter((f) => f.endsWith(".json")).map((f) => { const p = JSON.parse(readFileSync(join(ROOT, "src", "pages", f), "utf8")); return { slug: p.slug, eyebrow: p.eyebrow, head: p.h1 }; }),
 ];
 const mark = (stroke, w) => `<svg viewBox="0 0 100 100" width="${w}" height="${w}"><path d="M22 32 L43 46 L80 13" fill="none" stroke="${stroke}" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/><rect x="16" y="56" width="68" height="14" rx="7" fill="${stroke}"/><rect x="16" y="78" width="68" height="14" rx="7" fill="${stroke}"/></svg>`;

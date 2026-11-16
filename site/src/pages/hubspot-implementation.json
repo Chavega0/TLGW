@@ -1,0 +1,238 @@
+{
+ "slug": "hubspot-implementation",
+ "title": "HubSpot implementation and onboarding | Stacktik",
+ "metaDescription": "HubSpot implementation for sales and customer-facing teams: pipeline, data migration, calling and outreach connected, training. Fixed fee in writing.",
+ "eyebrow": "CRM implementation",
+ "h1": "HubSpot implementation, built around how your team sells.",
+ "lede": "HubSpot implementation is the work of turning a HubSpot account into the CRM your team runs on: pipeline stages, properties, your data moved over, calling and outreach connected, reports built and people trained. Stacktik, a RevOps (revenue operations) consultancy in Woodbridge, Ontario, does this work for sales and customer-facing teams, scoped in writing for a fixed fee. If HubSpot's own onboarding is enough for your case, we say so.",
+ "summary": [
+  {
+   "label": "What it is",
+   "text": "Setting HubSpot up as a working CRM: pipeline stages, properties, data moved over, calling and outreach connected, reporting built and the team trained on it."
+  },
+  {
+   "label": "Who it is for",
+   "text": "Sales and customer-facing teams that are moving to HubSpot, have bought it and need the HubSpot setup done properly, or already run it and want it fixed."
+  },
+  {
+   "label": "What you get",
+   "text": "One technical RevOps consultant from the first call to handover, a written scope, training on your own data recorded for the team, and handover notes."
+  },
+  {
+   "label": "How it is priced",
+   "text": "Implementation is a fixed fee quoted in writing before work starts. HubSpot itself stays on the vendor's own plan and pricing. The first call is free."
+  }
+ ],
+ "blocks": [
+  {
+   "type": "rows",
+   "id": "scope",
+   "eyebrow": "What is included",
+   "h2": "What HubSpot implementation services include.",
+   "intro": "Every project is scoped on the proposal, so the list below is what we draw from, not a fixed package. Smaller improvements to an existing HubSpot account draw from the same list.",
+   "items": [
+    {
+     "title": "HubSpot CRM setup: pipeline and properties",
+     "body": "Pipeline stages with written rules for when an opportunity moves forward, and the properties your team fills in on each record. Lead routing is a rule you set once: in turn, by territory, or to whoever is on duty."
+    },
+    {
+     "title": "HubSpot migration: your data moved over",
+     "body": "Data migration from your current system or spreadsheets, with duplicates merged. The old system stays read-only during the switch, then it is yours to close. Salesforce and ERP migrations are not usually in scope, so ask on the call."
+    },
+    {
+     "title": "HubSpot integrations: calling and outreach",
+     "body": "The phone system connected to HubSpot, so calls are logged on the record with the recording attached. Email sequences with the rules that stop them when a reply comes in. Every automation between tools is documented."
+    },
+    {
+     "title": "Reporting and the revenue scoreboard",
+     "body": "Targets per rep and per team, a live leaderboard of calls, booked meetings and closed sales, and the reports the owner actually reads. The numbers are pulled from the CRM and the phone system without anyone typing."
+    },
+    {
+     "title": "AI agents and custom tools",
+     "body": "Where they do routine work reliably, AI agents built on Claude or OpenAI write call notes to the record, qualify inbound leads and draft follow-ups for a rep to approve. Where no platform covers a step, we build the tool or connector."
+    },
+    {
+     "title": "Training and handover",
+     "body": "Training sessions on your own data, recorded for the team. Handover notes say how each piece runs and who to call. We work through a named admin seat you create for us and revoke at handover."
+    }
+   ]
+  },
+  {
+   "type": "rows",
+   "id": "consultant",
+   "eyebrow": "The role",
+   "h2": "What a HubSpot consultant does.",
+   "intro": "A HubSpot consultant sets HubSpot up around how a team sells and supports, then connects it to the tools around it. At Stacktik that is one technical RevOps consultant, assigned to your project from the first idea to fully deployed.",
+   "items": [
+    {
+     "title": "Maps how your team works today",
+     "body": "We start from how leads, calls and follow-ups move through your team. The pipeline, the properties and the routing rules are then set up to match, so the CRM fits the way you sell."
+    },
+    {
+     "title": "Puts the scope in writing first",
+     "body": "The proposal states what is in scope, what is not, what an addition would cost and what counts as done. You have it in writing before you commit to anything."
+    },
+    {
+     "title": "Builds it, without handing it off",
+     "body": "The same person is on the call, the proposal and the build. That person can build anything the project needs, from the CRM setup to a custom tool, portal or connector."
+    },
+    {
+     "title": "Works across every tool, not one vendor's",
+     "body": "Setup, data, connections and training cover the whole stack: the CRM, the phone system, the outreach tool and the reporting. That is the difference from a vendor's own onboarding, which covers one vendor's tool."
+    },
+    {
+     "title": "Says so when you need less",
+     "body": "If HubSpot's own onboarding is enough for your case, we say so. If the straight answer on the first call is that the next step is nothing yet, you hear that too."
+    }
+   ]
+  },
+  {
+   "type": "rows",
+   "id": "choose",
+   "eyebrow": "How to choose",
+   "h2": "HubSpot onboarding: the vendor, a consultant or an agency.",
+   "intro": "HubSpot onboarding services come from more than one place: the vendor, an agency, or a consultant such as Stacktik. Which one fits depends on how many tools are involved and what kind of work you need done.",
+   "items": [
+    {
+     "title": "When HubSpot's own onboarding is enough",
+     "body": "A vendor's own onboarding covers that vendor's tool. If HubSpot is the only tool involved and nothing else has to connect to it, that may be the better path. When it is, we say so."
+    },
+    {
+     "title": "When a consultant fits better",
+     "body": "When the work crosses tools: data coming from another system, a phone system to connect, sequences in an outreach tool, and reports pulled from all of them. That work sits across every tool, not inside one vendor's."
+    },
+    {
+     "title": "When a HubSpot agency fits better",
+     "body": "If you need email copy written or outbound run for you, look for an agency. That work is not usually in our scope. We build the system and train your team on it. Your team sends from it."
+    },
+    {
+     "title": "Buying HubSpot: through us or direct",
+     "body": "We are enrolled in vendor programs with most of the platforms we set up, and the proposal states our relationship with HubSpot next to its price. Where a program helps, we handle the purchase through it. Where it does not, we tell you to buy direct. Neither buying nor implementation requires the other."
+    },
+    {
+     "title": "When to keep the CRM you have",
+     "body": "We won't recommend a switch we can't justify in writing. If connecting and fixing your current CRM solves the problem, the proposal says to keep it and lists what to connect."
+    }
+   ]
+  },
+  {
+   "type": "steps",
+   "id": "process",
+   "eyebrow": "How it works",
+   "h2": "How Stacktik runs a HubSpot setup, step by step.",
+   "intro": "The exact steps, their order and what we need from your team are written on the proposal for your project. In outline, the work runs like this, with one consultant on it throughout.",
+   "items": [
+    {
+     "title": "A free first call",
+     "body": "We go through what you use today, what isn't working and what you are trying to get to. You get a straight answer on whether the next step is software, implementation, both, or nothing yet."
+    },
+    {
+     "title": "A written proposal",
+     "body": "If there is a fit, the proposal states the monthly software cost, the scope of the implementation and its fixed fee. You have all of it in writing before you commit to anything."
+    },
+    {
+     "title": "HubSpot set up in your account",
+     "body": "We work inside your account through an admin seat you create for us. Pipeline stages, properties and lead routing are set up around the way your team sells."
+    },
+    {
+     "title": "Data moved, tools connected",
+     "body": "Your data is migrated with duplicates merged while the old system stays read-only. Calling, outreach and reporting are connected to HubSpot, and each automation is documented."
+    },
+    {
+     "title": "Team trained, system handed over",
+     "body": "Your team is trained on their own data and the sessions are recorded. Handover notes say how each piece runs and who to call. You revoke our admin seat, and the old system is yours to close."
+    },
+    {
+     "title": "Monthly support, if you want it",
+     "body": "Optional, for teams that want the people who built the system to keep it current. What it covers and what it costs go on the proposal like everything else."
+    }
+   ]
+  }
+ ],
+ "platforms": {
+  "h2": "The platforms we work with around HubSpot.",
+  "intro": "HubSpot is the CRM, the system the others connect to. We are enrolled in vendor programs with most of the platforms we set up, and the proposal states our relationship with each one next to its price.",
+  "names": [
+   "HubSpot",
+   "CloudTalk",
+   "Dialpad",
+   "Kixie",
+   "lemlist",
+   "Instantly",
+   "Smartlead",
+   "Saleshandy",
+   "Reply.io",
+   "Lusha",
+   "Fireflies.ai",
+   "Zapier",
+   "Claude",
+   "OpenAI",
+   "Databox"
+  ]
+ },
+ "faq": [
+  {
+   "q": "How much does HubSpot implementation cost?",
+   "a": "It depends on the scope, so there is no price on this page. Stacktik quotes HubSpot implementation as a fixed fee, in writing, before work starts, with what is in scope, what is not and what an addition would cost. The software is a separate number: HubSpot is on the vendor's own plan and pricing, and the monthly figure is on the proposal. Nothing is charged for the first call."
+  },
+  {
+   "q": "How does a HubSpot CRM implementation work?",
+   "a": "At Stacktik, it runs as a call, a written proposal, then the build. On the free first call we go through what you use and what isn't working. The proposal sets the scope, the fixed fee, the steps and their order. Then one technical RevOps consultant sets up the pipeline and properties, moves your data over, connects calling, outreach and reporting, trains your team on their own data and hands over written notes."
+  },
+  {
+   "q": "How do I choose a HubSpot implementation partner?",
+   "a": "Choose on what the firm will put in writing. Here, implementation partner means the firm doing the setup, not a vendor partner tier. Ask what is in scope, whether the fee is fixed before work starts, whether the person on the call does the build, and whether the vendor pays the firm anything. Stacktik writes the scope, the fixed fee and its relationship with each tool on the proposal, and one consultant does the call, proposal and build."
+  },
+  {
+   "q": "Do I need a HubSpot expert, or is HubSpot's own onboarding enough?",
+   "a": "Not always. A vendor's own onboarding covers that vendor's tool, so if HubSpot is the only tool involved and nothing else has to connect to it, HubSpot's own onboarding may be enough. Stacktik says so when that is the better path. Outside help fits better when the work crosses tools: data moved from another system, a phone system and an outreach tool connected, and reports pulled from all of them."
+  },
+  {
+   "q": "Do we have to buy HubSpot through Stacktik to get it set up?",
+   "a": "No. Buying and implementation are separate, and neither requires the other. You can buy HubSpot direct and hire Stacktik only for the implementation. Where a vendor program helps, we can handle the purchase, and you can still run the setup yourself. Where it does not, we tell you to buy direct. The subscription is on the vendor's own plan and pricing, and the proposal states our relationship with HubSpot next to its price."
+  },
+  {
+   "q": "Can you fix a HubSpot account we already have?",
+   "a": "Yes. Stacktik works with HubSpot accounts that are already set up. On the first call we go through what you use and what isn't working. If there is a fit, the written proposal says what to keep, what to connect and what, if anything, to replace. The fixes draw from the same list as a full implementation, for problems such as calls that don't log and leads that don't reach a rep."
+  }
+ ],
+ "closeH2": "Start with a call about HubSpot.",
+ "closeLede": "Tell us what you use today and what isn't working. The first call is free, and you get a straight answer on whether the next step is software, implementation, both, or nothing yet.",
+ "keywordsUsed": [
+  "hubspot implementation",
+  "hubspot consultant",
+  "hubspot onboarding",
+  "hubspot implementation partner",
+  "hubspot implementation services",
+  "hubspot onboarding services",
+  "hubspot agency",
+  "hubspot crm implementation",
+  "hubspot crm setup",
+  "hubspot setup",
+  "hubspot migration",
+  "hubspot expert",
+  "hubspot integrations"
+ ],
+ "keywordsSkipped": [
+  {
+   "keyword": "hubspot partner",
+   "reason": "Using it would present Stacktik as a HubSpot partner. The site only says Stacktik is enrolled in vendor programs with most of the platforms it sets up, and it does not say HubSpot is one of them."
+  },
+  {
+   "keyword": "hubspot solutions partner",
+   "reason": "This is an official HubSpot partner tier. Owner rule 5 forbids claiming or implying it."
+  },
+  {
+   "keyword": "hubspot partner canada",
+   "reason": "Needs a HubSpot partner claim the site does not make. The page states the Woodbridge, Ontario location instead."
+  },
+  {
+   "keyword": "hubspot partner toronto",
+   "reason": "Needs a HubSpot partner claim, and the site text never mentions Toronto. The stated location is Woodbridge, Ontario."
+  },
+  {
+   "keyword": "hubspot audit",
+   "reason": "The site offers no audit service. Calling the free first call and the written proposal a HubSpot audit would invent one, so the FAQ asks about fixing an existing account instead."
+  }
+ ]
+}

@@ -33,25 +33,32 @@ function swap(html, from, to, { all = false, min = 1 } = {}) {
 
 /* ---------- content ---------- */
 const landing = (existsSync(join(SRC, "pages")) ? readdirSync(join(SRC, "pages")) : []).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(read(join(SRC, "pages", f))));
-const ORDER = ["crm-implementation", "hubspot-implementation", "monday-crm-implementation", "business-phone-systems", "ai-receptionist", "ai-agents"];
-landing.sort((a, b) => ORDER.indexOf(a.slug) - ORDER.indexOf(b.slug));
-const NAV_NAME = {
-  "crm-implementation": "CRM implementation",
-  "hubspot-implementation": "HubSpot implementation",
-  "monday-crm-implementation": "monday CRM implementation",
-  "business-phone-systems": "Business phone systems",
-  "ai-receptionist": "AI receptionist",
-  "ai-agents": "AI agents",
+// Every landing page: display name, group, the three pages it links to, and whether the homepage features it.
+// The order here is the order in menus.
+const META = {
+  "crm-implementation": { name: "CRM implementation", group: "service", featured: true, related: ["hubspot-implementation", "monday-crm-implementation", "crm-migration"] },
+  "hubspot-implementation": { name: "HubSpot implementation", group: "service", featured: true, related: ["hubspot-audit", "crm-migration", "hubspot-phone-integration"] },
+  "monday-crm-implementation": { name: "monday CRM implementation", group: "service", related: ["crm-implementation", "crm-integration", "zapier-consultant"] },
+  "close-crm-implementation": { name: "Close CRM implementation", group: "service", related: ["crm-implementation", "crm-migration", "crm-integration"] },
+  "gohighlevel-setup": { name: "GoHighLevel setup", group: "service", related: ["crm-implementation", "zapier-consultant", "ai-agents"] },
+  "crm-migration": { name: "CRM migration", group: "service", related: ["crm-implementation", "hubspot-implementation", "crm-integration"] },
+  "hubspot-audit": { name: "HubSpot audit", group: "service", related: ["hubspot-implementation", "crm-integration", "zapier-consultant"] },
+  "zapier-consultant": { name: "Zapier and CRM automation", group: "service", related: ["crm-integration", "ai-agents", "crm-implementation"] },
+  "business-phone-systems": { name: "Business phone systems", group: "service", featured: true, related: ["hubspot-phone-integration", "ai-receptionist", "crm-integration"] },
+  "ai-receptionist": { name: "AI receptionist", group: "service", featured: true, related: ["business-phone-systems", "ai-agents", "hubspot-phone-integration"] },
+  "ai-agents": { name: "AI agents", group: "service", featured: true, related: ["hubspot-ai-integration", "ai-receptionist", "zapier-consultant"] },
+  "crm-integration": { name: "CRM integration", group: "integration", featured: true, related: ["hubspot-phone-integration", "zapier-consultant", "hubspot-ai-integration"] },
+  "hubspot-phone-integration": { name: "HubSpot phone integration", group: "integration", related: ["ringcentral-hubspot-integration", "aircall-hubspot-integration", "business-phone-systems"] },
+  "ringcentral-hubspot-integration": { name: "RingCentral with HubSpot", group: "integration", related: ["hubspot-phone-integration", "aircall-hubspot-integration", "business-phone-systems"] },
+  "aircall-hubspot-integration": { name: "Aircall with HubSpot", group: "integration", related: ["hubspot-phone-integration", "ringcentral-hubspot-integration", "business-phone-systems"] },
+  "hubspot-ai-integration": { name: "HubSpot with Claude and ChatGPT", group: "integration", related: ["ai-agents", "hubspot-implementation", "crm-integration"] },
 };
-const RELATED = {
-  "crm-implementation": ["hubspot-implementation", "monday-crm-implementation", "business-phone-systems"],
-  "hubspot-implementation": ["crm-implementation", "business-phone-systems", "ai-agents"],
-  "monday-crm-implementation": ["crm-implementation", "hubspot-implementation", "ai-agents"],
-  "business-phone-systems": ["ai-receptionist", "crm-implementation", "hubspot-implementation"],
-  "ai-receptionist": ["business-phone-systems", "ai-agents", "crm-implementation"],
-  "ai-agents": ["ai-receptionist", "crm-implementation", "hubspot-implementation"],
-};
-const services = landing.map((p) => ({ slug: p.slug, path: `/${p.slug}/`, name: NAV_NAME[p.slug] || p.eyebrow, blurb: p.summary?.[0]?.text || p.metaDescription }));
+const ORDER = Object.keys(META);
+const rank = (slug) => (ORDER.indexOf(slug) < 0 ? 999 : ORDER.indexOf(slug));
+landing.sort((a, b) => rank(a.slug) - rank(b.slug));
+const metaOf = (p) => META[p.slug] || { name: p.eyebrow, group: "service", related: [] };
+const services = landing.map((p) => ({ slug: p.slug, path: `/${p.slug}/`, name: metaOf(p).name, group: metaOf(p).group, featured: !!metaOf(p).featured, blurb: p.summary?.[0]?.text || p.metaDescription }));
+const inGroup = (g) => services.filter((s) => s.group === g);
 
 const HOME = {
   path: "/",
@@ -65,6 +72,12 @@ const DETAILS = {
   description: "The platforms Stacktik sets up and our relationship with each, what a CRM and sales-tool implementation can include, and how buying software through us works.",
   og: "details",
 };
+const SERVICES = {
+  path: "/services/",
+  title: "RevOps services and integrations | Stacktik",
+  description: "Every service Stacktik offers: CRM implementation, HubSpot, monday CRM, Close, phone systems, AI agents, and the integrations that connect them to your CRM.",
+  og: "services",
+};
 const BOOK = {
   path: "/blueprint/",
   title: "Book a call with a RevOps consultant | Stacktik",
@@ -74,20 +87,21 @@ const BOOK = {
 
 /* ---------- shared pieces ---------- */
 const chev = `<span class="disc" aria-hidden="true"><svg><use href="#chev"/></svg></span>`;
-const footerHtml = () => `<footer>
+const footLinks = (label, items) => (items.length ? `
   <div class="wrap foot-svc">
-    <span class="label">Services</span>
-    <nav aria-label="Services">${services.map((s) => `<a href="${s.path}">${esc(s.name)}</a>`).join("")}<a href="/details/">Platforms and scope</a><a href="/blueprint/">Book a call</a></nav>
-  </div>
+    <span class="label">${label}</span>
+    <nav aria-label="${label}">${items.map((s) => `<a href="${s.path}">${esc(s.name)}</a>`).join("")}</nav>
+  </div>` : "");
+const footerHtml = () => `<footer>${footLinks("Services", inGroup("service"))}${footLinks("Integrations", inGroup("integration"))}
   <div class="wrap">
     <span>© ${TODAY.slice(0, 4)} ${ORG.legalName} · ${ORG.locality}, Ontario</span>
-    <span><a href="/">Home</a> · <a href="/details/">Platforms, implementation scope and buying details</a> · <span class="email">${ORG.email}</span></span>
+    <span><a href="/">Home</a> · ${services.length ? '<a href="/services/">All services</a> · ' : ""}<a href="/details/">Platforms, implementation scope and buying details</a> · <a href="/blueprint/">Book a call</a> · <span class="email">${ORG.email}</span></span>
   </div>
 </footer>`;
 
 const EXTRA_CSS = `
 /* Site-wide additions for the multi-page site: service links, breadcrumbs, key facts, platform chips, the booking form. */
-.foot-svc { display: grid !important; gap: 12px; justify-content: start; padding-bottom: 22px; margin-bottom: 22px; border-bottom: 1px solid var(--ln); }
+.foot-svc { display: grid !important; gap: 12px; justify-content: start; padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--ln); }
 .foot-svc nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
 .foot-svc nav a { text-decoration: none; color: var(--fg); font-weight: 500; }
 .foot-svc nav a:hover { color: var(--terracotta-light); }
@@ -189,6 +203,7 @@ function buildHome() {
   head = swap(head, '<meta name="claude:viewport-fit-sides" content="cover">\n', "");
 
   body = swap(body, 'href="details.html#platforms"', 'href="/details/#platforms"');
+  body = swap(body, '<a href="details.html">Details</a>\n    </nav>', (services.length ? '<a href="/services/">Services</a>\n      ' : "") + '<a href="details.html">Details</a>\n    </nav>');
   body = swap(body, 'href="details.html"', 'href="/details/"', { all: true });
   body = swap(body, 'href="https://stacktik.com/blueprint/"', 'href="/blueprint/"', { all: true });
   body = swap(body, 'poster="media/stacktik-film-poster.jpg"', 'poster="/media/stacktik-film-poster.jpg"');
@@ -197,7 +212,39 @@ function buildHome() {
   body = swap(body, ">For sales and customer-facing teams</span>", ">RevOps consulting for sales and customer-facing teams</span>");
   // Internal links to the service pages, from the section that describes the work.
   const helpEnd = '  </div>\n</section>\n\n<section id="journey"';
-  body = swap(body, helpEnd, `    <p class="svc-links"><span class="label">Start from a service</span>${services.map((s) => `<a href="${s.path}">${esc(s.name)}</a>`).join("")}</p>\n` + helpEnd);
+  body = swap(body, helpEnd, `    <p class="svc-links"><span class="label">Start from a service</span>${services.filter((s) => s.featured).map((s) => `<a href="${s.path}">${esc(s.name)}</a>`).join("")}${services.length ? '<a href="/services/">All services</a>' : ""}</p>\n` + helpEnd);
+  // For AI assistants and anyone skimming: who Stacktik is, in sentences that stand on their own, and the questions
+  // people ask an assistant about a firm like this, answered directly. The FAQ structured data picks these up.
+  const facts = [
+    ["What Stacktik is", `${ORG.name} is a RevOps (revenue operations) consultancy in ${ORG.locality}, Ontario. It chooses, buys, sets up and connects the CRM, calling, outreach and reporting tools that sales and customer-facing teams run on.`],
+    ["Who it is for", "Sales and customer-facing teams that are choosing software, replacing it, or running tools that were bought but never connected."],
+    ["What you get", "A written proposal, software bought on the vendor's own plan, the system set up and connected, your data moved over, your team trained, AI agents on the routine steps and a live revenue scoreboard."],
+    ["How it is priced", "The first call is free. Implementation is a fixed fee, quoted in writing before work starts. Software stays on the vendor's own plan and pricing. Ongoing support is optional and monthly."],
+    ["Beyond the sales tools", "Stacktik can also source phone systems, contact centre, internet, security, cloud and mobility from more than 400 suppliers, on the same written proposal."],
+    ["How to start", `Book a call, or write to ${ORG.email}. One technical RevOps consultant is assigned to each project.`],
+  ];
+  const inShort = `<section id="in-short" class="rule" data-tone="dark">
+  <div class="wrap">
+    <div class="sec-head" data-reveal-group>
+      <span class="eyebrow">In short</span>
+      <h2>Stacktik, in six lines.</h2>
+    </div>
+    <dl class="facts" data-reveal-group>
+${facts.map(([k, v]) => `      <div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("\n")}
+    </dl>
+  </div>
+</section>
+
+`;
+  body = swap(body, '<section id="faq" class="rule" data-tone="dark">', inShort + '<section id="faq" class="rule" data-tone="dark">');
+  const extraFaq = [
+    ["What is RevOps?", "RevOps, short for revenue operations, is the work of making sales, marketing and customer service run on one connected system: one set of customer records, shared definitions of a lead and a deal, and reporting everyone trusts. In practice it is the CRM, the calling and outreach tools connected to it, the automation between them and the scoreboard on top. That system is what Stacktik sets up."],
+    ["What does Stacktik do?", "Stacktik chooses, buys, sets up and connects the software a sales or customer-facing team runs on: CRM, calling, outreach and reporting. We move your data over, automate the routine steps, build AI agents on Claude and OpenAI for them, train your team and put a revenue scoreboard in front of them. Use one part or all of it."],
+    ["Do you only work on sales tools?", "No. Revenue operations is our specialty and the work we do ourselves. For the technology around it, we can source phone systems, contact centre, internet, security, cloud and mobility from more than 400 suppliers on the same written proposal, whether or not we do your RevOps work."],
+    ["Where is Stacktik based?", `${ORG.legalName} is based in ${ORG.locality}, Ontario, Canada. We work inside your own accounts, through a seat you create for us and can revoke at handover. Write to ${ORG.email} or book a call.`],
+  ];
+  const faqEnd = '</p></div>\n    </div>\n  </div>\n</section>\n\n<section class="close rule"';
+  body = swap(body, faqEnd, '</p></div>\n' + extraFaq.map(([q, a]) => `      <div class="q"><h3>${esc(q)}</h3><p>${esc(a)}</p></div>`).join("\n") + '\n    </div>\n  </div>\n</section>\n\n<section class="close rule"');
   const foot = body.match(/<footer>[\s\S]*?<\/footer>/);
   if (!foot) throw new Error("home: footer not found");
   body = body.replace(foot[0], footerHtml());
@@ -288,7 +335,7 @@ ${footerHtml()}
 
 function buildLanding(p) {
   const page = { path: `/${p.slug}/`, title: p.title, description: p.metaDescription, og: p.slug };
-  const name = NAV_NAME[p.slug] || p.eyebrow;
+  const name = metaOf(p).name;
   const steps = p.blocks.find((b) => b.type === "steps");
   const blockHtml = (b) => {
     const rows = b.items.map((it, i) => `      <${b.type === "steps" ? "li" : "div"} class="ledger-row">
@@ -308,7 +355,7 @@ ${rows}
   </div>
 </section>`;
   };
-  const related = (RELATED[p.slug] || []).map((s) => services.find((x) => x.slug === s)).filter(Boolean);
+  const related = metaOf(p).related.map((s) => services.find((x) => x.slug === s)).filter(Boolean);
   const main = `
 <section class="hero hero-short" data-tone="dark">
   <div class="wrap">
@@ -365,7 +412,7 @@ ${p.faq.map((f) => `      <div class="q"><h3>${esc(f.q)}</h3><p>${esc(f.a)}</p><
   </div>
 </section>
 
-<section id="related" class="rule" data-tone="dark">
+${related.length ? `<section id="related" class="rule" data-tone="dark">
   <div class="wrap">
     <div class="sec-head" data-reveal-group>
       <span class="eyebrow">Related</span>
@@ -374,8 +421,9 @@ ${p.faq.map((f) => `      <div class="q"><h3>${esc(f.q)}</h3><p>${esc(f.a)}</p><
     <div class="rel" data-reveal-group>
 ${related.map((r) => `      <a href="${r.path}"><strong>${esc(r.name)}</strong><span>${esc(r.blurb)}</span></a>`).join("\n")}
     </div>
+    <p class="chips-note"><a href="/services/">All services and integrations</a></p>
   </div>
-</section>
+</section>` : ""}
 
 <section class="close rule" data-tone="dark">
   <div class="wrap">
@@ -387,8 +435,53 @@ ${related.map((r) => `      <a href="${r.path}"><strong>${esc(r.name)}</strong><
 </section>`;
   const service = { "@type": "Service", "@id": url(page.path + "#service"), name, serviceType: name, description: p.metaDescription, url: url(page.path), provider: { "@id": url("/#organization") }, areaServed: { "@type": "Country", name: "Canada" } };
   const schema = [orgNode(), siteNode(), pageNode(page, { breadcrumb: { "@id": url(page.path + "#breadcrumb") }, mainEntity: { "@id": url(page.path + "#service") } }), crumbNode(page, [{ name: "Home", path: "/" }, { name, path: page.path }]), service, faqNode(page, p.faq)];
-  const navLinks = [{ href: "/", text: "Home" }, ...p.blocks.slice(0, 3).map((b) => ({ href: `#${b.id}`, text: b.eyebrow })), { href: "#faq", text: "Questions" }, { href: "/details/", text: "Details" }];
+  const navLinks = [{ href: "/", text: "Home" }, ...p.blocks.slice(0, 3).map((b) => ({ href: `#${b.id}`, text: b.eyebrow })), { href: "#faq", text: "Questions" }, { href: "/services/", text: "Services" }];
   return { page, html: shell(page, { schema, navLinks, main }) };
+}
+
+const SITE_NAV = [{ href: "/", text: "Home" }, { href: "/#help", text: "What we do" }, { href: "/#how", text: "How it works" }, { href: "/#fees", text: "Fees" }, { href: "/services/", text: "Services" }, { href: "/details/", text: "Details" }];
+
+function buildServices() {
+  const cards = (items) => `<div class="rel" data-reveal-group>
+${items.map((r) => `      <a href="${r.path}"><strong>${esc(r.name)}</strong><span>${esc(r.blurb)}</span></a>`).join("\n")}
+    </div>`;
+  const group = (id, eyebrow, h2, lede, items) => (items.length ? `
+<section id="${id}" class="rule" data-tone="dark">
+  <div class="wrap">
+    <div class="sec-head" data-reveal-group>
+      <span class="eyebrow">${eyebrow}</span>
+      <h2>${h2}</h2>
+      <p class="lede">${lede}</p>
+    </div>
+    ${cards(items)}
+  </div>
+</section>` : "");
+  const main = `
+<section class="hero hero-short" data-tone="dark">
+  <div class="wrap">
+    <div class="hero-copy" style="max-width:46rem">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Services</span></nav>
+      <span class="eyebrow">Services</span>
+      <h1>RevOps services and integrations.</h1>
+      <p class="lede">Revenue operations is our specialty: the CRM, calling, outreach and reporting tools your sales and customer-facing teams run on, chosen, bought, set up and connected. Start from the piece you need. Each one is scoped on a written proposal, with a fixed fee quoted before work starts.</p>
+      <div class="hero-ctas"><a class="btn" href="/blueprint/">Book a call ${chev}</a></div>
+    </div>
+  </div>
+</section>
+${group("implementation", "Implementation", "Set up, moved over and taught to your team.", "The system your team sells and serves on, installed properly, with your data in it and the rules written down.", inGroup("service"))}
+${group("integrations", "Integrations", "The tools connected to your CRM.", "A call logs itself, a reply stops the sequence, an AI agent drafts the follow-up. Each connection is documented and handed over.", inGroup("integration"))}
+
+<section class="close rule" data-tone="dark">
+  <div class="wrap">
+    <span class="eyebrow">Stacktik</span>
+    <h2>Start with what you use today.</h2>
+    <p class="lede">A free call about the tools you have and what isn't working. The technology around your sales tools can come through us too.</p>
+    <div><a class="btn" href="/blueprint/">Book a call ${chev}</a></div>
+  </div>
+</section>`;
+  const list = { "@type": "ItemList", "@id": url(SERVICES.path + "#list"), itemListElement: services.map((s, i) => ({ "@type": "ListItem", position: i + 1, name: s.name, url: url(s.path) })) };
+  const schema = [orgNode(), siteNode(), { ...pageNode(SERVICES, { breadcrumb: { "@id": url(SERVICES.path + "#breadcrumb") }, mainEntity: { "@id": url(SERVICES.path + "#list") } }), "@type": ["WebPage", "CollectionPage"] }, crumbNode(SERVICES, [{ name: "Home", path: "/" }, { name: "Services", path: SERVICES.path }]), list];
+  return shell(SERVICES, { schema, navLinks: SITE_NAV, main });
 }
 
 function buildBook() {
@@ -443,8 +536,7 @@ function buildBook() {
   });
 })();
 </script>`;
-  const navLinks = [{ href: "/", text: "Home" }, { href: "/#help", text: "What we do" }, { href: "/#how", text: "How it works" }, { href: "/#fees", text: "Fees" }, { href: "/details/", text: "Details" }];
-  return shell(BOOK, { schema, navLinks, main, extraScript });
+  return shell(BOOK, { schema, navLinks: SITE_NAV, main, extraScript });
 }
 
 /* ---------- write ---------- */
@@ -460,6 +552,7 @@ put("index.html", buildHome());
 put("details/index.html", buildDetails());
 put("blueprint/index.html", buildBook());
 const pages = [HOME, DETAILS, BOOK];
+if (services.length) { put("services/index.html", buildServices()); pages.push(SERVICES); }
 for (const p of landing) { const { page, html } = buildLanding(p); put(`${p.slug}/index.html`, html); pages.push(page); }
 
 put("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>
@@ -495,13 +588,33 @@ Stacktik (${ORG.legalName}) is based in ${ORG.locality}, Ontario, Canada. Revenu
 
 ## Services
 
-${services.map((s) => `- [${s.name}](${url(s.path)}): ${s.blurb}`).join("\n")}
+${inGroup("service").map((s) => `- [${s.name}](${url(s.path)}): ${s.blurb}`).join("\n")}
+
+## Integrations
+
+${inGroup("integration").map((s) => `- [${s.name}](${url(s.path)}): ${s.blurb}`).join("\n")}
 
 ## Pages
 
 - [Home](${url("/")}): what Stacktik does, how it works, fees and common questions.
+- [All services and integrations](${url("/services/")}): the full list on one page.
 - [Platforms, implementation scope and buying](${url("/details/")}): the platforms Stacktik works with, what a project can include, and how a purchase works.
 - [Book a call](${url("/blueprint/")}): request the free first call.
+
+## Optional
+
+- [Full text of the service pages](${url("/llms-full.txt")}): every service and integration page as plain markdown.
 `);
+
+const md = (p) => [`# ${metaOf(p).name}`, `URL: ${url(`/${p.slug}/`)}`, "", p.lede, "", ...p.summary.map((s) => `- **${s.label}:** ${s.text}`), "",
+  ...p.blocks.flatMap((b) => [`## ${b.h2}`, "", b.intro, "", ...b.items.map((it, i) => `${b.type === "steps" ? i + 1 + "." : "-"} **${it.title}.** ${it.body}`), ""]),
+  "## Questions", "", ...p.faq.flatMap((f) => [`**${f.q}**`, f.a, ""])].join("\n");
+put("llms-full.txt", `# Stacktik: full text of the service pages
+
+> ${ORG.description}
+
+Source: ${url("/")} · Contact: ${ORG.email} · Updated ${TODAY}
+
+${landing.map(md).join("\n---\n\n")}`);
 
 console.log(`built ${pages.length} pages into site/dist:`, pages.map((p) => p.path).join(" "));
