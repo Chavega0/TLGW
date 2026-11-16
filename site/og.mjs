@@ -1,7 +1,7 @@
 // Renders the social share images and icons into site/public (needs Playwright and network access to Google Fonts):
 // `node site/og.mjs`. Run it when a page headline changes; the PNGs are committed.
 import { createRequire } from "node:module";
-import { readFileSync, readdirSync, mkdirSync } from "node:fs";
+import { readFileSync, readdirSync, mkdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 const require = createRequire("/opt/node-tools/node_modules/");
@@ -14,7 +14,7 @@ const cards = [
   { slug: "home", eyebrow: "RevOps consulting for sales and customer-facing teams", head: "We set up the software and technology that grow your revenue." },
   { slug: "details", eyebrow: "Details", head: "The platforms, the scope, and how buying works." },
   { slug: "blueprint", eyebrow: "Book a call", head: "A free call about what you use today." },
-  ...readdirSync(join(ROOT, "src", "pages")).filter((f) => f.endsWith(".json")).map((f) => { const p = JSON.parse(readFileSync(join(ROOT, "src", "pages", f), "utf8")); return { slug: p.slug, eyebrow: p.eyebrow, head: p.h1 }; }),
+  ...(existsSync(join(ROOT, "src", "pages")) ? readdirSync(join(ROOT, "src", "pages")) : []).filter((f) => f.endsWith(".json")).map((f) => { const p = JSON.parse(readFileSync(join(ROOT, "src", "pages", f), "utf8")); return { slug: p.slug, eyebrow: p.eyebrow, head: p.h1 }; }),
 ];
 const mark = (stroke, w) => `<svg viewBox="0 0 100 100" width="${w}" height="${w}"><path d="M22 32 L43 46 L80 13" fill="none" stroke="${stroke}" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/><rect x="16" y="56" width="68" height="14" rx="7" fill="${stroke}"/><rect x="16" y="78" width="68" height="14" rx="7" fill="${stroke}"/></svg>`;
 const fonts = `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">`;

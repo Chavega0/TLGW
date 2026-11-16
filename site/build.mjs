@@ -32,7 +32,7 @@ function swap(html, from, to, { all = false, min = 1 } = {}) {
 }
 
 /* ---------- content ---------- */
-const landing = readdirSync(join(SRC, "pages")).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(read(join(SRC, "pages", f))));
+const landing = (existsSync(join(SRC, "pages")) ? readdirSync(join(SRC, "pages")) : []).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(read(join(SRC, "pages", f))));
 const ORDER = ["crm-implementation", "hubspot-implementation", "monday-crm-implementation", "business-phone-systems", "ai-receptionist", "ai-agents"];
 landing.sort((a, b) => ORDER.indexOf(a.slug) - ORDER.indexOf(b.slug));
 const NAV_NAME = {
